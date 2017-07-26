@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.enable": true,
+  "files.associations": {
+    "**/components/**/*.js": "javascriptreact"
+  },
+  "prettier.eslintIntegration": true,
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "none",
+  "prettier.bracketSpacing": true,
+  "prettier.semi": false
+}
