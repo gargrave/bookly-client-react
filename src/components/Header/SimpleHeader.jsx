@@ -1,14 +1,18 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
+import { localUrls } from '../../constants/urls'
+
 const SimpleHeader = () => {
   return (
     <div>
-      <Link to="/books">Books</Link>
+      <Link to="/">Home</Link>
       {' | '}
-      <Link to="/authors">Authors</Link>
+      <Link to={localUrls.booksList}>Books</Link>
       {' | '}
-      <Link to="/account">Account</Link>
+      <Link to={localUrls.authorsList}>Authors</Link>
+      {' | '}
+      <Link to={localUrls.account}>Account</Link>
     </div>
   )
 }
