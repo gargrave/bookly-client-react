@@ -13,6 +13,8 @@ const SimpleHeader = () => {
       <Link to={localUrls.authorsList}>Authors</Link>
       {' | '}
       <Link to={localUrls.account}>Account</Link>
+      {' | '}
+      <Link to={localUrls.login}>Login</Link>
     </div>
   )
 }
