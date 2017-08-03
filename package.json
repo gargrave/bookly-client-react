@@ -2,6 +2,12 @@
   "name": "bookly-client-react",
   "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "node scripts/start.js",
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js --env=jsdom"
+  },
   "dependencies": {
     "autoprefixer": "7.1.1",
     "axios": "^0.16.2",
@@ -39,7 +45,10 @@
     "react-dev-utils": "^3.0.2",
     "react-dom": "^15.6.1",
     "react-error-overlay": "^1.0.9",
+    "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "style-loader": "0.18.2",
     "sw-precache-webpack-plugin": "0.11.3",
     "url-loader": "0.5.9",
@@ -48,23 +57,10 @@
     "webpack-manifest-plugin": "1.1.0",
     "whatwg-fetch": "2.0.3"
   },
-  "scripts": {
-    "dev": "node scripts/start.js",
-    "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
-  },
   "jest": {
-    "collectCoverageFrom": [
-      "src/**/*.{js,jsx}"
-    ],
-    "setupFiles": [
-      "<rootDir>/config/polyfills.js"
-    ],
-    "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.js?(x)",
-      "<rootDir>/src/**/?(*.)(spec|test).js?(x)"
-    ],
+    "collectCoverageFrom": ["src/**/*.{js,jsx}"],
+    "setupFiles": ["<rootDir>/config/polyfills.js"],
+    "testMatch": ["<rootDir>/src/**/__tests__/**/*.js?(x)", "<rootDir>/src/**/?(*.)(spec|test).js?(x)"],
     "testEnvironment": "node",
     "testURL": "http://localhost",
     "transform": {
@@ -72,24 +68,14 @@
       "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
       "^(?!.*\\.(js|jsx|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
     },
-    "transformIgnorePatterns": [
-      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"
-    ],
+    "transformIgnorePatterns": ["[/\\\\]node_modules[/\\\\].+\\.(js|jsx)$"],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
     },
-    "moduleFileExtensions": [
-      "web.js",
-      "js",
-      "json",
-      "web.jsx",
-      "jsx"
-    ]
+    "moduleFileExtensions": ["web.js", "js", "json", "web.jsx", "jsx"]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": ["react-app"]
   },
   "eslintConfig": {
     "extends": "react-app"
