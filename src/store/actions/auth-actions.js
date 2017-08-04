@@ -2,6 +2,7 @@ import { AUTH } from '../action-types'
 import axios from 'axios'
 
 import { apiUrls } from '../../constants/urls'
+import { parseError } from '../../globals/errors'
 import apiHelper from '../../utils/api-helper'
 
 function _requestStart () {
@@ -31,7 +32,7 @@ export function login (user) {
       dispatch(_login(result.data))
       return userData
     } catch (err) {
-      return null
+      throw parseError(err)
     } finally {
       dispatch(_requestEnd())
     }

@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { func } from 'prop-types'
+import { withRouter } from 'react-router'
+import { func, object } from 'prop-types'
 
+import { localUrls } from '../../../constants/urls'
 import { login } from '../../../store/actions/auth-actions'
+import ErrorAlert from '../../Common/ErrorAlert'
 import LoginForm from '../components/LoginForm'
 
 class LoginPage extends Component {
@@ -13,7 +16,8 @@ class LoginPage extends Component {
       user: {
         email: '',
         password: ''
-      }
+      },
+      apiError: ''
     }
 
     this.login = this.login.bind(this)
@@ -23,8 +27,12 @@ class LoginPage extends Component {
   async login (event) {
     event.preventDefault()
     if (this.state.user.email && this.state.user.password) {
-      await this.props.login(this.state.user)
-      console.log('logged in!')
+      try {
+        await this.props.login(this.state.user)
+        this.props.history.push(localUrls.account)
+      } catch (err) {
+        this.setState({ apiError: err.message })
+      }
     }
   }
 
@@ -40,6 +48,7 @@ class LoginPage extends Component {
   render () {
     return (
       <div>
+        <ErrorAlert error={this.state.apiError} />
         <h2>LoginPage</h2>
         <LoginForm user={this.state.user} handleInputChange={this.handleInputChange} handleLogin={this.login} />
       </div>
@@ -48,6 +57,7 @@ class LoginPage extends Component {
 }
 
 LoginPage.propTypes = {
+  history: object.isRequired,
   login: func.isRequired
 }
 
@@ -61,4 +71,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginPage))
