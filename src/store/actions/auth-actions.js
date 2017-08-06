@@ -40,10 +40,7 @@ export function login (user) {
 }
 
 export function logout () {
-  return dispatch => {
-    return new Promise((resolve, reject) => {
-      dispatch(_logout())
-      resolve()
-    })
+  return async dispatch => {
+    dispatch(_logout())
   }
 }
