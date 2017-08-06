@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { withRouter } from 'react-router'
 import { func, object } from 'prop-types'
 
 import { localUrls } from '../../../constants/urls'
@@ -71,4 +70,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   }
 })
 
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(LoginPage))
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
