@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom'
 
 import AccountPage from './Account/containers/AccountPage'
 import LoginPage from './Account/containers/LoginPage'
-import AuthorsListPage from './Authors/AuthorsListPage'
-import BooksListPage from './Books/BooksListPage'
+import AuthorsListPage from './Authors/containers/AuthorsListPage'
+import BooksListPage from './Books/containers/BooksListPage'
 import NotFound from './Common/NotFound'
 import Home from './Common/Home'
 
