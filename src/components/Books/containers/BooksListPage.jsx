@@ -1,11 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
-const BooksListPage = () => {
-  return (
-    <div>
-      <h2>BooksListPage</h2>
-    </div>
-  )
+import { localUrls } from '../../../constants/urls'
+import requiresAuth from '../../Common/HOC/RequiresAuth'
+
+class BooksListPage extends Component {
+  render () {
+    return (
+      <div>
+        <h2>BooksListPage</h2>
+      </div>
+    )
+  }
 }
 
-export default BooksListPage
+BooksListPage.propTypes = {}
+
+const mapStateToProps = (state, ownProps) => ({})
+
+export default connect(mapStateToProps)(requiresAuth(BooksListPage, localUrls.login))
