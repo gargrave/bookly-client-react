@@ -1,3 +1,7 @@
+export const APP = {
+  INITIALIZED: 'APP_INITIALIZED'
+}
+
 export const AUTH = {
   REQUEST_START: 'AUTH_REQUEST_START',
   REQUEST_END: 'AUTH_REQUEST_END',
