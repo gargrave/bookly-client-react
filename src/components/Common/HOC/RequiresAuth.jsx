@@ -9,18 +9,27 @@ import { bool } from 'prop-types'
 
 export default function (WrappedComponent, redirectTo) {
   class RequiresAuth extends Component {
+    content () {
+      if (this.props.initialized) {
+        return this.props.loggedIn ? <WrappedComponent {...this.props} /> : <Redirect to={redirectTo} />
+      } else {
+        return <p>Loading...</p>
+      }
+    }
+
     render () {
-      const component = this.props.loggedIn ? <WrappedComponent {...this.props} /> : <Redirect to={redirectTo} />
-      return component
+      return this.content()
     }
   }
 
   RequiresAuth.propTypes = {
+    initialized: bool.isRequired,
     loggedIn: bool.isRequired
   }
 
   function mapStateToProps (state, ownProps) {
     return {
+      initialized: state.app.initialized,
       loggedIn: !!state.auth.token
     }
   }
