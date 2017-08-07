@@ -1,5 +1,6 @@
 import { AUTH } from '../action-types'
 
+import profileModel from '../../models/Profile.model'
 import userModel from '../../models/User.model'
 
 const defaultState = {
@@ -29,6 +30,11 @@ export default function orders (state = defaultState, action) {
 
     case AUTH.LOGOUT:
       return Object.assign({}, defaultState)
+
+    case AUTH.FETCH_PROFILE:
+      return Object.assign({}, state, {
+        profile: profileModel.fromAPI(action.payload.profile)
+      })
 
     default:
       return state
