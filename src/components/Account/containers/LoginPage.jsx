@@ -4,6 +4,7 @@ import { func, object } from 'prop-types'
 
 import { localUrls } from '../../../constants/urls'
 import { login } from '../../../store/actions/auth-actions'
+import requiresAuth from '../../Common/HOC/RequiresAuth'
 import ErrorAlert from '../../Common/ErrorAlert'
 import LoginForm from '../components/LoginForm'
 
@@ -70,4 +71,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   }
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginPage)
+export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(LoginPage, localUrls.account, false))
