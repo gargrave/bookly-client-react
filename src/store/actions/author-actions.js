@@ -23,20 +23,26 @@ function _fetchAuthors (authors) {
 
 export function fetchAuthors () {
   return async (dispatch, getState) => {
-    dispatch(_requestStart())
-    try {
-      const authToken = getTokenOrDie(getState)
-      const request = apiHelper.axGet(apiUrls.authors, authToken)
-      const result = await axios(request)
-      // const pagination = result.data.meta
-      const authorData = result.data.results
+    const authors = getState().authors.data
+    if (authors.length) {
+      dispatch(authors)
+      return authors
+    } else {
+      dispatch(_requestStart())
+      try {
+        const authToken = getTokenOrDie(getState)
+        const request = apiHelper.axGet(apiUrls.authors, authToken)
+        const result = await axios(request)
+        // const pagination = result.data.meta
+        const authorData = result.data.results
 
-      dispatch(_fetchAuthors(authorData))
-      return authorData
-    } catch (err) {
-      throw parseError(err)
-    } finally {
-      dispatch(_requestEnd())
+        dispatch(_fetchAuthors(authorData))
+        return authorData
+      } catch (err) {
+        throw parseError(err)
+      } finally {
+        dispatch(_requestEnd())
+      }
     }
   }
 }
