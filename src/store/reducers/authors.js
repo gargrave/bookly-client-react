@@ -20,9 +20,8 @@ export default function orders (state = defaultState, action) {
       })
 
     case AUTHORS.FETCH_SUCCESS:
-      return Object.assign({}, state, {
-        data: action.payload.authors
-      })
+      const data = action.payload.authors.map(author => authorModel.fromAPI(author))
+      return Object.assign({}, state, { data })
 
     case AUTH.LOGOUT:
       return Object.assign({}, defaultState)
