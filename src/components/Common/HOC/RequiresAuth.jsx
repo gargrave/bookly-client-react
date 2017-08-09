@@ -7,11 +7,12 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { bool } from 'prop-types'
 
-export default function (WrappedComponent, redirectTo) {
+export default function (WrappedComponent, redirectTo, requireAuth = true) {
   class RequiresAuth extends Component {
     content () {
       if (this.props.initialized) {
-        return this.props.loggedIn ? <WrappedComponent {...this.props} /> : <Redirect to={redirectTo} />
+        const shouldRedirect = requireAuth ? !this.props.loggedIn : this.props.loggedIn
+        return shouldRedirect ? <Redirect to={redirectTo} /> : <WrappedComponent {...this.props} />
       } else {
         return <p>Loading...</p>
       }
