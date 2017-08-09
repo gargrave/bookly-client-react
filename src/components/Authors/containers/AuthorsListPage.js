@@ -8,6 +8,12 @@ import requiresAuth from '../../Common/HOC/RequiresAuth'
 import AuthorListDetail from '../components/AuthorListDetail'
 
 class AuthorsListPage extends Component {
+  constructor (props) {
+    super(props)
+
+    this.handleAuthorClick = this.handleAuthorClick.bind(this)
+  }
+
   componentDidMount () {
     this.refreshAuthors()
   }
@@ -16,15 +22,21 @@ class AuthorsListPage extends Component {
     try {
       await this.props.fetchAuthors()
     } catch (err) {
-      // TODO handle error
+      // TODO: handle error
     }
+  }
+
+  handleAuthorClick (authorID) {
+    console.log('TODO: Go to detail page for author #' + authorID)
   }
 
   render () {
     return (
       <div>
         <h2>My Authors</h2>
-        {this.props.authors.map(author => <AuthorListDetail key={author.id} author={author} />)}
+        {this.props.authors.map(author =>
+          <AuthorListDetail key={author.id} author={author} onClick={() => this.handleAuthorClick(author.id)} />
+        )}
       </div>
     )
   }

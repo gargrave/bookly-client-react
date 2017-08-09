@@ -1,11 +1,13 @@
 import React from 'react'
-import { number, shape, string } from 'prop-types'
+import { func, number, shape, string } from 'prop-types'
+
+import './AuthorListDetail.css'
 
 const AuthorListDetail = props => {
   return (
-    <div>
+    <div className="author-list-detail" onClick={props.onClick}>
       <p>
-        Name: {props.author.firstName} {props.author.lastName}
+        {props.author.firstName} {props.author.lastName}
       </p>
     </div>
   )
@@ -18,7 +20,8 @@ AuthorListDetail.propTypes = {
     lastName: string.isRequired,
     createdAt: string.isRequired,
     updatedAt: string.isRequired
-  })
+  }),
+  onClick: func.isRequired
 }
 
 export default AuthorListDetail

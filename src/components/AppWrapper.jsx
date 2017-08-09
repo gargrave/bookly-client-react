@@ -8,6 +8,8 @@ import { fetchProfile } from '../store/actions/auth-actions'
 import SimpleHeader from './Header/SimpleHeader'
 import Routes from './Routes'
 
+import './AppWrapper.css'
+
 class AppWrapper extends Component {
   async componentWillMount () {
     const token = localStorage.getItem('authToken')
@@ -17,7 +19,7 @@ class AppWrapper extends Component {
 
     setTimeout(() => {
       this.props.setInitialized()
-    }, 1000)
+    }, 250)
   }
 
   render () {
@@ -26,7 +28,9 @@ class AppWrapper extends Component {
         <div className="App">
           <h1>Bookly</h1>
           <SimpleHeader />
-          <Routes />
+          <main className="main-view">
+            <Routes />
+          </main>
         </div>
       </BrowserRouter>
     )
