@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { array, func } from 'prop-types'
+import { array, func, object } from 'prop-types'
 
 import { localUrls } from '../../../constants/urls'
 import { fetchAuthors } from '../../../store/actions/author-actions'
@@ -27,7 +27,7 @@ class AuthorsListPage extends Component {
   }
 
   handleAuthorClick (authorID) {
-    console.log('TODO: Go to detail page for author #' + authorID)
+    this.props.history.push(`/authors/${authorID}`)
   }
 
   render () {
@@ -43,6 +43,7 @@ class AuthorsListPage extends Component {
 }
 
 AuthorsListPage.propTypes = {
+  history: object.isRequired,
   fetchAuthors: func.isRequired,
   authors: array.isRequired
 }
