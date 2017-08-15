@@ -4,7 +4,7 @@ const defaultState = {
   initialized: false
 }
 
-export default function orders (state = defaultState, action) {
+export default function app (state = defaultState, action) {
   switch (action.type) {
     case APP.INITIALIZED:
       return {

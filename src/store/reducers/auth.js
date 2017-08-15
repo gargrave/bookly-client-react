@@ -9,7 +9,7 @@ const defaultState = {
   token: null
 }
 
-export default function orders (state = defaultState, action) {
+export default function auth (state = defaultState, action) {
   switch (action.type) {
     case AUTH.REQUEST_START:
       return Object.assign({}, state, {

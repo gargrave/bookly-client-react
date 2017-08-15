@@ -7,7 +7,7 @@ const defaultState = {
   data: []
 }
 
-export default function (state = defaultState, action) {
+export default function authors (state = defaultState, action) {
   switch (action.type) {
     case AUTHORS.REQUEST_START:
       return Object.assign({}, state, {
