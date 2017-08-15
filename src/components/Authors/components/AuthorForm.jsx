@@ -27,7 +27,7 @@ const AuthorForm = props => {
       </div>
 
       <div className="input-single">
-        <button type="button" onClick={props.handleSubmit}>
+        <button type="submit" onClick={props.handleSubmit}>
           Submit
         </button>
         <button type="button" className="button-info float-right" onClick={props.handleCancel}>

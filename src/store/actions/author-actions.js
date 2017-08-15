@@ -21,6 +21,13 @@ function _fetchAuthors (authors) {
   }
 }
 
+function _createAuthor (author) {
+  return {
+    type: AUTHORS.CREATE_SUCCESS,
+    payload: { author }
+  }
+}
+
 export function fetchAuthors () {
   return async (dispatch, getState) => {
     const authors = getState().authors.data
@@ -43,6 +50,25 @@ export function fetchAuthors () {
       } finally {
         dispatch(_requestEnd())
       }
+    }
+  }
+}
+
+export function createAuthor (author) {
+  return async (dispatch, getState) => {
+    dispatch(_requestStart())
+    try {
+      const authToken = getTokenOrDie(getState)
+      const request = apiHelper.axPost(apiUrls.authors, author, authToken)
+      const result = await axios(request)
+      const authorData = result.data
+
+      dispatch(_createAuthor(authorData))
+      return authorData
+    } catch (err) {
+      throw parseError(err)
+    } finally {
+      dispatch(_requestEnd())
     }
   }
 }

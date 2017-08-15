@@ -7,7 +7,7 @@ const defaultState = {
   data: []
 }
 
-export default function orders (state = defaultState, action) {
+export default function (state = defaultState, action) {
   switch (action.type) {
     case AUTHORS.REQUEST_START:
       return Object.assign({}, state, {
@@ -20,8 +20,14 @@ export default function orders (state = defaultState, action) {
       })
 
     case AUTHORS.FETCH_SUCCESS:
-      const data = action.payload.authors.map(author => authorModel.fromAPI(author))
-      return Object.assign({}, state, { data })
+      return Object.assign({}, state, {
+        data: action.payload.authors.map(author => authorModel.fromAPI(author))
+      })
+
+    case AUTHORS.CREATE_SUCCESS:
+      return Object.assign({}, state, {
+        data: [...state.data, authorModel.fromAPI(action.payload.author)]
+      })
 
     case AUTH.LOGOUT:
       return Object.assign({}, defaultState)

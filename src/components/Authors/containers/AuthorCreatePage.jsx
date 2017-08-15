@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { object } from 'prop-types'
+import { func, object } from 'prop-types'
 
 import { localUrls } from '../../../constants/urls'
+import { createAuthor } from '../../../store/actions/author-actions'
 import authorModel from '../../../models/Author.model'
 import AuthorForm from '../components/AuthorForm'
 
@@ -28,9 +29,18 @@ class AuthorCreatePage extends Component {
     }
   }
 
-  handleSubmit (event) {
+  async handleSubmit (event) {
     event.preventDefault()
-    console.log('TODO: implement AuthorCreatePage.handleSubmit()')
+    // TODO: temp validation -> fix this nephew......
+    if (this.state.author.firstName && this.state.author.lastName) {
+      try {
+        const author = authorModel.toAPI(this.state.author)
+        await this.props.createAuthor(author)
+        this.props.history.push(localUrls.authorsList)
+      } catch (err) {
+        console.log('TODO: handle error')
+      }
+    }
   }
 
   handleCancel (event) {
@@ -54,13 +64,18 @@ class AuthorCreatePage extends Component {
 }
 
 AuthorCreatePage.propTypes = {
-  history: object
+  history: object,
+  createAuthor: func.isRequired
 }
 
 const mapStateToProps = (state, ownProps) => {
   return {}
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({})
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  createAuthor (author) {
+    return dispatch(createAuthor(author))
+  }
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthorCreatePage)
