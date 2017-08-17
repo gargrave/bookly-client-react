@@ -22,8 +22,12 @@ class AuthorDetailPage extends Component {
   }
 
   handleInputChange (event) {
-    console.log('handleInputChange')
     const key = event.target.name
+    if (key in this.state.editableAuthor) {
+      let editableAuthor = Object.assign({}, this.state.editableAuthor)
+      editableAuthor[key] = event.target.value
+      this.setState({ editableAuthor })
+    }
   }
 
   handleSubmit (event) {
