@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { number, shape, string } from 'prop-types'
 
 import AuthorDetailView from '../components/AuthorDetailView'
+import AuthorEditView from '../components/AuthorEditView'
 
 class AuthorDetailPage extends Component {
   constructor (props) {
@@ -15,8 +16,11 @@ class AuthorDetailPage extends Component {
     this.handleEditClick = this.handleEditClick.bind(this)
   }
 
+  /**
+   * Toggles the state of 'editing' on the local state.
+   */
   handleEditClick (event) {
-    this.setState({ editing: true })
+    this.setState({ editing: !this.state.editing })
   }
 
   render () {
@@ -25,7 +29,7 @@ class AuthorDetailPage extends Component {
     return (
       <div>
         {!editing && <AuthorDetailView author={author} handleEditClick={this.handleEditClick} />}
-        {editing && <p>(Editing View)</p>}
+        {editing && <AuthorEditView author={author} handleCancel={this.handleEditClick} />}
       </div>
     )
   }
