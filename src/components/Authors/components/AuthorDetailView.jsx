@@ -1,5 +1,5 @@
 import React from 'react'
-import { number, shape, string } from 'prop-types'
+import { func, number, shape, string } from 'prop-types'
 
 const AuthorDetailView = props => {
   const { author } = props
@@ -15,6 +15,7 @@ const AuthorDetailView = props => {
       <p>
         <strong>Updated on:</strong> {author.updatedAt}
       </p>
+      <button onClick={props.handleEditClick}>Edit</button>
     </div>
   )
 }
@@ -26,7 +27,8 @@ AuthorDetailView.propTypes = {
     lastName: string,
     createdAt: string,
     updatedAt: string
-  })
+  }),
+  handleEditClick: func.isRequired
 }
 
 export default AuthorDetailView

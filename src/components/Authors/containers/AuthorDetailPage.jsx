@@ -5,11 +5,27 @@ import { number, shape, string } from 'prop-types'
 import AuthorDetailView from '../components/AuthorDetailView'
 
 class AuthorDetailPage extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      editing: false
+    }
+
+    this.handleEditClick = this.handleEditClick.bind(this)
+  }
+
+  handleEditClick (event) {
+    this.setState({ editing: true })
+  }
+
   render () {
     const { author } = this.props
+    const { editing } = this.state
     return (
       <div>
-        <AuthorDetailView author={author} />
+        {!editing && <AuthorDetailView author={author} handleEditClick={this.handleEditClick} />}
+        {editing && <p>(Editing View)</p>}
       </div>
     )
   }
