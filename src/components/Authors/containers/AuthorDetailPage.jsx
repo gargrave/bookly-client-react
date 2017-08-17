@@ -2,21 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { number, shape, string } from 'prop-types'
 
+import AuthorDetailView from '../components/AuthorDetailView'
+
 class AuthorDetailPage extends Component {
   render () {
     const { author } = this.props
     return (
       <div>
-        <h2>Author Detail</h2>
-        <p>
-          <strong>Name:</strong> {author.firstName} {author.lastName}
-        </p>
-        <p>
-          <strong>Added on:</strong> {author.createdAt}
-        </p>
-        <p>
-          <strong>Updated on:</strong> {author.updatedAt}
-        </p>
+        <AuthorDetailView author={author} />
       </div>
     )
   }
