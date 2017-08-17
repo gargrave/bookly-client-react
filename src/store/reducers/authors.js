@@ -29,6 +29,11 @@ export default function authors (state = defaultState, action) {
         data: [...state.data, authorModel.fromAPI(action.payload.author)]
       })
 
+    case AUTHORS.UPDATE_SUCCESS:
+      return Object.assign({}, state, {
+        data: [...state.data.filter(a => a.id !== action.payload.author.id), authorModel.fromAPI(action.payload.author)]
+      })
+
     case AUTH.LOGOUT:
       return Object.assign({}, defaultState)
 
