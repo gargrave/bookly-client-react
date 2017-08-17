@@ -9,8 +9,8 @@ const AuthorDetailView = props => {
       <h2>Edit Author</h2>
       <AuthorForm
         author={props.author}
-        handleInputChange={() => {}}
-        handleSubmit={() => {}}
+        handleInputChange={props.handleInputChange}
+        handleSubmit={props.handleSubmit}
         handleCancel={props.handleCancel}
       />
     </div>
@@ -25,6 +25,8 @@ AuthorDetailView.propTypes = {
     createdAt: string,
     updatedAt: string
   }),
+  handleInputChange: func.isRequired,
+  handleSubmit: func.isRequired,
   handleCancel: func.isRequired
 }
 
