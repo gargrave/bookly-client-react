@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { number, shape, string } from 'prop-types'
+import { func, number, shape, string } from 'prop-types'
 
+import { updateAuthor } from '../../../store/actions/author-actions'
 import authorModel from '../../../models/Author.model'
 import AuthorDetailView from '../components/AuthorDetailView'
 import AuthorEditView from '../components/AuthorEditView'
@@ -30,9 +31,18 @@ class AuthorDetailPage extends Component {
     }
   }
 
-  handleSubmit (event) {
+  async handleSubmit (event) {
     event.preventDefault()
-    console.log('TODO: implement AuthorDetailPage.handleSubmit()')
+    // TODO: temp validation -> fix this nephew......
+    if (this.state.editableAuthor.firstName && this.state.editableAuthor.lastName) {
+      try {
+        const author = authorModel.toAPI(Object.assign({}, this.props.author, this.state.editableAuthor))
+        await this.props.updateAuthor(author)
+        this.setState({ editing: false })
+      } catch (error) {
+        console.log('TODO: handle error')
+      }
+    }
   }
 
   /**
@@ -81,7 +91,8 @@ AuthorDetailPage.propTypes = {
     lastName: string,
     createdAt: string,
     updatedAt: string
-  })
+  }),
+  updateAuthor: func.isRequired
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -93,6 +104,10 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({})
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  updateAuthor (author) {
+    return dispatch(updateAuthor(author))
+  }
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthorDetailPage)
