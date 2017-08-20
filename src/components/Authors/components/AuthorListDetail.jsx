@@ -6,7 +6,7 @@ import './AuthorListDetail.css'
 const AuthorListDetail = props => {
   return (
     <div className="author-list-detail" onClick={props.onClick}>
-      <p>
+      <p className="author-name">
         {props.author.firstName} {props.author.lastName}
       </p>
     </div>
