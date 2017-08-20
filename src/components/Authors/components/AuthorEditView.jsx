@@ -5,7 +5,7 @@ import AuthorForm from '../components/AuthorForm'
 
 const AuthorDetailView = props => {
   return (
-    <div>
+    <div className="author-edit-view">
       <h2>Edit Author</h2>
       <AuthorForm
         author={props.author}
