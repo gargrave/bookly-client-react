@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { authorsMockData } from '../../../utils/mocks/data/authors-mock-data'
-import AuthorListDetail from './AuthorListDetail'
+import { authorsMockData } from '../../../../utils/mocks/data/authors-mock-data'
+import AuthorListDetail from '../../../../components/Authors/components/AuthorListDetail'
 
 describe('AuthorListDetail', () => {
   let props
