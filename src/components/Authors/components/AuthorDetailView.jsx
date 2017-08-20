@@ -4,18 +4,20 @@ import { func, number, shape, string } from 'prop-types'
 const AuthorDetailView = props => {
   const { author } = props
   return (
-    <div>
+    <div className="author-detail-view">
       <h2>Author Detail</h2>
-      <p>
+      <p className="author-name">
         <strong>Name:</strong> {author.firstName} {author.lastName}
       </p>
-      <p>
+      <p className="author-added-on">
         <strong>Added on:</strong> {author.createdAt}
       </p>
-      <p>
+      <p className="author-updated-on">
         <strong>Updated on:</strong> {author.updatedAt}
       </p>
-      <button onClick={props.handleEditClick}>Edit</button>
+      <button className="author-edit-button" onClick={props.handleEditClick}>
+        Edit
+      </button>
     </div>
   )
 }
