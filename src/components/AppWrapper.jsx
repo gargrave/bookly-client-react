@@ -12,14 +12,11 @@ import './AppWrapper.css'
 
 class AppWrapper extends Component {
   async componentWillMount () {
-    const token = localStorage.getItem('authToken')
+    const token = window.localStorage ? localStorage.getItem('authToken') : null
     if (token) {
       await this.props.fetchProfile(token)
     }
-
-    setTimeout(() => {
-      this.props.setInitialized()
-    }, 250)
+    this.props.setInitialized()
   }
 
   render () {
