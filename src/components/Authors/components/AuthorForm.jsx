@@ -3,7 +3,12 @@ import { func, shape, string } from 'prop-types'
 
 const AuthorForm = props => {
   return (
-    <form noValidate style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}>
+    <form
+      className="author-form"
+      style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
+      onSubmit={props.handleSubmit}
+      noValidate
+    >
       <div className="input-single">
         <label htmlFor="firstName">First name:</label>
         <input
@@ -27,10 +32,10 @@ const AuthorForm = props => {
       </div>
 
       <div className="input-single">
-        <button type="submit" onClick={props.handleSubmit}>
+        <button type="submit" className="submit-button" onClick={props.handleSubmit}>
           Submit
         </button>
-        <button type="button" className="button-info float-right" onClick={props.handleCancel}>
+        <button type="button" className="button-info float-right cancel-button" onClick={props.handleCancel}>
           Cancel
         </button>
       </div>
