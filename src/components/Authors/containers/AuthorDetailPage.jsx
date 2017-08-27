@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { func, number, shape, string } from 'prop-types'
+import { func, number, object, shape, string } from 'prop-types'
 
+import { localUrls } from '../../../constants/urls'
 import { updateAuthor } from '../../../store/actions/author-actions'
 import authorModel from '../../../models/Author.model'
 import AuthorDetailView from '../components/AuthorDetailView'
@@ -20,6 +21,7 @@ class AuthorDetailPage extends Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleEditClick = this.handleEditClick.bind(this)
     this.handleCancel = this.handleCancel.bind(this)
+    this.handleBackClick = this.handleBackClick.bind(this)
   }
 
   handleInputChange (event) {
@@ -67,11 +69,20 @@ class AuthorDetailPage extends Component {
     this.setState({ editing: false })
   }
 
+  handleBackClick () {
+    this.props.history.push(localUrls.authorsList)
+  }
+
   render () {
     const { editing } = this.state
     return (
       <div>
-        {!editing && <AuthorDetailView author={this.props.author} handleEditClick={this.handleEditClick} />}
+        {!editing &&
+          <AuthorDetailView
+            author={this.props.author}
+            handleEditClick={this.handleEditClick}
+            handleBackClick={this.handleBackClick}
+          />}
         {editing &&
           <AuthorEditView
             author={this.state.editableAuthor}
@@ -85,6 +96,7 @@ class AuthorDetailPage extends Component {
 }
 
 AuthorDetailPage.propTypes = {
+  history: object,
   author: shape({
     id: number,
     firstName: string,

@@ -46,8 +46,16 @@ ShallowWrapper {
     <button
         className="author-edit-button"
         onClick={[Function]}
+        type="button"
     >
         Edit
+    </button>
+    <button
+        className="button-info float-right cancel-button"
+        onClick={[Function]}
+        type="button"
+    >
+        Back
     </button>
 </div>,
   "nodes": Array [
@@ -89,8 +97,16 @@ ShallowWrapper {
       <button
             className="author-edit-button"
             onClick={[Function]}
+            type="button"
       >
             Edit
+      </button>
+      <button
+            className="button-info float-right cancel-button"
+            onClick={[Function]}
+            type="button"
+      >
+            Back
       </button>
 </div>,
   ],
@@ -102,6 +118,7 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <AuthorDetailView
         author={Object {}}
+        handleBackClick={[Function]}
         handleEditClick={[Function]}
 />,
       "_debugID": 1,
@@ -112,6 +129,7 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "author": Object {},
+          "handleBackClick": [Function],
           "handleEditClick": [Function],
         },
         "refs": Object {},
@@ -172,8 +190,16 @@ ShallowWrapper {
           <button
                     className="author-edit-button"
                     onClick={[Function]}
+                    type="button"
           >
                     Edit
+          </button>
+          <button
+                    className="button-info float-right cancel-button"
+                    onClick={[Function]}
+                    type="button"
+          >
+                    Back
           </button>
 </div>,
         "_debugID": 2,
@@ -215,8 +241,16 @@ ShallowWrapper {
           <button
                     className="author-edit-button"
                     onClick={[Function]}
+                    type="button"
           >
                     Edit
+          </button>
+          <button
+                    className="button-info float-right cancel-button"
+                    onClick={[Function]}
+                    type="button"
+          >
+                    Back
           </button>
 </div>,
       },
@@ -232,6 +266,7 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <AuthorDetailView
     author={Object {}}
+    handleBackClick={[Function]}
     handleEditClick={[Function]}
 />,
 }
