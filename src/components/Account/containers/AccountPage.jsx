@@ -5,6 +5,7 @@ import { object } from 'prop-types'
 import { localUrls } from '../../../constants/urls'
 import { logout } from '../../../store/actions/auth-actions'
 import requiresAuth from '../../Common/HOC/RequiresAuth'
+import AccountDetailView from '../components/AccountDetailView'
 
 class AccountPage extends Component {
   constructor (props) {
@@ -20,9 +21,11 @@ class AccountPage extends Component {
   }
 
   render () {
+    const { user } = this.props
     return (
       <div>
         <h2>Account Page</h2>
+        <AccountDetailView user={user} />
         <button onClick={this.handleLogout}>Logout</button>
       </div>
     )
@@ -30,10 +33,13 @@ class AccountPage extends Component {
 }
 
 AccountPage.propTypes = {
-  history: object.isRequired
+  history: object.isRequired,
+  user: object.isRequired
 }
 
-const mapStateToProps = (state, ownProps) => ({})
+const mapStateToProps = (state, ownProps) => ({
+  user: state.auth.user
+})
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   logout () {
