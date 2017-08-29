@@ -50,7 +50,7 @@ class LoginPage extends Component {
       <div>
         <ErrorAlert error={this.state.apiError} />
         <h2>LoginPage</h2>
-        <LoginForm user={this.state.user} handleInputChange={this.handleInputChange} handleLogin={this.login} />
+        <LoginForm user={this.state.user} handleInputChange={this.handleInputChange} handleSubmit={this.login} />
       </div>
     )
   }
