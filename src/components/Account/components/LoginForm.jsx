@@ -3,7 +3,12 @@ import { func, shape, string } from 'prop-types'
 
 const LoginForm = props => {
   return (
-    <form noValidate style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}>
+    <form
+      className="login-form"
+      style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
+      onSubmit={props.handleSubmit}
+      noValidate
+    >
       <div className="input-single">
         <label htmlFor="email">Email:</label>
         <input type="email" name="email" id="email" value={props.user.email} onChange={props.handleInputChange} />
@@ -21,7 +26,7 @@ const LoginForm = props => {
       </div>
 
       <div className="input-single">
-        <button type="submit" onClick={props.handleLogin}>
+        <button type="submit" className="submit-button" onClick={props.handleSubmit}>
           Login
         </button>
       </div>
@@ -35,7 +40,7 @@ LoginForm.propTypes = {
     password: string.isRequired
   }).isRequired,
   handleInputChange: func.isRequired,
-  handleLogin: func.isRequired
+  handleSubmit: func.isRequired
 }
 
 export default LoginForm
