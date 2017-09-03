@@ -32,6 +32,12 @@ export default {
   },
 
   fromAPI (data) {
-    return Object.assign({}, this.empty(), cloneDeep(data))
+    return {
+      id: data.id,
+      title: data.title,
+      author: data.author,
+      createdAt: data.created_at,
+      updatedAt: data.updated_at
+    }
   }
 }
