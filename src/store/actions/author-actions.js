@@ -39,7 +39,6 @@ export function fetchAuthors () {
   return async (dispatch, getState) => {
     const authors = getState().authors.data
     if (authors.length) {
-      dispatch(authors)
       return authors
     } else {
       dispatch(_requestStart())

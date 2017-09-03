@@ -39,7 +39,6 @@ export function fetchBooks () {
   return async (dispatch, getState) => {
     const books = getState().books.data
     if (books.length) {
-      dispatch(books)
       return books
     } else {
       dispatch(_requestStart())
