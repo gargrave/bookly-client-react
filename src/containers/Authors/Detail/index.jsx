@@ -5,8 +5,9 @@ import { func, number, object, shape, string } from 'prop-types'
 import { localUrls } from '../../../constants/urls'
 import { updateAuthor } from '../../../store/actions/author-actions'
 import authorModel from '../../../models/Author.model'
-import AuthorDetailView from '../components/AuthorDetailView'
-import AuthorEditView from '../components/AuthorEditView'
+
+import AuthorDetailView from '../../../components/Authors/components/AuthorDetailView'
+import AuthorEditView from '../../../components/Authors/components/AuthorEditView'
 
 class AuthorDetailPage extends Component {
   constructor (props) {
