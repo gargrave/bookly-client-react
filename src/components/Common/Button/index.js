@@ -1,10 +1,16 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { func, oneOf, string } from 'prop-types'
 
-const classname = (type) => {
+import { prependClass } from '../../../utils/cssHelpers'
+
+import './styles.css'
+
+const classes = (type) => {
+  let buttonClass = ''
   if (type === 'success') {
-    return 'buttons-success'
+    buttonClass = 'button-success'
   }
+  return `${prependClass('button')} ${buttonClass}`
 }
 
 const Button = ({
@@ -14,8 +20,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={classname(type)}
-      style={{ marginLeft: '10px' }}
+      className={classes(type)}
       onClick={onClick}>
       { text }
     </button>
@@ -25,7 +30,7 @@ const Button = ({
 Button.propTypes = {
   onClick: func.isRequired,
   text: string.isRequired,
-  type: string.isRequired,
+  type: oneOf(['success']).isRequired,
 }
 
 export default Button
