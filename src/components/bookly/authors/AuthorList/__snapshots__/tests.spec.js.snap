@@ -9,11 +9,69 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div>
-    
+    <AuthorListDetail
+        author={
+            Object {
+                "firstName": "A",
+                "id": 0,
+                "lastName": "B",
+              }
+        }
+        onClick={[Function]}
+    />
+    <AuthorListDetail
+        author={
+            Object {
+                "firstName": "C",
+                "id": 1,
+                "lastName": "D",
+              }
+        }
+        onClick={[Function]}
+    />
+    <AuthorListDetail
+        author={
+            Object {
+                "firstName": "E",
+                "id": 2,
+                "lastName": "F",
+              }
+        }
+        onClick={[Function]}
+    />
 </div>,
   "nodes": Array [
     <div>
-      
+      <AuthorListDetail
+            author={
+                  Object {
+                        "firstName": "A",
+                        "id": 0,
+                        "lastName": "B",
+                      }
+            }
+            onClick={[Function]}
+      />
+      <AuthorListDetail
+            author={
+                  Object {
+                        "firstName": "C",
+                        "id": 1,
+                        "lastName": "D",
+                      }
+            }
+            onClick={[Function]}
+      />
+      <AuthorListDetail
+            author={
+                  Object {
+                        "firstName": "E",
+                        "id": 2,
+                        "lastName": "F",
+                      }
+            }
+            onClick={[Function]}
+      />
 </div>,
   ],
   "options": Object {},
@@ -23,7 +81,25 @@ ShallowWrapper {
       "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <AuthorList
-        authors={Array []}
+        authors={
+                Array [
+                        Object {
+                          "firstName": "A",
+                          "id": 0,
+                          "lastName": "B",
+                        },
+                        Object {
+                          "firstName": "C",
+                          "id": 1,
+                          "lastName": "D",
+                        },
+                        Object {
+                          "firstName": "E",
+                          "id": 2,
+                          "lastName": "F",
+                        },
+                      ]
+        }
         onAuthorClick={[Function]}
 />,
       "_debugID": 1,
@@ -33,7 +109,23 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "authors": Array [],
+          "authors": Array [
+            Object {
+              "firstName": "A",
+              "id": 0,
+              "lastName": "B",
+            },
+            Object {
+              "firstName": "C",
+              "id": 1,
+              "lastName": "D",
+            },
+            Object {
+              "firstName": "E",
+              "id": 2,
+              "lastName": "F",
+            },
+          ],
           "onAuthorClick": [Function],
         },
         "refs": Object {},
@@ -57,11 +149,69 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div>
-          
+          <AuthorListDetail
+                    author={
+                              Object {
+                                        "firstName": "A",
+                                        "id": 0,
+                                        "lastName": "B",
+                                      }
+                    }
+                    onClick={[Function]}
+          />
+          <AuthorListDetail
+                    author={
+                              Object {
+                                        "firstName": "C",
+                                        "id": 1,
+                                        "lastName": "D",
+                                      }
+                    }
+                    onClick={[Function]}
+          />
+          <AuthorListDetail
+                    author={
+                              Object {
+                                        "firstName": "E",
+                                        "id": 2,
+                                        "lastName": "F",
+                                      }
+                    }
+                    onClick={[Function]}
+          />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div>
-          
+          <AuthorListDetail
+                    author={
+                              Object {
+                                        "firstName": "A",
+                                        "id": 0,
+                                        "lastName": "B",
+                                      }
+                    }
+                    onClick={[Function]}
+          />
+          <AuthorListDetail
+                    author={
+                              Object {
+                                        "firstName": "C",
+                                        "id": 1,
+                                        "lastName": "D",
+                                      }
+                    }
+                    onClick={[Function]}
+          />
+          <AuthorListDetail
+                    author={
+                              Object {
+                                        "firstName": "E",
+                                        "id": 2,
+                                        "lastName": "F",
+                                      }
+                    }
+                    onClick={[Function]}
+          />
 </div>,
       },
       "_renderedNodeType": 0,
@@ -75,7 +225,25 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <AuthorList
-    authors={Array []}
+    authors={
+        Array [
+            Object {
+              "firstName": "A",
+              "id": 0,
+              "lastName": "B",
+            },
+            Object {
+              "firstName": "C",
+              "id": 1,
+              "lastName": "D",
+            },
+            Object {
+              "firstName": "E",
+              "id": 2,
+              "lastName": "F",
+            },
+          ]
+    }
     onAuthorClick={[Function]}
 />,
 }

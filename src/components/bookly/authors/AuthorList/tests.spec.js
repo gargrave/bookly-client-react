@@ -1,21 +1,39 @@
 import React from 'react'
-import { shallow } from 'enzyme'
+import { mount, shallow } from 'enzyme'
 
 import AuthorList from './'
+import AuthorListDetail from '@/components/bookly/authors/AuthorListDetail'
 
 describe('AuthorList', () => {
-  let component
   let props
+  let wrapper
 
   beforeEach(() => {
     props = {
-      authors: [],
+      authors: [
+        { id: 0, firstName: 'A', lastName: 'B' },
+        { id: 1, firstName: 'C', lastName: 'D' },
+        { id: 2, firstName: 'E', lastName: 'F' },
+      ],
       onAuthorClick: jest.fn(),
     }
-    component = shallow(<AuthorList {...props} />)
   })
 
   it('matches the snapshot', () => {
-    expect(component).toMatchSnapshot()
+    wrapper = shallow(<AuthorList {...props} />)
+    expect(wrapper).toMatchSnapshot()
+  })
+
+  it('renders the correct number of AuthorListDetail wrappers', () => {
+    wrapper = mount(<AuthorList {...props} />)
+    expect(wrapper.find(AuthorListDetail)).toHaveLength(props.authors.length)
+    expect(wrapper.find('.bookly-alert')).toHaveLength(0)
+  })
+
+  it('renders a nice message when there are no authors', () => {
+    props.authors = []
+    wrapper = mount(<AuthorList {...props} />)
+    expect(wrapper.find(AuthorListDetail)).toHaveLength(0)
+    expect(wrapper.find('.bookly-alert')).toHaveLength(1)
   })
 })
