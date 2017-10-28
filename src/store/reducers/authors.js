@@ -1,6 +1,6 @@
 import { AUTH, AUTHORS } from '../action-types'
 
-import authorModel from '../../models/Author.model'
+import authorModel from '@/models/Author.model'
 
 const defaultState = {
   authorRequestPending: false,

@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, oneOf, string } from 'prop-types'
 
-import { prependClass } from '../../../utils/cssHelpers'
+import { prependClass } from '@/utils/cssHelpers'
 
 import './styles.css'
 
