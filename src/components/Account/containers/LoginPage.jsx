@@ -5,7 +5,7 @@ import { func, object } from 'prop-types'
 import { localUrls } from '../../../constants/urls'
 import { login } from '../../../store/actions/auth-actions'
 import requiresAuth from '../../Common/hocs/RequiresAuth'
-import ErrorAlert from '../../Common/ErrorAlert'
+import ErrorAlert from '../../Common/Alert/ErrorAlert'
 import LoginForm from '../components/LoginForm'
 
 class LoginPage extends Component {
