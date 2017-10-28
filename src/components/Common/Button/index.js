@@ -20,6 +20,7 @@ const Button = ({
 }) => {
   return (
     <button
+      type="button"
       className={classes(type)}
       onClick={onClick}>
       { text }
