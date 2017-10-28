@@ -15,6 +15,11 @@ describe('Button', () => {
     }
   })
 
+  it('matches the snapshot', () => {
+    component = shallow(<Button {...props} />)
+    expect(component).toMatchSnapshot()
+  })
+
   it('renders as a "success" button', () => {
     component = shallow(<Button {...props} />)
     expect(component.hasClass('bookly-button')).toBeTruthy()
@@ -25,4 +30,6 @@ describe('Button', () => {
     component = shallow(<Button {...props} />)
     expect(component.text()).toEqual(props.text)
   })
+
+  it('calls the callback as expected')
 })
