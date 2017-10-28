@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { func, object } from 'prop-types'
 
-import { localUrls } from '../../../constants/urls'
-import { createAuthor } from '../../../store/actions/author-actions'
-import authorModel from '../../../models/Author.model'
+import { localUrls } from '@/constants/urls'
+import { createAuthor } from '@/store/actions/author-actions'
+import authorModel from '@/models/Author.model'
 
-import AuthorForm from '../../../components/Authors/components/AuthorForm'
+import AuthorForm from '@/components/Authors/components/AuthorForm'
 
 class AuthorCreatePage extends Component {
   constructor (props) {
