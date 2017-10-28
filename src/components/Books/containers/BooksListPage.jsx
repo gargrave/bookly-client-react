@@ -4,7 +4,7 @@ import { array, func, object } from 'prop-types'
 
 import { localUrls } from '../../../constants/urls'
 import { fetchBooks } from '../../../store/actions/book-actions'
-import requiresAuth from '../../Common/HOC/RequiresAuth'
+import requiresAuth from '../../Common/hocs/RequiresAuth'
 
 import BookListDetail from '../components/BookListDetail'
 

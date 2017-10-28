@@ -5,7 +5,7 @@ import { array, func, object } from 'prop-types'
 import { localUrls } from '../../../constants/urls'
 import { fetchAuthors } from '../../../store/actions/author-actions'
 import Button from '../../Common/Button'
-import requiresAuth from '../../Common/HOC/RequiresAuth'
+import requiresAuth from '../../Common/hocs/RequiresAuth'
 import AuthorListDetail from '../components/AuthorListDetail'
 
 class AuthorsListPage extends Component {

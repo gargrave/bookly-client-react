@@ -4,7 +4,7 @@ import { object } from 'prop-types'
 
 import { localUrls } from '../../../constants/urls'
 import { logout } from '../../../store/actions/auth-actions'
-import requiresAuth from '../../Common/HOC/RequiresAuth'
+import requiresAuth from '../../Common/hocs/RequiresAuth'
 import AccountDetailView from '../components/AccountDetailView'
 
 class AccountPage extends Component {
