@@ -6,7 +6,7 @@ import { localUrls } from '@/constants/urls'
 import { login } from '@/store/actions/auth-actions'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 
-import ErrorAlert from '@/components/common/Alert/ErrorAlert'
+import Alert from '@/components/common/Alert'
 import LoginForm from '@/components/bookly/account/LoginForm'
 
 class LoginPage extends Component {
@@ -49,7 +49,7 @@ class LoginPage extends Component {
   render () {
     return (
       <div>
-        <ErrorAlert error={this.state.apiError} />
+        <Alert message={this.state.apiError} />
         <h2>LoginPage</h2>
         <LoginForm user={this.state.user} handleInputChange={this.handleInputChange} handleSubmit={this.login} />
       </div>
