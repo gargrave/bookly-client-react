@@ -9,6 +9,9 @@ const BookDetailView = (props) => {
       <p className="book-name">
         <strong>Title:</strong> {book.title}
       </p>
+      <p className="author-name">
+        <strong>Author:</strong> {book.author.name}
+      </p>
       <p className="book-added-on">
         <strong>Added on:</strong> {book.createdAt}
       </p>

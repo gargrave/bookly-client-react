@@ -5,6 +5,7 @@ import { array, func, object } from 'prop-types'
 import bookModel from '@/models/Book.model'
 import { localUrls } from '@/constants/urls'
 import { fetchAuthors } from '@/store/actions/author-actions'
+import { createBook } from '@/store/actions/book-actions'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 
 import BookForm from '@/components/bookly/books/BookForm'
@@ -46,13 +47,14 @@ class BookCreatePage extends Component {
   handleInputChange (event) {
     const key = event.target.name
     const book = Object.assign({}, this.state.book)
+
     if (key in book) {
       book[key] = event.target.value
       this.setState({ book })
     }
   }
 
-  handleSubmit (event) {
+  async handleSubmit (event) {
     event.preventDefault()
     const book = bookModel.toAPI(this.state.book)
     const tempValidate = () => {
@@ -60,8 +62,13 @@ class BookCreatePage extends Component {
     }
 
     if (tempValidate()) {
-      console.log('book:')
-      console.dir(book)
+      try {
+        await this.props.createBook(book)
+        this.props.history.push(localUrls.booksList)
+      } catch (err) {
+        console.log('handle error:')
+        console.dir(err.message)
+      }
     }
   }
 
@@ -93,6 +100,7 @@ class BookCreatePage extends Component {
 BookCreatePage.propTypes = {
   history: object,
   authors: array.isRequired,
+  createBook: func.isRequired,
   fetchAuthors: func.isRequired,
 }
 
@@ -105,6 +113,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchAuthors () {
     return dispatch(fetchAuthors())
+  },
+
+  createBook (book) {
+    return dispatch(createBook(book))
   },
 })
 
