@@ -1,5 +1,7 @@
 {
-  "extends": ["standard", "plugin:react/recommended"],
+  "extends": [
+    "standard",
+    "plugin:react/recommended"],
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
@@ -15,6 +17,7 @@
   "rules": {
     "no-debugger": "warn",
     "semi": "warn",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "comma-dangle": ["warn", "always-multiline"]
   }
 }
