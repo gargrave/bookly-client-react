@@ -46,7 +46,7 @@ class BooksListPage extends Component {
             Add
           </button>
         </h2>
-        {this.props.books.map(book => (
+        {this.props.books.map((book) => (
           <BookListDetail key={book.id} book={book} onClick={() => this.handleBookClick(book.id)} />
         ))}
       </div>
@@ -57,17 +57,17 @@ class BooksListPage extends Component {
 BooksListPage.propTypes = {
   history: object,
   fetchBooks: func.isRequired,
-  books: array.isRequired
+  books: array.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  books: state.books.data
+  books: state.books.data,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchBooks () {
     return dispatch(fetchBooks())
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(BooksListPage, localUrls.login))

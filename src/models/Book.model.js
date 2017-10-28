@@ -1,27 +1,25 @@
-import cloneDeep from 'lodash/cloneDeep'
-
 export default {
   empty () {
     return {
       title: '',
       author: {
         id: -1,
-        name: ''
-      }
+        name: '',
+      },
     }
   },
 
   emptyErrors () {
     return {
       title: '',
-      author: ''
+      author: '',
     }
   },
 
   toAPI (data) {
     let payload = {
       title: data.title || '',
-      authorId: data.author.id
+      authorId: data.author.id,
     }
 
     if (data.id) {
@@ -37,7 +35,7 @@ export default {
       title: data.title,
       author: data.author,
       createdAt: data.created_at,
-      updatedAt: data.updated_at
+      updatedAt: data.updated_at,
     }
-  }
+  },
 }

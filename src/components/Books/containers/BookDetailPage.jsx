@@ -14,7 +14,7 @@ class BookDetailPage extends Component {
 
     this.state = {
       editing: false,
-      editableBook: bookModel.empty()
+      editableBook: bookModel.empty(),
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -46,8 +46,8 @@ class BookDetailPage extends Component {
     this.setState({
       editing: true,
       editableBook: {
-        title: this.props.book.title
-      }
+        title: this.props.book.title,
+      },
     })
   }
 
@@ -93,24 +93,24 @@ BookDetailPage.propTypes = {
     id: number,
     title: string,
     createdAt: string,
-    updatedAt: string
+    updatedAt: string,
   }),
-  updateBook: func.isRequired
+  updateBook: func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
   const bookID = ownProps.match.params.id
-  const book = state.books.data.find(a => Number(a.id) === Number(bookID)) || {}
+  const book = state.books.data.find((a) => Number(a.id) === Number(bookID)) || {}
 
   return {
-    book
+    book,
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   updateBook (book) {
     return dispatch(updateBook(book))
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookDetailPage)

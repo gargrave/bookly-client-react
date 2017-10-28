@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
-const LoginForm = props => {
+const LoginForm = (props) => {
   return (
     <form
       className="login-form"
@@ -37,10 +37,10 @@ const LoginForm = props => {
 LoginForm.propTypes = {
   user: shape({
     email: string.isRequired,
-    password: string.isRequired
+    password: string.isRequired,
   }).isRequired,
   handleInputChange: func.isRequired,
-  handleSubmit: func.isRequired
+  handleSubmit: func.isRequired,
 }
 
 export default LoginForm

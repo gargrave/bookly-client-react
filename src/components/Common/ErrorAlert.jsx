@@ -1,7 +1,7 @@
 import React from 'react'
 import { string } from 'prop-types'
 
-const ErrorAlert = props => {
+const ErrorAlert = (props) => {
   return (
     <div>
       {!!props.error &&
@@ -13,7 +13,7 @@ const ErrorAlert = props => {
 }
 
 ErrorAlert.propTypes = {
-  error: string.isRequired
+  error: string.isRequired,
 }
 
 export default ErrorAlert

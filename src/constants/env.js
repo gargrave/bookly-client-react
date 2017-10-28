@@ -6,7 +6,7 @@ const ENABLE_MOCK_API = false
 const ENV = {
   DEV: 'development',
   PROD: 'production',
-  TEST: 'testing'
+  TEST: 'testing',
 }
 
 const appEnv = getAppEnv()
@@ -40,5 +40,5 @@ export default {
       console.log('INFO: Mock API Enabled')
     }
     return USE_MOCK_API
-  }
+  },
 }

@@ -3,7 +3,7 @@ import { func, number, shape, string } from 'prop-types'
 
 import AuthorForm from '../components/AuthorForm'
 
-const AuthorDetailView = props => {
+const AuthorDetailView = (props) => {
   return (
     <div className="author-edit-view">
       <h2>Edit Author</h2>
@@ -23,11 +23,11 @@ AuthorDetailView.propTypes = {
     firstName: string,
     lastName: string,
     createdAt: string,
-    updatedAt: string
+    updatedAt: string,
   }),
   handleInputChange: func.isRequired,
   handleSubmit: func.isRequired,
-  handleCancel: func.isRequired
+  handleCancel: func.isRequired,
 }
 
 export default AuthorDetailView

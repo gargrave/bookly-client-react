@@ -35,13 +35,13 @@ class SimpleHeader extends Component {
 }
 
 SimpleHeader.propTypes = {
-  loggedIn: bool.isRequired
+  loggedIn: bool.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
   const loggedIn = !!state.auth.token
   return {
-    loggedIn
+    loggedIn,
   }
 }
 

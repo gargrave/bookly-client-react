@@ -34,17 +34,17 @@ class AccountPage extends Component {
 
 AccountPage.propTypes = {
   history: object.isRequired,
-  user: object.isRequired
+  user: object.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  user: state.auth.user
+  user: state.auth.user,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   logout () {
     return dispatch(logout())
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(AccountPage, localUrls.login))

@@ -25,13 +25,13 @@ export default function (WrappedComponent, redirectTo, requireAuth = true) {
 
   RequiresAuth.propTypes = {
     initialized: bool.isRequired,
-    loggedIn: bool.isRequired
+    loggedIn: bool.isRequired,
   }
 
   function mapStateToProps (state, ownProps) {
     return {
       initialized: state.app.initialized,
-      loggedIn: !!state.auth.token
+      loggedIn: !!state.auth.token,
     }
   }
 

@@ -12,7 +12,7 @@ class BookCreatePage extends Component {
     super(props)
 
     this.state = {
-      book: bookModel.empty()
+      book: bookModel.empty(),
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -56,7 +56,7 @@ class BookCreatePage extends Component {
 }
 
 BookCreatePage.propTypes = {
-  history: object
+  history: object,
 }
 
 const mapStateToProps = (state, ownProps) => {

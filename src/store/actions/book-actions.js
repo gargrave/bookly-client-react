@@ -17,21 +17,21 @@ function _requestEnd () {
 function _fetchBooks (books) {
   return {
     type: BOOKS.FETCH_SUCCESS,
-    payload: { books }
+    payload: { books },
   }
 }
 
 function _createBook (book) {
   return {
     type: BOOKS.CREATE_SUCCESS,
-    payload: { book }
+    payload: { book },
   }
 }
 
 function _updateBook (book) {
   return {
     type: BOOKS.UPDATE_SUCCESS,
-    payload: { book }
+    payload: { book },
   }
 }
 

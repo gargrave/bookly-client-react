@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
-const AuthorDetailView = props => {
+const AuthorDetailView = (props) => {
   const { author, handleEditClick, handleBackClick } = props
   return (
     <div className="author-detail-view">
@@ -31,10 +31,10 @@ AuthorDetailView.propTypes = {
     firstName: string,
     lastName: string,
     createdAt: string,
-    updatedAt: string
+    updatedAt: string,
   }),
   handleEditClick: func.isRequired,
-  handleBackClick: func.isRequired
+  handleBackClick: func.isRequired,
 }
 
 export default AuthorDetailView

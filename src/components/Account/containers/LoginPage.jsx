@@ -15,9 +15,9 @@ class LoginPage extends Component {
     this.state = {
       user: {
         email: '',
-        password: ''
+        password: '',
       },
-      apiError: ''
+      apiError: '',
     }
 
     this.login = this.login.bind(this)
@@ -58,7 +58,7 @@ class LoginPage extends Component {
 
 LoginPage.propTypes = {
   history: object.isRequired,
-  login: func.isRequired
+  login: func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -68,7 +68,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   login (user) {
     return dispatch(login(user))
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(LoginPage, localUrls.account, false))

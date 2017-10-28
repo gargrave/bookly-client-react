@@ -26,7 +26,7 @@ function _fetchProfile (profile) {
 }
 
 export function login (user) {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(_requestStart())
     try {
       const request = apiHelper.axPost(apiUrls.login, user)
@@ -47,7 +47,7 @@ export function login (user) {
 }
 
 export function fetchProfile (authToken) {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(_requestStart())
     try {
       const request = apiHelper.axGet(apiUrls.users, authToken)
@@ -68,7 +68,7 @@ export function fetchProfile (authToken) {
 }
 
 export function logout () {
-  return async dispatch => {
+  return async (dispatch) => {
     localStorage.clear()
     dispatch(_logout())
   }

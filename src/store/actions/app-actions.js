@@ -5,7 +5,7 @@ function _setInitialized () {
 }
 
 export function setInitialized () {
-  return async dispatch => {
+  return async (dispatch) => {
     dispatch(_setInitialized())
   }
 }

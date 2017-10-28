@@ -1,6 +1,6 @@
 export default {
   findRecordById (records, id) {
-    let record = records.filter(record => Number(record.id) === Number(id))
+    let record = records.filter((record) => Number(record.id) === Number(id))
     if (record.length) {
       return record[0]
     }
@@ -15,9 +15,9 @@ export default {
     let req = {
       method: 'get',
       headers: {
-        Accept: 'application/json'
+        Accept: 'application/json',
       },
-      url
+      url,
     }
 
     if (authToken) {
@@ -34,10 +34,10 @@ export default {
     let req = {
       method: 'post',
       headers: {
-        Accept: 'application/json'
+        Accept: 'application/json',
       },
       url,
-      data
+      data,
     }
 
     if (authToken) {
@@ -65,5 +65,5 @@ export default {
     let req = this.axPost(url, data, authToken)
     req.method = 'delete'
     return req
-  }
+  },
 }

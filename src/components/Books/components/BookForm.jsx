@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
-const BookForm = props => {
+const BookForm = (props) => {
   return (
     <form
       className="author-form"
@@ -28,11 +28,11 @@ const BookForm = props => {
 
 BookForm.propTypes = {
   book: shape({
-    title: string.isRequired
+    title: string.isRequired,
   }).isRequired,
   handleInputChange: func.isRequired,
   handleSubmit: func.isRequired,
-  handleCancel: func.isRequired
+  handleCancel: func.isRequired,
 }
 
 export default BookForm

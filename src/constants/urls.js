@@ -22,7 +22,7 @@ export let apiUrls = {
   pwResetConfirm: `${restApiRoot}/auth/passwordreset/confirm`,
   // REST resource URLS
   authors: `${restApiRoot}/authors/`,
-  books: `${restApiRoot}/books/`
+  books: `${restApiRoot}/books/`,
 }
 
 // URLs for local routing (i.e. react-router)
@@ -42,7 +42,7 @@ export let localUrls = {
   // books routes
   booksList: '/books',
   bookCreate: '/books/new',
-  bookDetail: '/books/:id'
+  bookDetail: '/books/:id',
 }
 
 function init () {

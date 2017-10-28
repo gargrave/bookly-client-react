@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
-const BookDetailView = props => {
+const BookDetailView = (props) => {
   const { book, handleEditClick, handleBackClick } = props
   return (
     <div className="book-detail-view">
@@ -30,10 +30,10 @@ BookDetailView.propTypes = {
     id: number,
     title: string,
     createdAt: string,
-    updatedAt: string
+    updatedAt: string,
   }),
   handleEditClick: func.isRequired,
-  handleBackClick: func.isRequired
+  handleBackClick: func.isRequired,
 }
 
 export default BookDetailView

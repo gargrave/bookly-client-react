@@ -14,7 +14,7 @@ class AuthorDetailPage extends Component {
 
     this.state = {
       editing: false,
-      editableAuthor: authorModel.empty()
+      editableAuthor: authorModel.empty(),
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -56,8 +56,8 @@ class AuthorDetailPage extends Component {
       editing: true,
       editableAuthor: {
         firstName: this.props.author.firstName,
-        lastName: this.props.author.lastName
-      }
+        lastName: this.props.author.lastName,
+      },
     })
   }
 
@@ -102,24 +102,24 @@ AuthorDetailPage.propTypes = {
     firstName: string,
     lastName: string,
     createdAt: string,
-    updatedAt: string
+    updatedAt: string,
   }),
-  updateAuthor: func.isRequired
+  updateAuthor: func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
   const authorID = ownProps.match.params.id
-  const author = state.authors.data.find(a => Number(a.id) === Number(authorID)) || {}
+  const author = state.authors.data.find((a) => Number(a.id) === Number(authorID)) || {}
 
   return {
-    author
+    author,
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   updateAuthor (author) {
     return dispatch(updateAuthor(author))
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthorDetailPage)

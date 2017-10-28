@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
-const AuthorForm = props => {
+const AuthorForm = (props) => {
   return (
     <form
       className="author-form"
@@ -46,11 +46,11 @@ const AuthorForm = props => {
 AuthorForm.propTypes = {
   author: shape({
     firstName: string.isRequired,
-    lastName: string.isRequired
+    lastName: string.isRequired,
   }).isRequired,
   handleInputChange: func.isRequired,
   handleSubmit: func.isRequired,
-  handleCancel: func.isRequired
+  handleCancel: func.isRequired,
 }
 
 export default AuthorForm

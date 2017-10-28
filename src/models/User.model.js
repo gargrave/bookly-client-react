@@ -6,7 +6,7 @@ export default {
       createdAt: '',
       updatedAt: '',
       lastLogin: '',
-      verified: undefined
+      verified: undefined,
     }
   },
 
@@ -17,7 +17,7 @@ export default {
       createdAt: data.created_at,
       updatedAt: data.updated_at,
       lastLogin: data.last_login,
-      verified: data.verified
+      verified: data.verified,
     }
-  }
+  },
 }

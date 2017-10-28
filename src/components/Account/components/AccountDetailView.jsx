@@ -1,7 +1,7 @@
 import React from 'react'
 import { shape, string } from 'prop-types'
 
-const AccountDetailView = props => {
+const AccountDetailView = (props) => {
   const { email } = props.user
   return (
     <div className="account-detail-view">
@@ -16,8 +16,8 @@ const AccountDetailView = props => {
 
 AccountDetailView.propTypes = {
   user: shape({
-    email: string.isRequired
-  }).isRequired
+    email: string.isRequired,
+  }).isRequired,
 }
 
 export default AccountDetailView

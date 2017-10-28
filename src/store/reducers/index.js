@@ -9,5 +9,5 @@ export default combineReducers({
   app,
   auth,
   authors,
-  books
+  books,
 })

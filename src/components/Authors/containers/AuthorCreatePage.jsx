@@ -12,7 +12,7 @@ class AuthorCreatePage extends Component {
     super(props)
 
     this.state = {
-      author: authorModel.empty()
+      author: authorModel.empty(),
     }
 
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -65,7 +65,7 @@ class AuthorCreatePage extends Component {
 
 AuthorCreatePage.propTypes = {
   history: object,
-  createAuthor: func.isRequired
+  createAuthor: func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -75,7 +75,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   createAuthor (author) {
     return dispatch(createAuthor(author))
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AuthorCreatePage)

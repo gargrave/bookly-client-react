@@ -3,7 +3,7 @@ import { func, number, shape, string } from 'prop-types'
 
 import BookForm from '../components/BookForm'
 
-const BookDetailView = props => {
+const BookDetailView = (props) => {
   return (
     <div className="book-edit-view">
       <h2>Edit Book</h2>
@@ -22,11 +22,11 @@ BookDetailView.propTypes = {
     id: number,
     title: string,
     createdAt: string,
-    updatedAt: string
+    updatedAt: string,
   }),
   handleInputChange: func.isRequired,
   handleSubmit: func.isRequired,
-  handleCancel: func.isRequired
+  handleCancel: func.isRequired,
 }
 
 export default BookDetailView

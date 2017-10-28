@@ -17,21 +17,21 @@ function _requestEnd () {
 function _fetchAuthors (authors) {
   return {
     type: AUTHORS.FETCH_SUCCESS,
-    payload: { authors }
+    payload: { authors },
   }
 }
 
 function _createAuthor (author) {
   return {
     type: AUTHORS.CREATE_SUCCESS,
-    payload: { author }
+    payload: { author },
   }
 }
 
 function _updateAuthor (author) {
   return {
     type: AUTHORS.UPDATE_SUCCESS,
-    payload: { author }
+    payload: { author },
   }
 }
 
