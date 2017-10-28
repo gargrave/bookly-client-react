@@ -5,8 +5,9 @@ import { func } from 'prop-types'
 
 import { setInitialized } from '@/store/actions/app-actions'
 import { fetchProfile } from '@/store/actions/auth-actions'
+
 import SimpleHeader from '@/components/bookly/header/SimpleHeader'
-import Routes from './Routes'
+import Routes from '@/components/Routes'
 
 import './AppWrapper.css'
 

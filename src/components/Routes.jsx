@@ -8,18 +8,19 @@ import AuthorCreatePage from '@/containers/authors/AuthorCreatePage'
 import AuthorDetailPage from '@/containers/authors/AuthorDetailPage'
 import AuthorsListPage from '@/containers/authors/AuthorsListPage'
 
+import HomePage from '@/containers/basic/HomePage'
+import NotFoundPage from '@/containers/basic/NotFoundPage'
+
 import BookCreatePage from '@/containers/books/BookCreatePage'
 import BookDetailPage from '@/containers/books/BookDetailPage'
 import BooksListPage from '@/containers/books/BooksListPage'
-import NotFound from './common/NotFound'
-import Home from './common/Home'
 
-import { localUrls } from '../constants/urls'
+import { localUrls } from '@/constants/urls'
 
 const routes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={HomePage} />
       <Route exact path={localUrls.account} component={AccountDetailPage} />
       <Route exact path={localUrls.login} component={LoginPage} />
       <Route exact path={localUrls.authorsList} component={AuthorsListPage} />
@@ -28,7 +29,7 @@ const routes = () => {
       <Route exact path={`${localUrls.booksList}/new`} component={BookCreatePage} />
       <Route exact path={`${localUrls.booksList}/:id`} component={BookDetailPage} />
       <Route exact path={localUrls.booksList} component={BooksListPage} />
-      <Route component={NotFound} />
+      <Route component={NotFoundPage} />
     </Switch>
   )
 }
