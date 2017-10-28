@@ -7,7 +7,7 @@ import { fetchAuthors } from '@/store/actions/author-actions'
 
 import Button from '@/components/common/Button'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
-import AuthorListDetail from '@/components/bookly/authors/AuthorListDetail'
+import AuthorList from '@/components/bookly/authors/AuthorList'
 
 class AuthorsListPage extends Component {
   constructor (props) {
@@ -38,6 +38,7 @@ class AuthorsListPage extends Component {
   }
 
   render () {
+    const { authors } = this.props
     return (
       <div>
         <h2>
@@ -47,9 +48,9 @@ class AuthorsListPage extends Component {
             text="Add"
             type="success" />
         </h2>
-        {this.props.authors.map((author) =>
-          <AuthorListDetail key={author.id} author={author} onClick={() => this.handleAuthorClick(author.id)} />
-        )}
+        <AuthorList
+          authors={authors}
+          onAuthorClick={this.handleAuthorClick} />
       </div>
     )
   }
