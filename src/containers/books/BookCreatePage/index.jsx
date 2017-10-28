@@ -14,7 +14,6 @@ class BookCreatePage extends Component {
     super(props)
 
     this.state = {
-      author: { id: 51 },
       book: bookModel.empty(),
     }
 
@@ -34,12 +33,12 @@ class BookCreatePage extends Component {
   }
 
   handleAuthorChange (event) {
-    const selectedAuthorId = Number(event.target.value)
-    const author = this.props.authors.find((a) => a.id === selectedAuthorId)
+    const authorId = Number(event.target.value)
+    const author = this.props.authors.find((a) => a.id === authorId)
 
     if (author) {
       this.setState({
-        author,
+        book: Object.assign({}, this.state.book, { author }),
       })
     }
   }
@@ -55,8 +54,15 @@ class BookCreatePage extends Component {
 
   handleSubmit (event) {
     event.preventDefault()
-    console.log('handleSubmit')
-    console.log('TODO: need to Author select to BookForm')
+    const book = bookModel.toAPI(this.state.book)
+    const tempValidate = () => {
+      return !!book.title.length && !!book.authorId && Number.isInteger(book.authorId) && book.authorId >= 0
+    }
+
+    if (tempValidate()) {
+      console.log('book:')
+      console.dir(book)
+    }
   }
 
   handleCancel (event) {
@@ -65,8 +71,9 @@ class BookCreatePage extends Component {
   }
 
   render () {
-    const { author, book } = this.state
+    const { book } = this.state
     const { authors } = this.props
+
     return (
       <div>
         <h2>BookCreatePage</h2>
@@ -77,7 +84,6 @@ class BookCreatePage extends Component {
           handleInputChange={this.handleInputChange}
           handleSubmit={this.handleSubmit}
           handleCancel={this.handleCancel}
-          selectedAuthorId={author.id}
         />
       </div>
     )

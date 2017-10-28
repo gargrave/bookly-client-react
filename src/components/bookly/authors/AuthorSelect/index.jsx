@@ -1,5 +1,5 @@
 import React from 'react'
-import { array, func, number } from 'prop-types'
+import { array, func, object } from 'prop-types'
 
 import './styles.css'
 
@@ -11,10 +11,11 @@ const options = (authors) => {
   ))
 }
 
-const AuthorSelect = ({ authors, handleChange, selectedAuthorId }) => {
+const AuthorSelect = ({ author, authors, handleChange }) => {
   return (
     <div className="input-single">
-      <select className="author-select" value={selectedAuthorId} onChange={handleChange}>
+      <select className="author-select" value={author.id} onChange={handleChange}>
+        <option value="-1">Select Author...</option>
         {options(authors)}
       </select>
     </div>
@@ -22,9 +23,9 @@ const AuthorSelect = ({ authors, handleChange, selectedAuthorId }) => {
 }
 
 AuthorSelect.propTypes = {
+  author: object.isRequired,
   authors: array.isRequired,
   handleChange: func.isRequired,
-  selectedAuthorId: number.isRequired,
 }
 
 export default AuthorSelect

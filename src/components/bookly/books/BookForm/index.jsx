@@ -1,17 +1,9 @@
 import React from 'react'
-import { array, func, number, shape, string } from 'prop-types'
+import { array, func, object, shape, string } from 'prop-types'
 
 import AuthorSelect from '@/components/bookly/authors/AuthorSelect'
 
-const BookForm = ({
-  authors,
-  book,
-  handleAuthorChange,
-  handleCancel,
-  handleInputChange,
-  handleSubmit,
-  selectedAuthorId,
-}) => {
+const BookForm = ({ authors, book, handleAuthorChange, handleCancel, handleInputChange, handleSubmit }) => {
   return (
     <form
       className="author-form"
@@ -24,7 +16,7 @@ const BookForm = ({
         <input type="text" name="title" id="title" value={book.title} onChange={handleInputChange} />
       </div>
 
-      <AuthorSelect authors={authors} selectedAuthorId={selectedAuthorId} handleChange={handleAuthorChange} />
+      <AuthorSelect author={book.author} authors={authors} handleChange={handleAuthorChange} />
 
       <div className="input-single">
         <button type="submit" className="submit-button" onClick={handleSubmit}>
@@ -41,13 +33,13 @@ const BookForm = ({
 BookForm.propTypes = {
   book: shape({
     title: string.isRequired,
+    author: object.isRequired,
   }).isRequired,
   authors: array.isRequired,
   handleAuthorChange: func.isRequired,
   handleInputChange: func.isRequired,
   handleSubmit: func.isRequired,
   handleCancel: func.isRequired,
-  selectedAuthorId: number.isRequired,
 }
 
 export default BookForm
