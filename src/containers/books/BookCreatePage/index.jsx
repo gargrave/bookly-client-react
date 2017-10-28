@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { object } from 'prop-types'
 
-import bookModel from '../../../models/Book.model'
-import { localUrls } from '../../../constants/urls'
+import bookModel from '@/models/Book.model'
+import { localUrls } from '@/constants/urls'
 
-import BookForm from '../components/BookForm'
+import BookForm from '@/components/bookly/books/BookForm'
 
 class BookCreatePage extends Component {
   constructor (props) {

@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { func, number, object, shape, string } from 'prop-types'
 
-import { localUrls } from '../../../constants/urls'
-import { updateBook } from '../../../store/actions/book-actions'
-import bookModel from '../../../models/Book.model'
-import BookDetailView from '../components/BookDetailView'
-import BookEditView from '../components/BookEditView'
+import { localUrls } from '@/constants/urls'
+import { updateBook } from '@/store/actions/book-actions'
+import bookModel from '@/models/Book.model'
+
+import BookDetailView from '@/components/bookly/books/BookDetailView'
+import BookEditView from '@/components/bookly/books/BookEditView'
 
 class BookDetailPage extends Component {
   constructor (props) {

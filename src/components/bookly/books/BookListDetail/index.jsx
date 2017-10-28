@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
-import './BookListDetail.css'
+import './styles.css'
 
 const BookListDetail = (props) => {
   return (

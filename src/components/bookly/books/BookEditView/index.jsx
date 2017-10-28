@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
-import BookForm from '../components/BookForm'
+import BookForm from '@/components/bookly/books/BookForm'
 
 const BookDetailView = (props) => {
   return (

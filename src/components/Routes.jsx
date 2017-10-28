@@ -8,9 +8,9 @@ import AuthorCreatePage from '@/containers/Authors/Create'
 import AuthorDetailPage from '@/containers/Authors/Detail'
 import AuthorsListPage from '@/containers/Authors/List'
 
-import BookCreatePage from './Books/containers/BookCreatePage'
-import BookDetailPage from './Books/containers/BookDetailPage'
-import BooksListPage from './Books/containers/BooksListPage'
+import BookCreatePage from '@/containers/books/BookCreatePage'
+import BookDetailPage from '@/containers/books/BookDetailPage'
+import BooksListPage from '@/containers/books/BooksListPage'
 import NotFound from './common/NotFound'
 import Home from './common/Home'
 

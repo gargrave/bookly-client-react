@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array, func, object } from 'prop-types'
 
-import { localUrls } from '../../../constants/urls'
-import { fetchBooks } from '../../../store/actions/book-actions'
-import requiresAuth from '../../common/hocs/RequiresAuth'
+import { localUrls } from '@/constants/urls'
+import { fetchBooks } from '@/store/actions/book-actions'
 
-import BookListDetail from '../components/BookListDetail'
+import RequiresAuth from '@/components/common/hocs/RequiresAuth'
+import BookListDetail from '@/components/bookly/books/BookListDetail'
 
 class BooksListPage extends Component {
   constructor (props) {
@@ -70,4 +70,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(BooksListPage, localUrls.login))
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(BooksListPage, localUrls.login))
