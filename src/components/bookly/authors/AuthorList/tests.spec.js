@@ -3,6 +3,7 @@ import { mount, shallow } from 'enzyme'
 
 import AuthorList from './'
 import AuthorListDetail from '@/components/bookly/authors/AuthorListDetail'
+import Alert from '@/components/common/Alert'
 
 describe('AuthorList', () => {
   let props
@@ -27,13 +28,13 @@ describe('AuthorList', () => {
   it('renders the correct number of AuthorListDetail wrappers', () => {
     wrapper = mount(<AuthorList {...props} />)
     expect(wrapper.find(AuthorListDetail)).toHaveLength(props.authors.length)
-    expect(wrapper.find('.bookly-alert')).toHaveLength(0)
+    expect(wrapper.find(Alert)).toHaveLength(0)
   })
 
   it('renders a nice message when there are no authors', () => {
     props.authors = []
     wrapper = mount(<AuthorList {...props} />)
     expect(wrapper.find(AuthorListDetail)).toHaveLength(0)
-    expect(wrapper.find('.bookly-alert')).toHaveLength(1)
+    expect(wrapper.find(Alert)).toHaveLength(1)
   })
 })

@@ -2,7 +2,7 @@ import React from 'react'
 import { array, func } from 'prop-types'
 
 import AuthorListDetail from '@/components/bookly/authors/AuthorListDetail'
-import InfoAlert from '@/components/common/Alert/InfoAlert/'
+import Alert from '@/components/common/Alert/'
 
 const authorList = (authors, onAuthorClick) => {
   return (
@@ -16,7 +16,11 @@ const authorList = (authors, onAuthorClick) => {
   )
 }
 
-const noAuthorsMessage = () => <InfoAlert message={'No Authors created yet!'} />
+const noAuthorsMessage = () => (
+  <Alert
+    message={'No Authors created yet!'}
+    type={'info'} />
+)
 
 const AuthorList = ({
   authors,
