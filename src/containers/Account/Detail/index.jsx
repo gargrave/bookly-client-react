@@ -2,12 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { object } from 'prop-types'
 
-import { localUrls } from '../../../constants/urls'
-import { logout } from '../../../store/actions/auth-actions'
-import requiresAuth from '../../common/hocs/RequiresAuth'
-import AccountDetailView from '../components/AccountDetailView'
+import { localUrls } from '@/constants/urls'
+import { logout } from '@/store/actions/auth-actions'
 
-class AccountPage extends Component {
+import RequiresAuth from '@/components/common/hocs/RequiresAuth'
+import AccountDetailView from '@/components/bookly/Account/AccountDetailView'
+
+class AccountDetailPage extends Component {
   constructor (props) {
     super(props)
 
@@ -32,7 +33,7 @@ class AccountPage extends Component {
   }
 }
 
-AccountPage.propTypes = {
+AccountDetailPage.propTypes = {
   history: object.isRequired,
   user: object.isRequired,
 }
@@ -47,4 +48,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(AccountPage, localUrls.login))
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AccountDetailPage, localUrls.login))

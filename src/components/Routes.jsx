@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import AccountPage from './Account/containers/AccountPage'
-import LoginPage from './Account/containers/LoginPage'
+import AccountDetailPage from '@/containers/Account/Detail'
+import LoginPage from '@/containers/Account/Login'
 
-import AuthorCreatePage from '../containers/Authors/Create'
-import AuthorDetailPage from '../containers/Authors/Detail'
-import AuthorsListPage from '../containers/Authors/List'
+import AuthorCreatePage from '@/containers/Authors/Create'
+import AuthorDetailPage from '@/containers/Authors/Detail'
+import AuthorsListPage from '@/containers/Authors/List'
 
 import BookCreatePage from './Books/containers/BookCreatePage'
 import BookDetailPage from './Books/containers/BookDetailPage'
@@ -20,7 +20,7 @@ const routes = () => {
   return (
     <Switch>
       <Route exact path="/" component={Home} />
-      <Route exact path={localUrls.account} component={AccountPage} />
+      <Route exact path={localUrls.account} component={AccountDetailPage} />
       <Route exact path={localUrls.login} component={LoginPage} />
       <Route exact path={localUrls.authorsList} component={AuthorsListPage} />
       <Route exact path={`${localUrls.authorsList}/new`} component={AuthorCreatePage} />
