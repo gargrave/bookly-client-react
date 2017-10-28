@@ -22,7 +22,7 @@ class AppWrapper extends Component {
   render () {
     return (
       <BrowserRouter>
-        <div className="App">
+        <div id="bookly-app" className="App">
           <h1>Bookly</h1>
           <SimpleHeader />
           <main className="main-view">
@@ -36,7 +36,7 @@ class AppWrapper extends Component {
 
 AppWrapper.propTypes = {
   fetchProfile: func.isRequired,
-  setInitialized: func.isRequired
+  setInitialized: func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -50,7 +50,7 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   setInitialized () {
     return dispatch(setInitialized())
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(AppWrapper)
