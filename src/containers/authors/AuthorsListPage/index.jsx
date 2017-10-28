@@ -50,7 +50,7 @@ class AuthorsListPage extends Component {
         </h2>
         <AuthorList
           authors={authors}
-          onClick={this.onAuthorClick} />
+          onAuthorClick={this.onAuthorClick} />
       </div>
     )
   }
