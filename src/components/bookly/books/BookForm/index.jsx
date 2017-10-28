@@ -1,24 +1,36 @@
 import React from 'react'
-import { func, shape, string } from 'prop-types'
+import { array, func, number, shape, string } from 'prop-types'
 
-const BookForm = (props) => {
+import AuthorSelect from '@/components/bookly/authors/AuthorSelect'
+
+const BookForm = ({
+  authors,
+  book,
+  handleAuthorChange,
+  handleCancel,
+  handleInputChange,
+  handleSubmit,
+  selectedAuthorId,
+}) => {
   return (
     <form
       className="author-form"
       style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
-      onSubmit={props.handleSubmit}
+      onSubmit={handleSubmit}
       noValidate
     >
       <div className="input-single">
         <label htmlFor="title">Title:</label>
-        <input type="text" name="title" id="title" value={props.book.title} onChange={props.handleInputChange} />
+        <input type="text" name="title" id="title" value={book.title} onChange={handleInputChange} />
       </div>
 
+      <AuthorSelect authors={authors} selectedAuthorId={selectedAuthorId} handleChange={handleAuthorChange} />
+
       <div className="input-single">
-        <button type="submit" className="submit-button" onClick={props.handleSubmit}>
+        <button type="submit" className="submit-button" onClick={handleSubmit}>
           Submit
         </button>
-        <button type="button" className="button-info float-right cancel-button" onClick={props.handleCancel}>
+        <button type="button" className="button-info float-right cancel-button" onClick={handleCancel}>
           Cancel
         </button>
       </div>
@@ -30,9 +42,12 @@ BookForm.propTypes = {
   book: shape({
     title: string.isRequired,
   }).isRequired,
+  authors: array.isRequired,
+  handleAuthorChange: func.isRequired,
   handleInputChange: func.isRequired,
   handleSubmit: func.isRequired,
   handleCancel: func.isRequired,
+  selectedAuthorId: number.isRequired,
 }
 
 export default BookForm

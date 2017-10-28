@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { object } from 'prop-types'
+import { array, func, object } from 'prop-types'
 
 import bookModel from '@/models/Book.model'
 import { localUrls } from '@/constants/urls'
+import { fetchAuthors } from '@/store/actions/author-actions'
+import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 
 import BookForm from '@/components/bookly/books/BookForm'
 
@@ -12,12 +14,34 @@ class BookCreatePage extends Component {
     super(props)
 
     this.state = {
+      author: { id: 51 },
       book: bookModel.empty(),
     }
 
+    this.handleAuthorChange = this.handleAuthorChange.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleCancel = this.handleCancel.bind(this)
+  }
+
+  async componentDidMount () {
+    try {
+      await this.props.fetchAuthors()
+    } catch (err) {
+      console.log('TODO: handle error!')
+      console.log(err)
+    }
+  }
+
+  handleAuthorChange (event) {
+    const selectedAuthorId = Number(event.target.value)
+    const author = this.props.authors.find((a) => a.id === selectedAuthorId)
+
+    if (author) {
+      this.setState({
+        author,
+      })
+    }
   }
 
   handleInputChange (event) {
@@ -32,6 +56,7 @@ class BookCreatePage extends Component {
   handleSubmit (event) {
     event.preventDefault()
     console.log('handleSubmit')
+    console.log('TODO: need to Author select to BookForm')
   }
 
   handleCancel (event) {
@@ -40,15 +65,19 @@ class BookCreatePage extends Component {
   }
 
   render () {
-    const { book } = this.state
+    const { author, book } = this.state
+    const { authors } = this.props
     return (
       <div>
         <h2>BookCreatePage</h2>
         <BookForm
+          authors={authors}
           book={book}
+          handleAuthorChange={this.handleAuthorChange}
           handleInputChange={this.handleInputChange}
           handleSubmit={this.handleSubmit}
           handleCancel={this.handleCancel}
+          selectedAuthorId={author.id}
         />
       </div>
     )
@@ -57,12 +86,20 @@ class BookCreatePage extends Component {
 
 BookCreatePage.propTypes = {
   history: object,
+  authors: array.isRequired,
+  fetchAuthors: func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return {}
+  return {
+    authors: state.authors.data,
+  }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => ({})
+const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchAuthors () {
+    return dispatch(fetchAuthors())
+  },
+})
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookCreatePage)
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(BookCreatePage))
