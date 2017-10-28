@@ -1,12 +1,17 @@
 import React from 'react'
 import { string } from 'prop-types'
 
-const ErrorAlert = (props) => (
-  <div>
-    {!!props.error &&
-      <div className="alert alert-danger">
-        {props.error}
-      </div>}
+import { prependClass } from '@/utils/cssHelpers'
+
+const classes = () => {
+  return `${prependClass('alert')} alert alert-danger`
+}
+
+const ErrorAlert = ({
+  error,
+}) => (
+  <div className={classes()}>
+    {error}
   </div>
 )
 
