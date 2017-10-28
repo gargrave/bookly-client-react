@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { bool } from 'prop-types'
 
-import { localUrls } from '../../../constants/urls'
+import { localUrls } from '@/constants/urls'
 
 class SimpleHeader extends Component {
   loggedInContent () {

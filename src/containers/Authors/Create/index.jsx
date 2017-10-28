@@ -6,7 +6,7 @@ import { localUrls } from '@/constants/urls'
 import { createAuthor } from '@/store/actions/author-actions'
 import authorModel from '@/models/Author.model'
 
-import AuthorForm from '@/components/Authors/AuthorForm'
+import AuthorForm from '@/components/bookly/Authors/AuthorForm'
 
 class AuthorCreatePage extends Component {
   constructor (props) {

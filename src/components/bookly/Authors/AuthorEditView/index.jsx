@@ -1,7 +1,7 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
-import AuthorForm from '@/components/Authors/AuthorForm'
+import AuthorForm from '@/components/bookly/Authors/AuthorForm'
 
 const AuthorDetailView = (props) => {
   return (
