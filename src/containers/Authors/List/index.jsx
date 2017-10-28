@@ -6,7 +6,7 @@ import { localUrls } from '@/constants/urls'
 import { fetchAuthors } from '@/store/actions/author-actions'
 
 import Button from '@/components/common/Button'
-import requiresAuth from '@/components/common/hocs/RequiresAuth'
+import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 import AuthorListDetail from '@/components/bookly/Authors/AuthorListDetail'
 
 class AuthorsListPage extends Component {
@@ -71,4 +71,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(AuthorsListPage, localUrls.login))
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AuthorsListPage, localUrls.login))
