@@ -6,6 +6,8 @@ import { parseError } from '../../globals/errors'
 import apiHelper from '../../utils/api-helper'
 import { getTokenOrDie } from '../store-helpers'
 
+import { fetchAuthors } from './author-actions'
+
 function _requestStart () {
   return { type: BOOKS.REQUEST_START }
 }
@@ -37,6 +39,12 @@ function _updateBook (book) {
 
 export function fetchBooks () {
   return async (dispatch, getState) => {
+    // ensure that Author data has been loaded
+    const authors = getState().authors.data
+    if (!authors.length) {
+      await dispatch(fetchAuthors())
+    }
+
     const books = getState().books.data
     if (books.length) {
       return books
