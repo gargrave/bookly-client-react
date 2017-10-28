@@ -49,7 +49,7 @@ class LoginPage extends Component {
   render () {
     return (
       <div>
-        <Alert message={this.state.apiError} />
+        <Alert message={this.state.apiError} type="danger" />
         <h2>LoginPage</h2>
         <LoginForm user={this.state.user} handleInputChange={this.handleInputChange} handleSubmit={this.login} />
       </div>
