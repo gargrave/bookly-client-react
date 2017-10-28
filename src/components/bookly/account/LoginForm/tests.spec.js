@@ -1,7 +1,7 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import LoginForm from '../../../../components/Account/components/LoginForm'
+import LoginForm from './'
 
 describe('LoginForm', () => {
   let props
@@ -12,7 +12,7 @@ describe('LoginForm', () => {
       props = {
         user: { email: 'whatever@gmail.com', password: 'password' },
         handleInputChange: jest.fn(),
-        handleSubmit: jest.fn()
+        handleSubmit: jest.fn(),
       }
 
       component = shallow(<LoginForm {...props} />)
@@ -66,7 +66,7 @@ describe('LoginForm', () => {
       props = {
         user: { email: '', password: '' },
         handleInputChange: jest.fn(),
-        handleSubmit: jest.fn()
+        handleSubmit: jest.fn(),
       }
 
       component = shallow(<LoginForm {...props} />)

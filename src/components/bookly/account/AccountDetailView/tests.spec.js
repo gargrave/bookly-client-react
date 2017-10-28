@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { usersMockData } from '../../../../utils/mocks/data/users-mock-data'
-import AccountDetailView from '../../../../components/Account/components/AccountDetailView'
+import { usersMockData } from '@/utils/mocks/data/users-mock-data'
+import AccountDetailView from './'
 
 describe('AccountDetailView', () => {
   let props
@@ -12,7 +12,7 @@ describe('AccountDetailView', () => {
     props = {
       user: Object.create(usersMockData[0]),
       handleEditClick: jest.fn(),
-      handleBackClick: jest.fn()
+      handleBackClick: jest.fn(),
     }
 
     component = shallow(<AccountDetailView {...props} />)

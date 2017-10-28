@@ -1,9 +1,9 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { authorsMockData } from '../../../../utils/mocks/data/authors-mock-data'
-import AuthorEditView from '../../../../components/Authors/components/AuthorEditView'
-import AuthorForm from '../../../../components/Authors/components/AuthorForm'
+import { authorsMockData } from '@/utils/mocks/data/authors-mock-data'
+import AuthorEditView from './'
+import AuthorForm from '@/components/bookly/authors/AuthorForm'
 
 describe('AuthorEditView', () => {
   let props
@@ -14,7 +14,7 @@ describe('AuthorEditView', () => {
       author: Object.create(authorsMockData[0]),
       handleInputChange: jest.fn(),
       handleSubmit: jest.fn(),
-      handleCancel: jest.fn()
+      handleCancel: jest.fn(),
     }
 
     component = shallow(<AuthorEditView {...props} />)

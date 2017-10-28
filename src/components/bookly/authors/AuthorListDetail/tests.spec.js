@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { authorsMockData } from '../../../../utils/mocks/data/authors-mock-data'
-import AuthorListDetail from '../../../../components/Authors/components/AuthorListDetail'
+import { authorsMockData } from '@/utils/mocks/data/authors-mock-data'
+import AuthorListDetail from './'
 
 describe('AuthorListDetail', () => {
   let props
@@ -11,7 +11,7 @@ describe('AuthorListDetail', () => {
   beforeEach(() => {
     props = {
       author: Object.create(authorsMockData[0]),
-      onClick: jest.fn()
+      onClick: jest.fn(),
     }
 
     component = shallow(<AuthorListDetail {...props} />)

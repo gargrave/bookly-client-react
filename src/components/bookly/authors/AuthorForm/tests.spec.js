@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { authorsMockData } from '../../../../utils/mocks/data/authors-mock-data'
-import AuthorForm from '../../../../components/Authors/components/AuthorForm'
+import { authorsMockData } from '@/utils/mocks/data/authors-mock-data'
+import AuthorForm from './'
 
 describe('AuthorForm', () => {
   let props
@@ -14,7 +14,7 @@ describe('AuthorForm', () => {
         author: Object.create(authorsMockData[0]),
         handleInputChange: jest.fn(),
         handleSubmit: jest.fn(),
-        handleCancel: jest.fn()
+        handleCancel: jest.fn(),
       }
 
       component = shallow(<AuthorForm {...props} />)
@@ -75,7 +75,7 @@ describe('AuthorForm', () => {
         author: { firstName: '', lastName: '' },
         handleInputChange: jest.fn(),
         handleSubmit: jest.fn(),
-        handleCancel: jest.fn()
+        handleCancel: jest.fn(),
       }
 
       component = shallow(<AuthorForm {...props} />)

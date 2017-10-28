@@ -1,8 +1,8 @@
 import React from 'react'
 import { shallow } from 'enzyme'
 
-import { authorsMockData } from '../../../../utils/mocks/data/authors-mock-data'
-import AuthorDetailView from '../../../../components/Authors/components/AuthorDetailView'
+import { authorsMockData } from '@/utils/mocks/data/authors-mock-data'
+import AuthorDetailView from './'
 
 describe('AuthorDetailView', () => {
   let props
@@ -12,7 +12,7 @@ describe('AuthorDetailView', () => {
     props = {
       author: Object.create(authorsMockData[0]),
       handleEditClick: jest.fn(),
-      handleBackClick: jest.fn()
+      handleBackClick: jest.fn(),
     }
 
     component = shallow(<AuthorDetailView {...props} />)
@@ -45,7 +45,7 @@ describe('AuthorDetailView', () => {
     expect(props.handleEditClick.mock.calls.length).toEqual(1)
   })
 
-  test.only('calls the "handleBackClick" callback when the button is clicked', () => {
+  test('calls the "handleBackClick" callback when the button is clicked', () => {
     expect(props.handleBackClick.mock.calls.length).toEqual(0)
     component.find('.cancel-button').simulate('click')
     expect(props.handleBackClick.mock.calls.length).toEqual(1)

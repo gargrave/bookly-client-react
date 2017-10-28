@@ -50,8 +50,9 @@ ShallowWrapper {
     >
         Edit
     </button>
+     
     <button
-        className="button-info float-right cancel-button"
+        className="button-info cancel-button"
         onClick={[Function]}
         type="button"
     >
@@ -101,8 +102,9 @@ ShallowWrapper {
       >
             Edit
       </button>
+       
       <button
-            className="button-info float-right cancel-button"
+            className="button-info cancel-button"
             onClick={[Function]}
             type="button"
       >
@@ -194,8 +196,9 @@ ShallowWrapper {
           >
                     Edit
           </button>
+           
           <button
-                    className="button-info float-right cancel-button"
+                    className="button-info cancel-button"
                     onClick={[Function]}
                     type="button"
           >
@@ -245,8 +248,9 @@ ShallowWrapper {
           >
                     Edit
           </button>
+           
           <button
-                    className="button-info float-right cancel-button"
+                    className="button-info cancel-button"
                     onClick={[Function]}
                     type="button"
           >
