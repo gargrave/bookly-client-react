@@ -13,8 +13,8 @@ class AuthorsListPage extends Component {
   constructor (props) {
     super(props)
 
-    this.handleAddClick = this.handleAddClick.bind(this)
-    this.handleAuthorClick = this.handleAuthorClick.bind(this)
+    this.onAddClick = this.onAddClick.bind(this)
+    this.onAuthorClick = this.onAuthorClick.bind(this)
   }
 
   componentDidMount () {
@@ -29,11 +29,11 @@ class AuthorsListPage extends Component {
     }
   }
 
-  handleAddClick () {
+  onAddClick () {
     this.props.history.push(localUrls.authorCreate)
   }
 
-  handleAuthorClick (authorID) {
+  onAuthorClick (authorID) {
     this.props.history.push(`/authors/${authorID}`)
   }
 
@@ -44,13 +44,13 @@ class AuthorsListPage extends Component {
         <h2>
           My Authors
           <Button
-            onClick={this.handleAddClick}
+            onClick={this.onAddClick}
             text="Add"
             type="success" />
         </h2>
         <AuthorList
           authors={authors}
-          onAuthorClick={this.handleAuthorClick} />
+          onClick={this.onAuthorClick} />
       </div>
     )
   }

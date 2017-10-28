@@ -1,13 +1,16 @@
 import React from 'react'
-import { func, number, shape, string } from 'prop-types'
+import { func, shape, string } from 'prop-types'
 
 import './styles.css'
 
-const AuthorListDetail = (props) => {
+const AuthorListDetail = ({
+  author,
+  onClick,
+}) => {
   return (
-    <div className="author-list-detail" onClick={props.onClick}>
+    <div className="author-list-detail" onClick={onClick}>
       <p className="author-name">
-        {props.author.firstName} {props.author.lastName}
+        {author.firstName} {author.lastName}
       </p>
     </div>
   )
@@ -15,11 +18,8 @@ const AuthorListDetail = (props) => {
 
 AuthorListDetail.propTypes = {
   author: shape({
-    id: number.isRequired,
     firstName: string.isRequired,
     lastName: string.isRequired,
-    createdAt: string.isRequired,
-    updatedAt: string.isRequired,
   }),
   onClick: func.isRequired,
 }

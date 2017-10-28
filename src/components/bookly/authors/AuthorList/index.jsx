@@ -5,15 +5,15 @@ import AuthorListDetail from '@/components/bookly/authors/AuthorListDetail'
 
 const AuthorList = ({
   authors,
-  onAuthorClick,
+  onClick,
 }) => {
   return (
     <div>
       {authors.map((author) =>
         <AuthorListDetail
-          key={author.id}
           author={author}
-          onClick={onAuthorClick.bind(null, author.id)} />
+          key={author.id}
+          onClick={onClick.bind(null, author.id)} />
       )}
     </div>
   )
@@ -21,7 +21,7 @@ const AuthorList = ({
 
 AuthorList.propTypes = {
   authors: array.isRequired,
-  onAuthorClick: func.isRequired,
+  onClick: func.isRequired,
 }
 
 export default AuthorList
