@@ -3,9 +3,9 @@ import { BrowserRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { func } from 'prop-types'
 
-import { setInitialized } from '../store/actions/app-actions'
-import { fetchProfile } from '../store/actions/auth-actions'
-import SimpleHeader from './Header/SimpleHeader'
+import { setInitialized } from '@/store/actions/app-actions'
+import { fetchProfile } from '@/store/actions/auth-actions'
+import SimpleHeader from '@/components/bookly/Header/SimpleHeader'
 import Routes from './Routes'
 
 import './AppWrapper.css'
