@@ -7,7 +7,7 @@ import { login } from '@/store/actions/auth-actions'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 
 import ErrorAlert from '@/components/common/Alert/ErrorAlert'
-import LoginForm from '@/components/bookly/Account/LoginForm'
+import LoginForm from '@/components/bookly/account/LoginForm'
 
 class LoginPage extends Component {
   constructor (props) {

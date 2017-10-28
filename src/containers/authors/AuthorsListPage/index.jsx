@@ -7,7 +7,7 @@ import { fetchAuthors } from '@/store/actions/author-actions'
 
 import Button from '@/components/common/Button'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
-import AuthorListDetail from '@/components/bookly/Authors/AuthorListDetail'
+import AuthorListDetail from '@/components/bookly/authors/AuthorListDetail'
 
 class AuthorsListPage extends Component {
   constructor (props) {

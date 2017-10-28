@@ -6,7 +6,7 @@ import { localUrls } from '@/constants/urls'
 import { logout } from '@/store/actions/auth-actions'
 
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
-import AccountDetailView from '@/components/bookly/Account/AccountDetailView'
+import AccountDetailView from '@/components/bookly/account/AccountDetailView'
 
 class AccountDetailPage extends Component {
   constructor (props) {

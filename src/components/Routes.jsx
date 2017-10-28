@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route, Switch } from 'react-router-dom'
 
-import AccountDetailPage from '@/containers/Account/Detail'
-import LoginPage from '@/containers/Account/Login'
+import AccountDetailPage from '@/containers/account/AccountDetailPage'
+import LoginPage from '@/containers/account/LoginPage'
 
-import AuthorCreatePage from '@/containers/Authors/Create'
-import AuthorDetailPage from '@/containers/Authors/Detail'
-import AuthorsListPage from '@/containers/Authors/List'
+import AuthorCreatePage from '@/containers/authors/AuthorCreatePage'
+import AuthorDetailPage from '@/containers/authors/AuthorDetailPage'
+import AuthorsListPage from '@/containers/authors/AuthorsListPage'
 
 import BookCreatePage from '@/containers/books/BookCreatePage'
 import BookDetailPage from '@/containers/books/BookDetailPage'

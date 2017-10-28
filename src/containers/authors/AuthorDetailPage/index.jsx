@@ -6,8 +6,8 @@ import { localUrls } from '@/constants/urls'
 import { updateAuthor } from '@/store/actions/author-actions'
 import authorModel from '@/models/Author.model'
 
-import AuthorDetailView from '@/components/bookly/Authors/AuthorDetailView'
-import AuthorEditView from '@/components/bookly/Authors/AuthorEditView'
+import AuthorDetailView from '@/components/bookly/authors/AuthorDetailView'
+import AuthorEditView from '@/components/bookly/authors/AuthorEditView'
 
 class AuthorDetailPage extends Component {
   constructor (props) {
