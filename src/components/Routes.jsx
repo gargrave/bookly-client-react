@@ -9,8 +9,8 @@ import AuthorsListPage from './Authors/containers/AuthorsListPage'
 import BookCreatePage from './Books/containers/BookCreatePage'
 import BookDetailPage from './Books/containers/BookDetailPage'
 import BooksListPage from './Books/containers/BooksListPage'
-import NotFound from './Common/NotFound'
-import Home from './Common/Home'
+import NotFound from './common/NotFound'
+import Home from './common/Home'
 
 import { localUrls } from '../constants/urls'
 
