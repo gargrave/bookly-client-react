@@ -92,11 +92,20 @@
     ]
   },
   "babel": {
+    "plugins": [
+      ["babel-plugin-root-import", {
+        "rootPathSuffix": "src",
+        "rootPathPrefix": "@"
+      }]
+    ],
     "presets": [
       "react-app"
     ]
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "devDependencies": {
+    "babel-plugin-root-import": "^5.1.0"
   }
 }
