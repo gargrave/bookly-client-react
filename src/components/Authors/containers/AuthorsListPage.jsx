@@ -4,6 +4,7 @@ import { array, func, object } from 'prop-types'
 
 import { localUrls } from '../../../constants/urls'
 import { fetchAuthors } from '../../../store/actions/author-actions'
+import Button from '../../Common/Button'
 import requiresAuth from '../../Common/HOC/RequiresAuth'
 import AuthorListDetail from '../components/AuthorListDetail'
 
@@ -40,11 +41,12 @@ class AuthorsListPage extends Component {
       <div>
         <h2>
           My Authors
-          <button className="button-success" style={{ marginLeft: '10px' }} onClick={this.handleAddClick}>
-            Add
-          </button>
+          <Button
+            onClick={this.handleAddClick}
+            text="Add"
+            type="success" />
         </h2>
-        {this.props.authors.map(author =>
+        {this.props.authors.map((author) =>
           <AuthorListDetail key={author.id} author={author} onClick={() => this.handleAuthorClick(author.id)} />
         )}
       </div>
@@ -55,17 +57,17 @@ class AuthorsListPage extends Component {
 AuthorsListPage.propTypes = {
   history: object.isRequired,
   fetchAuthors: func.isRequired,
-  authors: array.isRequired
+  authors: array.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => ({
-  authors: state.authors.data
+  authors: state.authors.data,
 })
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchAuthors () {
     return dispatch(fetchAuthors())
-  }
+  },
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(requiresAuth(AuthorsListPage, localUrls.login))
