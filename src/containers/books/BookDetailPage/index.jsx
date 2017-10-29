@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { func, number, object, shape, string } from 'prop-types'
+import { array, func, number, object, shape, string } from 'prop-types'
 
 import { localUrls } from '@/constants/urls'
+import { fetchAuthors } from '@/store/actions/author-actions'
 import { updateBook } from '@/store/actions/book-actions'
 import bookModel from '@/models/Book.model'
 
+import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 import BookDetailView from '@/components/bookly/books/BookDetailView'
 import BookEditView from '@/components/bookly/books/BookEditView'
 
@@ -18,11 +20,33 @@ class BookDetailPage extends Component {
       editableBook: bookModel.empty(),
     }
 
+    this.handleAuthorChange = this.handleAuthorChange.bind(this)
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleEditClick = this.handleEditClick.bind(this)
     this.handleCancel = this.handleCancel.bind(this)
     this.handleBackClick = this.handleBackClick.bind(this)
+  }
+
+  async componentDidMount () {
+    try {
+      await this.props.fetchAuthors()
+    } catch (err) {
+      console.log('TODO: handle error!')
+      console.log(err)
+    }
+  }
+
+  handleAuthorChange (event) {
+    const authorId = Number(event.target.value)
+    const author = this.props.authors.find((a) => a.id === authorId)
+    const editableBook = Object.assign({}, this.state.editableBook, { author })
+
+    if (author) {
+      this.setState({
+        editableBook,
+      })
+    }
   }
 
   handleInputChange (event) {
@@ -36,7 +60,20 @@ class BookDetailPage extends Component {
 
   async handleSubmit (event) {
     event.preventDefault()
-    console.log('TODO: complete the form and submit data')
+    const book = bookModel.toAPI(this.state.editableBook)
+    const tempValidate = () => {
+      return !!book.title.length && !!book.authorId && Number.isInteger(book.authorId) && book.authorId >= 0
+    }
+
+    if (tempValidate()) {
+      try {
+        await this.props.updateBook(book)
+        this.setState({ editing: false })
+      } catch (err) {
+        console.log('handle error:')
+        console.dir(err.message)
+      }
+    }
   }
 
   /**
@@ -46,9 +83,7 @@ class BookDetailPage extends Component {
   handleEditClick () {
     this.setState({
       editing: true,
-      editableBook: {
-        title: this.props.book.title,
-      },
+      editableBook: Object.assign(this.props.book),
     })
   }
 
@@ -65,6 +100,7 @@ class BookDetailPage extends Component {
   }
 
   render () {
+    const { authors } = this.props
     const { editing } = this.state
     return (
       <div>
@@ -77,7 +113,9 @@ class BookDetailPage extends Component {
         )}
         {editing && (
           <BookEditView
+            authors={authors}
             book={this.state.editableBook}
+            handleAuthorChange={this.handleAuthorChange}
             handleInputChange={this.handleInputChange}
             handleSubmit={this.handleSubmit}
             handleCancel={this.handleCancel}
@@ -90,12 +128,14 @@ class BookDetailPage extends Component {
 
 BookDetailPage.propTypes = {
   history: object,
+  authors: array.isRequired,
   book: shape({
     id: number,
     title: string,
     createdAt: string,
     updatedAt: string,
   }),
+  fetchAuthors: func.isRequired,
   updateBook: func.isRequired,
 }
 
@@ -104,14 +144,19 @@ const mapStateToProps = (state, ownProps) => {
   const book = state.books.data.find((a) => Number(a.id) === Number(bookID)) || {}
 
   return {
+    authors: state.authors.data,
     book,
   }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchAuthors () {
+    return dispatch(fetchAuthors)
+  },
+
   updateBook (book) {
     return dispatch(updateBook(book))
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookDetailPage)
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(BookDetailPage))
