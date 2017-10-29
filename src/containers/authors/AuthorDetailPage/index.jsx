@@ -10,6 +10,22 @@ import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 import AuthorDetailView from '@/components/bookly/authors/AuthorDetailView'
 import AuthorEditView from '@/components/bookly/authors/AuthorEditView'
 
+const detailView = (author, onBackClick, onEditClick) => (
+  <AuthorDetailView
+    author={author}
+    handleBackClick={onBackClick}
+    handleEditClick={onEditClick}
+  />
+)
+
+const editView = (author, onCancel, onInputChange, onSubmit) => (
+  <AuthorEditView
+    author={author}
+    handleCancel={onCancel}
+    handleInputChange={onInputChange}
+    handleSubmit={onSubmit} />
+)
+
 class AuthorDetailPage extends Component {
   constructor (props) {
     super(props)
@@ -18,12 +34,6 @@ class AuthorDetailPage extends Component {
       editing: false,
       editableAuthor: authorModel.empty(),
     }
-
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleEditClick = this.handleEditClick.bind(this)
-    this.handleCancel = this.handleCancel.bind(this)
-    this.handleBackClick = this.handleBackClick.bind(this)
   }
 
   componentDidMount () {
@@ -33,7 +43,7 @@ class AuthorDetailPage extends Component {
   async refreshAuthors () {
     try {
       await this.props.fetchAuthors()
-      if (!this.props.author.firstName) {
+      if (!this.props.author.id) {
         this.props.history.push(localUrls.authorsList)
       }
     } catch (err) {
@@ -43,7 +53,7 @@ class AuthorDetailPage extends Component {
     }
   }
 
-  handleInputChange (event) {
+  onInputChange (event) {
     const key = event.target.name
     if (key in this.state.editableAuthor) {
       let editableAuthor = Object.assign({}, this.state.editableAuthor)
@@ -52,7 +62,7 @@ class AuthorDetailPage extends Component {
     }
   }
 
-  async handleSubmit (event) {
+  async onSubmit (event) {
     event.preventDefault()
     // TODO: temp validation -> fix this nephew......
     if (this.state.editableAuthor.firstName && this.state.editableAuthor.lastName) {
@@ -60,8 +70,9 @@ class AuthorDetailPage extends Component {
         const author = authorModel.toAPI(Object.assign({}, this.props.author, this.state.editableAuthor))
         await this.props.updateAuthor(author)
         this.setState({ editing: false })
-      } catch (error) {
-        console.log('TODO: handle error')
+      } catch (err) {
+        console.log('TODO: handle error in AuthorDetailPage.onSubmit():')
+        console.dir(err)
       }
     }
   }
@@ -70,7 +81,7 @@ class AuthorDetailPage extends Component {
    * Enables 'editing' state and sets the editable author's value
    * to the current author from the store.
    */
-  handleEditClick () {
+  onEditClick () {
     this.setState({
       editing: true,
       editableAuthor: {
@@ -83,32 +94,28 @@ class AuthorDetailPage extends Component {
   /**
    * Disables 'editing' state.
    */
-  handleCancel (event) {
+  onCancel (event) {
     event.preventDefault()
     this.setState({ editing: false })
   }
 
-  handleBackClick () {
+  onBackClick () {
     this.props.history.push(localUrls.authorsList)
   }
 
   render () {
-    const { editing } = this.state
+    const { author } = this.props
+    const { editableAuthor, editing } = this.state
     return (
       <div>
         {!editing &&
-          <AuthorDetailView
-            author={this.props.author}
-            handleEditClick={this.handleEditClick}
-            handleBackClick={this.handleBackClick}
-          />}
+          detailView(author, this.onEditClick.bind(this),
+            this.onBackClick.bind(this))
+        }
         {editing &&
-          <AuthorEditView
-            author={this.state.editableAuthor}
-            handleInputChange={this.handleInputChange}
-            handleSubmit={this.handleSubmit}
-            handleCancel={this.handleCancel}
-          />}
+          editView(editableAuthor, this.onInputChange.bind(this),
+            this.onSubmit.bind(this), this.onCancel.bind(this))
+        }
       </div>
     )
   }
