@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import { func, number, object, shape, string } from 'prop-types'
 
 import { localUrls } from '@/constants/urls'
-import { updateAuthor } from '@/store/actions/author-actions'
+import { fetchAuthors, updateAuthor } from '@/store/actions/author-actions'
 import authorModel from '@/models/Author.model'
 
+import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 import AuthorDetailView from '@/components/bookly/authors/AuthorDetailView'
 import AuthorEditView from '@/components/bookly/authors/AuthorEditView'
 
@@ -23,6 +24,20 @@ class AuthorDetailPage extends Component {
     this.handleEditClick = this.handleEditClick.bind(this)
     this.handleCancel = this.handleCancel.bind(this)
     this.handleBackClick = this.handleBackClick.bind(this)
+  }
+
+  componentDidMount () {
+    this.refreshAuthors()
+  }
+
+  async refreshAuthors () {
+    try {
+      await this.props.fetchAuthors()
+    } catch (err) {
+      // TODO: handle error
+      console.log('TODO: handle error in AuthorDetailPage.refreshAuthors():')
+      console.dir(err)
+    }
   }
 
   handleInputChange (event) {
@@ -105,6 +120,7 @@ AuthorDetailPage.propTypes = {
     createdAt: string,
     updatedAt: string,
   }),
+  fetchAuthors: func.isRequired,
   updateAuthor: func.isRequired,
 }
 
@@ -118,9 +134,13 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  fetchAuthors () {
+    return dispatch(fetchAuthors())
+  },
+
   updateAuthor (author) {
     return dispatch(updateAuthor(author))
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthorDetailPage)
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AuthorDetailPage))
