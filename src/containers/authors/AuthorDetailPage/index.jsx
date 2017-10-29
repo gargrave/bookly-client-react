@@ -13,17 +13,17 @@ import AuthorEditView from '@/components/bookly/authors/AuthorEditView'
 const detailView = (author, onBackClick, onEditClick) => (
   <AuthorDetailView
     author={author}
-    handleBackClick={onBackClick}
-    handleEditClick={onEditClick}
+    onBackClick={onBackClick}
+    onEditClick={onEditClick}
   />
 )
 
 const editView = (author, onCancel, onInputChange, onSubmit) => (
   <AuthorEditView
     author={author}
-    handleCancel={onCancel}
-    handleInputChange={onInputChange}
-    handleSubmit={onSubmit} />
+    onCancel={onCancel}
+    onInputChange={onInputChange}
+    onSubmit={onSubmit} />
 )
 
 class AuthorDetailPage extends Component {
@@ -109,12 +109,10 @@ class AuthorDetailPage extends Component {
     return (
       <div>
         {!editing &&
-          detailView(author, this.onEditClick.bind(this),
-            this.onBackClick.bind(this))
+          detailView(author, this.onBackClick.bind(this), this.onEditClick.bind(this))
         }
         {editing &&
-          editView(editableAuthor, this.onInputChange.bind(this),
-            this.onSubmit.bind(this), this.onCancel.bind(this))
+          editView(editableAuthor, this.onCancel.bind(this), this.onInputChange.bind(this), this.onSubmit.bind(this))
         }
       </div>
     )

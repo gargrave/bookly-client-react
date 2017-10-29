@@ -120,8 +120,8 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <AuthorDetailView
         author={Object {}}
-        handleBackClick={[Function]}
-        handleEditClick={[Function]}
+        onBackClick={[Function]}
+        onEditClick={[Function]}
 />,
       "_debugID": 1,
       "_hostContainerInfo": null,
@@ -131,8 +131,8 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "author": Object {},
-          "handleBackClick": [Function],
-          "handleEditClick": [Function],
+          "onBackClick": [Function],
+          "onEditClick": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -270,8 +270,8 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <AuthorDetailView
     author={Object {}}
-    handleBackClick={[Function]}
-    handleEditClick={[Function]}
+    onBackClick={[Function]}
+    onEditClick={[Function]}
 />,
 }
 `;

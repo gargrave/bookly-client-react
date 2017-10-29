@@ -3,16 +3,20 @@ import { func, number, shape, string } from 'prop-types'
 
 import AuthorForm from '@/components/bookly/authors/AuthorForm'
 
-const AuthorDetailView = (props) => {
+const AuthorDetailView = ({
+  author,
+  onCancel,
+  onInputChange,
+  onSubmit,
+}) => {
   return (
     <div className="author-edit-view">
       <h2>Edit Author</h2>
       <AuthorForm
-        author={props.author}
-        handleInputChange={props.handleInputChange}
-        handleSubmit={props.handleSubmit}
-        handleCancel={props.handleCancel}
-      />
+        author={author}
+        onCancel={onCancel}
+        onInputChange={onInputChange}
+        onSubmit={onSubmit} />
     </div>
   )
 }
@@ -25,9 +29,9 @@ AuthorDetailView.propTypes = {
     createdAt: string,
     updatedAt: string,
   }),
-  handleInputChange: func.isRequired,
-  handleSubmit: func.isRequired,
-  handleCancel: func.isRequired,
+  onCancel: func.isRequired,
+  onInputChange: func.isRequired,
+  onSubmit: func.isRequired,
 }
 
 export default AuthorDetailView

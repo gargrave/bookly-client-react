@@ -12,9 +12,9 @@ describe('AuthorForm', () => {
     beforeEach(() => {
       props = {
         author: Object.create(authorsMockData[0]),
-        handleInputChange: jest.fn(),
-        handleSubmit: jest.fn(),
-        handleCancel: jest.fn(),
+        onInputChange: jest.fn(),
+        onSubmit: jest.fn(),
+        onCancel: jest.fn(),
       }
 
       component = shallow(<AuthorForm {...props} />)
@@ -38,34 +38,34 @@ describe('AuthorForm', () => {
       expect(text).toEqual(props.author.lastName)
     })
 
-    test('calls the "handleSubmit" callback when the form is submitted', () => {
-      expect(props.handleSubmit.mock.calls.length).toEqual(0)
+    test('calls the "onSubmit" callback when the form is submitted', () => {
+      expect(props.onSubmit.mock.calls.length).toEqual(0)
       component.simulate('submit')
-      expect(props.handleSubmit.mock.calls.length).toEqual(1)
+      expect(props.onSubmit.mock.calls.length).toEqual(1)
     })
 
-    test('calls the "handleSubmit" callback when the button is clicked', () => {
-      expect(props.handleSubmit.mock.calls.length).toEqual(0)
+    test('calls the "onSubmit" callback when the button is clicked', () => {
+      expect(props.onSubmit.mock.calls.length).toEqual(0)
       component.find('button.submit-button').simulate('click')
-      expect(props.handleSubmit.mock.calls.length).toEqual(1)
+      expect(props.onSubmit.mock.calls.length).toEqual(1)
     })
 
-    test('calls the "handleCancel" callback when the button is clicked', () => {
-      expect(props.handleCancel.mock.calls.length).toEqual(0)
+    test('calls the "onCancel" callback when the button is clicked', () => {
+      expect(props.onCancel.mock.calls.length).toEqual(0)
       component.find('button.cancel-button').simulate('click')
-      expect(props.handleCancel.mock.calls.length).toEqual(1)
+      expect(props.onCancel.mock.calls.length).toEqual(1)
     })
 
-    test('calls the "handleInputChange" callback when "firstName" value changes', () => {
-      const beforeLen = props.handleInputChange.mock.calls.length
+    test('calls the "onInputChange" callback when "firstName" value changes', () => {
+      const beforeLen = props.onInputChange.mock.calls.length
       component.find('input[name="firstName"]').simulate('change')
-      expect(props.handleInputChange.mock.calls.length).toEqual(beforeLen + 1)
+      expect(props.onInputChange.mock.calls.length).toEqual(beforeLen + 1)
     })
 
-    test('calls the "handleInputChange" callback when "lastName" value changes', () => {
-      const beforeLen = props.handleInputChange.mock.calls.length
+    test('calls the "onInputChange" callback when "lastName" value changes', () => {
+      const beforeLen = props.onInputChange.mock.calls.length
       component.find('input[name="lastName"]').simulate('change')
-      expect(props.handleInputChange.mock.calls.length).toEqual(beforeLen + 1)
+      expect(props.onInputChange.mock.calls.length).toEqual(beforeLen + 1)
     })
   })
 
@@ -73,9 +73,9 @@ describe('AuthorForm', () => {
     beforeEach(() => {
       props = {
         author: { firstName: '', lastName: '' },
-        handleInputChange: jest.fn(),
-        handleSubmit: jest.fn(),
-        handleCancel: jest.fn(),
+        onInputChange: jest.fn(),
+        onSubmit: jest.fn(),
+        onCancel: jest.fn(),
       }
 
       component = shallow(<AuthorForm {...props} />)

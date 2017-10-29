@@ -11,8 +11,8 @@ describe('AuthorDetailView', () => {
   beforeEach(() => {
     props = {
       author: Object.create(authorsMockData[0]),
-      handleEditClick: jest.fn(),
-      handleBackClick: jest.fn(),
+      onEditClick: jest.fn(),
+      onBackClick: jest.fn(),
     }
 
     component = shallow(<AuthorDetailView {...props} />)
@@ -39,15 +39,15 @@ describe('AuthorDetailView', () => {
     expect(text.indexOf(props.author.updatedAt)).not.toEqual(-1)
   })
 
-  test('calls the "handleEditClick" callback when the button is clicked', () => {
-    expect(props.handleEditClick.mock.calls.length).toEqual(0)
+  test('calls the "onEditClick" callback when the button is clicked', () => {
+    expect(props.onEditClick.mock.calls.length).toEqual(0)
     component.find('.author-edit-button').simulate('click')
-    expect(props.handleEditClick.mock.calls.length).toEqual(1)
+    expect(props.onEditClick.mock.calls.length).toEqual(1)
   })
 
-  test('calls the "handleBackClick" callback when the button is clicked', () => {
-    expect(props.handleBackClick.mock.calls.length).toEqual(0)
+  test('calls the "onBackClick" callback when the button is clicked', () => {
+    expect(props.onBackClick.mock.calls.length).toEqual(0)
     component.find('.cancel-button').simulate('click')
-    expect(props.handleBackClick.mock.calls.length).toEqual(1)
+    expect(props.onBackClick.mock.calls.length).toEqual(1)
   })
 })

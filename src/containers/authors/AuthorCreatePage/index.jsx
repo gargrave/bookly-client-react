@@ -55,9 +55,9 @@ class AuthorCreatePage extends Component {
         <h2>Add an Author</h2>
         <AuthorForm
           author={this.state.author}
-          handleInputChange={this.handleInputChange}
-          handleSubmit={this.handleSubmit}
-          handleCancel={this.handleCancel}
+          onInputChange={this.handleInputChange}
+          onSubmit={this.handleSubmit}
+          onCancel={this.handleCancel}
         />
       </div>
     )

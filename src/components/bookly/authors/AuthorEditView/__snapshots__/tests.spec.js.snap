@@ -16,9 +16,9 @@ ShallowWrapper {
     </h2>
     <AuthorForm
         author={Object {}}
-        handleCancel={[Function]}
-        handleInputChange={[Function]}
-        handleSubmit={[Function]}
+        onCancel={[Function]}
+        onInputChange={[Function]}
+        onSubmit={[Function]}
     />
 </div>,
   "nodes": Array [
@@ -30,9 +30,9 @@ ShallowWrapper {
       </h2>
       <AuthorForm
             author={Object {}}
-            handleCancel={[Function]}
-            handleInputChange={[Function]}
-            handleSubmit={[Function]}
+            onCancel={[Function]}
+            onInputChange={[Function]}
+            onSubmit={[Function]}
       />
 </div>,
   ],
@@ -44,9 +44,9 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <AuthorDetailView
         author={Object {}}
-        handleCancel={[Function]}
-        handleInputChange={[Function]}
-        handleSubmit={[Function]}
+        onCancel={[Function]}
+        onInputChange={[Function]}
+        onSubmit={[Function]}
 />,
       "_debugID": 1,
       "_hostContainerInfo": null,
@@ -56,9 +56,9 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "author": Object {},
-          "handleCancel": [Function],
-          "handleInputChange": [Function],
-          "handleSubmit": [Function],
+          "onCancel": [Function],
+          "onInputChange": [Function],
+          "onSubmit": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -88,9 +88,9 @@ ShallowWrapper {
           </h2>
           <AuthorForm
                     author={Object {}}
-                    handleCancel={[Function]}
-                    handleInputChange={[Function]}
-                    handleSubmit={[Function]}
+                    onCancel={[Function]}
+                    onInputChange={[Function]}
+                    onSubmit={[Function]}
           />
 </div>,
         "_debugID": 2,
@@ -102,9 +102,9 @@ ShallowWrapper {
           </h2>
           <AuthorForm
                     author={Object {}}
-                    handleCancel={[Function]}
-                    handleInputChange={[Function]}
-                    handleSubmit={[Function]}
+                    onCancel={[Function]}
+                    onInputChange={[Function]}
+                    onSubmit={[Function]}
           />
 </div>,
       },
@@ -120,9 +120,9 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <AuthorDetailView
     author={Object {}}
-    handleCancel={[Function]}
-    handleInputChange={[Function]}
-    handleSubmit={[Function]}
+    onCancel={[Function]}
+    onInputChange={[Function]}
+    onSubmit={[Function]}
 />,
 }
 `;

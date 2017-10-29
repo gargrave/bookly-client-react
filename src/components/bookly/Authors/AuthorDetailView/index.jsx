@@ -2,7 +2,7 @@ import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
 const AuthorDetailView = (props) => {
-  const { author, handleEditClick, handleBackClick } = props
+  const { author, onEditClick, onBackClick } = props
   return (
     <div className="author-detail-view">
       <h2>Author Detail</h2>
@@ -15,10 +15,10 @@ const AuthorDetailView = (props) => {
       <p className="author-updated-on">
         <strong>Updated on:</strong> {author.updatedAt}
       </p>
-      <button type="button" className="author-edit-button" onClick={handleEditClick}>
+      <button type="button" className="author-edit-button" onClick={onEditClick}>
         Edit
       </button>&nbsp;
-      <button type="button" className="button-info cancel-button" onClick={handleBackClick}>
+      <button type="button" className="button-info cancel-button" onClick={onBackClick}>
         Back
       </button>
     </div>
@@ -33,8 +33,8 @@ AuthorDetailView.propTypes = {
     createdAt: string,
     updatedAt: string,
   }),
-  handleEditClick: func.isRequired,
-  handleBackClick: func.isRequired,
+  onBackClick: func.isRequired,
+  onEditClick: func.isRequired,
 }
 
 export default AuthorDetailView

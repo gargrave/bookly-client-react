@@ -146,9 +146,9 @@ ShallowWrapper {
       "_context": Object {},
       "_currentElement": <AuthorForm
         author={Object {}}
-        handleCancel={[Function]}
-        handleInputChange={[Function]}
-        handleSubmit={[Function]}
+        onCancel={[Function]}
+        onInputChange={[Function]}
+        onSubmit={[Function]}
 />,
       "_debugID": 1,
       "_hostContainerInfo": null,
@@ -158,9 +158,9 @@ ShallowWrapper {
         "context": Object {},
         "props": Object {
           "author": Object {},
-          "handleCancel": [Function],
-          "handleInputChange": [Function],
-          "handleSubmit": [Function],
+          "onCancel": [Function],
+          "onInputChange": [Function],
+          "onSubmit": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -324,9 +324,9 @@ ShallowWrapper {
   "root": [Circular],
   "unrendered": <AuthorForm
     author={Object {}}
-    handleCancel={[Function]}
-    handleInputChange={[Function]}
-    handleSubmit={[Function]}
+    onCancel={[Function]}
+    onInputChange={[Function]}
+    onSubmit={[Function]}
 />,
 }
 `;
