@@ -33,6 +33,9 @@ class AuthorDetailPage extends Component {
   async refreshAuthors () {
     try {
       await this.props.fetchAuthors()
+      if (!this.props.author.firstName) {
+        this.props.history.push(localUrls.authorsList)
+      }
     } catch (err) {
       // TODO: handle error
       console.log('TODO: handle error in AuthorDetailPage.refreshAuthors():')
