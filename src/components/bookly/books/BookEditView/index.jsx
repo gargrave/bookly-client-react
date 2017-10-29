@@ -3,7 +3,7 @@ import { func, number, shape, string } from 'prop-types'
 
 import BookForm from '@/components/bookly/books/BookForm'
 
-const BookDetailView = (props) => {
+const BookEditView = (props) => {
   return (
     <div className="book-edit-view">
       <h2>Edit Book</h2>
@@ -17,7 +17,7 @@ const BookDetailView = (props) => {
   )
 }
 
-BookDetailView.propTypes = {
+BookEditView.propTypes = {
   book: shape({
     id: number,
     title: string,
@@ -29,4 +29,4 @@ BookDetailView.propTypes = {
   handleCancel: func.isRequired,
 }
 
-export default BookDetailView
+export default BookEditView
