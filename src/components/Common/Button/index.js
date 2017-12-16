@@ -15,23 +15,39 @@ const acceptableTypes = [
   'dark',
 ]
 
-const classes = (type) => {
-  let buttonClass = ''
+const acceptablePositions = [
+  'left',
+  'right',
+]
+
+const buttonClass = (type) => {
   if (acceptableTypes.includes(type)) {
-    buttonClass = `button-${type}`
+    return `button-${type}`
   }
-  return buildClasses('button', buttonClass)
+  return ''
+}
+
+const positionClass = (position) => {
+  if (acceptablePositions.includes(position)) {
+    return `button-${position}`
+  }
+  return ''
+}
+
+const classes = (type, position) => {
+  return buildClasses(['button', positionClass(position)], buttonClass(type))
 }
 
 const Button = ({
   onClick,
+  position,
   text,
   type,
 }) => {
   return (
     <button
       type="button"
-      className={classes(type)}
+      className={classes(type, position)}
       onClick={onClick}>
       { text }
     </button>
@@ -40,6 +56,7 @@ const Button = ({
 
 Button.propTypes = {
   onClick: func.isRequired,
+  position: oneOf(acceptablePositions),
   text: string.isRequired,
   type: oneOf(acceptableTypes).isRequired,
 }
