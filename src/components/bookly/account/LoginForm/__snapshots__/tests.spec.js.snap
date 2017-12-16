@@ -9,17 +9,9 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <form
-    className="login-form"
+    className="bookly-form bookly-login-form"
     noValidate={true}
     onSubmit={[Function]}
-    style={
-        Object {
-            "margin": "auto",
-            "marginTop": "20px",
-            "maxWidth": "500px",
-            "textAlign": "left",
-          }
-    }
 >
     <div
         className="input-single"
@@ -67,17 +59,9 @@ ShallowWrapper {
 </form>,
   "nodes": Array [
     <form
-      className="login-form"
+      className="bookly-form bookly-login-form"
       noValidate={true}
       onSubmit={[Function]}
-      style={
-            Object {
-                  "margin": "auto",
-                  "marginTop": "20px",
-                  "maxWidth": "500px",
-                  "textAlign": "left",
-                }
-      }
 >
       <div
             className="input-single"
@@ -175,17 +159,9 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <form
-          className="login-form"
+          className="bookly-form bookly-login-form"
           noValidate={true}
           onSubmit={[Function]}
-          style={
-                    Object {
-                              "margin": "auto",
-                              "marginTop": "20px",
-                              "maxWidth": "500px",
-                              "textAlign": "left",
-                            }
-          }
 >
           <div
                     className="input-single"
@@ -233,17 +209,9 @@ ShallowWrapper {
 </form>,
         "_debugID": 2,
         "_renderedOutput": <form
-          className="login-form"
+          className="bookly-form bookly-login-form"
           noValidate={true}
           onSubmit={[Function]}
-          style={
-                    Object {
-                              "margin": "auto",
-                              "marginTop": "20px",
-                              "maxWidth": "500px",
-                              "textAlign": "left",
-                            }
-          }
 >
           <div
                     className="input-single"

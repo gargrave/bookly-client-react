@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AuthorForm with "author" populated renders correctly 1`] = `
+exports[`BookForm with "book" populated renders correctly 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -9,7 +9,7 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <form
-    className="bookly-form bookly-author-form"
+    className="bookly-form bookly-book-form"
     noValidate={true}
     onSubmit={[Function]}
     style={
@@ -25,34 +25,23 @@ ShallowWrapper {
         className="input-single"
     >
         <label
-            htmlFor="firstName"
+            htmlFor="title"
         >
-            First name:
+            Title:
         </label>
         <input
-            id="firstName"
-            name="firstName"
+            id="title"
+            name="title"
             onChange={[Function]}
             type="text"
-            value="Aldous"
+            value=""
         />
     </div>
-    <div
-        className="input-single"
-    >
-        <label
-            htmlFor="lastName"
-        >
-            Last name:
-        </label>
-        <input
-            id="lastName"
-            name="lastName"
-            onChange={[Function]}
-            type="text"
-            value="Huxley"
-        />
-    </div>
+    <AuthorSelect
+        author={Object {}}
+        authors={Array []}
+        handleChange={[Function]}
+    />
     <div
         className="input-single"
     >
@@ -74,7 +63,7 @@ ShallowWrapper {
 </form>,
   "nodes": Array [
     <form
-      className="bookly-form bookly-author-form"
+      className="bookly-form bookly-book-form"
       noValidate={true}
       onSubmit={[Function]}
       style={
@@ -90,34 +79,23 @@ ShallowWrapper {
             className="input-single"
       >
             <label
-                  htmlFor="firstName"
+                  htmlFor="title"
             >
-                  First name:
+                  Title:
             </label>
             <input
-                  id="firstName"
-                  name="firstName"
+                  id="title"
+                  name="title"
                   onChange={[Function]}
                   type="text"
-                  value="Aldous"
+                  value=""
             />
       </div>
-      <div
-            className="input-single"
-      >
-            <label
-                  htmlFor="lastName"
-            >
-                  Last name:
-            </label>
-            <input
-                  id="lastName"
-                  name="lastName"
-                  onChange={[Function]}
-                  type="text"
-                  value="Huxley"
-            />
-      </div>
+      <AuthorSelect
+            author={Object {}}
+            authors={Array []}
+            handleChange={[Function]}
+      />
       <div
             className="input-single"
       >
@@ -144,11 +122,18 @@ ShallowWrapper {
       "_calledComponentWillUnmount": false,
       "_compositeType": 2,
       "_context": Object {},
-      "_currentElement": <AuthorForm
-        author={Object {}}
-        onCancel={[Function]}
-        onInputChange={[Function]}
-        onSubmit={[Function]}
+      "_currentElement": <BookForm
+        authors={Array []}
+        book={
+                Object {
+                        "author": Object {},
+                        "title": "",
+                      }
+        }
+        handleAuthorChange={[Function]}
+        handleCancel={[Function]}
+        handleInputChange={[Function]}
+        handleSubmit={[Function]}
 />,
       "_debugID": 1,
       "_hostContainerInfo": null,
@@ -157,10 +142,15 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "author": Object {},
-          "onCancel": [Function],
-          "onInputChange": [Function],
-          "onSubmit": [Function],
+          "authors": Array [],
+          "book": Object {
+            "author": Object {},
+            "title": "",
+          },
+          "handleAuthorChange": [Function],
+          "handleCancel": [Function],
+          "handleInputChange": [Function],
+          "handleSubmit": [Function],
         },
         "refs": Object {},
         "state": null,
@@ -183,7 +173,7 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <form
-          className="bookly-form bookly-author-form"
+          className="bookly-form bookly-book-form"
           noValidate={true}
           onSubmit={[Function]}
           style={
@@ -199,34 +189,23 @@ ShallowWrapper {
                     className="input-single"
           >
                     <label
-                              htmlFor="firstName"
+                              htmlFor="title"
                     >
-                              First name:
+                              Title:
                     </label>
                     <input
-                              id="firstName"
-                              name="firstName"
+                              id="title"
+                              name="title"
                               onChange={[Function]}
                               type="text"
-                              value="Aldous"
+                              value=""
                     />
           </div>
-          <div
-                    className="input-single"
-          >
-                    <label
-                              htmlFor="lastName"
-                    >
-                              Last name:
-                    </label>
-                    <input
-                              id="lastName"
-                              name="lastName"
-                              onChange={[Function]}
-                              type="text"
-                              value="Huxley"
-                    />
-          </div>
+          <AuthorSelect
+                    author={Object {}}
+                    authors={Array []}
+                    handleChange={[Function]}
+          />
           <div
                     className="input-single"
           >
@@ -248,7 +227,7 @@ ShallowWrapper {
 </form>,
         "_debugID": 2,
         "_renderedOutput": <form
-          className="bookly-form bookly-author-form"
+          className="bookly-form bookly-book-form"
           noValidate={true}
           onSubmit={[Function]}
           style={
@@ -264,34 +243,23 @@ ShallowWrapper {
                     className="input-single"
           >
                     <label
-                              htmlFor="firstName"
+                              htmlFor="title"
                     >
-                              First name:
+                              Title:
                     </label>
                     <input
-                              id="firstName"
-                              name="firstName"
+                              id="title"
+                              name="title"
                               onChange={[Function]}
                               type="text"
-                              value="Aldous"
+                              value=""
                     />
           </div>
-          <div
-                    className="input-single"
-          >
-                    <label
-                              htmlFor="lastName"
-                    >
-                              Last name:
-                    </label>
-                    <input
-                              id="lastName"
-                              name="lastName"
-                              onChange={[Function]}
-                              type="text"
-                              value="Huxley"
-                    />
-          </div>
+          <AuthorSelect
+                    author={Object {}}
+                    authors={Array []}
+                    handleChange={[Function]}
+          />
           <div
                     className="input-single"
           >
@@ -322,11 +290,18 @@ ShallowWrapper {
     "render": [Function],
   },
   "root": [Circular],
-  "unrendered": <AuthorForm
-    author={Object {}}
-    onCancel={[Function]}
-    onInputChange={[Function]}
-    onSubmit={[Function]}
+  "unrendered": <BookForm
+    authors={Array []}
+    book={
+        Object {
+            "author": Object {},
+            "title": "",
+          }
+    }
+    handleAuthorChange={[Function]}
+    handleCancel={[Function]}
+    handleInputChange={[Function]}
+    handleSubmit={[Function]}
 />,
 }
 `;

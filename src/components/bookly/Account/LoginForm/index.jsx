@@ -1,11 +1,14 @@
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
+import { buildClasses } from '@/utils/cssHelpers'
+
+import '@/components/common/Form/styles.css'
+
 const LoginForm = (props) => {
   return (
     <form
-      className="login-form"
-      style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
+      className={buildClasses(['form', 'login-form'])}
       onSubmit={props.handleSubmit}
       noValidate
     >

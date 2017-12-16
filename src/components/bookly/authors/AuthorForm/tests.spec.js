@@ -22,7 +22,8 @@ describe('AuthorForm', () => {
 
     test('renders correctly', () => {
       expect(component).toMatchSnapshot()
-      expect(component.find('form.author-form').length).toEqual(1)
+      expect(component.find('form.bookly-form').length).toEqual(1)
+      expect(component.find('form.bookly-author-form').length).toEqual(1)
       expect(component.find('input[type="text"]').length).toEqual(2)
       expect(component.find('button.submit-button').length).toEqual(1)
       expect(component.find('button.cancel-button').length).toEqual(1)

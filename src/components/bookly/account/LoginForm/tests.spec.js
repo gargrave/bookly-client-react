@@ -20,7 +20,8 @@ describe('LoginForm', () => {
 
     test('renders correctly', () => {
       expect(component).toMatchSnapshot()
-      expect(component.find('form.login-form').length).toEqual(1)
+      expect(component.find('form.bookly-form').length).toEqual(1)
+      expect(component.find('form.bookly-login-form').length).toEqual(1)
       expect(component.find('input[type="email"]').length).toEqual(1)
       expect(component.find('input[type="password"]').length).toEqual(1)
       expect(component.find('button.submit-button').length).toEqual(1)

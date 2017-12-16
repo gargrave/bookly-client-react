@@ -1,6 +1,10 @@
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
+import { buildClasses } from '@/utils/cssHelpers'
+
+import '@/components/common/Form/styles.css'
+
 const AuthorForm = ({
   author,
   onCancel,
@@ -9,11 +13,10 @@ const AuthorForm = ({
 }) => {
   return (
     <form
-      className="author-form"
+      className={buildClasses(['form', 'author-form'])}
       style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
       onSubmit={onSubmit}
-      noValidate
-    >
+      noValidate>
       <div className="input-single">
         <label htmlFor="firstName">First name:</label>
         <input

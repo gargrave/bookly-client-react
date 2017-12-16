@@ -1,12 +1,16 @@
 import React from 'react'
 import { array, func, object, shape, string } from 'prop-types'
 
+import { buildClasses } from '@/utils/cssHelpers'
+
+import '@/components/common/Form/styles.css'
+
 import AuthorSelect from '@/components/bookly/authors/AuthorSelect'
 
 const BookForm = ({ authors, book, handleAuthorChange, handleCancel, handleInputChange, handleSubmit }) => {
   return (
     <form
-      className="author-form"
+      className={buildClasses(['form', 'book-form'])}
       style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
       onSubmit={handleSubmit}
       noValidate
