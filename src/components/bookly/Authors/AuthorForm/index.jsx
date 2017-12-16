@@ -16,7 +16,6 @@ const AuthorForm = ({
   return (
     <form
       className={buildClasses(['form', 'author-form'])}
-      style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
       onSubmit={onSubmit}
       noValidate>
       <div className="input-field">
@@ -26,8 +25,7 @@ const AuthorForm = ({
           name="firstName"
           id="firstName"
           value={author.firstName}
-          onChange={onInputChange}
-        />
+          onChange={onInputChange} />
       </div>
 
       <div className="input-field">
@@ -37,8 +35,7 @@ const AuthorForm = ({
           name="lastName"
           id="lastName"
           value={author.lastName}
-          onChange={onInputChange}
-        />
+          onChange={onInputChange} />
       </div>
 
       <div className="input-field">
