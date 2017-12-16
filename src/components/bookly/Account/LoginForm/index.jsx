@@ -3,18 +3,20 @@ import { func, shape, string } from 'prop-types'
 
 import { buildClasses } from '@/utils/cssHelpers'
 
+import Button from '@/components/common/Button'
+
 import '@/components/common/Form/styles.css'
 
 const LoginForm = (props) => {
   return (
     <form
       className={buildClasses(['form', 'login-form'])}
-      onSubmit={props.handleSubmit}
+      onSubmit={props.onSubmit}
       noValidate
     >
       <div className="input-field">
         <label htmlFor="email">Email:</label>
-        <input type="email" name="email" id="email" value={props.user.email} onChange={props.handleInputChange} />
+        <input type="email" name="email" id="email" value={props.user.email} onChange={props.onInputChange} />
       </div>
 
       <div className="input-field">
@@ -24,14 +26,18 @@ const LoginForm = (props) => {
           name="password"
           id="password"
           value={props.user.password}
-          onChange={props.handleInputChange}
+          onChange={props.onInputChange}
         />
       </div>
 
       <div className="input-field">
-        <button type="submit" className="submit-button" onClick={props.handleSubmit}>
-          Login
-        </button>
+        <Button
+          canSubmit={true}
+          onClick={props.onSubmit}
+          position="left"
+          text="Login"
+          type="success"
+        />
       </div>
     </form>
   )
@@ -42,8 +48,8 @@ LoginForm.propTypes = {
     email: string.isRequired,
     password: string.isRequired,
   }).isRequired,
-  handleInputChange: func.isRequired,
-  handleSubmit: func.isRequired,
+  onInputChange: func.isRequired,
+  onSubmit: func.isRequired,
 }
 
 export default LoginForm

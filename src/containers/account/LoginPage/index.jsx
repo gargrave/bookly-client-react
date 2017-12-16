@@ -22,7 +22,7 @@ class LoginPage extends Component {
     }
 
     this.login = this.login.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
+    this.onInputChange = this.onInputChange.bind(this)
   }
 
   async login (event) {
@@ -37,7 +37,7 @@ class LoginPage extends Component {
     }
   }
 
-  handleInputChange (event) {
+  onInputChange (event) {
     const key = event.target.name
     if (key in this.state.user) {
       const user = this.state.user
@@ -51,7 +51,10 @@ class LoginPage extends Component {
       <div>
         <Alert message={this.state.apiError} type="danger" />
         <h2>LoginPage</h2>
-        <LoginForm user={this.state.user} handleInputChange={this.handleInputChange} handleSubmit={this.login} />
+        <LoginForm
+          user={this.state.user}
+          onInputChange={this.onInputChange}
+          onSubmit={this.login} />
       </div>
     )
   }
