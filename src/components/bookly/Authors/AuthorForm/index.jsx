@@ -3,6 +3,8 @@ import { func, shape, string } from 'prop-types'
 
 import { buildClasses } from '@/utils/cssHelpers'
 
+import Button from '@/components/common/Button'
+
 import '@/components/common/Form/styles.css'
 
 const AuthorForm = ({
@@ -40,12 +42,17 @@ const AuthorForm = ({
       </div>
 
       <div className="input-field">
-        <button type="submit" className="submit-button" onClick={onSubmit}>
-          Submit
-        </button>
-        <button type="button" className="button-info float-right cancel-button" onClick={onCancel}>
-          Cancel
-        </button>
+        <Button
+          canSubmit={true}
+          onClick={onSubmit}
+          position="left"
+          text="Submit"
+          type="success" />
+        <Button
+          extraClasses="float-right"
+          onClick={onCancel}
+          text="Cancel"
+          type="info" />
       </div>
     </form>
   )

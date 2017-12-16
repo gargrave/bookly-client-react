@@ -25,8 +25,6 @@ describe('AuthorForm', () => {
       expect(component.find('form.bookly-form').length).toEqual(1)
       expect(component.find('form.bookly-author-form').length).toEqual(1)
       expect(component.find('input[type="text"]').length).toEqual(2)
-      expect(component.find('button.submit-button').length).toEqual(1)
-      expect(component.find('button.cancel-button').length).toEqual(1)
     })
 
     test('populates the "firstName" field correctly', () => {
@@ -43,18 +41,6 @@ describe('AuthorForm', () => {
       expect(props.onSubmit.mock.calls.length).toEqual(0)
       component.simulate('submit')
       expect(props.onSubmit.mock.calls.length).toEqual(1)
-    })
-
-    test('calls the "onSubmit" callback when the button is clicked', () => {
-      expect(props.onSubmit.mock.calls.length).toEqual(0)
-      component.find('button.submit-button').simulate('click')
-      expect(props.onSubmit.mock.calls.length).toEqual(1)
-    })
-
-    test('calls the "onCancel" callback when the button is clicked', () => {
-      expect(props.onCancel.mock.calls.length).toEqual(0)
-      component.find('button.cancel-button').simulate('click')
-      expect(props.onCancel.mock.calls.length).toEqual(1)
     })
 
     test('calls the "onInputChange" callback when "firstName" value changes', () => {
