@@ -32,6 +32,9 @@ BookDetailView.propTypes = {
   book: shape({
     id: number,
     title: string,
+    author: shape({
+      name: string,
+    }),
     createdAt: string,
     updatedAt: string,
   }),

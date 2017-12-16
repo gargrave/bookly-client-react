@@ -3,8 +3,7 @@ import { connect } from 'react-redux'
 import { array, func, number, object, shape, string } from 'prop-types'
 
 import { localUrls } from '@/constants/urls'
-import { fetchAuthors } from '@/store/actions/author-actions'
-import { updateBook } from '@/store/actions/book-actions'
+import { fetchBooks, updateBook } from '@/store/actions/book-actions'
 import bookModel from '@/models/Book.model'
 
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
@@ -28,9 +27,14 @@ class BookDetailPage extends Component {
     this.handleBackClick = this.handleBackClick.bind(this)
   }
 
-  async componentDidMount () {
+  componentDidMount () {
+    this.refreshBooks()
+  }
+
+  async refreshBooks () {
     try {
-      await this.props.fetchAuthors()
+      await this.props.fetchBooks()
+      console.log('lksajdlfjslkjf')
     } catch (err) {
       console.log('TODO: handle error!')
       console.log(err)
@@ -132,16 +136,19 @@ BookDetailPage.propTypes = {
   book: shape({
     id: number,
     title: string,
+    author: shape({
+      name: string,
+    }),
     createdAt: string,
     updatedAt: string,
   }),
-  fetchAuthors: func.isRequired,
+  fetchBooks: func.isRequired,
   updateBook: func.isRequired,
 }
 
 const mapStateToProps = (state, ownProps) => {
   const bookID = ownProps.match.params.id
-  const book = state.books.data.find((a) => Number(a.id) === Number(bookID)) || {}
+  const book = state.books.data.find((a) => Number(a.id) === Number(bookID)) || bookModel.empty()
 
   return {
     authors: state.authors.data,
@@ -150,8 +157,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchAuthors () {
-    return dispatch(fetchAuthors)
+  fetchBooks () {
+    return dispatch(fetchBooks())
   },
 
   updateBook (book) {
