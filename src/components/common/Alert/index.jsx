@@ -1,17 +1,13 @@
 import React from 'react'
 import { oneOf, string } from 'prop-types'
 
-import { prependClass } from '@/utils/cssHelpers'
-
-const classes = (type) => {
-  return `${prependClass('alert')} alert alert-${type}`
-}
+import { buildClasses } from '@/utils/cssHelpers'
 
 const Alert = ({
   message,
   type,
 }) => (
-  <div className={classes(type)}>
+  <div className={buildClasses('alert', ['alert', `alert-${type}`])}>
     {message}
   </div>
 )

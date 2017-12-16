@@ -20,5 +20,4 @@ function prependClass (className) {
 
 export {
   buildClasses,
-  prependClass,
 }
