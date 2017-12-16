@@ -17,7 +17,6 @@ const acceptableTypes = [
 
 const acceptablePositions = [
   'left',
-  'right',
 ]
 
 const buttonClass = (type) => {
@@ -34,12 +33,16 @@ const positionClass = (position) => {
   return ''
 }
 
-const classes = (type, position) => {
-  return buildClasses(['button', positionClass(position)], buttonClass(type))
+const classes = (type, position, extraClasses) => {
+  return buildClasses(
+    ['button', positionClass(position)],
+    [buttonClass(type), ...extraClasses.split(' ')]
+  )
 }
 
 const Button = ({
   canSubmit,
+  extraClasses = '',
   onClick,
   position,
   text,
@@ -48,7 +51,7 @@ const Button = ({
   return (
     <button
       type={canSubmit ? 'submit' : 'button'}
-      className={classes(type, position)}
+      className={classes(type, position, extraClasses)}
       onClick={onClick}>
       { text }
     </button>
@@ -57,6 +60,7 @@ const Button = ({
 
 Button.propTypes = {
   canSubmit: bool,
+  extraClasses: string,
   onClick: func.isRequired,
   position: oneOf(acceptablePositions),
   text: string.isRequired,
