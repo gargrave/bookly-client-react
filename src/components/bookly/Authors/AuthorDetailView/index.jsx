@@ -1,8 +1,14 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
+import Button from '@/components/common/Button'
+
 const AuthorDetailView = (props) => {
-  const { author, onEditClick, onBackClick } = props
+  const {
+    author,
+    onEditClick,
+    onBackClick,
+  } = props
   return (
     <div className="author-detail-view">
       <h2>Author Detail</h2>
@@ -15,12 +21,15 @@ const AuthorDetailView = (props) => {
       <p className="author-updated-on">
         <strong>Updated on:</strong> {author.updatedAt}
       </p>
-      <button type="button" className="author-edit-button" onClick={onEditClick}>
-        Edit
-      </button>&nbsp;
-      <button type="button" className="button-info cancel-button" onClick={onBackClick}>
-        Back
-      </button>
+
+      <Button
+        onClick={onEditClick}
+        text="Edit"
+        type="info" />
+      <Button
+        onClick={onBackClick}
+        text="Back"
+        type="light" />
     </div>
   )
 }

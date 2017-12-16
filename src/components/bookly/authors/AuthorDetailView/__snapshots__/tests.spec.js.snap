@@ -43,21 +43,16 @@ ShallowWrapper {
          
         2017-07-01T01:16:43.881Z
     </p>
-    <button
-        className="author-edit-button"
+    <Button
         onClick={[Function]}
-        type="button"
-    >
-        Edit
-    </button>
-     
-    <button
-        className="button-info cancel-button"
+        text="Edit"
+        type="info"
+    />
+    <Button
         onClick={[Function]}
-        type="button"
-    >
-        Back
-    </button>
+        text="Back"
+        type="light"
+    />
 </div>,
   "nodes": Array [
     <div
@@ -95,21 +90,16 @@ ShallowWrapper {
              
             2017-07-01T01:16:43.881Z
       </p>
-      <button
-            className="author-edit-button"
+      <Button
             onClick={[Function]}
-            type="button"
-      >
-            Edit
-      </button>
-       
-      <button
-            className="button-info cancel-button"
+            text="Edit"
+            type="info"
+      />
+      <Button
             onClick={[Function]}
-            type="button"
-      >
-            Back
-      </button>
+            text="Back"
+            type="light"
+      />
 </div>,
   ],
   "options": Object {},
@@ -189,21 +179,16 @@ ShallowWrapper {
                      
                     2017-07-01T01:16:43.881Z
           </p>
-          <button
-                    className="author-edit-button"
+          <Button
                     onClick={[Function]}
-                    type="button"
-          >
-                    Edit
-          </button>
-           
-          <button
-                    className="button-info cancel-button"
+                    text="Edit"
+                    type="info"
+          />
+          <Button
                     onClick={[Function]}
-                    type="button"
-          >
-                    Back
-          </button>
+                    text="Back"
+                    type="light"
+          />
 </div>,
         "_debugID": 2,
         "_renderedOutput": <div
@@ -241,21 +226,16 @@ ShallowWrapper {
                      
                     2017-07-01T01:16:43.881Z
           </p>
-          <button
-                    className="author-edit-button"
+          <Button
                     onClick={[Function]}
-                    type="button"
-          >
-                    Edit
-          </button>
-           
-          <button
-                    className="button-info cancel-button"
+                    text="Edit"
+                    type="info"
+          />
+          <Button
                     onClick={[Function]}
-                    type="button"
-          >
-                    Back
-          </button>
+                    text="Back"
+                    type="light"
+          />
 </div>,
       },
       "_renderedNodeType": 0,

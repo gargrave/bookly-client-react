@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import { authorsMockData } from '@/utils/mocks/data/authors-mock-data'
+
 import AuthorDetailView from './'
 
 describe('AuthorDetailView', () => {
@@ -11,8 +12,8 @@ describe('AuthorDetailView', () => {
   beforeEach(() => {
     props = {
       author: Object.create(authorsMockData[0]),
-      onEditClick: jest.fn(),
       onBackClick: jest.fn(),
+      onEditClick: jest.fn(),
     }
 
     component = shallow(<AuthorDetailView {...props} />)
@@ -37,17 +38,5 @@ describe('AuthorDetailView', () => {
   test("renders the author's 'updated on' date", () => {
     const text = component.find('.author-updated-on').text()
     expect(text.indexOf(props.author.updatedAt)).not.toEqual(-1)
-  })
-
-  test('calls the "onEditClick" callback when the button is clicked', () => {
-    expect(props.onEditClick.mock.calls.length).toEqual(0)
-    component.find('.author-edit-button').simulate('click')
-    expect(props.onEditClick.mock.calls.length).toEqual(1)
-  })
-
-  test('calls the "onBackClick" callback when the button is clicked', () => {
-    expect(props.onBackClick.mock.calls.length).toEqual(0)
-    component.find('.cancel-button').simulate('click')
-    expect(props.onBackClick.mock.calls.length).toEqual(1)
   })
 })
