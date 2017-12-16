@@ -25,7 +25,6 @@ class AccountDetailPage extends Component {
     const { user } = this.props
     return (
       <div>
-        <h2>Account Page</h2>
         <AccountDetailView user={user} />
         <button onClick={this.handleLogout}>Logout</button>
       </div>

@@ -5,7 +5,7 @@ const AccountDetailView = (props) => {
   const { email } = props.user
   return (
     <div className="account-detail-view">
-      <h2>AccountDetailView</h2>
+      <h2>My Account</h2>
       <p className="email-display">
         <strong>Email: </strong>
         {email}

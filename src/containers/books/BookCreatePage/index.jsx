@@ -83,7 +83,7 @@ class BookCreatePage extends Component {
 
     return (
       <div>
-        <h2>BookCreatePage</h2>
+        <h2>Add a Book</h2>
         <BookForm
           authors={authors}
           book={book}
