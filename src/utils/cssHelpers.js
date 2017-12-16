@@ -10,7 +10,7 @@ function buildClasses (prepends, statics = []) {
     .filter((p) => !!p.trim()) // dispose of empty/whitespace strings
     .map((p) => prependClass(p))
     .join(' ')
-  const second = statics.length ? ` ${statics.join(' ')}` : ''
+  const second = statics.length ? ` ${statics.filter((p) => !!p.trim()).join(' ')}` : ''
   return `${first}${second}`
 }
 
