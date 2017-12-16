@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, oneOf, string } from 'prop-types'
+import { bool, func, oneOf, string } from 'prop-types'
 
 import { buildClasses } from '@/utils/cssHelpers'
 
@@ -39,6 +39,7 @@ const classes = (type, position) => {
 }
 
 const Button = ({
+  canSubmit,
   onClick,
   position,
   text,
@@ -46,7 +47,7 @@ const Button = ({
 }) => {
   return (
     <button
-      type="button"
+      type={canSubmit ? 'submit' : 'button'}
       className={classes(type, position)}
       onClick={onClick}>
       { text }
@@ -55,6 +56,7 @@ const Button = ({
 }
 
 Button.propTypes = {
+  canSubmit: bool,
   onClick: func.isRequired,
   position: oneOf(acceptablePositions),
   text: string.isRequired,
