@@ -1,16 +1,26 @@
 import React from 'react'
 import { func, oneOf, string } from 'prop-types'
 
-import { prependClass } from '@/utils/cssHelpers'
+import { buildClasses } from '@/utils/cssHelpers'
 
 import './styles.css'
 
+const acceptableTypes = [
+  'success',
+  'secondary',
+  'info',
+  'warning',
+  'danger',
+  'light',
+  'dark',
+]
+
 const classes = (type) => {
   let buttonClass = ''
-  if (type === 'success') {
-    buttonClass = 'button-success'
+  if (acceptableTypes.includes(type)) {
+    buttonClass = `button-${type}`
   }
-  return `${prependClass('button')} ${buttonClass}`
+  return buildClasses('button', buttonClass)
 }
 
 const Button = ({
@@ -31,7 +41,7 @@ const Button = ({
 Button.propTypes = {
   onClick: func.isRequired,
   text: string.isRequired,
-  type: oneOf(['success']).isRequired,
+  type: oneOf(acceptableTypes).isRequired,
 }
 
 export default Button
