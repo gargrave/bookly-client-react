@@ -5,6 +5,7 @@ import { array, func, object } from 'prop-types'
 import { localUrls } from '@/constants/urls'
 import { fetchBooks } from '@/store/actions/book-actions'
 
+import Button from '@/components/common/Button'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 import BookListDetail from '@/components/bookly/books/BookListDetail'
 
@@ -12,8 +13,8 @@ class BooksListPage extends Component {
   constructor (props) {
     super(props)
 
-    this.handleAddClick = this.handleAddClick.bind(this)
-    this.handleBookClick = this.handleBookClick.bind(this)
+    this.onAddClick = this.onAddClick.bind(this)
+    this.onBookClick = this.onBookClick.bind(this)
   }
 
   componentDidMount () {
@@ -29,11 +30,11 @@ class BooksListPage extends Component {
     }
   }
 
-  handleAddClick () {
+  onAddClick () {
     this.props.history.push(localUrls.bookCreate)
   }
 
-  handleBookClick (bookID) {
+  onBookClick (bookID) {
     this.props.history.push(`/books/${bookID}`)
   }
 
@@ -42,12 +43,13 @@ class BooksListPage extends Component {
       <div>
         <h2>
           My Books
-          <button className="button-success" style={{ marginLeft: '10px' }} onClick={this.handleAddClick}>
-            Add
-          </button>
+          <Button
+            onClick={this.onAddClick}
+            text="Add"
+            type="success" />
         </h2>
         {this.props.books.map((book) => (
-          <BookListDetail key={book.id} book={book} onClick={() => this.handleBookClick(book.id)} />
+          <BookListDetail key={book.id} book={book} onClick={() => this.onBookClick(book.id)} />
         ))}
       </div>
     )
