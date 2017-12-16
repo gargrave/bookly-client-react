@@ -13,7 +13,7 @@ const options = (authors) => {
 
 const AuthorSelect = ({ author, authors, handleChange }) => {
   return (
-    <div className="input-single">
+    <div className="input-field">
       <select className="author-select" value={author.id} onChange={handleChange}>
         <option value="-1">Select Author...</option>
         {options(authors)}

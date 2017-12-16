@@ -11,18 +11,17 @@ const BookForm = ({ authors, book, handleAuthorChange, handleCancel, handleInput
   return (
     <form
       className={buildClasses(['form', 'book-form'])}
-      style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
       onSubmit={handleSubmit}
       noValidate
     >
-      <div className="input-single">
+      <div className="input-field">
         <label htmlFor="title">Title:</label>
         <input type="text" name="title" id="title" value={book.title} onChange={handleInputChange} />
       </div>
 
       <AuthorSelect author={book.author} authors={authors} handleChange={handleAuthorChange} />
 
-      <div className="input-single">
+      <div className="input-field">
         <button type="submit" className="submit-button" onClick={handleSubmit}>
           Submit
         </button>

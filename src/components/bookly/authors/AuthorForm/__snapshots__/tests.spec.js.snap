@@ -22,7 +22,7 @@ ShallowWrapper {
     }
 >
     <div
-        className="input-single"
+        className="input-field"
     >
         <label
             htmlFor="firstName"
@@ -38,7 +38,7 @@ ShallowWrapper {
         />
     </div>
     <div
-        className="input-single"
+        className="input-field"
     >
         <label
             htmlFor="lastName"
@@ -54,7 +54,7 @@ ShallowWrapper {
         />
     </div>
     <div
-        className="input-single"
+        className="input-field"
     >
         <button
             className="submit-button"
@@ -87,7 +87,7 @@ ShallowWrapper {
       }
 >
       <div
-            className="input-single"
+            className="input-field"
       >
             <label
                   htmlFor="firstName"
@@ -103,7 +103,7 @@ ShallowWrapper {
             />
       </div>
       <div
-            className="input-single"
+            className="input-field"
       >
             <label
                   htmlFor="lastName"
@@ -119,7 +119,7 @@ ShallowWrapper {
             />
       </div>
       <div
-            className="input-single"
+            className="input-field"
       >
             <button
                   className="submit-button"
@@ -196,7 +196,7 @@ ShallowWrapper {
           }
 >
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <label
                               htmlFor="firstName"
@@ -212,7 +212,7 @@ ShallowWrapper {
                     />
           </div>
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <label
                               htmlFor="lastName"
@@ -228,7 +228,7 @@ ShallowWrapper {
                     />
           </div>
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <button
                               className="submit-button"
@@ -261,7 +261,7 @@ ShallowWrapper {
           }
 >
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <label
                               htmlFor="firstName"
@@ -277,7 +277,7 @@ ShallowWrapper {
                     />
           </div>
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <label
                               htmlFor="lastName"
@@ -293,7 +293,7 @@ ShallowWrapper {
                     />
           </div>
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <button
                               className="submit-button"

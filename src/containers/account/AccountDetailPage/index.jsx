@@ -5,6 +5,7 @@ import { object } from 'prop-types'
 import { localUrls } from '@/constants/urls'
 import { logout } from '@/store/actions/auth-actions'
 
+import Button from '@/components/common/Button'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 import AccountDetailView from '@/components/bookly/account/AccountDetailView'
 
@@ -12,10 +13,10 @@ class AccountDetailPage extends Component {
   constructor (props) {
     super(props)
 
-    this.handleLogout = this.handleLogout.bind(this)
+    this.onLogoutClick = this.onLogoutClick.bind(this)
   }
 
-  async handleLogout (event) {
+  async onLogoutClick (event) {
     event.preventDefault()
     await this.props.logout()
     this.props.history.push(localUrls.login)
@@ -26,7 +27,10 @@ class AccountDetailPage extends Component {
     return (
       <div>
         <AccountDetailView user={user} />
-        <button onClick={this.handleLogout}>Logout</button>
+        <Button
+          onClick={this.onLogoutClick}
+          text="Logout"
+          type="light" />
       </div>
     )
   }

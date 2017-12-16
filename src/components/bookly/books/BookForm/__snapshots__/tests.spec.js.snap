@@ -12,17 +12,9 @@ ShallowWrapper {
     className="bookly-form bookly-book-form"
     noValidate={true}
     onSubmit={[Function]}
-    style={
-        Object {
-            "margin": "auto",
-            "marginTop": "20px",
-            "maxWidth": "500px",
-            "textAlign": "left",
-          }
-    }
 >
     <div
-        className="input-single"
+        className="input-field"
     >
         <label
             htmlFor="title"
@@ -43,7 +35,7 @@ ShallowWrapper {
         handleChange={[Function]}
     />
     <div
-        className="input-single"
+        className="input-field"
     >
         <button
             className="submit-button"
@@ -66,17 +58,9 @@ ShallowWrapper {
       className="bookly-form bookly-book-form"
       noValidate={true}
       onSubmit={[Function]}
-      style={
-            Object {
-                  "margin": "auto",
-                  "marginTop": "20px",
-                  "maxWidth": "500px",
-                  "textAlign": "left",
-                }
-      }
 >
       <div
-            className="input-single"
+            className="input-field"
       >
             <label
                   htmlFor="title"
@@ -97,7 +81,7 @@ ShallowWrapper {
             handleChange={[Function]}
       />
       <div
-            className="input-single"
+            className="input-field"
       >
             <button
                   className="submit-button"
@@ -176,17 +160,9 @@ ShallowWrapper {
           className="bookly-form bookly-book-form"
           noValidate={true}
           onSubmit={[Function]}
-          style={
-                    Object {
-                              "margin": "auto",
-                              "marginTop": "20px",
-                              "maxWidth": "500px",
-                              "textAlign": "left",
-                            }
-          }
 >
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <label
                               htmlFor="title"
@@ -207,7 +183,7 @@ ShallowWrapper {
                     handleChange={[Function]}
           />
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <button
                               className="submit-button"
@@ -230,17 +206,9 @@ ShallowWrapper {
           className="bookly-form bookly-book-form"
           noValidate={true}
           onSubmit={[Function]}
-          style={
-                    Object {
-                              "margin": "auto",
-                              "marginTop": "20px",
-                              "maxWidth": "500px",
-                              "textAlign": "left",
-                            }
-          }
 >
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <label
                               htmlFor="title"
@@ -261,7 +229,7 @@ ShallowWrapper {
                     handleChange={[Function]}
           />
           <div
-                    className="input-single"
+                    className="input-field"
           >
                     <button
                               className="submit-button"

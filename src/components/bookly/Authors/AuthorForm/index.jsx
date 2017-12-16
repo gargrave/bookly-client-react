@@ -17,7 +17,7 @@ const AuthorForm = ({
       style={{ maxWidth: '500px', margin: 'auto', marginTop: '20px', textAlign: 'left' }}
       onSubmit={onSubmit}
       noValidate>
-      <div className="input-single">
+      <div className="input-field">
         <label htmlFor="firstName">First name:</label>
         <input
           type="text"
@@ -28,7 +28,7 @@ const AuthorForm = ({
         />
       </div>
 
-      <div className="input-single">
+      <div className="input-field">
         <label htmlFor="lastName">Last name:</label>
         <input
           type="text"
@@ -39,7 +39,7 @@ const AuthorForm = ({
         />
       </div>
 
-      <div className="input-single">
+      <div className="input-field">
         <button type="submit" className="submit-button" onClick={onSubmit}>
           Submit
         </button>

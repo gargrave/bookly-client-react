@@ -12,12 +12,12 @@ const LoginForm = (props) => {
       onSubmit={props.handleSubmit}
       noValidate
     >
-      <div className="input-single">
+      <div className="input-field">
         <label htmlFor="email">Email:</label>
         <input type="email" name="email" id="email" value={props.user.email} onChange={props.handleInputChange} />
       </div>
 
-      <div className="input-single">
+      <div className="input-field">
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -28,7 +28,7 @@ const LoginForm = (props) => {
         />
       </div>
 
-      <div className="input-single">
+      <div className="input-field">
         <button type="submit" className="submit-button" onClick={props.handleSubmit}>
           Login
         </button>
