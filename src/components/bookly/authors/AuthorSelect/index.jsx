@@ -1,8 +1,6 @@
 import React from 'react'
 import { array, func, object } from 'prop-types'
 
-import './styles.css'
-
 const options = (authors) => {
   return authors.map((a) => (
     <option key={a.id} value={a.id}>

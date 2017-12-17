@@ -8,29 +8,30 @@
   max-width: 600px;
   padding: 8px;
   width: 95%;
+
+  &:hover {
+    background: #ffe8e4;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  &-title {
+    font-weight: bold;
+  }
+
+  &-text {
+    color: #6e6969;
+  }
+
+  &-text + &-text {
+    margin-top: 8px;
+  }
+
+  &-spacer {
+    height: 20px;
+    line-height: 20px;
+  }
 }
 
-.bookly-card:hover {
-  background: #ffe8e4;
-}
-
-.bookly-card p {
-  margin: 0;
-}
-
-.bookly-card .bookly-card-title {
-  font-weight: bold;
-}
-
-.bookly-card .bookly-card-text {
-  color: #6e6969;
-}
-
-.bookly-card .bookly-card-text + .bookly-card-text {
-  margin-top: 8px;
-}
-
-.bookly-card .bookly-card-spacer {
-  height: 20px;
-  line-height: 20px;
-}
