@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LoginForm with "user" populated renders correctly 1`] = `
+exports[`LoginForm basic rendering renders correctly 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -13,38 +13,20 @@ ShallowWrapper {
     noValidate={true}
     onSubmit={[Function]}
 >
-    <div
-        className="input-field"
-    >
-        <label
-            htmlFor="email"
-        >
-            Email:
-        </label>
-        <input
-            id="email"
-            name="email"
-            onChange={[Function]}
-            type="email"
-            value="whatever@gmail.com"
-        />
-    </div>
-    <div
-        className="input-field"
-    >
-        <label
-            htmlFor="password"
-        >
-            Password:
-        </label>
-        <input
-            id="password"
-            name="password"
-            onChange={[Function]}
-            type="password"
-            value="password"
-        />
-    </div>
+    <InputField
+        boundValue="whatever@gmail.com"
+        label="Email"
+        name="email"
+        onInputChange={[Function]}
+        type="email"
+    />
+    <InputField
+        boundValue="password"
+        label="Password"
+        name="password"
+        onInputChange={[Function]}
+        type="password"
+    />
     <div
         className="input-field"
     >
@@ -63,38 +45,20 @@ ShallowWrapper {
       noValidate={true}
       onSubmit={[Function]}
 >
-      <div
-            className="input-field"
-      >
-            <label
-                  htmlFor="email"
-            >
-                  Email:
-            </label>
-            <input
-                  id="email"
-                  name="email"
-                  onChange={[Function]}
-                  type="email"
-                  value="whatever@gmail.com"
-            />
-      </div>
-      <div
-            className="input-field"
-      >
-            <label
-                  htmlFor="password"
-            >
-                  Password:
-            </label>
-            <input
-                  id="password"
-                  name="password"
-                  onChange={[Function]}
-                  type="password"
-                  value="password"
-            />
-      </div>
+      <InputField
+            boundValue="whatever@gmail.com"
+            label="Email"
+            name="email"
+            onInputChange={[Function]}
+            type="email"
+      />
+      <InputField
+            boundValue="password"
+            label="Password"
+            name="password"
+            onInputChange={[Function]}
+            type="password"
+      />
       <div
             className="input-field"
       >
@@ -163,38 +127,20 @@ ShallowWrapper {
           noValidate={true}
           onSubmit={[Function]}
 >
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="email"
-                    >
-                              Email:
-                    </label>
-                    <input
-                              id="email"
-                              name="email"
-                              onChange={[Function]}
-                              type="email"
-                              value="whatever@gmail.com"
-                    />
-          </div>
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="password"
-                    >
-                              Password:
-                    </label>
-                    <input
-                              id="password"
-                              name="password"
-                              onChange={[Function]}
-                              type="password"
-                              value="password"
-                    />
-          </div>
+          <InputField
+                    boundValue="whatever@gmail.com"
+                    label="Email"
+                    name="email"
+                    onInputChange={[Function]}
+                    type="email"
+          />
+          <InputField
+                    boundValue="password"
+                    label="Password"
+                    name="password"
+                    onInputChange={[Function]}
+                    type="password"
+          />
           <div
                     className="input-field"
           >
@@ -213,38 +159,20 @@ ShallowWrapper {
           noValidate={true}
           onSubmit={[Function]}
 >
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="email"
-                    >
-                              Email:
-                    </label>
-                    <input
-                              id="email"
-                              name="email"
-                              onChange={[Function]}
-                              type="email"
-                              value="whatever@gmail.com"
-                    />
-          </div>
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="password"
-                    >
-                              Password:
-                    </label>
-                    <input
-                              id="password"
-                              name="password"
-                              onChange={[Function]}
-                              type="password"
-                              value="password"
-                    />
-          </div>
+          <InputField
+                    boundValue="whatever@gmail.com"
+                    label="Email"
+                    name="email"
+                    onInputChange={[Function]}
+                    type="email"
+          />
+          <InputField
+                    boundValue="password"
+                    label="Password"
+                    name="password"
+                    onInputChange={[Function]}
+                    type="password"
+          />
           <div
                     className="input-field"
           >

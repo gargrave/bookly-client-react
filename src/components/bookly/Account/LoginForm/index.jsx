@@ -4,6 +4,7 @@ import { func, shape, string } from 'prop-types'
 import { buildClasses } from '@/utils/cssHelpers'
 
 import Button from '@/components/common/Button'
+import InputField from '@/components/common/InputField'
 
 import '@/components/common/Form/styles.css'
 
@@ -17,20 +18,20 @@ const LoginForm = ({
       className={buildClasses(['form', 'login-form'])}
       onSubmit={onSubmit}
       noValidate>
-      <div className="input-field">
-        <label htmlFor="email">Email:</label>
-        <input type="email" name="email" id="email" value={user.email} onChange={onInputChange} />
-      </div>
 
-      <div className="input-field">
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          value={user.password}
-          onChange={onInputChange} />
-      </div>
+      <InputField
+        boundValue={user.email}
+        label="Email"
+        name="email"
+        onInputChange={onInputChange}
+        type="email" />
+
+      <InputField
+        boundValue={user.password}
+        label="Password"
+        name="password"
+        onInputChange={onInputChange}
+        type="password" />
 
       <div className="input-field">
         <Button
