@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { buildClasses } from '@/utils/cssHelpers'
 
 import Button from '@/components/common/Button'
+import ButtonRow from '@/components/common/ButtonRow'
 import Card from '@/components/common/Card'
 
 const AccountDetailView = ({
@@ -20,6 +21,7 @@ const AccountDetailView = ({
         <p className={buildClasses('card-text')}>
           <strong>Email:</strong> {user.email}
         </p>
+
         <hr/>
         <p className={buildClasses('card-text')}>
           <strong>Registered:</strong> {format(user.createdAt, 'MMM. DD, YYYY, HH:mm:ss')}
@@ -27,11 +29,15 @@ const AccountDetailView = ({
         <p className={buildClasses('card-text')}>
           <strong>Updated:</strong> {format(user.updatedAt, 'MMM. DD, YYYY, HH:mm:ss')}
         </p>
+
         <hr/>
-        <Button
-          onClick={onLogoutClick}
-          text="Logout"
-          type="info" />
+        <ButtonRow>
+          <Button
+            onClick={onLogoutClick}
+            position="left"
+            text="Logout"
+            type="info" />
+        </ButtonRow>
       </Card>
     </div>
   )

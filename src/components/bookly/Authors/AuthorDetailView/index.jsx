@@ -5,6 +5,7 @@ import { format } from 'date-fns'
 import { buildClasses } from '@/utils/cssHelpers'
 
 import Button from '@/components/common/Button'
+import ButtonRow from '@/components/common/ButtonRow'
 import Card from '@/components/common/Card'
 
 const AuthorDetailView = (props) => {
@@ -29,14 +30,18 @@ const AuthorDetailView = (props) => {
         </p>
 
         <hr/>
-        <Button
-          onClick={onEditClick}
-          text="Edit"
-          type="info" />
-        <Button
-          onClick={onBackClick}
-          text="Back"
-          type="light" />
+
+        <ButtonRow>
+          <Button
+            onClick={onEditClick}
+            position="left"
+            text="Edit"
+            type="info" />
+          <Button
+            onClick={onBackClick}
+            text="Back"
+            type="light" />
+        </ButtonRow>
       </Card>
     </div>
   )
