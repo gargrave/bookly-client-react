@@ -12,6 +12,7 @@ const renderText = (text, classname) => (
 )
 
 const Card = ({
+  children,
   classes = [],
   onClick,
   text,
@@ -23,11 +24,13 @@ const Card = ({
       onClick={onClick}>
       {renderText(title, 'card-title')}
       {renderText(text, 'card-text')}
+      {children}
     </div>
   )
 }
 
 Card.propTypes = {
+  children: array,
   classes: array,
   onClick: func.isRequired,
   text: string,
