@@ -59,11 +59,14 @@ ShallowWrapper {
           Jun. 30, 2017, 12:52:54
         </p>
         <hr />
-        <Button
-          onClick={[Function]}
-          text="Logout"
-          type="info"
-        />
+        <ButtonRow>
+          <Button
+            onClick={[Function]}
+            position="left"
+            text="Logout"
+            type="info"
+          />
+        </ButtonRow>
       </Card>,
       "className": "bookly-account-detail-view",
     },
@@ -103,11 +106,14 @@ ShallowWrapper {
             Jun. 30, 2017, 12:52:54
           </p>,
           <hr />,
-          <Button
-            onClick={[Function]}
-            text="Logout"
-            type="info"
-          />,
+          <ButtonRow>
+            <Button
+              onClick={[Function]}
+              position="left"
+              text="Logout"
+              type="info"
+            />
+          </ButtonRow>,
         ],
         "classes": Array [
           "detail-card",
@@ -237,12 +243,28 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "function",
           "props": Object {
-            "onClick": [Function],
-            "text": "Logout",
-            "type": "info",
+            "children": <Button
+              onClick={[Function]}
+              position="left"
+              text="Logout"
+              type="info"
+            />,
           },
           "ref": null,
-          "rendered": null,
+          "rendered": Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "onClick": [Function],
+              "position": "left",
+              "text": "Logout",
+              "type": "info",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
           "type": [Function],
         },
       ],
@@ -295,11 +317,14 @@ ShallowWrapper {
             Jun. 30, 2017, 12:52:54
           </p>
           <hr />
-          <Button
-            onClick={[Function]}
-            text="Logout"
-            type="info"
-          />
+          <ButtonRow>
+            <Button
+              onClick={[Function]}
+              position="left"
+              text="Logout"
+              type="info"
+            />
+          </ButtonRow>
         </Card>,
         "className": "bookly-account-detail-view",
       },
@@ -339,11 +364,14 @@ ShallowWrapper {
               Jun. 30, 2017, 12:52:54
             </p>,
             <hr />,
-            <Button
-              onClick={[Function]}
-              text="Logout"
-              type="info"
-            />,
+            <ButtonRow>
+              <Button
+                onClick={[Function]}
+                position="left"
+                text="Logout"
+                type="info"
+              />
+            </ButtonRow>,
           ],
           "classes": Array [
             "detail-card",
@@ -473,12 +501,28 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "onClick": [Function],
-              "text": "Logout",
-              "type": "info",
+              "children": <Button
+                onClick={[Function]}
+                position="left"
+                text="Logout"
+                type="info"
+              />,
             },
             "ref": null,
-            "rendered": null,
+            "rendered": Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "onClick": [Function],
+                "position": "left",
+                "text": "Logout",
+                "type": "info",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
             "type": [Function],
           },
         ],
