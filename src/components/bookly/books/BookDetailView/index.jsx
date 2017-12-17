@@ -33,7 +33,7 @@ const BookDetailView = (props) => {
         onClick={onEditClick}
         position="left"
         text="Edit"
-        type="success" />
+        type="info" />
 
       <Button
         onClick={onBackClick}

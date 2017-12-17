@@ -1,7 +1,10 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
+import { buildClasses } from '@/utils/cssHelpers'
+
 import Button from '@/components/common/Button'
+import Card from '@/components/common/Card'
 
 const AuthorDetailView = (props) => {
   const {
@@ -10,17 +13,20 @@ const AuthorDetailView = (props) => {
     onBackClick,
   } = props
   return (
-    <div className="author-detail-view">
-      <h2>Author Detail</h2>
-      <p className="author-name">
-        <strong>Name:</strong> {author.firstName} {author.lastName}
-      </p>
-      <p className="author-added-on">
-        <strong>Added on:</strong> {author.createdAt}
-      </p>
-      <p className="author-updated-on">
-        <strong>Updated on:</strong> {author.updatedAt}
-      </p>
+    <div className={buildClasses('author-detail-view')}>
+      <Card
+        classes={['detail-card', 'author-detail-card']}
+        hoverable={false}
+        onClick={() => null}
+        title={`${author.firstName} ${author.lastName}`}>
+        <hr/>
+        <p className={buildClasses('card-text')}>
+          <strong>Added on:</strong> {author.createdAt}
+        </p>
+        <p className={buildClasses('card-text')}>
+          <strong>Updated on:</strong> {author.updatedAt}
+        </p>
+      </Card>
 
       <Button
         onClick={onEditClick}
