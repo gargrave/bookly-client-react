@@ -1,4 +1,4 @@
-div.book-list-detail {
+.book-list-detail {
   background-color: #f9f9f9;
   cursor: pointer;
   border: solid 1px #bbb;
@@ -10,18 +10,18 @@ div.book-list-detail {
   padding: 8px;
 }
 
-div.book-list-detail:hover {
+.book-list-detail:hover {
   background: #ffe8e4;
 }
 
-div.book-list-detail p {
+.book-list-detail p {
   margin: 0;
 }
 
-div.book-list-detail p.book-title {
+.book-list-detail p.book-title {
   font-weight: bold;
 }
 
-div.book-list-detail p.book-author {
+.book-list-detail p.book-author {
   color: #6e6969;
 }

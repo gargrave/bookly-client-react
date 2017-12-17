@@ -1,4 +1,4 @@
-div.author-list-detail {
+.author-list-detail {
   cursor: pointer;
   border: solid 1px #bbb;
   border-radius: 5px;
@@ -8,10 +8,10 @@ div.author-list-detail {
   padding: 8px;
 }
 
-div.author-list-detail:hover {
+.author-list-detail:hover {
   background: #ffe8e4;
 }
 
-div.author-list-detail p {
+.author-list-detail p {
   margin: 0;
 }
