@@ -2,327 +2,483 @@
 
 exports[`AuthorForm with "author" populated renders correctly 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <form
-    className="bookly-form bookly-author-form"
-    noValidate={true}
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AuthorForm
+    author={Object {}}
+    onCancel={[Function]}
+    onInputChange={[Function]}
     onSubmit={[Function]}
-    style={
-        Object {
-            "margin": "auto",
-            "marginTop": "20px",
-            "maxWidth": "500px",
-            "textAlign": "left",
-          }
-    }
->
-    <div
-        className="input-field"
-    >
-        <label
-            htmlFor="firstName"
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div
+          className="input-field"
         >
+          <label
+            htmlFor="firstName"
+          >
             First name:
-        </label>
-        <input
+          </label>
+          <input
             id="firstName"
             name="firstName"
             onChange={[Function]}
             type="text"
             value="Aldous"
-        />
-    </div>
-    <div
-        className="input-field"
-    >
-        <label
-            htmlFor="lastName"
+          />
+        </div>,
+        <div
+          className="input-field"
         >
+          <label
+            htmlFor="lastName"
+          >
             Last name:
-        </label>
-        <input
+          </label>
+          <input
             id="lastName"
             name="lastName"
             onChange={[Function]}
             type="text"
             value="Huxley"
-        />
-    </div>
-    <div
-        className="input-field"
-    >
-        <Button
+          />
+        </div>,
+        <div
+          className="input-field"
+        >
+          <Button
             canSubmit={true}
             onClick={[Function]}
             position="left"
             text="Submit"
             type="success"
-        />
-        <Button
+          />
+          <Button
             extraClasses="float-right"
             onClick={[Function]}
             text="Cancel"
             type="info"
-        />
-    </div>
-</form>,
-  "nodes": Array [
-    <form
-      className="bookly-form bookly-author-form"
-      noValidate={true}
-      onSubmit={[Function]}
-      style={
-            Object {
-                  "margin": "auto",
-                  "marginTop": "20px",
-                  "maxWidth": "500px",
-                  "textAlign": "left",
-                }
-      }
->
-      <div
-            className="input-field"
-      >
-            <label
-                  htmlFor="firstName"
-            >
-                  First name:
-            </label>
-            <input
-                  id="firstName"
-                  name="firstName"
-                  onChange={[Function]}
-                  type="text"
-                  value="Aldous"
-            />
-      </div>
-      <div
-            className="input-field"
-      >
-            <label
-                  htmlFor="lastName"
-            >
-                  Last name:
-            </label>
-            <input
-                  id="lastName"
-                  name="lastName"
-                  onChange={[Function]}
-                  type="text"
-                  value="Huxley"
-            />
-      </div>
-      <div
-            className="input-field"
-      >
-            <Button
-                  canSubmit={true}
-                  onClick={[Function]}
-                  position="left"
-                  text="Submit"
-                  type="success"
-            />
-            <Button
-                  extraClasses="float-right"
-                  onClick={[Function]}
-                  text="Cancel"
-                  type="info"
-            />
-      </div>
-</form>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <AuthorForm
-        author={Object {}}
-        onCancel={[Function]}
-        onInputChange={[Function]}
-        onSubmit={[Function]}
-/>,
-      "_debugID": 1,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "author": Object {},
-          "onCancel": [Function],
-          "onInputChange": [Function],
-          "onSubmit": [Function],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 1,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <form
-          className="bookly-form bookly-author-form"
-          noValidate={true}
-          onSubmit={[Function]}
-          style={
-                    Object {
-                              "margin": "auto",
-                              "marginTop": "20px",
-                              "maxWidth": "500px",
-                              "textAlign": "left",
-                            }
-          }
->
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="firstName"
-                    >
-                              First name:
-                    </label>
-                    <input
-                              id="firstName"
-                              name="firstName"
-                              onChange={[Function]}
-                              type="text"
-                              value="Aldous"
-                    />
-          </div>
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="lastName"
-                    >
-                              Last name:
-                    </label>
-                    <input
-                              id="lastName"
-                              name="lastName"
-                              onChange={[Function]}
-                              type="text"
-                              value="Huxley"
-                    />
-          </div>
-          <div
-                    className="input-field"
-          >
-                    <Button
-                              canSubmit={true}
-                              onClick={[Function]}
-                              position="left"
-                              text="Submit"
-                              type="success"
-                    />
-                    <Button
-                              extraClasses="float-right"
-                              onClick={[Function]}
-                              text="Cancel"
-                              type="info"
-                    />
-          </div>
-</form>,
-        "_debugID": 2,
-        "_renderedOutput": <form
-          className="bookly-form bookly-author-form"
-          noValidate={true}
-          onSubmit={[Function]}
-          style={
-                    Object {
-                              "margin": "auto",
-                              "marginTop": "20px",
-                              "maxWidth": "500px",
-                              "textAlign": "left",
-                            }
-          }
->
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="firstName"
-                    >
-                              First name:
-                    </label>
-                    <input
-                              id="firstName"
-                              name="firstName"
-                              onChange={[Function]}
-                              type="text"
-                              value="Aldous"
-                    />
-          </div>
-          <div
-                    className="input-field"
-          >
-                    <label
-                              htmlFor="lastName"
-                    >
-                              Last name:
-                    </label>
-                    <input
-                              id="lastName"
-                              name="lastName"
-                              onChange={[Function]}
-                              type="text"
-                              value="Huxley"
-                    />
-          </div>
-          <div
-                    className="input-field"
-          >
-                    <Button
-                              canSubmit={true}
-                              onClick={[Function]}
-                              position="left"
-                              text="Submit"
-                              type="success"
-                    />
-                    <Button
-                              extraClasses="float-right"
-                              onClick={[Function]}
-                              text="Cancel"
-                              type="info"
-                    />
-          </div>
-</form>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
+          />
+        </div>,
+      ],
+      "className": "bookly-form bookly-author-form",
+      "noValidate": true,
+      "onSubmit": [Function],
     },
-    "getRenderOutput": [Function],
-    "render": [Function],
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              htmlFor="firstName"
+            >
+              First name:
+            </label>,
+            <input
+              id="firstName"
+              name="firstName"
+              onChange={[Function]}
+              type="text"
+              value="Aldous"
+            />,
+          ],
+          "className": "input-field",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "First name:",
+              "htmlFor": "firstName",
+            },
+            "ref": null,
+            "rendered": "First name:",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "firstName",
+              "name": "firstName",
+              "onChange": [Function],
+              "type": "text",
+              "value": "Aldous",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <label
+              htmlFor="lastName"
+            >
+              Last name:
+            </label>,
+            <input
+              id="lastName"
+              name="lastName"
+              onChange={[Function]}
+              type="text"
+              value="Huxley"
+            />,
+          ],
+          "className": "input-field",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Last name:",
+              "htmlFor": "lastName",
+            },
+            "ref": null,
+            "rendered": "Last name:",
+            "type": "label",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "id": "lastName",
+              "name": "lastName",
+              "onChange": [Function],
+              "type": "text",
+              "value": "Huxley",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": "input",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <Button
+              canSubmit={true}
+              onClick={[Function]}
+              position="left"
+              text="Submit"
+              type="success"
+            />,
+            <Button
+              extraClasses="float-right"
+              onClick={[Function]}
+              text="Cancel"
+              type="info"
+            />,
+          ],
+          "className": "input-field",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "canSubmit": true,
+              "onClick": [Function],
+              "position": "left",
+              "text": "Submit",
+              "type": "success",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "extraClasses": "float-right",
+              "onClick": [Function],
+              "text": "Cancel",
+              "type": "info",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "form",
   },
-  "root": [Circular],
-  "unrendered": <AuthorForm
-    author={Object {}}
-    onCancel={[Function]}
-    onInputChange={[Function]}
-    onSubmit={[Function]}
-/>,
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div
+            className="input-field"
+          >
+            <label
+              htmlFor="firstName"
+            >
+              First name:
+            </label>
+            <input
+              id="firstName"
+              name="firstName"
+              onChange={[Function]}
+              type="text"
+              value="Aldous"
+            />
+          </div>,
+          <div
+            className="input-field"
+          >
+            <label
+              htmlFor="lastName"
+            >
+              Last name:
+            </label>
+            <input
+              id="lastName"
+              name="lastName"
+              onChange={[Function]}
+              type="text"
+              value="Huxley"
+            />
+          </div>,
+          <div
+            className="input-field"
+          >
+            <Button
+              canSubmit={true}
+              onClick={[Function]}
+              position="left"
+              text="Submit"
+              type="success"
+            />
+            <Button
+              extraClasses="float-right"
+              onClick={[Function]}
+              text="Cancel"
+              type="info"
+            />
+          </div>,
+        ],
+        "className": "bookly-form bookly-author-form",
+        "noValidate": true,
+        "onSubmit": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                htmlFor="firstName"
+              >
+                First name:
+              </label>,
+              <input
+                id="firstName"
+                name="firstName"
+                onChange={[Function]}
+                type="text"
+                value="Aldous"
+              />,
+            ],
+            "className": "input-field",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "First name:",
+                "htmlFor": "firstName",
+              },
+              "ref": null,
+              "rendered": "First name:",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "firstName",
+                "name": "firstName",
+                "onChange": [Function],
+                "type": "text",
+                "value": "Aldous",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <label
+                htmlFor="lastName"
+              >
+                Last name:
+              </label>,
+              <input
+                id="lastName"
+                name="lastName"
+                onChange={[Function]}
+                type="text"
+                value="Huxley"
+              />,
+            ],
+            "className": "input-field",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Last name:",
+                "htmlFor": "lastName",
+              },
+              "ref": null,
+              "rendered": "Last name:",
+              "type": "label",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "id": "lastName",
+                "name": "lastName",
+                "onChange": [Function],
+                "type": "text",
+                "value": "Huxley",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": "input",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <Button
+                canSubmit={true}
+                onClick={[Function]}
+                position="left"
+                text="Submit"
+                type="success"
+              />,
+              <Button
+                extraClasses="float-right"
+                onClick={[Function]}
+                text="Cancel"
+                type="info"
+              />,
+            ],
+            "className": "input-field",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "canSubmit": true,
+                "onClick": [Function],
+                "position": "left",
+                "text": "Submit",
+                "type": "success",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "function",
+              "props": Object {
+                "extraClasses": "float-right",
+                "onClick": [Function],
+                "text": "Cancel",
+                "type": "info",
+              },
+              "ref": null,
+              "rendered": null,
+              "type": [Function],
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "form",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;

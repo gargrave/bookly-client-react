@@ -2,438 +2,450 @@
 
 exports[`InputField "email" type input field renders an email input correctly 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="input-field"
->
-    <label
-        htmlFor="email"
-    >
-        Email
-        :
-    </label>
-    <input
-        id="email"
-        name="email"
-        onChange={[Function]}
-        type="email"
-        value=""
-    />
-</div>,
-  "nodes": Array [
-    <div
-      className="input-field"
->
-      <label
-            htmlFor="email"
-      >
-            Email
-            :
-      </label>
-      <input
-            id="email"
-            name="email"
-            onChange={[Function]}
-            type="email"
-            value=""
-      />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <InputField
-        boundValue=""
-        label="Email"
-        name="email"
-        onInputChange={[Function]}
-        type="email"
-/>,
-      "_debugID": 5,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "boundValue": "",
-          "label": "Email",
-          "name": "email",
-          "onInputChange": [Function],
-          "type": "email",
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 3,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="input-field"
->
-          <label
-                    htmlFor="email"
-          >
-                    Email
-                    :
-          </label>
-          <input
-                    id="email"
-                    name="email"
-                    onChange={[Function]}
-                    type="email"
-                    value=""
-          />
-</div>,
-        "_debugID": 6,
-        "_renderedOutput": <div
-          className="input-field"
->
-          <label
-                    htmlFor="email"
-          >
-                    Email
-                    :
-          </label>
-          <input
-                    id="email"
-                    name="email"
-                    onChange={[Function]}
-                    type="email"
-                    value=""
-          />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <InputField
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <InputField
     boundValue=""
     label="Email"
     name="email"
     onInputChange={[Function]}
     type="email"
-/>,
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <label
+          htmlFor="email"
+        >
+          Email
+          :
+        </label>,
+        <input
+          id="email"
+          name="email"
+          onChange={[Function]}
+          type="email"
+          value=""
+        />,
+      ],
+      "className": "input-field",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Email",
+            ":",
+          ],
+          "htmlFor": "email",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Email",
+          ":",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "id": "email",
+          "name": "email",
+          "onChange": [Function],
+          "type": "email",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label
+            htmlFor="email"
+          >
+            Email
+            :
+          </label>,
+          <input
+            id="email"
+            name="email"
+            onChange={[Function]}
+            type="email"
+            value=""
+          />,
+        ],
+        "className": "input-field",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Email",
+              ":",
+            ],
+            "htmlFor": "email",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Email",
+            ":",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "id": "email",
+            "name": "email",
+            "onChange": [Function],
+            "type": "email",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
 
 exports[`InputField "password" type input field renders a password input correctly 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="input-field"
->
-    <label
-        htmlFor="password"
-    >
-        Password
-        :
-    </label>
-    <input
-        id="password"
-        name="password"
-        onChange={[Function]}
-        type="password"
-        value=""
-    />
-</div>,
-  "nodes": Array [
-    <div
-      className="input-field"
->
-      <label
-            htmlFor="password"
-      >
-            Password
-            :
-      </label>
-      <input
-            id="password"
-            name="password"
-            onChange={[Function]}
-            type="password"
-            value=""
-      />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <InputField
-        boundValue=""
-        label="Password"
-        name="password"
-        onInputChange={[Function]}
-        type="password"
-/>,
-      "_debugID": 3,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "boundValue": "",
-          "label": "Password",
-          "name": "password",
-          "onInputChange": [Function],
-          "type": "password",
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 2,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="input-field"
->
-          <label
-                    htmlFor="password"
-          >
-                    Password
-                    :
-          </label>
-          <input
-                    id="password"
-                    name="password"
-                    onChange={[Function]}
-                    type="password"
-                    value=""
-          />
-</div>,
-        "_debugID": 4,
-        "_renderedOutput": <div
-          className="input-field"
->
-          <label
-                    htmlFor="password"
-          >
-                    Password
-                    :
-          </label>
-          <input
-                    id="password"
-                    name="password"
-                    onChange={[Function]}
-                    type="password"
-                    value=""
-          />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <InputField
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <InputField
     boundValue=""
     label="Password"
     name="password"
     onInputChange={[Function]}
     type="password"
-/>,
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <label
+          htmlFor="password"
+        >
+          Password
+          :
+        </label>,
+        <input
+          id="password"
+          name="password"
+          onChange={[Function]}
+          type="password"
+          value=""
+        />,
+      ],
+      "className": "input-field",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Password",
+            ":",
+          ],
+          "htmlFor": "password",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Password",
+          ":",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "id": "password",
+          "name": "password",
+          "onChange": [Function],
+          "type": "password",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label
+            htmlFor="password"
+          >
+            Password
+            :
+          </label>,
+          <input
+            id="password"
+            name="password"
+            onChange={[Function]}
+            type="password"
+            value=""
+          />,
+        ],
+        "className": "input-field",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Password",
+              ":",
+            ],
+            "htmlFor": "password",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Password",
+            ":",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "id": "password",
+            "name": "password",
+            "onChange": [Function],
+            "type": "password",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
 
 exports[`InputField "text" type input field renders a text input correctly 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="input-field"
->
-    <label
-        htmlFor="text"
-    >
-        Whatever
-        :
-    </label>
-    <input
-        id="text"
-        name="text"
-        onChange={[Function]}
-        type="text"
-        value=""
-    />
-</div>,
-  "nodes": Array [
-    <div
-      className="input-field"
->
-      <label
-            htmlFor="text"
-      >
-            Whatever
-            :
-      </label>
-      <input
-            id="text"
-            name="text"
-            onChange={[Function]}
-            type="text"
-            value=""
-      />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <InputField
-        boundValue=""
-        label="Whatever"
-        name="text"
-        onInputChange={[Function]}
-        type="text"
-/>,
-      "_debugID": 1,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "boundValue": "",
-          "label": "Whatever",
-          "name": "text",
-          "onInputChange": [Function],
-          "type": "text",
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 1,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="input-field"
->
-          <label
-                    htmlFor="text"
-          >
-                    Whatever
-                    :
-          </label>
-          <input
-                    id="text"
-                    name="text"
-                    onChange={[Function]}
-                    type="text"
-                    value=""
-          />
-</div>,
-        "_debugID": 2,
-        "_renderedOutput": <div
-          className="input-field"
->
-          <label
-                    htmlFor="text"
-          >
-                    Whatever
-                    :
-          </label>
-          <input
-                    id="text"
-                    name="text"
-                    onChange={[Function]}
-                    type="text"
-                    value=""
-          />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <InputField
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <InputField
     boundValue=""
     label="Whatever"
     name="text"
     onInputChange={[Function]}
     type="text"
-/>,
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <label
+          htmlFor="text"
+        >
+          Whatever
+          :
+        </label>,
+        <input
+          id="text"
+          name="text"
+          onChange={[Function]}
+          type="text"
+          value=""
+        />,
+      ],
+      "className": "input-field",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            "Whatever",
+            ":",
+          ],
+          "htmlFor": "text",
+        },
+        "ref": null,
+        "rendered": Array [
+          "Whatever",
+          ":",
+        ],
+        "type": "label",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "id": "text",
+          "name": "text",
+          "onChange": [Function],
+          "type": "text",
+          "value": "",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": "input",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <label
+            htmlFor="text"
+          >
+            Whatever
+            :
+          </label>,
+          <input
+            id="text"
+            name="text"
+            onChange={[Function]}
+            type="text"
+            value=""
+          />,
+        ],
+        "className": "input-field",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              "Whatever",
+              ":",
+            ],
+            "htmlFor": "text",
+          },
+          "ref": null,
+          "rendered": Array [
+            "Whatever",
+            ":",
+          ],
+          "type": "label",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "id": "text",
+            "name": "text",
+            "onChange": [Function],
+            "type": "text",
+            "value": "",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": "input",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;

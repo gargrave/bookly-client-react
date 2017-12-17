@@ -2,249 +2,227 @@
 
 exports[`AuthorList matches the snapshot 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div>
-    <AuthorListDetail
-        author={
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AuthorList
+    authors={
+      Array [
+        Object {
+          "firstName": "A",
+          "id": 0,
+          "lastName": "B",
+        },
+        Object {
+          "firstName": "C",
+          "id": 1,
+          "lastName": "D",
+        },
+        Object {
+          "firstName": "E",
+          "id": 2,
+          "lastName": "F",
+        },
+      ]
+    }
+    onAuthorClick={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <AuthorListDetail
+          author={
             Object {
+              "firstName": "A",
+              "id": 0,
+              "lastName": "B",
+            }
+          }
+          onClick={[Function]}
+        />,
+        <AuthorListDetail
+          author={
+            Object {
+              "firstName": "C",
+              "id": 1,
+              "lastName": "D",
+            }
+          }
+          onClick={[Function]}
+        />,
+        <AuthorListDetail
+          author={
+            Object {
+              "firstName": "E",
+              "id": 2,
+              "lastName": "F",
+            }
+          }
+          onClick={[Function]}
+        />,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0",
+        "nodeType": "function",
+        "props": Object {
+          "author": Object {
+            "firstName": "A",
+            "id": 0,
+            "lastName": "B",
+          },
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "1",
+        "nodeType": "function",
+        "props": Object {
+          "author": Object {
+            "firstName": "C",
+            "id": 1,
+            "lastName": "D",
+          },
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": "2",
+        "nodeType": "function",
+        "props": Object {
+          "author": Object {
+            "firstName": "E",
+            "id": 2,
+            "lastName": "F",
+          },
+          "onClick": [Function],
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <AuthorListDetail
+            author={
+              Object {
                 "firstName": "A",
                 "id": 0,
                 "lastName": "B",
               }
-        }
-        onClick={[Function]}
-    />
-    <AuthorListDetail
-        author={
-            Object {
+            }
+            onClick={[Function]}
+          />,
+          <AuthorListDetail
+            author={
+              Object {
                 "firstName": "C",
                 "id": 1,
                 "lastName": "D",
               }
-        }
-        onClick={[Function]}
-    />
-    <AuthorListDetail
-        author={
-            Object {
+            }
+            onClick={[Function]}
+          />,
+          <AuthorListDetail
+            author={
+              Object {
                 "firstName": "E",
                 "id": 2,
                 "lastName": "F",
               }
-        }
-        onClick={[Function]}
-    />
-</div>,
-  "nodes": Array [
-    <div>
-      <AuthorListDetail
-            author={
-                  Object {
-                        "firstName": "A",
-                        "id": 0,
-                        "lastName": "B",
-                      }
             }
             onClick={[Function]}
-      />
-      <AuthorListDetail
-            author={
-                  Object {
-                        "firstName": "C",
-                        "id": 1,
-                        "lastName": "D",
-                      }
-            }
-            onClick={[Function]}
-      />
-      <AuthorListDetail
-            author={
-                  Object {
-                        "firstName": "E",
-                        "id": 2,
-                        "lastName": "F",
-                      }
-            }
-            onClick={[Function]}
-      />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <AuthorList
-        authors={
-                Array [
-                        Object {
-                          "firstName": "A",
-                          "id": 0,
-                          "lastName": "B",
-                        },
-                        Object {
-                          "firstName": "C",
-                          "id": 1,
-                          "lastName": "D",
-                        },
-                        Object {
-                          "firstName": "E",
-                          "id": 2,
-                          "lastName": "F",
-                        },
-                      ]
-        }
-        onAuthorClick={[Function]}
-/>,
-      "_debugID": 1,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "authors": Array [
-            Object {
+          />,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0",
+          "nodeType": "function",
+          "props": Object {
+            "author": Object {
               "firstName": "A",
               "id": 0,
               "lastName": "B",
             },
-            Object {
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "1",
+          "nodeType": "function",
+          "props": Object {
+            "author": Object {
               "firstName": "C",
               "id": 1,
               "lastName": "D",
             },
-            Object {
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": "2",
+          "nodeType": "function",
+          "props": Object {
+            "author": Object {
               "firstName": "E",
               "id": 2,
               "lastName": "F",
             },
-          ],
-          "onAuthorClick": [Function],
+            "onClick": [Function],
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
         },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 1,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div>
-          <AuthorListDetail
-                    author={
-                              Object {
-                                        "firstName": "A",
-                                        "id": 0,
-                                        "lastName": "B",
-                                      }
-                    }
-                    onClick={[Function]}
-          />
-          <AuthorListDetail
-                    author={
-                              Object {
-                                        "firstName": "C",
-                                        "id": 1,
-                                        "lastName": "D",
-                                      }
-                    }
-                    onClick={[Function]}
-          />
-          <AuthorListDetail
-                    author={
-                              Object {
-                                        "firstName": "E",
-                                        "id": 2,
-                                        "lastName": "F",
-                                      }
-                    }
-                    onClick={[Function]}
-          />
-</div>,
-        "_debugID": 2,
-        "_renderedOutput": <div>
-          <AuthorListDetail
-                    author={
-                              Object {
-                                        "firstName": "A",
-                                        "id": 0,
-                                        "lastName": "B",
-                                      }
-                    }
-                    onClick={[Function]}
-          />
-          <AuthorListDetail
-                    author={
-                              Object {
-                                        "firstName": "C",
-                                        "id": 1,
-                                        "lastName": "D",
-                                      }
-                    }
-                    onClick={[Function]}
-          />
-          <AuthorListDetail
-                    author={
-                              Object {
-                                        "firstName": "E",
-                                        "id": 2,
-                                        "lastName": "F",
-                                      }
-                    }
-                    onClick={[Function]}
-          />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
+      ],
+      "type": "div",
     },
-    "getRenderOutput": [Function],
-    "render": [Function],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
   },
-  "root": [Circular],
-  "unrendered": <AuthorList
-    authors={
-        Array [
-            Object {
-              "firstName": "A",
-              "id": 0,
-              "lastName": "B",
-            },
-            Object {
-              "firstName": "C",
-              "id": 1,
-              "lastName": "D",
-            },
-            Object {
-              "firstName": "E",
-              "id": 2,
-              "lastName": "F",
-            },
-          ]
-    }
-    onAuthorClick={[Function]}
-/>,
 }
 `;

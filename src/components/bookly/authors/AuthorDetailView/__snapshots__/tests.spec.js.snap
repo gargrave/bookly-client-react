@@ -2,256 +2,414 @@
 
 exports[`AuthorDetailView renders correctly 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="author-detail-view"
->
-    <h2>
-        Author Detail
-    </h2>
-    <p
-        className="author-name"
-    >
-        <strong>
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <AuthorDetailView
+    author={Object {}}
+    onBackClick={[Function]}
+    onEditClick={[Function]}
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h2>
+          Author Detail
+        </h2>,
+        <p
+          className="author-name"
+        >
+          <strong>
             Name:
-        </strong>
-         
-        Aldous
-         
-        Huxley
-    </p>
-    <p
-        className="author-added-on"
-    >
-        <strong>
+          </strong>
+           
+          Aldous
+           
+          Huxley
+        </p>,
+        <p
+          className="author-added-on"
+        >
+          <strong>
             Added on:
-        </strong>
-         
-        2017-07-01T01:16:43.881Z
-    </p>
-    <p
-        className="author-updated-on"
-    >
-        <strong>
+          </strong>
+           
+          2017-07-01T01:16:43.881Z
+        </p>,
+        <p
+          className="author-updated-on"
+        >
+          <strong>
             Updated on:
-        </strong>
-         
-        2017-07-01T01:16:43.881Z
-    </p>
-    <Button
-        onClick={[Function]}
-        text="Edit"
-        type="info"
-    />
-    <Button
-        onClick={[Function]}
-        text="Back"
-        type="light"
-    />
-</div>,
-  "nodes": Array [
-    <div
-      className="author-detail-view"
->
-      <h2>
-            Author Detail
-      </h2>
-      <p
-            className="author-name"
-      >
+          </strong>
+           
+          2017-07-01T01:16:43.881Z
+        </p>,
+        <Button
+          onClick={[Function]}
+          text="Edit"
+          type="info"
+        />,
+        <Button
+          onClick={[Function]}
+          text="Back"
+          type="light"
+        />,
+      ],
+      "className": "author-detail-view",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Author Detail",
+        },
+        "ref": null,
+        "rendered": "Author Detail",
+        "type": "h2",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
             <strong>
-                  Name:
+              Name:
+            </strong>,
+            " ",
+            "Aldous",
+            " ",
+            "Huxley",
+          ],
+          "className": "author-name",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Name:",
+            },
+            "ref": null,
+            "rendered": "Name:",
+            "type": "strong",
+          },
+          " ",
+          "Aldous",
+          " ",
+          "Huxley",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <strong>
+              Added on:
+            </strong>,
+            " ",
+            "2017-07-01T01:16:43.881Z",
+          ],
+          "className": "author-added-on",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Added on:",
+            },
+            "ref": null,
+            "rendered": "Added on:",
+            "type": "strong",
+          },
+          " ",
+          "2017-07-01T01:16:43.881Z",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <strong>
+              Updated on:
+            </strong>,
+            " ",
+            "2017-07-01T01:16:43.881Z",
+          ],
+          "className": "author-updated-on",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "Updated on:",
+            },
+            "ref": null,
+            "rendered": "Updated on:",
+            "type": "strong",
+          },
+          " ",
+          "2017-07-01T01:16:43.881Z",
+        ],
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "onClick": [Function],
+          "text": "Edit",
+          "type": "info",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "onClick": [Function],
+          "text": "Back",
+          "type": "light",
+        },
+        "ref": null,
+        "rendered": null,
+        "type": [Function],
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h2>
+            Author Detail
+          </h2>,
+          <p
+            className="author-name"
+          >
+            <strong>
+              Name:
             </strong>
              
             Aldous
              
             Huxley
-      </p>
-      <p
+          </p>,
+          <p
             className="author-added-on"
-      >
+          >
             <strong>
-                  Added on:
+              Added on:
             </strong>
              
             2017-07-01T01:16:43.881Z
-      </p>
-      <p
+          </p>,
+          <p
             className="author-updated-on"
-      >
+          >
             <strong>
-                  Updated on:
+              Updated on:
             </strong>
              
             2017-07-01T01:16:43.881Z
-      </p>
-      <Button
+          </p>,
+          <Button
             onClick={[Function]}
             text="Edit"
             type="info"
-      />
-      <Button
+          />,
+          <Button
             onClick={[Function]}
             text="Back"
             type="light"
-      />
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <AuthorDetailView
-        author={Object {}}
-        onBackClick={[Function]}
-        onEditClick={[Function]}
-/>,
-      "_debugID": 1,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "author": Object {},
-          "onBackClick": [Function],
-          "onEditClick": [Function],
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
+          />,
+        ],
+        "className": "author-detail-view",
       },
-      "_mountOrder": 1,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="author-detail-view"
->
-          <h2>
-                    Author Detail
-          </h2>
-          <p
-                    className="author-name"
-          >
-                    <strong>
-                              Name:
-                    </strong>
-                     
-                    Aldous
-                     
-                    Huxley
-          </p>
-          <p
-                    className="author-added-on"
-          >
-                    <strong>
-                              Added on:
-                    </strong>
-                     
-                    2017-07-01T01:16:43.881Z
-          </p>
-          <p
-                    className="author-updated-on"
-          >
-                    <strong>
-                              Updated on:
-                    </strong>
-                     
-                    2017-07-01T01:16:43.881Z
-          </p>
-          <Button
-                    onClick={[Function]}
-                    text="Edit"
-                    type="info"
-          />
-          <Button
-                    onClick={[Function]}
-                    text="Back"
-                    type="light"
-          />
-</div>,
-        "_debugID": 2,
-        "_renderedOutput": <div
-          className="author-detail-view"
->
-          <h2>
-                    Author Detail
-          </h2>
-          <p
-                    className="author-name"
-          >
-                    <strong>
-                              Name:
-                    </strong>
-                     
-                    Aldous
-                     
-                    Huxley
-          </p>
-          <p
-                    className="author-added-on"
-          >
-                    <strong>
-                              Added on:
-                    </strong>
-                     
-                    2017-07-01T01:16:43.881Z
-          </p>
-          <p
-                    className="author-updated-on"
-          >
-                    <strong>
-                              Updated on:
-                    </strong>
-                     
-                    2017-07-01T01:16:43.881Z
-          </p>
-          <Button
-                    onClick={[Function]}
-                    text="Edit"
-                    type="info"
-          />
-          <Button
-                    onClick={[Function]}
-                    text="Back"
-                    type="light"
-          />
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Author Detail",
+          },
+          "ref": null,
+          "rendered": "Author Detail",
+          "type": "h2",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong>
+                Name:
+              </strong>,
+              " ",
+              "Aldous",
+              " ",
+              "Huxley",
+            ],
+            "className": "author-name",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Name:",
+              },
+              "ref": null,
+              "rendered": "Name:",
+              "type": "strong",
+            },
+            " ",
+            "Aldous",
+            " ",
+            "Huxley",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong>
+                Added on:
+              </strong>,
+              " ",
+              "2017-07-01T01:16:43.881Z",
+            ],
+            "className": "author-added-on",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Added on:",
+              },
+              "ref": null,
+              "rendered": "Added on:",
+              "type": "strong",
+            },
+            " ",
+            "2017-07-01T01:16:43.881Z",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong>
+                Updated on:
+              </strong>,
+              " ",
+              "2017-07-01T01:16:43.881Z",
+            ],
+            "className": "author-updated-on",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Updated on:",
+              },
+              "ref": null,
+              "rendered": "Updated on:",
+              "type": "strong",
+            },
+            " ",
+            "2017-07-01T01:16:43.881Z",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onClick": [Function],
+            "text": "Edit",
+            "type": "info",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onClick": [Function],
+            "text": "Back",
+            "type": "light",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
+      ],
+      "type": "div",
     },
-    "getRenderOutput": [Function],
-    "render": [Function],
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
   },
-  "root": [Circular],
-  "unrendered": <AuthorDetailView
-    author={Object {}}
-    onBackClick={[Function]}
-    onEditClick={[Function]}
-/>,
 }
 `;

@@ -2,135 +2,131 @@
 
 exports[`Card renders correctly 1`] = `
 ShallowWrapper {
-  "complexSelector": ComplexSelector {
-    "buildPredicate": [Function],
-    "childrenOfNode": [Function],
-    "findWhereUnwrapped": [Function],
-  },
   "length": 1,
-  "node": <div
-    className="bookly-card"
-    onClick={[Function]}
->
-    <p
-        className="bookly-card-title"
-    >
-        Awesome Title
-    </p>
-    <p
-        className="bookly-card-text"
-    >
-        this is the text
-    </p>
-</div>,
-  "nodes": Array [
-    <div
-      className="bookly-card"
-      onClick={[Function]}
->
-      <p
-            className="bookly-card-title"
-      >
-            Awesome Title
-      </p>
-      <p
-            className="bookly-card-text"
-      >
-            this is the text
-      </p>
-</div>,
-  ],
-  "options": Object {},
-  "renderer": ReactShallowRenderer {
-    "_instance": ShallowComponentWrapper {
-      "_calledComponentWillUnmount": false,
-      "_compositeType": 2,
-      "_context": Object {},
-      "_currentElement": <Card
-        classes={Array []}
-        onClick={[Function]}
-        text="this is the text"
-        title="Awesome Title"
-/>,
-      "_debugID": 1,
-      "_hostContainerInfo": null,
-      "_hostParent": null,
-      "_instance": StatelessComponent {
-        "_reactInternalInstance": [Circular],
-        "context": Object {},
-        "props": Object {
-          "classes": Array [],
-          "onClick": [Function],
-          "text": "this is the text",
-          "title": "Awesome Title",
-        },
-        "refs": Object {},
-        "state": null,
-        "updater": Object {
-          "enqueueCallback": [Function],
-          "enqueueCallbackInternal": [Function],
-          "enqueueElementInternal": [Function],
-          "enqueueForceUpdate": [Function],
-          "enqueueReplaceState": [Function],
-          "enqueueSetState": [Function],
-          "isMounted": [Function],
-          "validateCallback": [Function],
-        },
-      },
-      "_mountOrder": 1,
-      "_pendingCallbacks": null,
-      "_pendingElement": null,
-      "_pendingForceUpdate": false,
-      "_pendingReplaceState": false,
-      "_pendingStateQueue": null,
-      "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="bookly-card"
-          onClick={[Function]}
->
-          <p
-                    className="bookly-card-title"
-          >
-                    Awesome Title
-          </p>
-          <p
-                    className="bookly-card-text"
-          >
-                    this is the text
-          </p>
-</div>,
-        "_debugID": 2,
-        "_renderedOutput": <div
-          className="bookly-card"
-          onClick={[Function]}
->
-          <p
-                    className="bookly-card-title"
-          >
-                    Awesome Title
-          </p>
-          <p
-                    className="bookly-card-text"
-          >
-                    this is the text
-          </p>
-</div>,
-      },
-      "_renderedNodeType": 0,
-      "_rootNodeID": 0,
-      "_topLevelWrapper": null,
-      "_updateBatchNumber": null,
-      "_warnedAboutRefsInRender": false,
-    },
-    "getRenderOutput": [Function],
-    "render": [Function],
-  },
-  "root": [Circular],
-  "unrendered": <Card
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <Card
     classes={Array []}
     onClick={[Function]}
     text="this is the text"
     title="Awesome Title"
-/>,
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <p
+          className="bookly-card-title"
+        >
+          Awesome Title
+        </p>,
+        <p
+          className="bookly-card-text"
+        >
+          this is the text
+        </p>,
+        undefined,
+      ],
+      "className": "bookly-card",
+      "onClick": [Function],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Awesome Title",
+          "className": "bookly-card-title",
+        },
+        "ref": null,
+        "rendered": "Awesome Title",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "this is the text",
+          "className": "bookly-card-text",
+        },
+        "ref": null,
+        "rendered": "this is the text",
+        "type": "p",
+      },
+      undefined,
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <p
+            className="bookly-card-title"
+          >
+            Awesome Title
+          </p>,
+          <p
+            className="bookly-card-text"
+          >
+            this is the text
+          </p>,
+          undefined,
+        ],
+        "className": "bookly-card",
+        "onClick": [Function],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Awesome Title",
+            "className": "bookly-card-title",
+          },
+          "ref": null,
+          "rendered": "Awesome Title",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "this is the text",
+            "className": "bookly-card-text",
+          },
+          "ref": null,
+          "rendered": "this is the text",
+          "type": "p",
+        },
+        undefined,
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
 }
 `;
