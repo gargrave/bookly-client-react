@@ -1,5 +1,6 @@
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
+import { format } from 'date-fns'
 
 import { buildClasses } from '@/utils/cssHelpers'
 
@@ -22,10 +23,10 @@ const BookDetailView = (props) => {
         title={book.title}>
         <hr/>
         <p className={buildClasses('card-text')}>
-          <strong>Added on:</strong> {book.createdAt}
+          <strong>Added:</strong> {format(book.createdAt, 'MMM. DD, YYYY, HH:mm:ss')}
         </p>
         <p className={buildClasses('card-text')}>
-          <strong>Updated on:</strong> {book.updatedAt}
+          <strong>Updated:</strong> {format(book.updatedAt, 'MMM. DD, YYYY, HH:mm:ss')}
         </p>
       </Card>
 
