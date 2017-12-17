@@ -6,8 +6,6 @@ import { buildClasses } from '@/utils/cssHelpers'
 import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 
-import './styles.css'
-
 const BookDetailView = (props) => {
   const {
     book,
@@ -17,12 +15,12 @@ const BookDetailView = (props) => {
   return (
     <div className={buildClasses('book-detail-view')}>
       <Card
-        classes={['book-detail-card']}
+        classes={['detail-card', 'book-detail-card']}
         hoverable={false}
         onClick={() => null}
         text={`by ${book.author.name}`}
         title={book.title}>
-        <p className={buildClasses('card-spacer')}></p>
+        <hr/>
         <p className={buildClasses('card-text')}>
           <strong>Added on:</strong> {book.createdAt}
         </p>
