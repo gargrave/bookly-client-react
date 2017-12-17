@@ -5,7 +5,6 @@ import { object } from 'prop-types'
 import { localUrls } from '@/constants/urls'
 import { logout } from '@/store/actions/auth-actions'
 
-import Button from '@/components/common/Button'
 import RequiresAuth from '@/components/common/hocs/RequiresAuth'
 import AccountDetailView from '@/components/bookly/account/AccountDetailView'
 
@@ -25,13 +24,9 @@ class AccountDetailPage extends Component {
   render () {
     const { user } = this.props
     return (
-      <div>
-        <AccountDetailView user={user} />
-        <Button
-          onClick={this.onLogoutClick}
-          text="Logout"
-          type="light" />
-      </div>
+      <AccountDetailView
+        onLogoutClick={this.onLogoutClick}
+        user={user} />
     )
   }
 }
