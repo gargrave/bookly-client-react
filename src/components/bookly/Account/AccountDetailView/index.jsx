@@ -28,12 +28,12 @@ const AccountDetailView = ({
         <p className={buildClasses('card-text')}>
           <strong>Updated:</strong> {format(user.updatedAt, 'MMM. DD, YYYY, HH:mm:ss')}
         </p>
+        <hr/>
+        <Button
+          onClick={onLogoutClick}
+          text="Logout"
+          type="info" />
       </Card>
-
-      <Button
-        onClick={onLogoutClick}
-        text="Logout"
-        type="light" />
     </div>
   )
 }

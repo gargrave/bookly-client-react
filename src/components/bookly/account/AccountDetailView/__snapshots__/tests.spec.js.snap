@@ -5,6 +5,7 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AccountDetailView
+    onLogoutClick={[Function]}
     user={Object {}}
   />,
   Symbol(enzyme.__renderer__): Object {
@@ -58,6 +59,12 @@ ShallowWrapper {
            
           Jun. 30, 2017, 12:52:54
         </p>
+        <hr />
+        <Button
+          onClick={[Function]}
+          text="Logout"
+          type="info"
+        />
       </Card>,
       "className": "bookly-account-detail-view",
     },
@@ -96,6 +103,12 @@ ShallowWrapper {
              
             Jun. 30, 2017, 12:52:54
           </p>,
+          <hr />,
+          <Button
+            onClick={[Function]}
+            text="Logout"
+            type="info"
+          />,
         ],
         "classes": Array [
           "detail-card",
@@ -212,6 +225,28 @@ ShallowWrapper {
           ],
           "type": "p",
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "function",
+          "props": Object {
+            "onClick": [Function],
+            "text": "Logout",
+            "type": "info",
+          },
+          "ref": null,
+          "rendered": null,
+          "type": [Function],
+        },
       ],
       "type": [Function],
     },
@@ -262,6 +297,12 @@ ShallowWrapper {
              
             Jun. 30, 2017, 12:52:54
           </p>
+          <hr />
+          <Button
+            onClick={[Function]}
+            text="Logout"
+            type="info"
+          />
         </Card>,
         "className": "bookly-account-detail-view",
       },
@@ -300,6 +341,12 @@ ShallowWrapper {
                
               Jun. 30, 2017, 12:52:54
             </p>,
+            <hr />,
+            <Button
+              onClick={[Function]}
+              text="Logout"
+              type="info"
+            />,
           ],
           "classes": Array [
             "detail-card",
@@ -415,6 +462,28 @@ ShallowWrapper {
               "Jun. 30, 2017, 12:52:54",
             ],
             "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "hr",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "function",
+            "props": Object {
+              "onClick": [Function],
+              "text": "Logout",
+              "type": "info",
+            },
+            "ref": null,
+            "rendered": null,
+            "type": [Function],
           },
         ],
         "type": [Function],

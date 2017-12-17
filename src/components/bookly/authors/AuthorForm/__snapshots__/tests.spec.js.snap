@@ -46,7 +46,7 @@ ShallowWrapper {
             type="success"
           />
           <Button
-            extraClasses="float-right"
+            classes="float-right"
             onClick={[Function]}
             text="Cancel"
             type="info"
@@ -101,7 +101,7 @@ ShallowWrapper {
               type="success"
             />,
             <Button
-              extraClasses="float-right"
+              classes="float-right"
               onClick={[Function]}
               text="Cancel"
               type="info"
@@ -131,7 +131,7 @@ ShallowWrapper {
             "key": undefined,
             "nodeType": "function",
             "props": Object {
-              "extraClasses": "float-right",
+              "classes": "float-right",
               "onClick": [Function],
               "text": "Cancel",
               "type": "info",
@@ -176,7 +176,7 @@ ShallowWrapper {
               type="success"
             />
             <Button
-              extraClasses="float-right"
+              classes="float-right"
               onClick={[Function]}
               text="Cancel"
               type="info"
@@ -231,7 +231,7 @@ ShallowWrapper {
                 type="success"
               />,
               <Button
-                extraClasses="float-right"
+                classes="float-right"
                 onClick={[Function]}
                 text="Cancel"
                 type="info"
@@ -261,7 +261,7 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "function",
               "props": Object {
-                "extraClasses": "float-right",
+                "classes": "float-right",
                 "onClick": [Function],
                 "text": "Cancel",
                 "type": "info",

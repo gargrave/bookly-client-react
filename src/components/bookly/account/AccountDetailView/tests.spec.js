@@ -13,6 +13,7 @@ describe('AccountDetailView', () => {
 
   beforeEach(() => {
     props = {
+      onLogoutClick: jest.fn(),
       user: Object.create(usersMockData[0]),
     }
 

@@ -40,7 +40,7 @@ const AuthorForm = ({
           text="Submit"
           type="success" />
         <Button
-          extraClasses="float-right"
+          classes="float-right"
           onClick={onCancel}
           text="Cancel"
           type="info" />
