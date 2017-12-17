@@ -1,13 +1,13 @@
 .bookly-card {
   background-color: #f9f9f9;
-  cursor: pointer;
   border: solid 1px #bbb;
   border-radius: 5px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
   margin: 10px auto;
-  width: 95%;
   max-width: 600px;
   padding: 8px;
+  width: 95%;
 }
 
 .bookly-card:hover {
@@ -24,4 +24,13 @@
 
 .bookly-card .bookly-card-text {
   color: #6e6969;
+}
+
+.bookly-card .bookly-card-text + .bookly-card-text {
+  margin-top: 8px;
+}
+
+.bookly-card .bookly-card-spacer {
+  height: 20px;
+  line-height: 20px;
 }
