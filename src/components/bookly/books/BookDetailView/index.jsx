@@ -6,6 +6,8 @@ import { buildClasses } from '@/utils/cssHelpers'
 import Button from '@/components/common/Button'
 import Card from '@/components/common/Card'
 
+import './styles.css'
+
 const BookDetailView = (props) => {
   const {
     book,
@@ -16,6 +18,7 @@ const BookDetailView = (props) => {
     <div className={buildClasses('book-detail-view')}>
       <Card
         classes={['book-detail-card']}
+        hoverable={false}
         onClick={() => null}
         text={`by ${book.author.name}`}
         title={book.title}>

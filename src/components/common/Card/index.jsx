@@ -1,5 +1,5 @@
 import React from 'react'
-import { array, func, string } from 'prop-types'
+import { array, bool, func, string } from 'prop-types'
 
 import { buildClasses } from '@/utils/cssHelpers'
 
@@ -11,16 +11,25 @@ const renderText = (text, classname) => (
     : null
 )
 
+const rawClassList = (classes, hoverable) => {
+  const extras = []
+  if (hoverable) {
+    extras.push('hoverable')
+  }
+  return ['card', ...classes, ...extras]
+}
+
 const Card = ({
   children,
   classes = [],
+  hoverable = true,
   onClick,
   text,
   title,
 }) => {
   return (
     <div
-      className={buildClasses(['card', ...classes])}
+      className={buildClasses(rawClassList(classes, hoverable))}
       onClick={onClick}>
       {renderText(title, 'card-title')}
       {renderText(text, 'card-text')}
@@ -32,6 +41,7 @@ const Card = ({
 Card.propTypes = {
   children: array,
   classes: array,
+  hoverable: bool,
   onClick: func.isRequired,
   text: string,
   title: string,

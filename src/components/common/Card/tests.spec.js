@@ -10,6 +10,7 @@ describe('Card', () => {
   beforeEach(() => {
     props = {
       classes: [],
+      hoverable: true,
       onClick: jest.fn(),
       text: 'this is the text',
       title: 'Awesome Title',
@@ -22,6 +23,7 @@ describe('Card', () => {
     expect(component.find('.bookly-card').length).toEqual(1)
     expect(component.find('.bookly-card-title').length).toEqual(1)
     expect(component.find('.bookly-card-text').length).toEqual(1)
+    expect(component.find('.bookly-hoverable').length).toEqual(1)
   })
 
   it('does not render title when prop is blank', () => {
@@ -40,6 +42,12 @@ describe('Card', () => {
     props.classes = ['oneclass', 'anotherclass']
     component = shallow(<Card {...props} />)
     expect(component.find('.bookly-oneclass.bookly-anotherclass').length).toEqual(1)
+  })
+
+  it('does not add a hover state with "hoverable=false"', () => {
+    props.hoverable = false
+    component = shallow(<Card {...props} />)
+    expect(component.find('.bookly-hoverable').length).toEqual(0)
   })
 
   it('calls the "onClick" callback when clicked', () => {
