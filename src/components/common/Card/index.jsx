@@ -1,5 +1,5 @@
 import React from 'react'
-import { func, string } from 'prop-types'
+import { array, func, string } from 'prop-types'
 
 import { buildClasses } from '@/utils/cssHelpers'
 
@@ -12,12 +12,13 @@ const renderText = (text, classname) => (
 )
 
 const Card = ({
+  classes = [],
   onClick,
   text,
   title,
 }) => {
   return (
-    <div className={buildClasses('card')} onClick={onClick}>
+    <div className={buildClasses(['card', ...classes])} onClick={onClick}>
       {renderText(title, 'card-title')}
       {renderText(text, 'card-text')}
     </div>
@@ -25,6 +26,7 @@ const Card = ({
 }
 
 Card.propTypes = {
+  classes: array,
   onClick: func.isRequired,
   text: string,
   title: string,

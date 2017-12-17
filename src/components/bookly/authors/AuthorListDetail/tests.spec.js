@@ -2,6 +2,9 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import { authorsMockData } from '@/utils/mocks/data/authors-mock-data'
+
+import Card from '@/components/common/Card'
+
 import AuthorListDetail from './'
 
 describe('AuthorListDetail', () => {
@@ -18,19 +21,8 @@ describe('AuthorListDetail', () => {
   })
 
   test('renders correctly', () => {
-    const element = component.find('.author-list-detail')
+    const element = component.find(Card)
     expect(component).toMatchSnapshot()
     expect(element.length).toEqual(1)
-  })
-
-  test("renders the author's name", () => {
-    const text = component.find('.author-list-detail .author-name').text()
-    expect(text.indexOf(`${props.author.firstName} ${props.author.lastName}`)).not.toEqual(-1)
-  })
-
-  test('calls the "onClick" callback when the component is clicked', () => {
-    expect(props.onClick.mock.calls.length).toEqual(0)
-    component.simulate('click')
-    expect(props.onClick.mock.calls.length).toEqual(1)
   })
 })

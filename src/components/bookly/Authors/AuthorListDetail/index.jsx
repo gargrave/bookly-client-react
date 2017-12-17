@@ -1,18 +1,17 @@
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
-import './styles.css'
+import Card from '@/components/common/Card'
 
 const AuthorListDetail = ({
   author,
   onClick,
 }) => {
   return (
-    <div className="author-list-detail" onClick={onClick}>
-      <p className="author-name">
-        {author.firstName} {author.lastName}
-      </p>
-    </div>
+    <Card
+      classes={['author-card']}
+      onClick={onClick}
+      title={`${author.firstName} ${author.lastName}`} />
   )
 }
 

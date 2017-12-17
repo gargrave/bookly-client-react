@@ -8,31 +8,25 @@ ShallowWrapper {
     "findWhereUnwrapped": [Function],
   },
   "length": 1,
-  "node": <div
-    className="author-list-detail"
+  "node": <Card
+    classes={
+        Array [
+            "author-card",
+          ]
+    }
     onClick={[Function]}
->
-    <p
-        className="author-name"
-    >
-        Aldous
-         
-        Huxley
-    </p>
-</div>,
+    title="Aldous Huxley"
+/>,
   "nodes": Array [
-    <div
-      className="author-list-detail"
+    <Card
+      classes={
+            Array [
+                  "author-card",
+                ]
+      }
       onClick={[Function]}
->
-      <p
-            className="author-name"
-      >
-            Aldous
-             
-            Huxley
-      </p>
-</div>,
+      title="Aldous Huxley"
+/>,
   ],
   "options": Object {},
   "renderer": ReactShallowRenderer {
@@ -74,33 +68,27 @@ ShallowWrapper {
       "_pendingReplaceState": false,
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
-        "_currentElement": <div
-          className="author-list-detail"
+        "_currentElement": <Card
+          classes={
+                    Array [
+                              "author-card",
+                            ]
+          }
           onClick={[Function]}
->
-          <p
-                    className="author-name"
-          >
-                    Aldous
-                     
-                    Huxley
-          </p>
-</div>,
+          title="Aldous Huxley"
+/>,
         "_debugID": 2,
-        "_renderedOutput": <div
-          className="author-list-detail"
+        "_renderedOutput": <Card
+          classes={
+                    Array [
+                              "author-card",
+                            ]
+          }
           onClick={[Function]}
->
-          <p
-                    className="author-name"
-          >
-                    Aldous
-                     
-                    Huxley
-          </p>
-</div>,
+          title="Aldous Huxley"
+/>,
       },
-      "_renderedNodeType": 0,
+      "_renderedNodeType": 1,
       "_rootNodeID": 0,
       "_topLevelWrapper": null,
       "_updateBatchNumber": null,
