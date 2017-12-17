@@ -19,87 +19,91 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h2>
-          My Account
-        </h2>,
+      "children": <Card
+        classes={
+          Array [
+            "detail-card",
+            "account-detail-card",
+          ]
+        }
+        hoverable={false}
+        onClick={[Function]}
+        title="My Account"
+      >
         <p
-          className="email-display"
+          className="bookly-card-text"
         >
           <strong>
-            Email: 
+            Email:
           </strong>
+           
           mockuser1@gmail.com
-        </p>,
-      ],
-      "className": "account-detail-view",
+        </p>
+        <hr />
+        <p
+          className="bookly-card-text"
+        >
+          <strong>
+            Registered:
+          </strong>
+           
+          Jun. 30, 2017, 12:52:54
+        </p>
+        <p
+          className="bookly-card-text"
+        >
+          <strong>
+            Updated:
+          </strong>
+           
+          Jun. 30, 2017, 12:52:54
+        </p>
+      </Card>,
+      "className": "bookly-account-detail-view",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "My Account",
-        },
-        "ref": null,
-        "rendered": "My Account",
-        "type": "h2",
-      },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <strong>
-              Email: 
-            </strong>,
-            "mockuser1@gmail.com",
-          ],
-          "className": "email-display",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Email: ",
-            },
-            "ref": null,
-            "rendered": "Email: ",
-            "type": "strong",
-          },
-          "mockuser1@gmail.com",
-        ],
-        "type": "p",
-      },
-    ],
-    "type": "div",
-  },
-  Symbol(enzyme.__nodes__): Array [
-    Object {
+    "rendered": Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
-          <h2>
-            My Account
-          </h2>,
           <p
-            className="email-display"
+            className="bookly-card-text"
           >
             <strong>
-              Email: 
+              Email:
             </strong>
+             
             mockuser1@gmail.com
           </p>,
+          <hr />,
+          <p
+            className="bookly-card-text"
+          >
+            <strong>
+              Registered:
+            </strong>
+             
+            Jun. 30, 2017, 12:52:54
+          </p>,
+          <p
+            className="bookly-card-text"
+          >
+            <strong>
+              Updated:
+            </strong>
+             
+            Jun. 30, 2017, 12:52:54
+          </p>,
         ],
-        "className": "account-detail-view",
+        "classes": Array [
+          "detail-card",
+          "account-detail-card",
+        ],
+        "hoverable": false,
+        "onClick": [Function],
+        "title": "My Account",
       },
       "ref": null,
       "rendered": Array [
@@ -108,24 +112,14 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
-            "children": "My Account",
-          },
-          "ref": null,
-          "rendered": "My Account",
-          "type": "h2",
-        },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
             "children": Array [
               <strong>
-                Email: 
+                Email:
               </strong>,
+              " ",
               "mockuser1@gmail.com",
             ],
-            "className": "email-display",
+            "className": "bookly-card-text",
           },
           "ref": null,
           "rendered": Array [
@@ -134,17 +128,297 @@ ShallowWrapper {
               "key": undefined,
               "nodeType": "host",
               "props": Object {
-                "children": "Email: ",
+                "children": "Email:",
               },
               "ref": null,
-              "rendered": "Email: ",
+              "rendered": "Email:",
               "type": "strong",
             },
+            " ",
             "mockuser1@gmail.com",
           ],
           "type": "p",
         },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {},
+          "ref": null,
+          "rendered": null,
+          "type": "hr",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong>
+                Registered:
+              </strong>,
+              " ",
+              "Jun. 30, 2017, 12:52:54",
+            ],
+            "className": "bookly-card-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Registered:",
+              },
+              "ref": null,
+              "rendered": "Registered:",
+              "type": "strong",
+            },
+            " ",
+            "Jun. 30, 2017, 12:52:54",
+          ],
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <strong>
+                Updated:
+              </strong>,
+              " ",
+              "Jun. 30, 2017, 12:52:54",
+            ],
+            "className": "bookly-card-text",
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "Updated:",
+              },
+              "ref": null,
+              "rendered": "Updated:",
+              "type": "strong",
+            },
+            " ",
+            "Jun. 30, 2017, 12:52:54",
+          ],
+          "type": "p",
+        },
       ],
+      "type": [Function],
+    },
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": <Card
+          classes={
+            Array [
+              "detail-card",
+              "account-detail-card",
+            ]
+          }
+          hoverable={false}
+          onClick={[Function]}
+          title="My Account"
+        >
+          <p
+            className="bookly-card-text"
+          >
+            <strong>
+              Email:
+            </strong>
+             
+            mockuser1@gmail.com
+          </p>
+          <hr />
+          <p
+            className="bookly-card-text"
+          >
+            <strong>
+              Registered:
+            </strong>
+             
+            Jun. 30, 2017, 12:52:54
+          </p>
+          <p
+            className="bookly-card-text"
+          >
+            <strong>
+              Updated:
+            </strong>
+             
+            Jun. 30, 2017, 12:52:54
+          </p>
+        </Card>,
+        "className": "bookly-account-detail-view",
+      },
+      "ref": null,
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": Array [
+            <p
+              className="bookly-card-text"
+            >
+              <strong>
+                Email:
+              </strong>
+               
+              mockuser1@gmail.com
+            </p>,
+            <hr />,
+            <p
+              className="bookly-card-text"
+            >
+              <strong>
+                Registered:
+              </strong>
+               
+              Jun. 30, 2017, 12:52:54
+            </p>,
+            <p
+              className="bookly-card-text"
+            >
+              <strong>
+                Updated:
+              </strong>
+               
+              Jun. 30, 2017, 12:52:54
+            </p>,
+          ],
+          "classes": Array [
+            "detail-card",
+            "account-detail-card",
+          ],
+          "hoverable": false,
+          "onClick": [Function],
+          "title": "My Account",
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Email:
+                </strong>,
+                " ",
+                "mockuser1@gmail.com",
+              ],
+              "className": "bookly-card-text",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Email:",
+                },
+                "ref": null,
+                "rendered": "Email:",
+                "type": "strong",
+              },
+              " ",
+              "mockuser1@gmail.com",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "hr",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Registered:
+                </strong>,
+                " ",
+                "Jun. 30, 2017, 12:52:54",
+              ],
+              "className": "bookly-card-text",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Registered:",
+                },
+                "ref": null,
+                "rendered": "Registered:",
+                "type": "strong",
+              },
+              " ",
+              "Jun. 30, 2017, 12:52:54",
+            ],
+            "type": "p",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": Array [
+                <strong>
+                  Updated:
+                </strong>,
+                " ",
+                "Jun. 30, 2017, 12:52:54",
+              ],
+              "className": "bookly-card-text",
+            },
+            "ref": null,
+            "rendered": Array [
+              Object {
+                "instance": null,
+                "key": undefined,
+                "nodeType": "host",
+                "props": Object {
+                  "children": "Updated:",
+                },
+                "ref": null,
+                "rendered": "Updated:",
+                "type": "strong",
+              },
+              " ",
+              "Jun. 30, 2017, 12:52:54",
+            ],
+            "type": "p",
+          },
+        ],
+        "type": [Function],
+      },
       "type": "div",
     },
   ],
