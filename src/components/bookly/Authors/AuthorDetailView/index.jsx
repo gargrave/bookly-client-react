@@ -19,6 +19,7 @@ const AuthorDetailView = (props) => {
         classes={['detail-card', 'author-detail-card']}
         hoverable={false}
         title={`${author.firstName} ${author.lastName}`}>
+
         <hr/>
         <p className={buildClasses('card-text')}>
           <strong>Added:</strong> {format(author.createdAt, 'MMM. DD, YYYY, HH:mm:ss')}
@@ -26,16 +27,17 @@ const AuthorDetailView = (props) => {
         <p className={buildClasses('card-text')}>
           <strong>Updated:</strong> {format(author.updatedAt, 'MMM. DD, YYYY, HH:mm:ss')}
         </p>
-      </Card>
 
-      <Button
-        onClick={onEditClick}
-        text="Edit"
-        type="info" />
-      <Button
-        onClick={onBackClick}
-        text="Back"
-        type="light" />
+        <hr/>
+        <Button
+          onClick={onEditClick}
+          text="Edit"
+          type="info" />
+        <Button
+          onClick={onBackClick}
+          text="Back"
+          type="light" />
+      </Card>
     </div>
   )
 }
