@@ -18,7 +18,9 @@ const Card = ({
   title,
 }) => {
   return (
-    <div className={buildClasses(['card', ...classes])} onClick={onClick}>
+    <div
+      className={buildClasses(['card', ...classes])}
+      onClick={onClick}>
       {renderText(title, 'card-title')}
       {renderText(text, 'card-text')}
     </div>
