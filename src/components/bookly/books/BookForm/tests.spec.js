@@ -2,6 +2,7 @@ import React from 'react'
 import { shallow } from 'enzyme'
 
 import Button from '@/components/common/Button'
+import InputField from '@/components/common/InputField'
 
 import BookForm from './'
 
@@ -25,9 +26,8 @@ describe('BookForm', () => {
 
     test('renders correctly', () => {
       expect(component).toMatchSnapshot()
-      expect(component.find('form.bookly-form').length).toEqual(1)
-      expect(component.find('form.bookly-book-form').length).toEqual(1)
-      expect(component.find('input[type="text"]').length).toEqual(1)
+      expect(component.find('.bookly-form.bookly-book-form').length).toEqual(1)
+      expect(component.find(InputField).length).toEqual(1)
       expect(component.find(Button).length).toEqual(2)
     })
   })

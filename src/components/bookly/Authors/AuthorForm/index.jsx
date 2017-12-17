@@ -4,6 +4,7 @@ import { func, shape, string } from 'prop-types'
 import { buildClasses } from '@/utils/cssHelpers'
 
 import Button from '@/components/common/Button'
+import InputField from '@/components/common/InputField'
 
 import '@/components/common/Form/styles.css'
 
@@ -18,25 +19,18 @@ const AuthorForm = ({
       className={buildClasses(['form', 'author-form'])}
       onSubmit={onSubmit}
       noValidate>
-      <div className="input-field">
-        <label htmlFor="firstName">First name:</label>
-        <input
-          type="text"
-          name="firstName"
-          id="firstName"
-          value={author.firstName}
-          onChange={onInputChange} />
-      </div>
 
-      <div className="input-field">
-        <label htmlFor="lastName">Last name:</label>
-        <input
-          type="text"
-          name="lastName"
-          id="lastName"
-          value={author.lastName}
-          onChange={onInputChange} />
-      </div>
+      <InputField
+        boundValue={author.firstName}
+        label="First name"
+        name="firstName"
+        onInputChange={onInputChange} />
+
+      <InputField
+        boundValue={author.lastName}
+        label="Last name"
+        name="lastName"
+        onInputChange={onInputChange} />
 
       <div className="input-field">
         <Button

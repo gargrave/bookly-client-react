@@ -23,38 +23,18 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <div
-          className="input-field"
-        >
-          <label
-            htmlFor="firstName"
-          >
-            First name:
-          </label>
-          <input
-            id="firstName"
-            name="firstName"
-            onChange={[Function]}
-            type="text"
-            value="Aldous"
-          />
-        </div>,
-        <div
-          className="input-field"
-        >
-          <label
-            htmlFor="lastName"
-          >
-            Last name:
-          </label>
-          <input
-            id="lastName"
-            name="lastName"
-            onChange={[Function]}
-            type="text"
-            value="Huxley"
-          />
-        </div>,
+        <InputField
+          boundValue="Aldous"
+          label="First name"
+          name="firstName"
+          onInputChange={[Function]}
+        />,
+        <InputField
+          boundValue="Huxley"
+          label="Last name"
+          name="lastName"
+          onInputChange={[Function]}
+        />,
         <div
           className="input-field"
         >
@@ -82,108 +62,30 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            <label
-              htmlFor="firstName"
-            >
-              First name:
-            </label>,
-            <input
-              id="firstName"
-              name="firstName"
-              onChange={[Function]}
-              type="text"
-              value="Aldous"
-            />,
-          ],
-          "className": "input-field",
+          "boundValue": "Aldous",
+          "label": "First name",
+          "name": "firstName",
+          "onInputChange": [Function],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "First name:",
-              "htmlFor": "firstName",
-            },
-            "ref": null,
-            "rendered": "First name:",
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "id": "firstName",
-              "name": "firstName",
-              "onChange": [Function],
-              "type": "text",
-              "value": "Aldous",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-        ],
-        "type": "div",
+        "rendered": null,
+        "type": [Function],
       },
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "host",
+        "nodeType": "function",
         "props": Object {
-          "children": Array [
-            <label
-              htmlFor="lastName"
-            >
-              Last name:
-            </label>,
-            <input
-              id="lastName"
-              name="lastName"
-              onChange={[Function]}
-              type="text"
-              value="Huxley"
-            />,
-          ],
-          "className": "input-field",
+          "boundValue": "Huxley",
+          "label": "Last name",
+          "name": "lastName",
+          "onInputChange": [Function],
         },
         "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "children": "Last name:",
-              "htmlFor": "lastName",
-            },
-            "ref": null,
-            "rendered": "Last name:",
-            "type": "label",
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "host",
-            "props": Object {
-              "id": "lastName",
-              "name": "lastName",
-              "onChange": [Function],
-              "type": "text",
-              "value": "Huxley",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": "input",
-          },
-        ],
-        "type": "div",
+        "rendered": null,
+        "type": [Function],
       },
       Object {
         "instance": null,
@@ -251,38 +153,18 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <div
-            className="input-field"
-          >
-            <label
-              htmlFor="firstName"
-            >
-              First name:
-            </label>
-            <input
-              id="firstName"
-              name="firstName"
-              onChange={[Function]}
-              type="text"
-              value="Aldous"
-            />
-          </div>,
-          <div
-            className="input-field"
-          >
-            <label
-              htmlFor="lastName"
-            >
-              Last name:
-            </label>
-            <input
-              id="lastName"
-              name="lastName"
-              onChange={[Function]}
-              type="text"
-              value="Huxley"
-            />
-          </div>,
+          <InputField
+            boundValue="Aldous"
+            label="First name"
+            name="firstName"
+            onInputChange={[Function]}
+          />,
+          <InputField
+            boundValue="Huxley"
+            label="Last name"
+            name="lastName"
+            onInputChange={[Function]}
+          />,
           <div
             className="input-field"
           >
@@ -310,108 +192,30 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <label
-                htmlFor="firstName"
-              >
-                First name:
-              </label>,
-              <input
-                id="firstName"
-                name="firstName"
-                onChange={[Function]}
-                type="text"
-                value="Aldous"
-              />,
-            ],
-            "className": "input-field",
+            "boundValue": "Aldous",
+            "label": "First name",
+            "name": "firstName",
+            "onInputChange": [Function],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "First name:",
-                "htmlFor": "firstName",
-              },
-              "ref": null,
-              "rendered": "First name:",
-              "type": "label",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "id": "firstName",
-                "name": "firstName",
-                "onChange": [Function],
-                "type": "text",
-                "value": "Aldous",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "input",
-            },
-          ],
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
         },
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "host",
+          "nodeType": "function",
           "props": Object {
-            "children": Array [
-              <label
-                htmlFor="lastName"
-              >
-                Last name:
-              </label>,
-              <input
-                id="lastName"
-                name="lastName"
-                onChange={[Function]}
-                type="text"
-                value="Huxley"
-              />,
-            ],
-            "className": "input-field",
+            "boundValue": "Huxley",
+            "label": "Last name",
+            "name": "lastName",
+            "onInputChange": [Function],
           },
           "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "children": "Last name:",
-                "htmlFor": "lastName",
-              },
-              "ref": null,
-              "rendered": "Last name:",
-              "type": "label",
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "host",
-              "props": Object {
-                "id": "lastName",
-                "name": "lastName",
-                "onChange": [Function],
-                "type": "text",
-                "value": "Huxley",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": "input",
-            },
-          ],
-          "type": "div",
+          "rendered": null,
+          "type": [Function],
         },
         Object {
           "instance": null,

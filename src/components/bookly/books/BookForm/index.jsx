@@ -5,6 +5,7 @@ import { buildClasses } from '@/utils/cssHelpers'
 
 import AuthorSelect from '@/components/bookly/authors/AuthorSelect'
 import Button from '@/components/common/Button'
+import InputField from '@/components/common/InputField'
 
 import '@/components/common/Form/styles.css'
 
@@ -21,10 +22,12 @@ const BookForm = ({
       className={buildClasses(['form', 'book-form'])}
       onSubmit={onSubmit}
       noValidate>
-      <div className="input-field">
-        <label htmlFor="title">Title:</label>
-        <input type="text" name="title" id="title" value={book.title} onChange={onInputChange} />
-      </div>
+
+      <InputField
+        boundValue={book.title}
+        label="Title"
+        name="title"
+        onInputChange={onInputChange} />
 
       <AuthorSelect
         author={book.author}
