@@ -7,16 +7,19 @@ import Button from '@/components/common/Button'
 
 import '@/components/common/Form/styles.css'
 
-const LoginForm = (props) => {
+const LoginForm = ({
+  user,
+  onInputChange,
+  onSubmit,
+}) => {
   return (
     <form
       className={buildClasses(['form', 'login-form'])}
-      onSubmit={props.onSubmit}
-      noValidate
-    >
+      onSubmit={onSubmit}
+      noValidate>
       <div className="input-field">
         <label htmlFor="email">Email:</label>
-        <input type="email" name="email" id="email" value={props.user.email} onChange={props.onInputChange} />
+        <input type="email" name="email" id="email" value={user.email} onChange={onInputChange} />
       </div>
 
       <div className="input-field">
@@ -25,15 +28,14 @@ const LoginForm = (props) => {
           type="password"
           name="password"
           id="password"
-          value={props.user.password}
-          onChange={props.onInputChange}
-        />
+          value={user.password}
+          onChange={onInputChange} />
       </div>
 
       <div className="input-field">
         <Button
           canSubmit={true}
-          onClick={props.onSubmit}
+          onClick={onSubmit}
           position="left"
           text="Login"
           type="success" />

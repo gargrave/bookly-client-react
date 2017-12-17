@@ -1,14 +1,13 @@
 import React from 'react'
 import { shape, string } from 'prop-types'
 
-const AccountDetailView = (props) => {
-  const { email } = props.user
+const AccountDetailView = ({ user }) => {
   return (
     <div className="account-detail-view">
       <h2>My Account</h2>
       <p className="email-display">
         <strong>Email: </strong>
-        {email}
+        {user.email}
       </p>
     </div>
   )

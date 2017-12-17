@@ -34,7 +34,6 @@ class BookDetailPage extends Component {
   async refreshBooks () {
     try {
       await this.props.fetchBooks()
-      console.log('lksajdlfjslkjf')
     } catch (err) {
       console.log('TODO: deal with this error!')
       console.log(err)

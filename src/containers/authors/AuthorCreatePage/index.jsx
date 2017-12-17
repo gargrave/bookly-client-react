@@ -57,8 +57,7 @@ class AuthorCreatePage extends Component {
           author={this.state.author}
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}
-          onCancel={this.onCancel}
-        />
+          onCancel={this.onCancel} />
       </div>
     )
   }

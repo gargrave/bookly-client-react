@@ -112,7 +112,8 @@ class AuthorDetailPage extends Component {
           detailView(author, this.onBackClick.bind(this), this.onEditClick.bind(this))
         }
         {editing &&
-          editView(editableAuthor, this.onCancel.bind(this), this.onInputChange.bind(this), this.onSubmit.bind(this))
+          editView(editableAuthor, this.onCancel.bind(this),
+            this.onInputChange.bind(this), this.onSubmit.bind(this))
         }
       </div>
     )

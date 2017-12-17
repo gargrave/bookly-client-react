@@ -11,7 +11,11 @@ const options = (authors) => {
   ))
 }
 
-const AuthorSelect = ({ author, authors, onChange }) => {
+const AuthorSelect = ({
+  author,
+  authors,
+  onChange,
+}) => {
   return (
     <div className="input-field">
       <select

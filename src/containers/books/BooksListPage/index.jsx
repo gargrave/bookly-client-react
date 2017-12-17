@@ -49,7 +49,10 @@ class BooksListPage extends Component {
             type="success" />
         </h2>
         {this.props.books.map((book) => (
-          <BookListDetail key={book.id} book={book} onClick={() => this.onBookClick(book.id)} />
+          <BookListDetail
+            key={book.id}
+            book={book}
+            onClick={() => this.onBookClick(book.id)} />
         ))}
       </div>
     )
