@@ -16,7 +16,6 @@ const AccountDetailView = ({
       <Card
         classes={['detail-card', 'account-detail-card']}
         hoverable={false}
-        onClick={() => null}
         title="My Account">
         <p className={buildClasses('card-text')}>
           <strong>Email:</strong> {user.email}

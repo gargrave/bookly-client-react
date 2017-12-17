@@ -42,7 +42,7 @@ Card.propTypes = {
   children: array,
   classes: array,
   hoverable: bool,
-  onClick: func.isRequired,
+  onClick: func,
   text: string,
   title: string,
 }

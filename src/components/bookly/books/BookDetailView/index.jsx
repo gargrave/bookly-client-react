@@ -18,7 +18,6 @@ const BookDetailView = (props) => {
       <Card
         classes={['detail-card', 'book-detail-card']}
         hoverable={false}
-        onClick={() => null}
         text={`by ${book.author.name}`}
         title={book.title}>
         <hr/>

@@ -18,7 +18,6 @@ const AuthorDetailView = (props) => {
       <Card
         classes={['detail-card', 'author-detail-card']}
         hoverable={false}
-        onClick={() => null}
         title={`${author.firstName} ${author.lastName}`}>
         <hr/>
         <p className={buildClasses('card-text')}>

@@ -28,7 +28,6 @@ ShallowWrapper {
           ]
         }
         hoverable={false}
-        onClick={[Function]}
         title="My Account"
       >
         <p
@@ -115,7 +114,6 @@ ShallowWrapper {
           "account-detail-card",
         ],
         "hoverable": false,
-        "onClick": [Function],
         "title": "My Account",
       },
       "ref": null,
@@ -266,7 +264,6 @@ ShallowWrapper {
             ]
           }
           hoverable={false}
-          onClick={[Function]}
           title="My Account"
         >
           <p
@@ -353,7 +350,6 @@ ShallowWrapper {
             "account-detail-card",
           ],
           "hoverable": false,
-          "onClick": [Function],
           "title": "My Account",
         },
         "ref": null,
