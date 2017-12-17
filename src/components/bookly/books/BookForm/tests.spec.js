@@ -14,10 +14,10 @@ describe('BookForm', () => {
       props = {
         book: { title: '', author: {} },
         authors: [],
-        handleAuthorChange: jest.fn(),
-        handleInputChange: jest.fn(),
-        handleSubmit: jest.fn(),
-        handleCancel: jest.fn(),
+        onAuthorChange: jest.fn(),
+        onInputChange: jest.fn(),
+        onSubmit: jest.fn(),
+        onCancel: jest.fn(),
       }
 
       component = shallow(<BookForm {...props} />)

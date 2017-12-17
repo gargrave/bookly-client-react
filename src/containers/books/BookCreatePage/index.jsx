@@ -18,22 +18,22 @@ class BookCreatePage extends Component {
       book: bookModel.empty(),
     }
 
-    this.handleAuthorChange = this.handleAuthorChange.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleCancel = this.handleCancel.bind(this)
+    this.onAuthorChange = this.onAuthorChange.bind(this)
+    this.onInputChange = this.onInputChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+    this.onCancel = this.onCancel.bind(this)
   }
 
   async componentDidMount () {
     try {
       await this.props.fetchAuthors()
     } catch (err) {
-      console.log('TODO: handle error!')
+      console.log('TODO: deal with this error!')
       console.log(err)
     }
   }
 
-  handleAuthorChange (event) {
+  onAuthorChange (event) {
     const authorId = Number(event.target.value)
     const author = this.props.authors.find((a) => a.id === authorId)
 
@@ -44,7 +44,7 @@ class BookCreatePage extends Component {
     }
   }
 
-  handleInputChange (event) {
+  onInputChange (event) {
     const key = event.target.name
     const book = Object.assign({}, this.state.book)
 
@@ -54,7 +54,7 @@ class BookCreatePage extends Component {
     }
   }
 
-  async handleSubmit (event) {
+  async onSubmit (event) {
     event.preventDefault()
     const book = bookModel.toAPI(this.state.book)
     const tempValidate = () => {
@@ -66,13 +66,13 @@ class BookCreatePage extends Component {
         await this.props.createBook(book)
         this.props.history.push(localUrls.booksList)
       } catch (err) {
-        console.log('handle error:')
+        console.log('deal with this error:')
         console.dir(err.message)
       }
     }
   }
 
-  handleCancel (event) {
+  onCancel (event) {
     event.preventDefault()
     this.props.history.push(localUrls.booksList)
   }
@@ -87,11 +87,10 @@ class BookCreatePage extends Component {
         <BookForm
           authors={authors}
           book={book}
-          handleAuthorChange={this.handleAuthorChange}
-          handleInputChange={this.handleInputChange}
-          handleSubmit={this.handleSubmit}
-          handleCancel={this.handleCancel}
-        />
+          onAuthorChange={this.onAuthorChange}
+          onInputChange={this.onInputChange}
+          onSubmit={this.onSubmit}
+          onCancel={this.onCancel} />
       </div>
     )
   }

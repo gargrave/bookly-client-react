@@ -11,34 +11,37 @@ import '@/components/common/Form/styles.css'
 const BookForm = ({
   authors,
   book,
-  handleAuthorChange,
-  handleCancel,
-  handleInputChange,
-  handleSubmit,
+  onAuthorChange,
+  onCancel,
+  onInputChange,
+  onSubmit,
 }) => {
   return (
     <form
       className={buildClasses(['form', 'book-form'])}
-      onSubmit={handleSubmit}
+      onSubmit={onSubmit}
       noValidate>
       <div className="input-field">
         <label htmlFor="title">Title:</label>
-        <input type="text" name="title" id="title" value={book.title} onChange={handleInputChange} />
+        <input type="text" name="title" id="title" value={book.title} onChange={onInputChange} />
       </div>
 
-      <AuthorSelect author={book.author} authors={authors} handleChange={handleAuthorChange} />
+      <AuthorSelect
+        author={book.author}
+        authors={authors}
+        onChange={onAuthorChange} />
 
       <div className="input-field">
         <Button
           canSubmit={true}
-          onClick={handleSubmit}
+          onClick={onSubmit}
           position="left"
           text="Submit"
           type="success" />
 
         <Button
           extraClasses="float-right"
-          onClick={handleCancel}
+          onClick={onCancel}
           text="Cancel"
           type="light" />
       </div>
@@ -47,15 +50,15 @@ const BookForm = ({
 }
 
 BookForm.propTypes = {
+  authors: array.isRequired,
   book: shape({
     title: string.isRequired,
     author: object.isRequired,
   }).isRequired,
-  authors: array.isRequired,
-  handleAuthorChange: func.isRequired,
-  handleInputChange: func.isRequired,
-  handleSubmit: func.isRequired,
-  handleCancel: func.isRequired,
+  onAuthorChange: func.isRequired,
+  onInputChange: func.isRequired,
+  onSubmit: func.isRequired,
+  onCancel: func.isRequired,
 }
 
 export default BookForm

@@ -47,8 +47,8 @@ class AuthorDetailPage extends Component {
         this.props.history.push(localUrls.authorsList)
       }
     } catch (err) {
-      // TODO: handle error
-      console.log('TODO: handle error in AuthorDetailPage.refreshAuthors():')
+      // TODO: deal with this error
+      console.log('TODO: deal with this error in AuthorDetailPage.refreshAuthors():')
       console.dir(err)
     }
   }
@@ -71,7 +71,7 @@ class AuthorDetailPage extends Component {
         await this.props.updateAuthor(author)
         this.setState({ editing: false })
       } catch (err) {
-        console.log('TODO: handle error in AuthorDetailPage.onSubmit():')
+        console.log('TODO: deal with this error in AuthorDetailPage.onSubmit():')
         console.dir(err)
       }
     }

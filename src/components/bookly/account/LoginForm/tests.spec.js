@@ -11,8 +11,8 @@ describe('LoginForm', () => {
     beforeEach(() => {
       props = {
         user: { email: 'whatever@gmail.com', password: 'password' },
-        handleInputChange: jest.fn(),
-        handleSubmit: jest.fn(),
+        onInputChange: jest.fn(),
+        onSubmit: jest.fn(),
       }
 
       component = shallow(<LoginForm {...props} />)
@@ -24,7 +24,6 @@ describe('LoginForm', () => {
       expect(component.find('form.bookly-login-form').length).toEqual(1)
       expect(component.find('input[type="email"]').length).toEqual(1)
       expect(component.find('input[type="password"]').length).toEqual(1)
-      expect(component.find('button.submit-button').length).toEqual(1)
     })
 
     test('populates the "email" field correctly', () => {
@@ -37,28 +36,22 @@ describe('LoginForm', () => {
       expect(text).toEqual(props.user.password)
     })
 
-    test('calls the "handleSubmit" callback when the form is submitted', () => {
-      expect(props.handleSubmit.mock.calls.length).toEqual(0)
+    test('calls the "onSubmit" callback when the form is submitted', () => {
+      expect(props.onSubmit.mock.calls.length).toEqual(0)
       component.simulate('submit')
-      expect(props.handleSubmit.mock.calls.length).toEqual(1)
+      expect(props.onSubmit.mock.calls.length).toEqual(1)
     })
 
-    test('calls the "handleSubmit" callback when the button is clicked', () => {
-      expect(props.handleSubmit.mock.calls.length).toEqual(0)
-      component.find('button.submit-button').simulate('click')
-      expect(props.handleSubmit.mock.calls.length).toEqual(1)
-    })
-
-    test('calls the "handleInputChange" callback when "email" value changes', () => {
-      const beforeLen = props.handleInputChange.mock.calls.length
+    test('calls the "onInputChange" callback when "email" value changes', () => {
+      const beforeLen = props.onInputChange.mock.calls.length
       component.find('input[name="email"]').simulate('change')
-      expect(props.handleInputChange.mock.calls.length).toEqual(beforeLen + 1)
+      expect(props.onInputChange.mock.calls.length).toEqual(beforeLen + 1)
     })
 
-    test('calls the "handleInputChange" callback when "password" value changes', () => {
-      const beforeLen = props.handleInputChange.mock.calls.length
+    test('calls the "onInputChange" callback when "password" value changes', () => {
+      const beforeLen = props.onInputChange.mock.calls.length
       component.find('input[name="password"]').simulate('change')
-      expect(props.handleInputChange.mock.calls.length).toEqual(beforeLen + 1)
+      expect(props.onInputChange.mock.calls.length).toEqual(beforeLen + 1)
     })
   })
 
@@ -66,8 +59,8 @@ describe('LoginForm', () => {
     beforeEach(() => {
       props = {
         user: { email: '', password: '' },
-        handleInputChange: jest.fn(),
-        handleSubmit: jest.fn(),
+        onInputChange: jest.fn(),
+        onSubmit: jest.fn(),
       }
 
       component = shallow(<LoginForm {...props} />)

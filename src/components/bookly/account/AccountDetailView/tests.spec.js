@@ -11,8 +11,6 @@ describe('AccountDetailView', () => {
   beforeEach(() => {
     props = {
       user: Object.create(usersMockData[0]),
-      handleEditClick: jest.fn(),
-      handleBackClick: jest.fn(),
     }
 
     component = shallow(<AccountDetailView {...props} />)

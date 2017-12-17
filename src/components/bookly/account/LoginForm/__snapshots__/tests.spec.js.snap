@@ -48,13 +48,13 @@ ShallowWrapper {
     <div
         className="input-field"
     >
-        <button
-            className="submit-button"
+        <Button
+            canSubmit={true}
             onClick={[Function]}
-            type="submit"
-        >
-            Login
-        </button>
+            position="left"
+            text="Login"
+            type="success"
+        />
     </div>
 </form>,
   "nodes": Array [
@@ -98,13 +98,13 @@ ShallowWrapper {
       <div
             className="input-field"
       >
-            <button
-                  className="submit-button"
+            <Button
+                  canSubmit={true}
                   onClick={[Function]}
-                  type="submit"
-            >
-                  Login
-            </button>
+                  position="left"
+                  text="Login"
+                  type="success"
+            />
       </div>
 </form>,
   ],
@@ -115,8 +115,8 @@ ShallowWrapper {
       "_compositeType": 2,
       "_context": Object {},
       "_currentElement": <LoginForm
-        handleInputChange={[Function]}
-        handleSubmit={[Function]}
+        onInputChange={[Function]}
+        onSubmit={[Function]}
         user={
                 Object {
                         "email": "whatever@gmail.com",
@@ -131,8 +131,8 @@ ShallowWrapper {
         "_reactInternalInstance": [Circular],
         "context": Object {},
         "props": Object {
-          "handleInputChange": [Function],
-          "handleSubmit": [Function],
+          "onInputChange": [Function],
+          "onSubmit": [Function],
           "user": Object {
             "email": "whatever@gmail.com",
             "password": "password",
@@ -198,13 +198,13 @@ ShallowWrapper {
           <div
                     className="input-field"
           >
-                    <button
-                              className="submit-button"
+                    <Button
+                              canSubmit={true}
                               onClick={[Function]}
-                              type="submit"
-                    >
-                              Login
-                    </button>
+                              position="left"
+                              text="Login"
+                              type="success"
+                    />
           </div>
 </form>,
         "_debugID": 2,
@@ -248,13 +248,13 @@ ShallowWrapper {
           <div
                     className="input-field"
           >
-                    <button
-                              className="submit-button"
+                    <Button
+                              canSubmit={true}
                               onClick={[Function]}
-                              type="submit"
-                    >
-                              Login
-                    </button>
+                              position="left"
+                              text="Login"
+                              type="success"
+                    />
           </div>
 </form>,
       },
@@ -269,8 +269,8 @@ ShallowWrapper {
   },
   "root": [Circular],
   "unrendered": <LoginForm
-    handleInputChange={[Function]}
-    handleSubmit={[Function]}
+    onInputChange={[Function]}
+    onSubmit={[Function]}
     user={
         Object {
             "email": "whatever@gmail.com",

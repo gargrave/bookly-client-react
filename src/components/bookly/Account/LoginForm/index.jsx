@@ -36,8 +36,7 @@ const LoginForm = (props) => {
           onClick={props.onSubmit}
           position="left"
           text="Login"
-          type="success"
-        />
+          type="success" />
       </div>
     </form>
   )

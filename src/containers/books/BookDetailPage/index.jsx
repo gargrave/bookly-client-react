@@ -19,12 +19,12 @@ class BookDetailPage extends Component {
       editableBook: bookModel.empty(),
     }
 
-    this.handleAuthorChange = this.handleAuthorChange.bind(this)
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleEditClick = this.handleEditClick.bind(this)
-    this.handleCancel = this.handleCancel.bind(this)
-    this.handleBackClick = this.handleBackClick.bind(this)
+    this.onAuthorChange = this.onAuthorChange.bind(this)
+    this.onInputChange = this.onInputChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+    this.onEditClick = this.onEditClick.bind(this)
+    this.onCancel = this.onCancel.bind(this)
+    this.onBackClick = this.onBackClick.bind(this)
   }
 
   componentDidMount () {
@@ -36,12 +36,12 @@ class BookDetailPage extends Component {
       await this.props.fetchBooks()
       console.log('lksajdlfjslkjf')
     } catch (err) {
-      console.log('TODO: handle error!')
+      console.log('TODO: deal with this error!')
       console.log(err)
     }
   }
 
-  handleAuthorChange (event) {
+  onAuthorChange (event) {
     const authorId = Number(event.target.value)
     const author = this.props.authors.find((a) => a.id === authorId)
     const editableBook = Object.assign({}, this.state.editableBook, { author })
@@ -53,7 +53,7 @@ class BookDetailPage extends Component {
     }
   }
 
-  handleInputChange (event) {
+  onInputChange (event) {
     const key = event.target.name
     if (key in this.state.editableBook) {
       let editableBook = Object.assign({}, this.state.editableBook)
@@ -62,7 +62,7 @@ class BookDetailPage extends Component {
     }
   }
 
-  async handleSubmit (event) {
+  async onSubmit (event) {
     event.preventDefault()
     const book = bookModel.toAPI(this.state.editableBook)
     const tempValidate = () => {
@@ -74,7 +74,7 @@ class BookDetailPage extends Component {
         await this.props.updateBook(book)
         this.setState({ editing: false })
       } catch (err) {
-        console.log('handle error:')
+        console.log('deal with this error:')
         console.dir(err.message)
       }
     }
@@ -84,7 +84,7 @@ class BookDetailPage extends Component {
    * Enables 'editing' state and sets the editable book's value
    * to the current book from the store.
    */
-  handleEditClick () {
+  onEditClick () {
     this.setState({
       editing: true,
       editableBook: Object.assign(this.props.book),
@@ -94,12 +94,12 @@ class BookDetailPage extends Component {
   /**
    * Disables 'editing' state.
    */
-  handleCancel (event) {
+  onCancel (event) {
     event.preventDefault()
     this.setState({ editing: false })
   }
 
-  handleBackClick () {
+  onBackClick () {
     this.props.history.push(localUrls.booksList)
   }
 
@@ -111,19 +111,17 @@ class BookDetailPage extends Component {
         {!editing && (
           <BookDetailView
             book={this.props.book}
-            handleEditClick={this.handleEditClick}
-            handleBackClick={this.handleBackClick}
-          />
+            onEditClick={this.onEditClick}
+            onBackClick={this.onBackClick} />
         )}
         {editing && (
           <BookEditView
             authors={authors}
             book={this.state.editableBook}
-            handleAuthorChange={this.handleAuthorChange}
-            handleInputChange={this.handleInputChange}
-            handleSubmit={this.handleSubmit}
-            handleCancel={this.handleCancel}
-          />
+            onAuthorChange={this.onAuthorChange}
+            onInputChange={this.onInputChange}
+            onSubmit={this.onSubmit}
+            onCancel={this.onCancel} />
         )}
       </div>
     )

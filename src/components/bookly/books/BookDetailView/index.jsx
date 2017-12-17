@@ -4,7 +4,11 @@ import { func, number, shape, string } from 'prop-types'
 import Button from '@/components/common/Button'
 
 const BookDetailView = (props) => {
-  const { book, handleEditClick, handleBackClick } = props
+  const {
+    book,
+    onEditClick,
+    onBackClick,
+  } = props
   return (
     <div className="book-detail-view">
       <h2>Book Detail</h2>
@@ -22,13 +26,13 @@ const BookDetailView = (props) => {
       </p>
 
       <Button
-        onClick={handleEditClick}
+        onClick={onEditClick}
         position="left"
         text="Edit"
         type="success" />
 
       <Button
-        onClick={handleBackClick}
+        onClick={onBackClick}
         text="Back"
         type="light" />
     </div>
@@ -45,8 +49,8 @@ BookDetailView.propTypes = {
     createdAt: string,
     updatedAt: string,
   }),
-  handleEditClick: func.isRequired,
-  handleBackClick: func.isRequired,
+  onEditClick: func.isRequired,
+  onBackClick: func.isRequired,
 }
 
 export default BookDetailView

@@ -25,7 +25,7 @@ class AuthorsListPage extends Component {
     try {
       await this.props.fetchAuthors()
     } catch (err) {
-      // TODO: handle error
+      // TODO: deal with this error
     }
   }
 

@@ -6,10 +6,10 @@ import BookForm from '@/components/bookly/books/BookForm'
 const BookEditView = ({
   authors,
   book,
-  handleAuthorChange,
-  handleCancel,
-  handleInputChange,
-  handleSubmit,
+  onAuthorChange,
+  onCancel,
+  onInputChange,
+  onSubmit,
 }) => {
   return (
     <div className="book-edit-view">
@@ -17,11 +17,10 @@ const BookEditView = ({
       <BookForm
         authors={authors}
         book={book}
-        handleAuthorChange={handleAuthorChange}
-        handleCancel={handleCancel}
-        handleInputChange={handleInputChange}
-        handleSubmit={handleSubmit}
-      />
+        onAuthorChange={onAuthorChange}
+        onCancel={onCancel}
+        onInputChange={onInputChange}
+        onSubmit={onSubmit} />
     </div>
   )
 }
@@ -34,10 +33,10 @@ BookEditView.propTypes = {
     createdAt: string,
     updatedAt: string,
   }),
-  handleAuthorChange: func.isRequired,
-  handleInputChange: func.isRequired,
-  handleSubmit: func.isRequired,
-  handleCancel: func.isRequired,
+  onAuthorChange: func.isRequired,
+  onInputChange: func.isRequired,
+  onSubmit: func.isRequired,
+  onCancel: func.isRequired,
 }
 
 export default BookEditView

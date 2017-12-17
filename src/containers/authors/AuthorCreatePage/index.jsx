@@ -16,12 +16,12 @@ class AuthorCreatePage extends Component {
       author: authorModel.empty(),
     }
 
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.handleCancel = this.handleCancel.bind(this)
+    this.onInputChange = this.onInputChange.bind(this)
+    this.onSubmit = this.onSubmit.bind(this)
+    this.onCancel = this.onCancel.bind(this)
   }
 
-  handleInputChange (event) {
+  onInputChange (event) {
     const key = event.target.name
     if (key in this.state.author) {
       const author = Object.assign({}, this.state.author)
@@ -30,7 +30,7 @@ class AuthorCreatePage extends Component {
     }
   }
 
-  async handleSubmit (event) {
+  async onSubmit (event) {
     event.preventDefault()
     // TODO: temp validation -> fix this nephew......
     if (this.state.author.firstName && this.state.author.lastName) {
@@ -39,12 +39,12 @@ class AuthorCreatePage extends Component {
         await this.props.createAuthor(author)
         this.props.history.push(localUrls.authorsList)
       } catch (err) {
-        console.log('TODO: handle error')
+        console.log('TODO: deal with this error')
       }
     }
   }
 
-  handleCancel (event) {
+  onCancel (event) {
     event.preventDefault()
     this.props.history.push(localUrls.authorsList)
   }
@@ -55,9 +55,9 @@ class AuthorCreatePage extends Component {
         <h2>Add an Author</h2>
         <AuthorForm
           author={this.state.author}
-          onInputChange={this.handleInputChange}
-          onSubmit={this.handleSubmit}
-          onCancel={this.handleCancel}
+          onInputChange={this.onInputChange}
+          onSubmit={this.onSubmit}
+          onCancel={this.onCancel}
         />
       </div>
     )

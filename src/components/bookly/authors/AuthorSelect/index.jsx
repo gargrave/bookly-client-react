@@ -11,10 +11,13 @@ const options = (authors) => {
   ))
 }
 
-const AuthorSelect = ({ author, authors, handleChange }) => {
+const AuthorSelect = ({ author, authors, onChange }) => {
   return (
     <div className="input-field">
-      <select className="author-select" value={author.id} onChange={handleChange}>
+      <select
+        className="author-select"
+        value={author.id}
+        onChange={onChange}>
         <option value="-1">Select Author...</option>
         {options(authors)}
       </select>
@@ -25,7 +28,7 @@ const AuthorSelect = ({ author, authors, handleChange }) => {
 AuthorSelect.propTypes = {
   author: object.isRequired,
   authors: array.isRequired,
-  handleChange: func.isRequired,
+  onChange: func.isRequired,
 }
 
 export default AuthorSelect
