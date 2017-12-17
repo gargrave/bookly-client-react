@@ -37,20 +37,19 @@ ShallowWrapper {
     <div
         className="input-field"
     >
-        <button
-            className="submit-button"
+        <Button
+            canSubmit={true}
             onClick={[Function]}
-            type="submit"
-        >
-            Submit
-        </button>
-        <button
-            className="button-info float-right cancel-button"
+            position="left"
+            text="Submit"
+            type="success"
+        />
+        <Button
+            extraClasses="float-right"
             onClick={[Function]}
-            type="button"
-        >
-            Cancel
-        </button>
+            text="Cancel"
+            type="light"
+        />
     </div>
 </form>,
   "nodes": Array [
@@ -83,20 +82,19 @@ ShallowWrapper {
       <div
             className="input-field"
       >
-            <button
-                  className="submit-button"
+            <Button
+                  canSubmit={true}
                   onClick={[Function]}
-                  type="submit"
-            >
-                  Submit
-            </button>
-            <button
-                  className="button-info float-right cancel-button"
+                  position="left"
+                  text="Submit"
+                  type="success"
+            />
+            <Button
+                  extraClasses="float-right"
                   onClick={[Function]}
-                  type="button"
-            >
-                  Cancel
-            </button>
+                  text="Cancel"
+                  type="light"
+            />
       </div>
 </form>,
   ],
@@ -185,20 +183,19 @@ ShallowWrapper {
           <div
                     className="input-field"
           >
-                    <button
-                              className="submit-button"
+                    <Button
+                              canSubmit={true}
                               onClick={[Function]}
-                              type="submit"
-                    >
-                              Submit
-                    </button>
-                    <button
-                              className="button-info float-right cancel-button"
+                              position="left"
+                              text="Submit"
+                              type="success"
+                    />
+                    <Button
+                              extraClasses="float-right"
                               onClick={[Function]}
-                              type="button"
-                    >
-                              Cancel
-                    </button>
+                              text="Cancel"
+                              type="light"
+                    />
           </div>
 </form>,
         "_debugID": 2,
@@ -231,20 +228,19 @@ ShallowWrapper {
           <div
                     className="input-field"
           >
-                    <button
-                              className="submit-button"
+                    <Button
+                              canSubmit={true}
                               onClick={[Function]}
-                              type="submit"
-                    >
-                              Submit
-                    </button>
-                    <button
-                              className="button-info float-right cancel-button"
+                              position="left"
+                              text="Submit"
+                              type="success"
+                    />
+                    <Button
+                              extraClasses="float-right"
                               onClick={[Function]}
-                              type="button"
-                    >
-                              Cancel
-                    </button>
+                              text="Cancel"
+                              type="light"
+                    />
           </div>
 </form>,
       },
