@@ -9,6 +9,7 @@ const BookListDetail = ({
 }) => {
   return (
     <Card
+      classes={['book-card']}
       onClick={onClick}
       text={book.author.name}
       title={book.title} />
