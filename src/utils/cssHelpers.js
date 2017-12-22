@@ -1,5 +1,8 @@
 // @flow
-function buildClasses (prepends: string | Array<string>, statics: string | Array<string> = []) {
+function buildClasses (
+  prepends: string | string[],
+  statics: string | string[] = []
+) {
   if (!Array.isArray(prepends)) {
     prepends = [prepends]
   }
@@ -11,7 +14,10 @@ function buildClasses (prepends: string | Array<string>, statics: string | Array
     .filter((p) => !!p.trim()) // dispose of empty/whitespace strings
     .map((p) => prependClass(p))
     .join(' ')
-  const second = statics.length ? ` ${statics.filter((p) => !!p.trim()).join(' ')}` : ''
+  const second = statics.length
+    ? ` ${statics.filter((p) => !!p.trim()).join(' ')}`
+    : ''
+
   return `${first}${second}`
 }
 
