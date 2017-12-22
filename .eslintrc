@@ -1,7 +1,9 @@
 {
   "extends": [
     "standard",
-    "plugin:react/recommended"],
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2017,
     "sourceType": "module",
@@ -9,6 +11,9 @@
       "jsx": true
     }
   },
+  "plugins": [
+    "flowtype"
+  ],
   "env": {
     "es6": true,
     "browser": true,

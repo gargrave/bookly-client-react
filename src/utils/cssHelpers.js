@@ -1,4 +1,5 @@
-function buildClasses (prepends, statics = []) {
+// @flow
+function buildClasses (prepends: string | Array<string>, statics: string | Array<string> = []) {
   if (!Array.isArray(prepends)) {
     prepends = [prepends]
   }
@@ -14,7 +15,7 @@ function buildClasses (prepends, statics = []) {
   return `${first}${second}`
 }
 
-function prependClass (className) {
+function prependClass (className: string) {
   if (!className) {
     return ''
   }
