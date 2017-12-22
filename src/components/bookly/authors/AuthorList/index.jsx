@@ -1,31 +1,47 @@
+// @flow
 import React from 'react'
 import { array, func } from 'prop-types'
 
-import AuthorListDetail from '@/components/bookly/authors/AuthorListDetail'
-import Alert from '@/components/common/Alert/'
+import type { Author } from '../../../../constants/flowtypes'
 
-const authorList = (authors, onAuthorClick) => {
+import Alert from '../../../../components/common/Alert/'
+import AuthorListDetail from '../AuthorListDetail'
+
+type Props = {
+  authors: Author[],
+  onAuthorClick: Function,
+}
+
+function authorList (
+  authors: Author[],
+  onAuthorClick: Function
+) {
   return (
     <div>
       {authors.map((author) =>
         <AuthorListDetail
           author={author}
           key={author.id}
-          onClick={onAuthorClick.bind(null, author.id)} />)}
+          onClick={onAuthorClick.bind(null, author.id)}
+        />
+      )}
     </div>
   )
 }
 
-const noAuthorsMessage = () => (
-  <Alert
-    message={'No Authors created yet!'}
-    type={'info'} />
-)
+function noAuthorsMessage () {
+  return (
+    <Alert
+      message={'No Authors created yet!'}
+      type={'info'}
+    />
+  )
+}
 
-const AuthorList = ({
+function AuthorList ({
   authors,
   onAuthorClick,
-}) => {
+}: Props) {
   return (
     authors.length ? authorList(authors, onAuthorClick) : noAuthorsMessage()
   )

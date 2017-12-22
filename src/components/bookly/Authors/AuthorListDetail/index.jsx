@@ -1,17 +1,26 @@
+// @flow
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
-import Card from '@/components/common/Card'
+import type { Author } from '../../../../constants/flowtypes'
 
-const AuthorListDetail = ({
+import Card from '../../../../components/common/Card'
+
+type Props = {
+  author: Author,
+  onClick: Function,
+}
+
+function AuthorListDetail ({
   author,
   onClick,
-}) => {
+}: Props) {
   return (
     <Card
       classes={['author-card']}
       onClick={onClick}
-      title={`${author.firstName} ${author.lastName}`} />
+      title={`${author.firstName} ${author.lastName}`}
+    />
   )
 }
 

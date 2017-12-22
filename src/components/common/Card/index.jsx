@@ -1,17 +1,32 @@
+// @flow
 import React from 'react'
 import { array, bool, func, string } from 'prop-types'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import { buildClasses } from '../../../utils/cssHelpers'
 
 import './styles.css'
 
-const renderText = (text, classname) => (
-  text
-    ? <p className={buildClasses(classname)}>{text}</p>
-    : null
-)
+type Props = {
+  children?: any[],
+  classes?: string[],
+  hoverable?: boolean,
+  onClick?: Function,
+  text?: string,
+  title?: string,
+}
 
-const rawClassList = (classes, hoverable) => {
+function renderText (text?: string, classname: string) {
+  return (
+    text
+      ? <p className={buildClasses(classname)}>{text}</p>
+      : null
+  )
+}
+
+function rawClassList (
+  classes: string[] = [],
+  hoverable: boolean = true
+) {
   const extras = []
   if (hoverable) {
     extras.push('hoverable')
@@ -19,18 +34,19 @@ const rawClassList = (classes, hoverable) => {
   return ['card', ...classes, ...extras]
 }
 
-const Card = ({
+function Card ({
   children,
-  classes = [],
-  hoverable = true,
+  classes,
+  hoverable,
   onClick,
   text,
   title,
-}) => {
+}: Props) {
   return (
     <div
       className={buildClasses(rawClassList(classes, hoverable))}
-      onClick={onClick}>
+      onClick={onClick}
+    >
       {renderText(title, 'card-title')}
       {renderText(text, 'card-text')}
       {children}

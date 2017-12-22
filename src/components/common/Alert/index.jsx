@@ -1,12 +1,18 @@
+// @flow
 import React from 'react'
 import { oneOf, string } from 'prop-types'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import { buildClasses } from '../../../utils/cssHelpers'
+
+type Props = {
+  message: string,
+  type: string,
+}
 
 const Alert = ({
   message,
   type,
-}) => (
+}: Props) => (
   <div className={buildClasses('alert', ['alert', `alert-${type}`])}>
     {message}
   </div>
