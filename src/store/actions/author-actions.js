@@ -3,7 +3,7 @@ import axios from 'axios'
 
 import { apiUrls } from '../../constants/urls'
 import { parseError } from '../../globals/errors'
-import apiHelper from '../../utils/api-helper'
+import apiHelper from '../../utils/apiHelper'
 import { getTokenOrDie } from '../store-helpers'
 
 function _requestStart () {
