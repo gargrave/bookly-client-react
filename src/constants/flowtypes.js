@@ -7,6 +7,14 @@ export type Author = {
   updatedAt?: string,
 }
 
+export type Book = {
+  id?: string | number,
+  title: string,
+  author: Author,
+  createdAt?: string,
+  updatedAt?: string,
+}
+
 export type User = {
   id?: string | number,
   email: string,

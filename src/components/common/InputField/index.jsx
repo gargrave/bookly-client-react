@@ -1,5 +1,14 @@
+// @flow
 import React from 'react'
 import { func, oneOf, string } from 'prop-types'
+
+type Props = {
+  boundValue: string,
+  label: string,
+  name: string,
+  onInputChange: Function,
+  type?: string,
+}
 
 const acceptableTypes = [
   'email',
@@ -7,13 +16,13 @@ const acceptableTypes = [
   'text',
 ]
 
-const InputField = ({
+function InputField ({
   boundValue,
   label,
   name,
   onInputChange,
   type,
-}) => {
+}: Props) {
   return (
     <div className="input-field">
       <label htmlFor={name}>{label}:</label>

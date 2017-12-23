@@ -1,18 +1,25 @@
+// @flow
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import { buildClasses } from '../../../../utils/cssHelpers'
 
-import Button from '@/components/common/Button'
-import InputField from '@/components/common/InputField'
+import Button from '../../../common/Button'
+import InputField from '../../../common/InputField'
 
-import '@/components/common/Form/styles.css'
+import '../../../common/Form/styles.css'
 
-const LoginForm = ({
-  user,
+type Props = {
+  onInputChange: Function,
+  onSubmit: Function,
+  user: any,
+}
+
+function LoginForm ({
   onInputChange,
   onSubmit,
-}) => {
+  user,
+}: Props) {
   return (
     <form
       className={buildClasses(['form', 'login-form'])}
@@ -24,14 +31,16 @@ const LoginForm = ({
         label="Email"
         name="email"
         onInputChange={onInputChange}
-        type="email" />
+        type="email"
+      />
 
       <InputField
         boundValue={user.password}
         label="Password"
         name="password"
         onInputChange={onInputChange}
-        type="password" />
+        type="password"
+      />
 
       <div className="input-field">
         <Button
@@ -39,7 +48,8 @@ const LoginForm = ({
           onClick={onSubmit}
           position="left"
           text="Login"
-          type="success" />
+          type="success"
+        />
       </div>
     </form>
   )

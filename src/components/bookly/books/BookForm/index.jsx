@@ -1,22 +1,34 @@
+// @flow
 import React from 'react'
 import { array, func, object, shape, string } from 'prop-types'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import type { Author, Book } from '../../../../constants/flowtypes'
 
-import AuthorSelect from '@/components/bookly/authors/AuthorSelect'
-import Button from '@/components/common/Button'
-import InputField from '@/components/common/InputField'
+import { buildClasses } from '../../../../utils/cssHelpers'
 
-import '@/components/common/Form/styles.css'
+import AuthorSelect from '../../authors/AuthorSelect'
+import Button from '../../../common/Button'
+import InputField from '../../../common/InputField'
 
-const BookForm = ({
+import '../../../common/Form/styles.css'
+
+type Props = {
+  authors: Author[],
+  book: Book,
+  onAuthorChange: Function,
+  onCancel: Function,
+  onInputChange: Function,
+  onSubmit: Function,
+}
+
+function BookForm ({
   authors,
   book,
   onAuthorChange,
   onCancel,
   onInputChange,
   onSubmit,
-}) => {
+}: Props) {
   return (
     <form
       className={buildClasses(['form', 'book-form'])}
@@ -27,12 +39,14 @@ const BookForm = ({
         boundValue={book.title}
         label="Title"
         name="title"
-        onInputChange={onInputChange} />
+        onInputChange={onInputChange}
+      />
 
       <AuthorSelect
         author={book.author}
         authors={authors}
-        onChange={onAuthorChange} />
+        onChange={onAuthorChange}
+      />
 
       <div className="input-field">
         <Button
@@ -40,13 +54,15 @@ const BookForm = ({
           onClick={onSubmit}
           position="left"
           text="Submit"
-          type="success" />
+          type="success"
+        />
 
         <Button
           classes="float-right"
           onClick={onCancel}
           text="Cancel"
-          type="light" />
+          type="light"
+        />
       </div>
     </form>
   )

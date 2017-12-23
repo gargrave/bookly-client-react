@@ -34,13 +34,15 @@ function AuthorForm ({
         boundValue={author.firstName}
         label="First name"
         name="firstName"
-        onInputChange={onInputChange} />
+        onInputChange={onInputChange}
+      />
 
       <InputField
         boundValue={author.lastName}
         label="Last name"
         name="lastName"
-        onInputChange={onInputChange} />
+        onInputChange={onInputChange}
+      />
 
       <div className="input-field">
         <Button
