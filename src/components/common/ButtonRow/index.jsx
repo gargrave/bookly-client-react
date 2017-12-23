@@ -1,13 +1,18 @@
+// @flow
 import React from 'react'
 import { array, object, oneOfType } from 'prop-types'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import { buildClasses } from '../../../utils/cssHelpers'
 
 import './styles.css'
 
-const ButtonRow = ({
+type Props = {
+  children?: Array<any>,
+}
+
+function ButtonRow ({
   children,
-}) => {
+}: Props) {
   return (
     <div className={buildClasses('button-row')}>
       {children}

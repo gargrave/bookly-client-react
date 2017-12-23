@@ -1,19 +1,27 @@
+// @flow
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 import { format } from 'date-fns'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import type { Author } from '../../../../constants/flowtypes'
 
-import Button from '@/components/common/Button'
-import ButtonRow from '@/components/common/ButtonRow'
-import Card from '@/components/common/Card'
+import { buildClasses } from '../../../../utils/cssHelpers'
 
-const AuthorDetailView = (props) => {
-  const {
-    author,
-    onEditClick,
-    onBackClick,
-  } = props
+import Button from '../../../../components/common/Button'
+import ButtonRow from '../../../../components/common/ButtonRow'
+import Card from '../../../../components/common/Card'
+
+type Props = {
+  author: Author,
+  onBackClick: Function,
+  onEditClick: Function,
+}
+
+function AuthorDetailView ({
+  author,
+  onEditClick,
+  onBackClick,
+}: Props) {
   return (
     <div className={buildClasses('author-detail-view')}>
       <Card
