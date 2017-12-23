@@ -6,6 +6,7 @@ import type { Author } from '../../../../constants/flowtypes';
 
 import Alert from '../../../common/Alert/';
 import AuthorListDetail from '../AuthorListDetail';
+import CardList from '../../../common/CardList';
 
 type Props = {
   authors: Author[],
@@ -17,7 +18,7 @@ function authorList(
   onAuthorClick: Function
 ) {
   return (
-    <div>
+    <CardList>
       {authors.map((author) =>
         <AuthorListDetail
           author={author}
@@ -25,7 +26,7 @@ function authorList(
           onClick={onAuthorClick.bind(null, author.id)}
         />
       )}
-    </div>
+    </CardList>
   );
 }
 

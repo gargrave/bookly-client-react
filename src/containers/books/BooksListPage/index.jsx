@@ -10,6 +10,7 @@ import { fetchBooks } from '../../../store/actions/book-actions';
 
 import Button from '../../../components/common/Button';
 import BookListDetail from '../../../components/bookly/books/BookListDetail';
+import CardList from '../../../components/common/CardList';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
@@ -61,13 +62,16 @@ class BooksListPage extends Component<Props> {
             type="success"
           />
         </h2>
-        {this.props.books.map((book) => (
-          <BookListDetail
-            key={book.id}
-            book={book}
-            onClick={() => this.onBookClick(book.id)}
-          />
-        ))}
+
+        <CardList>
+          {this.props.books.map((book) => (
+            <BookListDetail
+              key={book.id}
+              book={book}
+              onClick={() => this.onBookClick(book.id)}
+            />
+          ))}
+        </CardList>
       </div>
     );
   }
