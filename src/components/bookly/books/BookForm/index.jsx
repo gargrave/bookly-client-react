@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { array, func, object, shape, string } from 'prop-types';
+import { array, bool, func, object, shape, string } from 'prop-types';
 
 import type { Author, Book } from '../../../../constants/flowtypes';
 
@@ -15,6 +15,7 @@ import '../../../common/Form/styles.css';
 type Props = {
   authors: Author[],
   book: Book,
+  disabled: boolean,
   onAuthorChange: Function,
   onCancel: Function,
   onInputChange: Function,
@@ -24,6 +25,7 @@ type Props = {
 function BookForm({
   authors,
   book,
+  disabled,
   onAuthorChange,
   onCancel,
   onInputChange,
@@ -37,6 +39,7 @@ function BookForm({
 
       <InputField
         boundValue={book.title}
+        disabled={disabled || false}
         label="Title"
         name="title"
         onInputChange={onInputChange}
@@ -45,12 +48,14 @@ function BookForm({
       <AuthorSelect
         author={book.author}
         authors={authors}
+        disabled={disabled || false}
         onChange={onAuthorChange}
       />
 
       <div className="input-field">
         <Button
           canSubmit={true}
+          disabled={disabled || false}
           onClick={onSubmit}
           position="left"
           text="Submit"
@@ -74,6 +79,7 @@ BookForm.propTypes = {
     title: string.isRequired,
     author: object.isRequired,
   }).isRequired,
+  disabled: bool,
   onAuthorChange: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,

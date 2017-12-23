@@ -1,13 +1,14 @@
 // @flow
 import React from 'react';
-import { array, func, object } from 'prop-types';
+import { array, bool, func, object } from 'prop-types';
 
 import type { Author } from '../../../../constants/flowtypes';
 
 type Props = {
   author: Author,
-  authors: array.isRequired,
-  onChange: func.isRequired,
+  authors: Author[],
+  disabled: boolean,
+  onChange: Function,
 };
 
 function options(authors: Author[]) {
@@ -21,14 +22,17 @@ function options(authors: Author[]) {
 function AuthorSelect({
   author,
   authors,
+  disabled,
   onChange,
 }: Props) {
   return (
     <div className="input-field">
       <select
         className="author-select"
+        disabled={disabled || false}
+        onChange={onChange}
         value={author.id}
-        onChange={onChange}>
+      >
         <option value="-1">Select Author...</option>
         {options(authors)}
       </select>
@@ -39,6 +43,7 @@ function AuthorSelect({
 AuthorSelect.propTypes = {
   author: object.isRequired,
   authors: array.isRequired,
+  disabled: bool,
   onChange: func.isRequired,
 };
 

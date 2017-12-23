@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { func, shape, string } from 'prop-types';
+import { bool, func, shape, string } from 'prop-types';
 
 import type { Author } from '../../../../constants/flowtypes';
 
@@ -13,6 +13,7 @@ import '../../../common/Form/styles.css';
 
 type Props = {
   author: Author,
+  disabled?: boolean,
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
@@ -20,6 +21,7 @@ type Props = {
 
 function AuthorForm({
   author,
+  disabled,
   onCancel,
   onInputChange,
   onSubmit,
@@ -32,6 +34,7 @@ function AuthorForm({
 
       <InputField
         boundValue={author.firstName}
+        disabled={disabled}
         label="First name"
         name="firstName"
         onInputChange={onInputChange}
@@ -39,6 +42,7 @@ function AuthorForm({
 
       <InputField
         boundValue={author.lastName}
+        disabled={disabled}
         label="Last name"
         name="lastName"
         onInputChange={onInputChange}
@@ -47,6 +51,7 @@ function AuthorForm({
       <div className="input-field">
         <Button
           canSubmit={true}
+          disabled={disabled}
           onClick={onSubmit}
           position="left"
           text="Submit"
@@ -66,6 +71,7 @@ AuthorForm.propTypes = {
     firstName: string.isRequired,
     lastName: string.isRequired,
   }).isRequired,
+  disabled: bool,
   onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
