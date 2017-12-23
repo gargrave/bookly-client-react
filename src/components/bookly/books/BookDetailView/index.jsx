@@ -1,19 +1,27 @@
+// @flow
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 import { format } from 'date-fns'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import type { Book } from '../../../../constants/flowtypes'
 
-import Button from '@/components/common/Button'
-import ButtonRow from '@/components/common/ButtonRow'
-import Card from '@/components/common/Card'
+import { buildClasses } from '../../../../utils/cssHelpers'
 
-const BookDetailView = (props) => {
-  const {
-    book,
-    onEditClick,
-    onBackClick,
-  } = props
+import Button from '../../../common/Button'
+import ButtonRow from '../../../common/ButtonRow'
+import Card from '../../../common/Card'
+
+type Props = {
+  book: Book,
+  onBackClick: Function,
+  onEditClick: Function,
+}
+
+function BookDetailView ({
+  book,
+  onBackClick,
+  onEditClick,
+}: Props) {
   return (
     <div className={buildClasses('book-detail-view')}>
       <Card
@@ -36,12 +44,14 @@ const BookDetailView = (props) => {
             onClick={onEditClick}
             position="left"
             text="Edit"
-            type="info" />
+            type="info"
+          />
 
           <Button
             onClick={onBackClick}
             text="Back"
-            type="light" />
+            type="light"
+          />
         </ButtonRow>
       </Card>
     </div>
@@ -58,8 +68,8 @@ BookDetailView.propTypes = {
     createdAt: string,
     updatedAt: string,
   }),
-  onEditClick: func.isRequired,
   onBackClick: func.isRequired,
+  onEditClick: func.isRequired,
 }
 
 export default BookDetailView

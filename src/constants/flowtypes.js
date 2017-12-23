@@ -3,6 +3,7 @@ export type Author = {
   id?: string | number,
   firstName: string,
   lastName: string,
+  name: string,
   createdAt?: string,
   updatedAt?: string,
 }
