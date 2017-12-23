@@ -1,20 +1,30 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array, func, object } from 'prop-types'
+
+import type { Book } from '../../../constants/flowtypes'
 
 import { localUrls } from '../../../constants/urls'
 import { fetchBooks } from '../../../store/actions/book-actions'
 
 import Button from '../../../components/common/Button'
-import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 import BookListDetail from '../../../components/bookly/books/BookListDetail'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
-class BooksListPage extends Component {
-  constructor (props) {
+type Props = {
+  books: Book[],
+  fetchBooks: Function,
+  history: Object,
+}
+
+class BooksListPage extends Component<Props> {
+  constructor (props: Props) {
     super(props)
 
-    this.onAddClick = this.onAddClick.bind(this)
-    this.onBookClick = this.onBookClick.bind(this)
+    const _this: any = this
+    _this.onAddClick = _this.onAddClick.bind(this)
+    _this.onBookClick = _this.onBookClick.bind(this)
   }
 
   componentDidMount () {
@@ -34,8 +44,10 @@ class BooksListPage extends Component {
     this.props.history.push(localUrls.bookCreate)
   }
 
-  onBookClick (bookID) {
-    this.props.history.push(`/books/${bookID}`)
+  onBookClick (bookId?: string | number) {
+    if (bookId) {
+      this.props.history.push(`/books/${bookId}`)
+    }
   }
 
   render () {
@@ -46,13 +58,15 @@ class BooksListPage extends Component {
           <Button
             onClick={this.onAddClick}
             text="Add"
-            type="success" />
+            type="success"
+          />
         </h2>
         {this.props.books.map((book) => (
           <BookListDetail
             key={book.id}
             book={book}
-            onClick={() => this.onBookClick(book.id)} />
+            onClick={() => this.onBookClick(book.id)}
+          />
         ))}
       </div>
     )
@@ -60,9 +74,9 @@ class BooksListPage extends Component {
 }
 
 BooksListPage.propTypes = {
-  history: object,
-  fetchBooks: func.isRequired,
   books: array.isRequired,
+  fetchBooks: func.isRequired,
+  history: object,
 }
 
 const mapStateToProps = (state, ownProps) => ({

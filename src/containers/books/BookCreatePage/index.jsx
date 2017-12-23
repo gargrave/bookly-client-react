@@ -1,6 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array, func, object } from 'prop-types'
+
+import type { Author, Book } from '../../../constants/flowtypes'
 
 import { localUrls } from '../../../constants/urls'
 import { fetchAuthors } from '../../../store/actions/author-actions'
@@ -10,18 +13,30 @@ import bookModel from '../../../models/Book.model'
 import BookForm from '../../../components/bookly/books/BookForm'
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
-class BookCreatePage extends Component {
-  constructor (props) {
+type Props = {
+  authors: Author[],
+  createBook: Function,
+  fetchAuthors: Function,
+  history: Object,
+}
+
+type State = {
+  book: Book,
+}
+
+class BookCreatePage extends Component<Props, State> {
+  constructor (props: Props) {
     super(props)
 
     this.state = {
       book: bookModel.empty(),
     }
 
-    this.onAuthorChange = this.onAuthorChange.bind(this)
-    this.onInputChange = this.onInputChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-    this.onCancel = this.onCancel.bind(this)
+    const _this: any = this
+    _this.onAuthorChange = _this.onAuthorChange.bind(this)
+    _this.onInputChange = _this.onInputChange.bind(this)
+    _this.onSubmit = _this.onSubmit.bind(this)
+    _this.onCancel = _this.onCancel.bind(this)
   }
 
   async componentDidMount () {
@@ -90,17 +105,18 @@ class BookCreatePage extends Component {
           onAuthorChange={this.onAuthorChange}
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}
-          onCancel={this.onCancel} />
+          onCancel={this.onCancel}
+        />
       </div>
     )
   }
 }
 
 BookCreatePage.propTypes = {
-  history: object,
   authors: array.isRequired,
   createBook: func.isRequired,
   fetchAuthors: func.isRequired,
+  history: object,
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -119,4 +135,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(BookCreatePage))
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(BookCreatePage, localUrls.login))

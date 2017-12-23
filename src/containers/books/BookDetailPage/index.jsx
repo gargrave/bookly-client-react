@@ -1,30 +1,48 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array, func, number, object, shape, string } from 'prop-types'
+
+import type { Author, Book } from '../../../constants/flowtypes'
 
 import { localUrls } from '../../../constants/urls'
 import { fetchBooks, updateBook } from '../../../store/actions/book-actions'
 import bookModel from '../../../models/Book.model'
 
-import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 import BookDetailView from '../../../components/bookly/books/BookDetailView'
 import BookEditView from '../../../components/bookly/books/BookEditView'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
-class BookDetailPage extends Component {
-  constructor (props) {
+type Props = {
+  authors: Author[],
+  book: Book,
+  createBook: Function,
+  fetchBooks: Function,
+  history: Object,
+  updateBook: Function,
+}
+
+type State = {
+  editableBook: Book,
+  editing: boolean,
+}
+
+class BookDetailPage extends Component<Props, State> {
+  constructor (props: Props) {
     super(props)
 
     this.state = {
-      editing: false,
       editableBook: bookModel.empty(),
+      editing: false,
     }
 
-    this.onAuthorChange = this.onAuthorChange.bind(this)
-    this.onInputChange = this.onInputChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-    this.onEditClick = this.onEditClick.bind(this)
-    this.onCancel = this.onCancel.bind(this)
-    this.onBackClick = this.onBackClick.bind(this)
+    const _this: any = this
+    _this.onAuthorChange = _this.onAuthorChange.bind(this)
+    _this.onInputChange = _this.onInputChange.bind(this)
+    _this.onSubmit = _this.onSubmit.bind(this)
+    _this.onEditClick = _this.onEditClick.bind(this)
+    _this.onCancel = _this.onCancel.bind(this)
+    _this.onBackClick = _this.onBackClick.bind(this)
   }
 
   componentDidMount () {
@@ -111,7 +129,8 @@ class BookDetailPage extends Component {
           <BookDetailView
             book={this.props.book}
             onEditClick={this.onEditClick}
-            onBackClick={this.onBackClick} />
+            onBackClick={this.onBackClick}
+          />
         )}
         {editing && (
           <BookEditView
@@ -120,7 +139,8 @@ class BookDetailPage extends Component {
             onAuthorChange={this.onAuthorChange}
             onInputChange={this.onInputChange}
             onSubmit={this.onSubmit}
-            onCancel={this.onCancel} />
+            onCancel={this.onCancel}
+          />
         )}
       </div>
     )
@@ -128,7 +148,6 @@ class BookDetailPage extends Component {
 }
 
 BookDetailPage.propTypes = {
-  history: object,
   authors: array.isRequired,
   book: shape({
     id: number,
@@ -140,6 +159,7 @@ BookDetailPage.propTypes = {
     updatedAt: string,
   }),
   fetchBooks: func.isRequired,
+  history: object,
   updateBook: func.isRequired,
 }
 
@@ -163,4 +183,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(BookDetailPage))
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(BookDetailPage, localUrls.login))
