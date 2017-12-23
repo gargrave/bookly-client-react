@@ -1,108 +1,108 @@
-import { BOOKS } from '../action-types'
-import axios from 'axios'
+import { BOOKS } from '../action-types';
+import axios from 'axios';
 
-import { apiUrls } from '../../constants/urls'
-import { parseError } from '../../globals/errors'
-import apiHelper from '../../utils/apiHelper'
-import { getTokenOrDie } from '../store-helpers'
+import { apiUrls } from '../../constants/urls';
+import { parseError } from '../../globals/errors';
+import apiHelper from '../../utils/apiHelper';
+import { getTokenOrDie } from '../store-helpers';
 
-import { fetchAuthors } from './author-actions'
+import { fetchAuthors } from './author-actions';
 
-function _requestStart () {
-  return { type: BOOKS.REQUEST_START }
+function _requestStart() {
+  return { type: BOOKS.REQUEST_START };
 }
 
-function _requestEnd () {
-  return { type: BOOKS.REQUEST_END }
+function _requestEnd() {
+  return { type: BOOKS.REQUEST_END };
 }
 
-function _fetchBooks (books) {
+function _fetchBooks(books) {
   return {
     type: BOOKS.FETCH_SUCCESS,
     payload: { books },
-  }
+  };
 }
 
-function _createBook (book) {
+function _createBook(book) {
   return {
     type: BOOKS.CREATE_SUCCESS,
     payload: { book },
-  }
+  };
 }
 
-function _updateBook (book) {
+function _updateBook(book) {
   return {
     type: BOOKS.UPDATE_SUCCESS,
     payload: { book },
-  }
+  };
 }
 
-export function fetchBooks () {
+export function fetchBooks() {
   return async (dispatch, getState) => {
     // ensure that Author data has been loaded
-    const authors = getState().authors.data
+    const authors = getState().authors.data;
     if (!authors.length) {
-      await dispatch(fetchAuthors())
+      await dispatch(fetchAuthors());
     }
 
-    const books = getState().books.data
+    const books = getState().books.data;
     if (books.length) {
-      return books
+      return books;
     } else {
-      dispatch(_requestStart())
+      dispatch(_requestStart());
       try {
-        const authToken = getTokenOrDie(getState)
-        const request = apiHelper.axGet(apiUrls.books, authToken)
-        const result = await axios(request)
+        const authToken = getTokenOrDie(getState);
+        const request = apiHelper.axGet(apiUrls.books, authToken);
+        const result = await axios(request);
         // const pagination = result.data.meta
-        const bookData = result.data.results
+        const bookData = result.data.results;
 
-        dispatch(_fetchBooks(bookData))
-        return bookData
+        dispatch(_fetchBooks(bookData));
+        return bookData;
       } catch (err) {
-        throw parseError(err)
+        throw parseError(err);
       } finally {
-        dispatch(_requestEnd())
+        dispatch(_requestEnd());
       }
     }
-  }
+  };
 }
 
-export function createBook (book) {
+export function createBook(book) {
   return async (dispatch, getState) => {
-    dispatch(_requestStart())
+    dispatch(_requestStart());
     try {
-      const authToken = getTokenOrDie(getState)
-      const request = apiHelper.axPost(apiUrls.books, book, authToken)
-      const result = await axios(request)
-      const bookData = result.data
+      const authToken = getTokenOrDie(getState);
+      const request = apiHelper.axPost(apiUrls.books, book, authToken);
+      const result = await axios(request);
+      const bookData = result.data;
 
-      dispatch(_createBook(bookData))
-      return bookData
+      dispatch(_createBook(bookData));
+      return bookData;
     } catch (err) {
-      throw parseError(err)
+      throw parseError(err);
     } finally {
-      dispatch(_requestEnd())
+      dispatch(_requestEnd());
     }
-  }
+  };
 }
 
-export function updateBook (book) {
+export function updateBook(book) {
   return async (dispatch, getState) => {
-    dispatch(_requestStart())
+    dispatch(_requestStart());
     try {
-      const authToken = getTokenOrDie(getState)
-      const url = `${apiUrls.books}${book.id}`
-      const request = apiHelper.axPut(url, book, authToken)
-      const result = await axios(request)
-      const bookData = result.data
+      const authToken = getTokenOrDie(getState);
+      const url = `${apiUrls.books}${book.id}`;
+      const request = apiHelper.axPut(url, book, authToken);
+      const result = await axios(request);
+      const bookData = result.data;
 
-      dispatch(_updateBook(bookData))
-      return bookData
+      dispatch(_updateBook(bookData));
+      return bookData;
     } catch (err) {
-      throw parseError(err)
+      throw parseError(err);
     } finally {
-      dispatch(_requestEnd())
+      dispatch(_requestEnd());
     }
-  }
+  };
 }

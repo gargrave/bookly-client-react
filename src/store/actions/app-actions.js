@@ -1,11 +1,11 @@
-import { APP } from '../action-types'
+import { APP } from '../action-types';
 
-function _setInitialized () {
-  return { type: APP.INITIALIZED }
+function _setInitialized() {
+  return { type: APP.INITIALIZED };
 }
 
-export function setInitialized () {
+export function setInitialized() {
   return async (dispatch) => {
-    dispatch(_setInitialized())
-  }
+    dispatch(_setInitialized());
+  };
 }

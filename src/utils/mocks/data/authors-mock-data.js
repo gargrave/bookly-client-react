@@ -27,4 +27,4 @@ export const authorsMockData = [
     createdAt: '2017-07-06T22:02:17.051Z',
     updatedAt: '2017-08-17T21:27:35.885Z',
   },
-]
+];

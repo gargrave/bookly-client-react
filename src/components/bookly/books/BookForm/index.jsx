@@ -1,16 +1,16 @@
 // @flow
-import React from 'react'
-import { array, func, object, shape, string } from 'prop-types'
+import React from 'react';
+import { array, func, object, shape, string } from 'prop-types';
 
-import type { Author, Book } from '../../../../constants/flowtypes'
+import type { Author, Book } from '../../../../constants/flowtypes';
 
-import { buildClasses } from '../../../../utils/cssHelpers'
+import { buildClasses } from '../../../../utils/cssHelpers';
 
-import AuthorSelect from '../../authors/AuthorSelect'
-import Button from '../../../common/Button'
-import InputField from '../../../common/InputField'
+import AuthorSelect from '../../authors/AuthorSelect';
+import Button from '../../../common/Button';
+import InputField from '../../../common/InputField';
 
-import '../../../common/Form/styles.css'
+import '../../../common/Form/styles.css';
 
 type Props = {
   authors: Author[],
@@ -21,7 +21,7 @@ type Props = {
   onSubmit: Function,
 }
 
-function BookForm ({
+function BookForm({
   authors,
   book,
   onAuthorChange,
@@ -65,7 +65,7 @@ function BookForm ({
         />
       </div>
     </form>
-  )
+  );
 }
 
 BookForm.propTypes = {
@@ -78,6 +78,6 @@ BookForm.propTypes = {
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
   onCancel: func.isRequired,
-}
+};
 
-export default BookForm
+export default BookForm;

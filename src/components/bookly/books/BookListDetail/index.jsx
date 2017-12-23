@@ -1,17 +1,17 @@
 // @flow
-import React from 'react'
-import { func, number, object, shape, string } from 'prop-types'
+import React from 'react';
+import { func, number, object, shape, string } from 'prop-types';
 
-import type { Book } from '../../../../constants/flowtypes'
+import type { Book } from '../../../../constants/flowtypes';
 
-import Card from '../../../common/Card'
+import Card from '../../../common/Card';
 
 type Props = {
   book: Book,
   onClick: Function,
-}
+};
 
-function BookListDetail ({
+function BookListDetail({
   book,
   onClick,
 }: Props) {
@@ -22,7 +22,7 @@ function BookListDetail ({
       text={book.author.name}
       title={book.title}
     />
-  )
+  );
 }
 
 BookListDetail.propTypes = {
@@ -32,6 +32,6 @@ BookListDetail.propTypes = {
     author: object.isRequired,
   }),
   onClick: func.isRequired,
-}
+};
 
-export default BookListDetail
+export default BookListDetail;

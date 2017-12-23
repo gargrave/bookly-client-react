@@ -1,23 +1,23 @@
-import React from 'react'
-import { Route, Switch } from 'react-router-dom'
+import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 
-import AccountDetailPage from '../containers/account/AccountDetailPage'
-import LoginPage from '../containers/account/LoginPage'
+import AccountDetailPage from '../containers/account/AccountDetailPage';
+import LoginPage from '../containers/account/LoginPage';
 
-import AuthorCreatePage from '../containers/authors/AuthorCreatePage'
-import AuthorDetailPage from '../containers/authors/AuthorDetailPage'
-import AuthorsListPage from '../containers/authors/AuthorsListPage'
+import AuthorCreatePage from '../containers/authors/AuthorCreatePage';
+import AuthorDetailPage from '../containers/authors/AuthorDetailPage';
+import AuthorsListPage from '../containers/authors/AuthorsListPage';
 
-import HomePage from '../containers/basic/HomePage'
-import NotFoundPage from '../containers/basic/NotFoundPage'
+import HomePage from '../containers/basic/HomePage';
+import NotFoundPage from '../containers/basic/NotFoundPage';
 
-import BookCreatePage from '../containers/books/BookCreatePage'
-import BookDetailPage from '../containers/books/BookDetailPage'
-import BooksListPage from '../containers/books/BooksListPage'
+import BookCreatePage from '../containers/books/BookCreatePage';
+import BookDetailPage from '../containers/books/BookDetailPage';
+import BooksListPage from '../containers/books/BooksListPage';
 
-import { localUrls } from '../constants/urls'
+import { localUrls } from '../constants/urls';
 
-const routes = () => {
+function routes() {
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
@@ -31,7 +31,7 @@ const routes = () => {
       <Route exact path={localUrls.booksList} component={BooksListPage} />
       <Route component={NotFoundPage} />
     </Switch>
-  )
-}
+  );
+};
 
-export default routes
+export default routes;

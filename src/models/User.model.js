@@ -1,5 +1,5 @@
 export default {
-  empty () {
+  empty() {
     return {
       id: '',
       email: '',
@@ -7,10 +7,10 @@ export default {
       updatedAt: '',
       lastLogin: '',
       verified: undefined,
-    }
+    };
   },
 
-  fromAPI (data) {
+  fromAPI(data) {
     return {
       id: data.id,
       email: data.email,
@@ -18,6 +18,6 @@ export default {
       updatedAt: data.updated_at,
       lastLogin: data.last_login,
       verified: data.verified,
-    }
+    };
   },
-}
+};

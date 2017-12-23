@@ -6,7 +6,7 @@ export type Author = {
   name: string,
   createdAt?: string,
   updatedAt?: string,
-}
+};
 
 export type Book = {
   id?: string | number,
@@ -14,11 +14,11 @@ export type Book = {
   author: Author,
   createdAt?: string,
   updatedAt?: string,
-}
+};
 
 export type User = {
   id?: string | number,
   email: string,
   createdAt?: string,
   updatedAt?: string,
-}
+};

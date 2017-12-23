@@ -1,75 +1,75 @@
-import { AUTH } from '../action-types'
-import axios from 'axios'
+import { AUTH } from '../action-types';
+import axios from 'axios';
 
-import { apiUrls } from '../../constants/urls'
-import { parseError } from '../../globals/errors'
-import apiHelper from '../../utils/apiHelper'
+import { apiUrls } from '../../constants/urls';
+import { parseError } from '../../globals/errors';
+import apiHelper from '../../utils/apiHelper';
 
-function _requestStart () {
-  return { type: AUTH.REQUEST_START }
+function _requestStart() {
+  return { type: AUTH.REQUEST_START };
 }
 
-function _requestEnd () {
-  return { type: AUTH.REQUEST_END }
+function _requestEnd() {
+  return { type: AUTH.REQUEST_END };
 }
 
-function _login (user) {
-  return { type: AUTH.LOGIN, payload: { user } }
+function _login(user) {
+  return { type: AUTH.LOGIN, payload: { user } };
 }
 
-function _logout () {
-  return { type: AUTH.LOGOUT }
+function _logout() {
+  return { type: AUTH.LOGOUT };
 }
 
-function _fetchProfile (profile) {
-  return { type: AUTH.FETCH_PROFILE, payload: { profile } }
+function _fetchProfile(profile) {
+  return { type: AUTH.FETCH_PROFILE, payload: { profile } };
 }
 
-export function login (user) {
+export function login(user) {
   return async (dispatch) => {
-    dispatch(_requestStart())
+    dispatch(_requestStart());
     try {
-      const request = apiHelper.axPost(apiUrls.login, user)
-      const result = await axios(request)
-      const userData = result.data
+      const request = apiHelper.axPost(apiUrls.login, user);
+      const result = await axios(request);
+      const userData = result.data;
 
-      dispatch(_login(userData))
-      dispatch(_fetchProfile(userData.profile))
-      localStorage.setItem('authToken', userData.token)
+      dispatch(_login(userData));
+      dispatch(_fetchProfile(userData.profile));
+      localStorage.setItem('authToken', userData.token);
 
-      return userData
+      return userData;
     } catch (err) {
-      throw parseError(err)
+      throw parseError(err);
     } finally {
-      dispatch(_requestEnd())
+      dispatch(_requestEnd());
     }
-  }
+  };
 }
 
-export function fetchProfile (authToken) {
+export function fetchProfile(authToken) {
   return async (dispatch) => {
-    dispatch(_requestStart())
+    dispatch(_requestStart());
     try {
-      const request = apiHelper.axGet(apiUrls.users, authToken)
-      const result = await axios(request)
-      const userData = result.data
-      userData.token = authToken
+      const request = apiHelper.axGet(apiUrls.users, authToken);
+      const result = await axios(request);
+      const userData = result.data;
+      userData.token = authToken;
 
-      dispatch(_login(userData))
-      dispatch(_fetchProfile(userData.profile))
+      dispatch(_login(userData));
+      dispatch(_fetchProfile(userData.profile));
 
-      return userData
+      return userData;
     } catch (err) {
-      throw parseError(err)
+      throw parseError(err);
     } finally {
-      dispatch(_requestEnd())
+      dispatch(_requestEnd());
     }
-  }
+  };
 }
 
-export function logout () {
+export function logout() {
   return async (dispatch) => {
-    localStorage.clear()
-    dispatch(_logout())
-  }
+    localStorage.clear();
+    dispatch(_logout());
+  };
 }

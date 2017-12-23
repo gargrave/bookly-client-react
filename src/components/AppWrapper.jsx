@@ -1,26 +1,26 @@
-import React, { Component } from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { func } from 'prop-types'
+import React, { Component } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { func } from 'prop-types';
 
-import { setInitialized } from '../store/actions/app-actions'
-import { fetchProfile } from '../store/actions/auth-actions'
+import { setInitialized } from '../store/actions/app-actions';
+import { fetchProfile } from '../store/actions/auth-actions';
 
-import SimpleHeader from './bookly/Header/SimpleHeader'
-import Routes from './Routes'
+import SimpleHeader from './bookly/Header/SimpleHeader';
+import Routes from './Routes';
 
-import './AppWrapper.css'
+import './AppWrapper.css';
 
 class AppWrapper extends Component {
-  async componentWillMount () {
-    const token = window.localStorage ? localStorage.getItem('authToken') : null
+  async componentWillMount() {
+    const token = window.localStorage ? localStorage.getItem('authToken') : null;
     if (token) {
-      await this.props.fetchProfile(token)
+      await this.props.fetchProfile(token);
     }
-    this.props.setInitialized()
+    this.props.setInitialized();
   }
 
-  render () {
+  render() {
     return (
       <BrowserRouter>
         <div id="bookly-app" className="App">
@@ -31,27 +31,27 @@ class AppWrapper extends Component {
           </main>
         </div>
       </BrowserRouter>
-    )
+    );
   }
 }
 
 AppWrapper.propTypes = {
   fetchProfile: func.isRequired,
   setInitialized: func.isRequired,
-}
+};
 
 const mapStateToProps = (state, ownProps) => {
-  return {}
-}
+  return {};
+};
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  fetchProfile (token) {
-    return dispatch(fetchProfile(token))
+  fetchProfile(token) {
+    return dispatch(fetchProfile(token));
   },
 
-  setInitialized () {
-    return dispatch(setInitialized())
+  setInitialized() {
+    return dispatch(setInitialized());
   },
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(AppWrapper)
+export default connect(mapStateToProps, mapDispatchToProps)(AppWrapper);

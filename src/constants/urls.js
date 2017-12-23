@@ -1,20 +1,20 @@
 // @flow
-import env from './env'
+import env from './env';
 
-const DEV_API_ROOT_URL = 'http://localhost:3001'
-const PROD_API_ROOT_URL = 'https://bookly.gargrave.us'
+const DEV_API_ROOT_URL = 'http://localhost:3001';
+const PROD_API_ROOT_URL = 'https://bookly.gargrave.us';
 
-let apiRoot = ''
-let restApiRoot = ''
+let apiRoot = '';
+let restApiRoot = '';
 
-;(function init () {
+(function init() {
   if (env.isProd()) {
-    apiRoot = PROD_API_ROOT_URL
+    apiRoot = PROD_API_ROOT_URL;
   } else {
-    apiRoot = DEV_API_ROOT_URL
+    apiRoot = DEV_API_ROOT_URL;
   }
-  restApiRoot = `${apiRoot}/api/v1`
-})()
+  restApiRoot = `${apiRoot}/api/v1`;
+})();
 
 // URLs for AJAX calls to the API
 export let apiUrls = {
@@ -31,7 +31,7 @@ export let apiUrls = {
   // REST resource URLS
   authors: `${restApiRoot}/authors/`,
   books: `${restApiRoot}/books/`,
-}
+};
 
 // URLs for local routing (i.e. react-router)
 export let localUrls = {
@@ -51,4 +51,4 @@ export let localUrls = {
   booksList: '/books',
   bookCreate: '/books/new',
   bookDetail: '/books/:id',
-}
+};

@@ -1,21 +1,21 @@
 // @flow
-import React from 'react'
-import { func, shape, string } from 'prop-types'
+import React from 'react';
+import { func, shape, string } from 'prop-types';
 
-import { buildClasses } from '../../../../utils/cssHelpers'
+import { buildClasses } from '../../../../utils/cssHelpers';
 
-import Button from '../../../common/Button'
-import InputField from '../../../common/InputField'
+import Button from '../../../common/Button';
+import InputField from '../../../common/InputField';
 
-import '../../../common/Form/styles.css'
+import '../../../common/Form/styles.css';
 
 type Props = {
   onInputChange: Function,
   onSubmit: Function,
   user: any,
-}
+};
 
-function LoginForm ({
+function LoginForm({
   onInputChange,
   onSubmit,
   user,
@@ -52,7 +52,7 @@ function LoginForm ({
         />
       </div>
     </form>
-  )
+  );
 }
 
 LoginForm.propTypes = {
@@ -62,6 +62,6 @@ LoginForm.propTypes = {
   }).isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
-}
+};
 
-export default LoginForm
+export default LoginForm;

@@ -1,10 +1,10 @@
 // @flow
-import React from 'react'
-import { array, func, number, shape, string } from 'prop-types'
+import React from 'react';
+import { array, func, number, shape, string } from 'prop-types';
 
-import type { Author, Book } from '../../../../constants/flowtypes'
+import type { Author, Book } from '../../../../constants/flowtypes';
 
-import BookForm from '../BookForm'
+import BookForm from '../BookForm';
 
 type Props = {
   authors: Author[],
@@ -13,9 +13,9 @@ type Props = {
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
-}
+};
 
-function BookEditView ({
+function BookEditView({
   authors,
   book,
   onAuthorChange,
@@ -35,7 +35,7 @@ function BookEditView ({
         onSubmit={onSubmit}
       />
     </div>
-  )
+  );
 }
 
 BookEditView.propTypes = {
@@ -50,6 +50,6 @@ BookEditView.propTypes = {
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
   onCancel: func.isRequired,
-}
+};
 
-export default BookEditView
+export default BookEditView;

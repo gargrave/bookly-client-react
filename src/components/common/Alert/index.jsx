@@ -1,13 +1,13 @@
 // @flow
-import React from 'react'
-import { oneOf, string } from 'prop-types'
+import React from 'react';
+import { oneOf, string } from 'prop-types';
 
-import { buildClasses } from '../../../utils/cssHelpers'
+import { buildClasses } from '../../../utils/cssHelpers';
 
 type Props = {
   message: string,
   type: string,
-}
+};
 
 const Alert = ({
   message,
@@ -16,7 +16,7 @@ const Alert = ({
   <div className={buildClasses('alert', ['alert', `alert-${type}`])}>
     {message}
   </div>
-)
+);
 
 Alert.propTypes = {
   message: string.isRequired,
@@ -30,6 +30,6 @@ Alert.propTypes = {
     'light',
     'dark',
   ]).isRequired,
-}
+};
 
-export default Alert
+export default Alert;

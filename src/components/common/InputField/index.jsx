@@ -1,6 +1,6 @@
 // @flow
-import React from 'react'
-import { func, oneOf, string } from 'prop-types'
+import React from 'react';
+import { func, oneOf, string } from 'prop-types';
 
 type Props = {
   boundValue: string,
@@ -8,15 +8,15 @@ type Props = {
   name: string,
   onInputChange: Function,
   type?: string,
-}
+};
 
 const acceptableTypes = [
   'email',
   'password',
   'text',
-]
+];
 
-function InputField ({
+function InputField({
   boundValue,
   label,
   name,
@@ -33,7 +33,7 @@ function InputField ({
         value={boundValue}
         onChange={onInputChange} />
     </div>
-  )
+  );
 }
 
 InputField.propTypes = {
@@ -42,6 +42,6 @@ InputField.propTypes = {
   name: string.isRequired,
   onInputChange: func.isRequired,
   type: oneOf(acceptableTypes),
-}
+};
 
-export default InputField
+export default InputField;

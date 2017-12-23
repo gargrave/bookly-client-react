@@ -1,22 +1,22 @@
 // @flow
-import React from 'react'
-import { func, shape, string } from 'prop-types'
-import { format } from 'date-fns'
+import React from 'react';
+import { func, shape, string } from 'prop-types';
+import { format } from 'date-fns';
 
-import type { User } from '../../../../constants/flowtypes'
+import type { User } from '../../../../constants/flowtypes';
 
-import { buildClasses } from '../../../../utils/cssHelpers'
+import { buildClasses } from '../../../../utils/cssHelpers';
 
-import Button from '../../../common/Button'
-import ButtonRow from '../../../common/ButtonRow'
-import Card from '../../../common/Card'
+import Button from '../../../common/Button';
+import ButtonRow from '../../../common/ButtonRow';
+import Card from '../../../common/Card';
 
 type Props = {
   onLogoutClick: Function,
   user: User,
-}
+};
 
-function AccountDetailView ({
+function AccountDetailView({
   onLogoutClick,
   user,
 }: Props) {
@@ -50,7 +50,7 @@ function AccountDetailView ({
         </ButtonRow>
       </Card>
     </div>
-  )
+  );
 }
 
 AccountDetailView.propTypes = {
@@ -60,6 +60,6 @@ AccountDetailView.propTypes = {
     createdAt: string,
     updatedAtmail: string,
   }).isRequired,
-}
+};
 
-export default AccountDetailView
+export default AccountDetailView;

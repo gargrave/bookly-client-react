@@ -1,24 +1,24 @@
 // @flow
-import React from 'react'
-import { array, func, object } from 'prop-types'
+import React from 'react';
+import { array, func, object } from 'prop-types';
 
-import type { Author } from '../../../../constants/flowtypes'
+import type { Author } from '../../../../constants/flowtypes';
 
 type Props = {
   author: Author,
   authors: array.isRequired,
   onChange: func.isRequired,
-}
+};
 
-function options (authors: Author[]) {
+function options(authors: Author[]) {
   return authors.map((a: Author) => (
     <option key={a.id} value={a.id}>
       {a.firstName} {a.lastName}
     </option>
-  ))
+  ));
 }
 
-function AuthorSelect ({
+function AuthorSelect({
   author,
   authors,
   onChange,
@@ -33,13 +33,13 @@ function AuthorSelect ({
         {options(authors)}
       </select>
     </div>
-  )
+  );
 }
 
 AuthorSelect.propTypes = {
   author: object.isRequired,
   authors: array.isRequired,
   onChange: func.isRequired,
-}
+};
 
-export default AuthorSelect
+export default AuthorSelect;

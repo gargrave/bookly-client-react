@@ -1,13 +1,13 @@
 // @flow
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { bool } from 'prop-types'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { bool } from 'prop-types';
 
-import { localUrls } from '../../../../constants/urls'
+import { localUrls } from '../../../../constants/urls';
 
 class SimpleHeader extends Component<any> {
-  loggedInContent () {
+  loggedInContent() {
     return (
       <span>
         <Link to={localUrls.booksList}>Books</Link>
@@ -16,36 +16,36 @@ class SimpleHeader extends Component<any> {
         {' | '}
         <Link to={localUrls.account}>Account</Link>
       </span>
-    )
+    );
   }
 
-  notLoggedInContent () {
-    return <Link to={localUrls.login}>Login</Link>
+  notLoggedInContent() {
+    return <Link to={localUrls.login}>Login</Link>;
   }
 
-  render () {
-    const content = this.props.loggedIn ? this.loggedInContent : this.notLoggedInContent
+  render() {
+    const content = this.props.loggedIn ? this.loggedInContent : this.notLoggedInContent;
     return (
       <div>
         <Link to="/">Home</Link>
         {' | '}
         {content()}
       </div>
-    )
+    );
   }
 }
 
 SimpleHeader.propTypes = {
   loggedIn: bool.isRequired,
-}
+};
 
 const mapStateToProps = (state, ownProps) => {
-  const loggedIn = !!state.auth.token
+  const loggedIn = !!state.auth.token;
   return {
     loggedIn,
-  }
-}
+  };
+};
 
-const mapDispatchToProps = (dispatch, ownProps) => ({})
+const mapDispatchToProps = (dispatch, ownProps) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(SimpleHeader)
+export default connect(mapStateToProps, mapDispatchToProps)(SimpleHeader);

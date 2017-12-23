@@ -1,41 +1,41 @@
 export default {
-  empty () {
+  empty() {
     return {
       title: '',
       author: {
         id: -1,
         name: '',
       },
-    }
+    };
   },
 
-  emptyErrors () {
+  emptyErrors() {
     return {
       title: '',
       author: '',
-    }
+    };
   },
 
-  toAPI (data) {
+  toAPI(data) {
     let payload = {
       title: data.title || '',
       authorId: data.author.id,
-    }
+    };
 
     if (data.id) {
-      payload.id = data.id
+      payload.id = data.id;
     }
 
-    return payload
+    return payload;
   },
 
-  fromAPI (data) {
+  fromAPI(data) {
     return {
       id: data.id,
       title: data.title,
       author: data.author,
       createdAt: data.created_at,
       updatedAt: data.updated_at,
-    }
+    };
   },
-}
+};

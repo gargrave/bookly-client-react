@@ -1,18 +1,18 @@
 // @flow
-import React from 'react'
-import { array, func } from 'prop-types'
+import React from 'react';
+import { array, func } from 'prop-types';
 
-import type { Author } from '../../../../constants/flowtypes'
+import type { Author } from '../../../../constants/flowtypes';
 
-import Alert from '../../../common/Alert/'
-import AuthorListDetail from '../AuthorListDetail'
+import Alert from '../../../common/Alert/';
+import AuthorListDetail from '../AuthorListDetail';
 
 type Props = {
   authors: Author[],
   onAuthorClick: Function,
-}
+};
 
-function authorList (
+function authorList(
   authors: Author[],
   onAuthorClick: Function
 ) {
@@ -26,30 +26,30 @@ function authorList (
         />
       )}
     </div>
-  )
+  );
 }
 
-function noAuthorsMessage () {
+function noAuthorsMessage() {
   return (
     <Alert
       message={'No Authors created yet!'}
       type={'info'}
     />
-  )
+  );
 }
 
-function AuthorList ({
+function AuthorList({
   authors,
   onAuthorClick,
 }: Props) {
   return (
     authors.length ? authorList(authors, onAuthorClick) : noAuthorsMessage()
-  )
+  );
 }
 
 AuthorList.propTypes = {
   authors: array.isRequired,
   onAuthorClick: func.isRequired,
-}
+};
 
-export default AuthorList
+export default AuthorList;

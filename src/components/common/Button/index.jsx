@@ -1,10 +1,10 @@
 // @flow
-import React from 'react'
-import { bool, func, oneOf, string } from 'prop-types'
+import React from 'react';
+import { bool, func, oneOf, string } from 'prop-types';
 
-import { buildClasses } from '../../../utils/cssHelpers'
+import { buildClasses } from '../../../utils/cssHelpers';
 
-import './styles.css'
+import './styles.css';
 
 type Props = {
   canSubmit?: boolean,
@@ -13,7 +13,7 @@ type Props = {
   position?: string,
   text: string,
   type: string,
-}
+};
 
 const acceptableTypes = [
   'success',
@@ -23,27 +23,27 @@ const acceptableTypes = [
   'danger',
   'light',
   'dark',
-]
+];
 
 const acceptablePositions = [
   'left',
-]
+];
 
-function buttonClass (type: string) {
+function buttonClass(type: string) {
   if (acceptableTypes.includes(type)) {
-    return `button-${type}`
+    return `button-${type}`;
   }
-  return ''
+  return '';
 }
 
-function positionClass (position: string) {
+function positionClass(position: string) {
   if (acceptablePositions.includes(position)) {
-    return `button-${position}`
+    return `button-${position}`;
   }
-  return ''
+  return '';
 }
 
-function buildClassList (
+function buildClassList(
   type: string,
   position: string,
   classes: string,
@@ -51,10 +51,10 @@ function buildClassList (
   return buildClasses(
     ['button', positionClass(position)],
     [buttonClass(type), ...classes.split(' ')]
-  )
+  );
 }
 
-function Button ({
+function Button({
   canSubmit,
   classes = '',
   onClick,
@@ -69,7 +69,7 @@ function Button ({
       onClick={onClick}>
       { text }
     </button>
-  )
+  );
 }
 
 Button.propTypes = {
@@ -79,6 +79,6 @@ Button.propTypes = {
   position: oneOf(acceptablePositions),
   text: string.isRequired,
   type: oneOf(acceptableTypes).isRequired,
-}
+};
 
-export default Button
+export default Button;

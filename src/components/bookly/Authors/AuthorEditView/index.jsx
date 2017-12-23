@@ -1,19 +1,19 @@
 // @flow
-import React from 'react'
-import { func, number, shape, string } from 'prop-types'
+import React from 'react';
+import { func, number, shape, string } from 'prop-types';
 
-import type { Author } from '../../../../constants/flowtypes'
+import type { Author } from '../../../../constants/flowtypes';
 
-import AuthorForm from '../AuthorForm'
+import AuthorForm from '../AuthorForm';
 
 type Props = {
   author: Author,
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
-}
+};
 
-function AuthorEditView ({
+function AuthorEditView({
   author,
   onCancel,
   onInputChange,
@@ -28,7 +28,7 @@ function AuthorEditView ({
         onInputChange={onInputChange}
         onSubmit={onSubmit} />
     </div>
-  )
+  );
 }
 
 AuthorEditView.propTypes = {
@@ -42,6 +42,6 @@ AuthorEditView.propTypes = {
   onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
-}
+};
 
-export default AuthorEditView
+export default AuthorEditView;

@@ -7,4 +7,4 @@ export const usersMockData = [
     lastLogin: '2017-07-01T01:11:03.942Z',
     verified: true,
   },
-]
+];

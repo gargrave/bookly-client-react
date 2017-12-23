@@ -1,24 +1,24 @@
 // @flow
-import React from 'react'
-import { func, shape, string } from 'prop-types'
+import React from 'react';
+import { func, shape, string } from 'prop-types';
 
-import type { Author } from '../../../../constants/flowtypes'
+import type { Author } from '../../../../constants/flowtypes';
 
-import { buildClasses } from '../../../../utils/cssHelpers'
+import { buildClasses } from '../../../../utils/cssHelpers';
 
-import Button from '../../../common/Button'
-import InputField from '../../../common/InputField'
+import Button from '../../../common/Button';
+import InputField from '../../../common/InputField';
 
-import '../../../common/Form/styles.css'
+import '../../../common/Form/styles.css';
 
 type Props = {
   author: Author,
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
-}
+};
 
-function AuthorForm ({
+function AuthorForm({
   author,
   onCancel,
   onInputChange,
@@ -58,7 +58,7 @@ function AuthorForm ({
           type="info" />
       </div>
     </form>
-  )
+  );
 }
 
 AuthorForm.propTypes = {
@@ -69,6 +69,6 @@ AuthorForm.propTypes = {
   onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
-}
+};
 
-export default AuthorForm
+export default AuthorForm;

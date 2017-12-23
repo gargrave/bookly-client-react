@@ -1,23 +1,23 @@
 // @flow
-import React from 'react'
-import { func, number, shape, string } from 'prop-types'
-import { format } from 'date-fns'
+import React from 'react';
+import { func, number, shape, string } from 'prop-types';
+import { format } from 'date-fns';
 
-import type { Author } from '../../../../constants/flowtypes'
+import type { Author } from '../../../../constants/flowtypes';
 
-import { buildClasses } from '../../../../utils/cssHelpers'
+import { buildClasses } from '../../../../utils/cssHelpers';
 
-import Button from '../../../common/Button'
-import ButtonRow from '../../../common/ButtonRow'
-import Card from '../../../common/Card'
+import Button from '../../../common/Button';
+import ButtonRow from '../../../common/ButtonRow';
+import Card from '../../../common/Card';
 
 type Props = {
   author: Author,
   onBackClick: Function,
   onEditClick: Function,
-}
+};
 
-function AuthorDetailView ({
+function AuthorDetailView({
   author,
   onEditClick,
   onBackClick,
@@ -54,7 +54,7 @@ function AuthorDetailView ({
         </ButtonRow>
       </Card>
     </div>
-  )
+  );
 }
 
 AuthorDetailView.propTypes = {
@@ -67,6 +67,6 @@ AuthorDetailView.propTypes = {
   }),
   onBackClick: func.isRequired,
   onEditClick: func.isRequired,
-}
+};
 
-export default AuthorDetailView
+export default AuthorDetailView;

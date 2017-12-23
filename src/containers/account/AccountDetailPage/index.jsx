@@ -1,62 +1,62 @@
 // @flow
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { object } from 'prop-types'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { object } from 'prop-types';
 
-import type { User } from '../../../constants/flowtypes'
+import type { User } from '../../../constants/flowtypes';
 
-import { localUrls } from '../../../constants/urls'
-import { logout } from '../../../store/actions/auth-actions'
+import { localUrls } from '../../../constants/urls';
+import { logout } from '../../../store/actions/auth-actions';
 
-import AccountDetailView from '../../../components/bookly/account/AccountDetailView'
-import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
+import AccountDetailView from '../../../components/bookly/account/AccountDetailView';
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
   history: any,
   logout: Function,
   user: User,
-}
+};
 
 class AccountDetailPage extends Component<Props> {
-  constructor (props: Props) {
-    super(props)
+  constructor(props: Props) {
+    super(props);
 
-    const _this: any = this
-    _this.onLogoutClick = _this.onLogoutClick.bind(this)
+    const _this: any = this;
+    _this.onLogoutClick = _this.onLogoutClick.bind(this);
   }
 
-  async onLogoutClick (event) {
-    event.preventDefault()
-    await this.props.logout()
-    this.props.history.push(localUrls.login)
+  async onLogoutClick(event) {
+    event.preventDefault();
+    await this.props.logout();
+    this.props.history.push(localUrls.login);
   }
 
-  render () {
+  render() {
     const {
       user,
-    } = this.props
+    } = this.props;
     return (
       <AccountDetailView
         onLogoutClick={this.onLogoutClick}
         user={user}
       />
-    )
+    );
   }
 }
 
 AccountDetailPage.propTypes = {
   history: object.isRequired,
   user: object.isRequired,
-}
+};
 
 const mapStateToProps = (state, ownProps) => ({
   user: state.auth.user,
-})
+});
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  logout () {
-    return dispatch(logout())
+  logout() {
+    return dispatch(logout());
   },
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AccountDetailPage, localUrls.login))
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AccountDetailPage, localUrls.login));
