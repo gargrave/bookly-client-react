@@ -100,15 +100,6 @@
     ]
   },
   "babel": {
-    "plugins": [
-      [
-        "babel-plugin-root-import",
-        {
-          "rootPathSuffix": "src",
-          "rootPathPrefix": "@"
-        }
-      ]
-    ],
     "presets": [
       "react-app"
     ]
@@ -117,7 +108,6 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "babel-plugin-root-import": "^5.1.0",
     "flow-bin": "^0.61.0"
   }
 }
