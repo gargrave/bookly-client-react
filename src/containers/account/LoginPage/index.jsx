@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { func, object } from 'prop-types'
 
-import { localUrls } from '@/constants/urls'
-import { login } from '@/store/actions/auth-actions'
-import RequiresAuth from '@/components/common/hocs/RequiresAuth'
+import { localUrls } from '../../../constants/urls'
+import { login } from '../../../store/actions/auth-actions'
 
-import Alert from '@/components/common/Alert'
-import LoginForm from '@/components/bookly/account/LoginForm'
+import Alert from '../../../components/common/Alert'
+import LoginForm from '../../../components/bookly/account/LoginForm'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
 class LoginPage extends Component {
   constructor (props) {

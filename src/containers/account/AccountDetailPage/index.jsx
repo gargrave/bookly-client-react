@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { object } from 'prop-types'
 
-import { localUrls } from '@/constants/urls'
-import { logout } from '@/store/actions/auth-actions'
+import { localUrls } from '../../../constants/urls'
+import { logout } from '../../../store/actions/auth-actions'
 
-import RequiresAuth from '@/components/common/hocs/RequiresAuth'
-import AccountDetailView from '@/components/bookly/account/AccountDetailView'
+import AccountDetailView from '../../../components/bookly/account/AccountDetailView'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
 class AccountDetailPage extends Component {
   constructor (props) {

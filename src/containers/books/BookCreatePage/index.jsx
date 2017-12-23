@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array, func, object } from 'prop-types'
 
-import bookModel from '@/models/Book.model'
-import { localUrls } from '@/constants/urls'
-import { fetchAuthors } from '@/store/actions/author-actions'
-import { createBook } from '@/store/actions/book-actions'
-import RequiresAuth from '@/components/common/hocs/RequiresAuth'
+import { localUrls } from '../../../constants/urls'
+import { fetchAuthors } from '../../../store/actions/author-actions'
+import { createBook } from '../../../store/actions/book-actions'
+import bookModel from '../../../models/Book.model'
 
-import BookForm from '@/components/bookly/books/BookForm'
+import BookForm from '../../../components/bookly/books/BookForm'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
 class BookCreatePage extends Component {
   constructor (props) {

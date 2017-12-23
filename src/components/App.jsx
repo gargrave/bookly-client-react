@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 
 import AppWrapper from './AppWrapper'
 
-import store from '@/store/store'
+import store from '../store/store'
 
 import './App.css'
 

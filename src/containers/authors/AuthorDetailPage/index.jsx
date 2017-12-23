@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { func, number, object, shape, string } from 'prop-types'
 
-import { localUrls } from '@/constants/urls'
-import { fetchAuthors, updateAuthor } from '@/store/actions/author-actions'
-import authorModel from '@/models/Author.model'
+import { localUrls } from '../../../constants/urls'
+import { fetchAuthors, updateAuthor } from '../../../store/actions/author-actions'
+import authorModel from '../../../models/Author.model'
 
-import RequiresAuth from '@/components/common/hocs/RequiresAuth'
-import AuthorDetailView from '@/components/bookly/authors/AuthorDetailView'
-import AuthorEditView from '@/components/bookly/authors/AuthorEditView'
+import AuthorDetailView from '../../../components/bookly/authors/AuthorDetailView'
+import AuthorEditView from '../../../components/bookly/authors/AuthorEditView'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
 const detailView = (author, onBackClick, onEditClick) => (
   <AuthorDetailView

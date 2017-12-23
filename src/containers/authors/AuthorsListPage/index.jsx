@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array, func, object } from 'prop-types'
 
-import { localUrls } from '@/constants/urls'
-import { fetchAuthors } from '@/store/actions/author-actions'
+import { localUrls } from '../../../constants/urls'
+import { fetchAuthors } from '../../../store/actions/author-actions'
 
-import Button from '@/components/common/Button'
-import RequiresAuth from '@/components/common/hocs/RequiresAuth'
-import AuthorList from '@/components/bookly/authors/AuthorList'
+import AuthorList from '../../../components/bookly/authors/AuthorList'
+import Button from '../../../components/common/Button'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
 class AuthorsListPage extends Component {
   constructor (props) {

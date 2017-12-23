@@ -1,6 +1,6 @@
 import { AUTH, BOOKS } from '../action-types'
 
-import bookModel from '@/models/Book.model'
+import bookModel from '../../models/Book.model'
 
 const defaultState = {
   bookRequestPending: false,

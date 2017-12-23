@@ -2,12 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { array, func, object } from 'prop-types'
 
-import { localUrls } from '@/constants/urls'
-import { fetchBooks } from '@/store/actions/book-actions'
+import { localUrls } from '../../../constants/urls'
+import { fetchBooks } from '../../../store/actions/book-actions'
 
-import Button from '@/components/common/Button'
-import RequiresAuth from '@/components/common/hocs/RequiresAuth'
-import BookListDetail from '@/components/bookly/books/BookListDetail'
+import Button from '../../../components/common/Button'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
+import BookListDetail from '../../../components/bookly/books/BookListDetail'
 
 class BooksListPage extends Component {
   constructor (props) {

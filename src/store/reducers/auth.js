@@ -1,7 +1,7 @@
 import { AUTH } from '../action-types'
 
-import profileModel from '@/models/Profile.model'
-import userModel from '@/models/User.model'
+import profileModel from '../../models/Profile.model'
+import userModel from '../../models/User.model'
 
 const defaultState = {
   userRequestPending: false,
