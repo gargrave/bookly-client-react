@@ -1,6 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { func, object } from 'prop-types'
+
+import type { User } from '../../../constants/flowtypes'
 
 import { localUrls } from '../../../constants/urls'
 import { login } from '../../../store/actions/auth-actions'
@@ -9,8 +12,18 @@ import Alert from '../../../components/common/Alert'
 import LoginForm from '../../../components/bookly/account/LoginForm'
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
-class LoginPage extends Component {
-  constructor (props) {
+type Props = {
+  history: any,
+  login: Function,
+}
+
+type State = {
+  apiError: string,
+  user: User,
+}
+
+class LoginPage extends Component<Props, State> {
+  constructor (props: Props) {
     super(props)
 
     this.state = {
@@ -21,8 +34,9 @@ class LoginPage extends Component {
       apiError: '',
     }
 
-    this.login = this.login.bind(this)
-    this.onInputChange = this.onInputChange.bind(this)
+    const _this: any = this
+    _this.login = _this.login.bind(this)
+    _this.onInputChange = _this.onInputChange.bind(this)
   }
 
   async login (event) {
@@ -54,7 +68,8 @@ class LoginPage extends Component {
         <LoginForm
           user={this.state.user}
           onInputChange={this.onInputChange}
-          onSubmit={this.login} />
+          onSubmit={this.login}
+        />
       </div>
     )
   }

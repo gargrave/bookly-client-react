@@ -1,6 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { object } from 'prop-types'
+
+import type { User } from '../../../constants/flowtypes'
 
 import { localUrls } from '../../../constants/urls'
 import { logout } from '../../../store/actions/auth-actions'
@@ -8,11 +11,18 @@ import { logout } from '../../../store/actions/auth-actions'
 import AccountDetailView from '../../../components/bookly/account/AccountDetailView'
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
-class AccountDetailPage extends Component {
-  constructor (props) {
+type Props = {
+  history: any,
+  logout: Function,
+  user: User,
+}
+
+class AccountDetailPage extends Component<Props> {
+  constructor (props: Props) {
     super(props)
 
-    this.onLogoutClick = this.onLogoutClick.bind(this)
+    const _this: any = this
+    _this.onLogoutClick = _this.onLogoutClick.bind(this)
   }
 
   async onLogoutClick (event) {
@@ -22,11 +32,14 @@ class AccountDetailPage extends Component {
   }
 
   render () {
-    const { user } = this.props
+    const {
+      user,
+    } = this.props
     return (
       <AccountDetailView
         onLogoutClick={this.onLogoutClick}
-        user={user} />
+        user={user}
+      />
     )
   }
 }
