@@ -1,11 +1,12 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { bool } from 'prop-types'
 
-import { localUrls } from '@/constants/urls'
+import { localUrls } from '../../../../constants/urls'
 
-class SimpleHeader extends Component {
+class SimpleHeader extends Component<any> {
   loggedInContent () {
     return (
       <span>

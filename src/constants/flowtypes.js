@@ -6,3 +6,10 @@ export type Author = {
   createdAt?: string,
   updatedAt?: string,
 }
+
+export type User = {
+  id?: string | number,
+  email: string,
+  createdAt?: string,
+  updatedAt?: string,
+}

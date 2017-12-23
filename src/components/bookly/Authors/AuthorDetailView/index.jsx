@@ -44,11 +44,13 @@ function AuthorDetailView ({
             onClick={onEditClick}
             position="left"
             text="Edit"
-            type="info" />
+            type="info"
+          />
           <Button
             onClick={onBackClick}
             text="Back"
-            type="light" />
+            type="light"
+          />
         </ButtonRow>
       </Card>
     </div>

@@ -1,17 +1,25 @@
+// @flow
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 import { format } from 'date-fns'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import type { User } from '../../../../constants/flowtypes'
 
-import Button from '@/components/common/Button'
-import ButtonRow from '@/components/common/ButtonRow'
-import Card from '@/components/common/Card'
+import { buildClasses } from '../../../../utils/cssHelpers'
 
-const AccountDetailView = ({
+import Button from '../../../common/Button'
+import ButtonRow from '../../../common/ButtonRow'
+import Card from '../../../common/Card'
+
+type Props = {
+  onLogoutClick: Function,
+  user: User,
+}
+
+function AccountDetailView ({
   onLogoutClick,
   user,
-}) => {
+}: Props) {
   return (
     <div className={buildClasses('account-detail-view')}>
       <Card
@@ -31,12 +39,14 @@ const AccountDetailView = ({
         </p>
 
         <hr/>
+
         <ButtonRow>
           <Button
             onClick={onLogoutClick}
             position="left"
             text="Logout"
-            type="info" />
+            type="info"
+          />
         </ButtonRow>
       </Card>
     </div>

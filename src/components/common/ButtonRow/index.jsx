@@ -7,7 +7,7 @@ import { buildClasses } from '../../../utils/cssHelpers'
 import './styles.css'
 
 type Props = {
-  children?: Array<any>,
+  children?: any,
 }
 
 function ButtonRow ({
