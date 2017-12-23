@@ -163,6 +163,7 @@ BookDetailPage.propTypes = {
   updateBook: func.isRequired,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => {
   const bookID = ownProps.match.params.id;
   const book = state.books.data.find((a) => Number(a.id) === Number(bookID)) || bookModel.empty();

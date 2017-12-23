@@ -49,6 +49,7 @@ AccountDetailPage.propTypes = {
   user: object.isRequired,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => ({
   user: state.auth.user,
 });

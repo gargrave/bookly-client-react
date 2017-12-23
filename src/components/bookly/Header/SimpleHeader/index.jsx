@@ -39,6 +39,7 @@ SimpleHeader.propTypes = {
   loggedIn: bool.isRequired,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => {
   const loggedIn = !!state.auth.token;
   return {

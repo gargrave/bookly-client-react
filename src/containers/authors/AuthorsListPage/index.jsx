@@ -74,6 +74,7 @@ AuthorsListPage.propTypes = {
   history: object.isRequired,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => ({
   authors: state.authors.data,
 });

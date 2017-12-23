@@ -83,6 +83,7 @@ AuthorCreatePage.propTypes = {
   history: object,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => {
   return {};
 };

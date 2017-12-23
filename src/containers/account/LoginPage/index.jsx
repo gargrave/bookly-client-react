@@ -80,6 +80,7 @@ LoginPage.propTypes = {
   login: func.isRequired,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => {
   return {};
 };

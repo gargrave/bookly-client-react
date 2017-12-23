@@ -40,6 +40,7 @@ AppWrapper.propTypes = {
   setInitialized: func.isRequired,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => {
   return {};
 };

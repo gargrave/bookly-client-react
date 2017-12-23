@@ -162,6 +162,7 @@ AuthorDetailPage.propTypes = {
   updateAuthor: func.isRequired,
 };
 
+/* eslint-disable no-unused-vars */
 const mapStateToProps = (state, ownProps) => {
   const authorID = ownProps.match.params.id;
   const author = state.authors.data.find((a) => Number(a.id) === Number(authorID)) || {};
