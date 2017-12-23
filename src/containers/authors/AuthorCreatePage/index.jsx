@@ -1,14 +1,27 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { func, object } from 'prop-types'
+
+import type { Author } from '../../../constants/flowtypes'
 
 import { localUrls } from '../../../constants/urls'
 import { createAuthor } from '../../../store/actions/author-actions'
 import authorModel from '../../../models/Author.model'
 
 import AuthorForm from '../../../components/bookly/authors/AuthorForm'
+import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
-class AuthorCreatePage extends Component {
+type Props = {
+  createAuthor: Function,
+  history: Object,
+}
+
+type State = {
+  author: Author,
+}
+
+class AuthorCreatePage extends Component<Props, State> {
   constructor (props) {
     super(props)
 
@@ -16,9 +29,10 @@ class AuthorCreatePage extends Component {
       author: authorModel.empty(),
     }
 
-    this.onInputChange = this.onInputChange.bind(this)
-    this.onSubmit = this.onSubmit.bind(this)
-    this.onCancel = this.onCancel.bind(this)
+    const _this: any = this
+    _this.onCancel = _this.onCancel.bind(this)
+    _this.onInputChange = _this.onInputChange.bind(this)
+    _this.onSubmit = _this.onSubmit.bind(this)
   }
 
   onInputChange (event) {
@@ -55,17 +69,18 @@ class AuthorCreatePage extends Component {
         <h2>Add an Author</h2>
         <AuthorForm
           author={this.state.author}
+          onCancel={this.onCancel}
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}
-          onCancel={this.onCancel} />
+        />
       </div>
     )
   }
 }
 
 AuthorCreatePage.propTypes = {
-  history: object,
   createAuthor: func.isRequired,
+  history: object,
 }
 
 const mapStateToProps = (state, ownProps) => {
@@ -78,4 +93,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(AuthorCreatePage)
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AuthorCreatePage, localUrls.login))

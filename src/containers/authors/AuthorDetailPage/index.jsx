@@ -1,6 +1,9 @@
+// @flow
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { func, number, object, shape, string } from 'prop-types'
+
+import type { Author } from '../../../constants/flowtypes'
 
 import { localUrls } from '../../../constants/urls'
 import { fetchAuthors, updateAuthor } from '../../../store/actions/author-actions'
@@ -10,29 +13,54 @@ import AuthorDetailView from '../../../components/bookly/authors/AuthorDetailVie
 import AuthorEditView from '../../../components/bookly/authors/AuthorEditView'
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth'
 
-const detailView = (author, onBackClick, onEditClick) => (
-  <AuthorDetailView
-    author={author}
-    onBackClick={onBackClick}
-    onEditClick={onEditClick}
-  />
-)
+type Props = {
+  author: Author,
+  history: Object,
+  fetchAuthors: Function,
+  updateAuthor: Function,
+}
 
-const editView = (author, onCancel, onInputChange, onSubmit) => (
-  <AuthorEditView
-    author={author}
-    onCancel={onCancel}
-    onInputChange={onInputChange}
-    onSubmit={onSubmit} />
-)
+type State = {
+  editableAuthor: Author,
+  editing: boolean,
+}
 
-class AuthorDetailPage extends Component {
-  constructor (props) {
+function detailView (
+  author: Author,
+  onBackClick: Function,
+  onEditClick: Function,
+) {
+  return (
+    <AuthorDetailView
+      author={author}
+      onBackClick={onBackClick}
+      onEditClick={onEditClick}
+    />
+  )
+}
+
+function editView (
+  author: Author,
+  onCancel: Function,
+  onInputChange: Function,
+  onSubmit: Function,
+) {
+  return (
+    <AuthorEditView
+      author={author}
+      onCancel={onCancel}
+      onInputChange={onInputChange}
+      onSubmit={onSubmit} />
+  )
+}
+
+class AuthorDetailPage extends Component<Props, State> {
+  constructor (props: Props) {
     super(props)
 
     this.state = {
-      editing: false,
       editableAuthor: authorModel.empty(),
+      editing: false,
     }
   }
 
@@ -83,11 +111,12 @@ class AuthorDetailPage extends Component {
    */
   onEditClick () {
     this.setState({
-      editing: true,
       editableAuthor: {
         firstName: this.props.author.firstName,
         lastName: this.props.author.lastName,
+        name: '',
       },
+      editing: true,
     })
   }
 
@@ -121,7 +150,6 @@ class AuthorDetailPage extends Component {
 }
 
 AuthorDetailPage.propTypes = {
-  history: object,
   author: shape({
     id: number,
     firstName: string,
@@ -130,6 +158,7 @@ AuthorDetailPage.propTypes = {
     updatedAt: string,
   }),
   fetchAuthors: func.isRequired,
+  history: object,
   updateAuthor: func.isRequired,
 }
 
@@ -152,4 +181,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   },
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AuthorDetailPage))
+export default connect(mapStateToProps, mapDispatchToProps)(RequiresAuth(AuthorDetailPage, localUrls.login))
