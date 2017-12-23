@@ -1,14 +1,24 @@
+// @flow
 import React from 'react'
 import { func, number, shape, string } from 'prop-types'
 
-import AuthorForm from '@/components/bookly/authors/AuthorForm'
+import type { Author } from '../../../../constants/flowtypes'
 
-const AuthorDetailView = ({
+import AuthorForm from '../AuthorForm'
+
+type Props = {
+  author: Author,
+  onCancel: Function,
+  onInputChange: Function,
+  onSubmit: Function,
+}
+
+function AuthorEditView ({
   author,
   onCancel,
   onInputChange,
   onSubmit,
-}) => {
+}: Props) {
   return (
     <div className="author-edit-view">
       <h2>Edit Author</h2>
@@ -21,7 +31,7 @@ const AuthorDetailView = ({
   )
 }
 
-AuthorDetailView.propTypes = {
+AuthorEditView.propTypes = {
   author: shape({
     id: number,
     firstName: string,
@@ -34,4 +44,4 @@ AuthorDetailView.propTypes = {
   onSubmit: func.isRequired,
 }
 
-export default AuthorDetailView
+export default AuthorEditView

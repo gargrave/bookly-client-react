@@ -4,7 +4,7 @@ import { func, shape, string } from 'prop-types'
 
 import type { Author } from '../../../../constants/flowtypes'
 
-import Card from '../../../../components/common/Card'
+import Card from '../../../common/Card'
 
 type Props = {
   author: Author,

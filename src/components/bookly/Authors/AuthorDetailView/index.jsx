@@ -7,9 +7,9 @@ import type { Author } from '../../../../constants/flowtypes'
 
 import { buildClasses } from '../../../../utils/cssHelpers'
 
-import Button from '../../../../components/common/Button'
-import ButtonRow from '../../../../components/common/ButtonRow'
-import Card from '../../../../components/common/Card'
+import Button from '../../../common/Button'
+import ButtonRow from '../../../common/ButtonRow'
+import Card from '../../../common/Card'
 
 type Props = {
   author: Author,

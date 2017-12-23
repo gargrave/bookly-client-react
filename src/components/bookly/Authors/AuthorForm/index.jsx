@@ -1,19 +1,29 @@
+// @flow
 import React from 'react'
 import { func, shape, string } from 'prop-types'
 
-import { buildClasses } from '@/utils/cssHelpers'
+import type { Author } from '../../../../constants/flowtypes'
 
-import Button from '@/components/common/Button'
-import InputField from '@/components/common/InputField'
+import { buildClasses } from '../../../../utils/cssHelpers'
 
-import '@/components/common/Form/styles.css'
+import Button from '../../../common/Button'
+import InputField from '../../../common/InputField'
 
-const AuthorForm = ({
+import '../../../common/Form/styles.css'
+
+type Props = {
+  author: Author,
+  onCancel: Function,
+  onInputChange: Function,
+  onSubmit: Function,
+}
+
+function AuthorForm ({
   author,
   onCancel,
   onInputChange,
   onSubmit,
-}) => {
+}: Props) {
   return (
     <form
       className={buildClasses(['form', 'author-form'])}

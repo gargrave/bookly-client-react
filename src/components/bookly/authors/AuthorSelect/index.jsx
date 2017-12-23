@@ -1,19 +1,28 @@
+// @flow
 import React from 'react'
 import { array, func, object } from 'prop-types'
 
-const options = (authors) => {
-  return authors.map((a) => (
+import type { Author } from '../../../../constants/flowtypes'
+
+type Props = {
+  author: Author,
+  authors: array.isRequired,
+  onChange: func.isRequired,
+}
+
+function options (authors: Author[]) {
+  return authors.map((a: Author) => (
     <option key={a.id} value={a.id}>
       {a.firstName} {a.lastName}
     </option>
   ))
 }
 
-const AuthorSelect = ({
+function AuthorSelect ({
   author,
   authors,
   onChange,
-}) => {
+}: Props) {
   return (
     <div className="input-field">
       <select
