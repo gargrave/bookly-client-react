@@ -1,3 +1,4 @@
+// @flow
 const PROD_SITE_URL_CHECK = 'bookly-app.us'
 const DEV_SITE_URL_CHECK = 'localhost:3000'
 
