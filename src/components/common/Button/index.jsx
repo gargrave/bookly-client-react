@@ -9,6 +9,7 @@ import './styles.css';
 type Props = {
   canSubmit?: boolean,
   classes?: string,
+  disabled?: boolean,
   onClick: Function,
   position?: string,
   text: string,
@@ -57,6 +58,7 @@ function buildClassList(
 function Button({
   canSubmit,
   classes = '',
+  disabled,
   onClick,
   position = '',
   text,
@@ -64,9 +66,11 @@ function Button({
 }: Props) {
   return (
     <button
-      type={canSubmit ? 'submit' : 'button'}
       className={buildClassList(type, position, classes)}
-      onClick={onClick}>
+      disabled={disabled || false}
+      onClick={onClick}
+      type={canSubmit ? 'submit' : 'button'}
+    >
       { text }
     </button>
   );
@@ -75,6 +79,7 @@ function Button({
 Button.propTypes = {
   canSubmit: bool,
   classes: string,
+  disabled: bool,
   onClick: func.isRequired,
   position: oneOf(acceptablePositions),
   text: string.isRequired,
