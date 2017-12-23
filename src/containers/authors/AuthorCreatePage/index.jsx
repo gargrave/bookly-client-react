@@ -6,7 +6,7 @@ import { func, object } from 'prop-types';
 import type { Author } from '../../../constants/flowtypes';
 
 import { localUrls } from '../../../constants/urls';
-import { createAuthor } from '../../../store/actions/author-actions';
+import { createAuthor, fetchAuthors } from '../../../store/actions/author-actions';
 import authorModel from '../../../models/Author.model';
 
 import AuthorForm from '../../../components/bookly/authors/AuthorForm';
@@ -14,11 +14,13 @@ import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
   createAuthor: Function,
+  fetchAuthors: Function,
   history: Object,
 };
 
 type State = {
   author: Author,
+  formDisabled: boolean,
 };
 
 class AuthorCreatePage extends Component<Props, State> {
@@ -27,12 +29,30 @@ class AuthorCreatePage extends Component<Props, State> {
 
     this.state = {
       author: authorModel.empty(),
+      formDisabled: true,
     };
 
     const _this: any = this;
     _this.onCancel = _this.onCancel.bind(this);
     _this.onInputChange = _this.onInputChange.bind(this);
     _this.onSubmit = _this.onSubmit.bind(this);
+  }
+
+  componentDidMount() {
+    this.refreshAuthors();
+  }
+
+  async refreshAuthors() {
+    try {
+      await this.props.fetchAuthors();
+      this.setState({
+        formDisabled: false,
+      });
+    } catch (err) {
+      // TODO: deal with this error
+      console.log('TODO: deal with this error in AuthorDetailPage.refreshAuthors():');
+      console.dir(err);
+    }
   }
 
   onInputChange(event) {
@@ -64,11 +84,17 @@ class AuthorCreatePage extends Component<Props, State> {
   }
 
   render() {
+    const {
+      author,
+      formDisabled,
+    } = this.state;
+
     return (
       <div>
         <h2>Add an Author</h2>
         <AuthorForm
-          author={this.state.author}
+          author={author}
+          disabled={formDisabled}
           onCancel={this.onCancel}
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}
@@ -80,6 +106,7 @@ class AuthorCreatePage extends Component<Props, State> {
 
 AuthorCreatePage.propTypes = {
   createAuthor: func.isRequired,
+  fetchAuthors: func.isRequired,
   history: object,
 };
 
@@ -91,6 +118,10 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => ({
   createAuthor(author) {
     return dispatch(createAuthor(author));
+  },
+
+  fetchAuthors() {
+    return dispatch(fetchAuthors());
   },
 });
 

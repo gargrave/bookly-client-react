@@ -7,7 +7,7 @@ import type { Author, Book } from '../../../constants/flowtypes';
 
 import { localUrls } from '../../../constants/urls';
 import { fetchAuthors } from '../../../store/actions/author-actions';
-import { createBook } from '../../../store/actions/book-actions';
+import { createBook, fetchBooks } from '../../../store/actions/book-actions';
 import bookModel from '../../../models/Book.model';
 
 import BookForm from '../../../components/bookly/books/BookForm';
@@ -17,11 +17,13 @@ type Props = {
   authors: Author[],
   createBook: Function,
   fetchAuthors: Function,
+  fetchBooks: Function,
   history: Object,
 };
 
 type State = {
   book: Book,
+  formDisabled: boolean,
 };
 
 class BookCreatePage extends Component<Props, State> {
@@ -30,6 +32,7 @@ class BookCreatePage extends Component<Props, State> {
 
     this.state = {
       book: bookModel.empty(),
+      formDisabled: true,
     };
 
     const _this: any = this;
@@ -42,6 +45,10 @@ class BookCreatePage extends Component<Props, State> {
   async componentDidMount() {
     try {
       await this.props.fetchAuthors();
+      await this.props.fetchBooks();
+      this.setState({
+        formDisabled: false,
+      });
     } catch (err) {
       console.log('TODO: deal with this error!');
       console.log(err);
@@ -93,8 +100,11 @@ class BookCreatePage extends Component<Props, State> {
   }
 
   render() {
-    const { book } = this.state;
     const { authors } = this.props;
+    const {
+      book,
+      formDisabled,
+    } = this.state;
 
     return (
       <div>
@@ -102,6 +112,7 @@ class BookCreatePage extends Component<Props, State> {
         <BookForm
           authors={authors}
           book={book}
+          disabled={formDisabled}
           onAuthorChange={this.onAuthorChange}
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}
@@ -116,6 +127,7 @@ BookCreatePage.propTypes = {
   authors: array.isRequired,
   createBook: func.isRequired,
   fetchAuthors: func.isRequired,
+  fetchBooks: func.isRequired,
   history: object,
 };
 
@@ -127,12 +139,16 @@ const mapStateToProps = (state, ownProps) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+  createBook(book) {
+    return dispatch(createBook(book));
+  },
+
   fetchAuthors() {
     return dispatch(fetchAuthors());
   },
 
-  createBook(book) {
-    return dispatch(createBook(book));
+  fetchBooks() {
+    return dispatch(fetchBooks());
   },
 });
 
