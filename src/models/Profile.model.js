@@ -1,4 +1,4 @@
-export default {
+const ProfileModel = {
   empty() {
     return {
       firstName: '',
@@ -29,3 +29,5 @@ export default {
     };
   },
 };
+
+export default ProfileModel;

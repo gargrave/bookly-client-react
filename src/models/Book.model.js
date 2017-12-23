@@ -1,4 +1,4 @@
-export default {
+const BookModel = {
   empty() {
     return {
       title: '',
@@ -39,3 +39,5 @@ export default {
     };
   },
 };
+
+export default BookModel;

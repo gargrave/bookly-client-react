@@ -1,4 +1,4 @@
-export default {
+const UserModel = {
   empty() {
     return {
       id: '',
@@ -21,3 +21,5 @@ export default {
     };
   },
 };
+
+export default UserModel;
