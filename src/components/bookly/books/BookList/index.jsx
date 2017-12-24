@@ -6,7 +6,6 @@ import type { Book } from '../../../../constants/flowtypes';
 
 import Alert from '../../../common/Alert/';
 import BookListDetail from '../BookListDetail';
-import CardList from '../../../common/CardList';
 
 type Props = {
   books: Book[],
@@ -18,7 +17,7 @@ function bookList(
   onBookClick: Function
 ) {
   return (
-    <CardList>
+    <div>
       {books.map((book) =>
         <BookListDetail
           book={book}
@@ -26,7 +25,7 @@ function bookList(
           onClick={onBookClick.bind(null, book.id)}
         />
       )}
-    </CardList>
+    </div>
   );
 }
 

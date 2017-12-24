@@ -10,6 +10,7 @@ import { fetchAuthors } from '../../../store/actions/author-actions';
 
 import AuthorList from '../../../components/bookly/authors/AuthorList';
 import Button from '../../../components/common/Button';
+import CardList from '../../../components/common/CardList';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
@@ -64,10 +65,12 @@ class AuthorsListPage extends Component<Props> {
             type="success"
           />
         </h2>
-        <AuthorList
-          authors={authors}
-          onAuthorClick={this.onAuthorClick}
-        />
+        <CardList>
+          <AuthorList
+            authors={authors}
+            onAuthorClick={this.onAuthorClick}
+          />
+        </CardList>
       </div>
     );
   }

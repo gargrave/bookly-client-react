@@ -1,13 +1,13 @@
 // @flow
 import React from 'react';
-import { array } from 'prop-types';
+import { any } from 'prop-types';
 
 import { buildClasses } from '../../../utils/cssHelpers';
 
 import './styles.css';
 
 type Props = {
-  children?: any[],
+  children?: any,
 }
 
 function CardList({
@@ -21,7 +21,7 @@ function CardList({
 }
 
 CardList.propTypes = {
-  children: array,
+  children: any,
 };
 
 export default CardList;

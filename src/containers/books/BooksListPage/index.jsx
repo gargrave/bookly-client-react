@@ -10,6 +10,7 @@ import { fetchBooks } from '../../../store/actions/book-actions';
 
 import Button from '../../../components/common/Button';
 import BookList from '../../../components/bookly/books/BookList';
+import CardList from '../../../components/common/CardList';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
@@ -65,10 +66,12 @@ class BooksListPage extends Component<Props> {
             type="success"
           />
         </h2>
-        <BookList
-          books={books}
-          onBookClick={this.onBookClick}
-        />
+        <CardList>
+          <BookList
+            books={books}
+            onBookClick={this.onBookClick}
+          />
+        </CardList>
       </div>
     );
   }
