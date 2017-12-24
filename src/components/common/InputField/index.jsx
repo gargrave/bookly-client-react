@@ -5,7 +5,7 @@ import { bool, func, oneOf, string } from 'prop-types';
 type Props = {
   boundValue: string,
   disabled?: boolean,
-  label: string,
+  label?: string,
   name: string,
   onInputChange: Function,
   type?: string,
@@ -14,6 +14,7 @@ type Props = {
 const acceptableTypes = [
   'email',
   'password',
+  'search',
   'text',
 ];
 
@@ -27,7 +28,7 @@ function InputField({
 }: Props) {
   return (
     <div className="input-field">
-      <label htmlFor={name}>{label}:</label>
+      {label && <label htmlFor={name}>{label}:</label>}
       <input
         disabled={disabled || false}
         type={type || 'text'}
@@ -42,7 +43,7 @@ function InputField({
 InputField.propTypes = {
   boundValue: string.isRequired,
   disabled: bool,
-  label: string.isRequired,
+  label: string,
   name: string.isRequired,
   onInputChange: func.isRequired,
   type: oneOf(acceptableTypes),

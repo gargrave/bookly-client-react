@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { array, func } from 'prop-types';
+import { array, func, string } from 'prop-types';
 
 import type { Author } from '../../../../constants/flowtypes';
 
@@ -9,22 +9,35 @@ import AuthorListDetail from '../AuthorListDetail';
 
 type Props = {
   authors: Author[],
+  filterBy?: string,
   onAuthorClick: Function,
 };
 
+function filterAuthor(author: Author, filterBy?: string = '') {
+  if (!filterBy) {
+    return true;
+  }
+  const name = `${author.firstName} ${author.lastName}`.toLowerCase();
+  return name.includes(filterBy);
+}
+
 function authorList(
   authors: Author[],
-  onAuthorClick: Function
+  onAuthorClick: Function,
+  filterBy?: string,
 ) {
   return (
     <div>
-      {authors.map((author) =>
-        <AuthorListDetail
-          author={author}
-          key={author.id}
-          onClick={onAuthorClick.bind(null, author.id)}
-        />
-      )}
+      {authors
+        .filter((a: Author) => filterAuthor(a, filterBy))
+        .map((author) =>
+          <AuthorListDetail
+            author={author}
+            key={author.id}
+            onClick={onAuthorClick.bind(null, author.id)}
+          />
+        )
+      }
     </div>
   );
 }
@@ -40,15 +53,19 @@ function noAuthorsMessage() {
 
 function AuthorList({
   authors,
+  filterBy,
   onAuthorClick,
 }: Props) {
   return (
-    authors.length ? authorList(authors, onAuthorClick) : noAuthorsMessage()
+    authors.length
+      ? authorList(authors, onAuthorClick, filterBy)
+      : noAuthorsMessage()
   );
 }
 
 AuthorList.propTypes = {
   authors: array.isRequired,
+  filterBy: string,
   onAuthorClick: func.isRequired,
 };
 
