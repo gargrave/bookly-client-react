@@ -9,8 +9,7 @@ import { localUrls } from '../../../constants/urls';
 import { fetchBooks } from '../../../store/actions/book-actions';
 
 import Button from '../../../components/common/Button';
-import BookListDetail from '../../../components/bookly/books/BookListDetail';
-import CardList from '../../../components/common/CardList';
+import BookList from '../../../components/bookly/books/BookList';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
@@ -52,6 +51,10 @@ class BooksListPage extends Component<Props> {
   }
 
   render() {
+    const {
+      books,
+    } = this.props;
+
     return (
       <div>
         <h2>
@@ -62,16 +65,10 @@ class BooksListPage extends Component<Props> {
             type="success"
           />
         </h2>
-
-        <CardList>
-          {this.props.books.map((book) => (
-            <BookListDetail
-              key={book.id}
-              book={book}
-              onClick={() => this.onBookClick(book.id)}
-            />
-          ))}
-        </CardList>
+        <BookList
+          books={books}
+          onBookClick={this.onBookClick}
+        />
       </div>
     );
   }

@@ -43,12 +43,17 @@ class AuthorsListPage extends Component<Props> {
     this.props.history.push(localUrls.authorCreate);
   }
 
-  onAuthorClick(authorID) {
-    this.props.history.push(`/authors/${authorID}`);
+  onAuthorClick(authorId?: string | number) {
+    if (authorId) {
+      this.props.history.push(`/authors/${authorId}`);
+    }
   }
 
   render() {
-    const { authors } = this.props;
+    const {
+      authors,
+    } = this.props;
+
     return (
       <div>
         <h2>
