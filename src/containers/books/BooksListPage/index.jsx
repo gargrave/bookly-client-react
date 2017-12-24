@@ -94,6 +94,7 @@ class BooksListPage extends Component<Props, State> {
             boundValue={searchValue}
             name="searchValue"
             onInputChange={this.onInputChange}
+            placeholder={'Filter by title or author...'}
             type="search"
           />
           <BookList

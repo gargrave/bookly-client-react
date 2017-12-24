@@ -8,6 +8,7 @@ type Props = {
   label?: string,
   name: string,
   onInputChange: Function,
+  placeholder?: string,
   type?: string,
 };
 
@@ -24,6 +25,7 @@ function InputField({
   label,
   name,
   onInputChange,
+  placeholder,
   type,
 }: Props) {
   return (
@@ -31,11 +33,13 @@ function InputField({
       {label && <label htmlFor={name}>{label}:</label>}
       <input
         disabled={disabled || false}
-        type={type || 'text'}
-        name={name}
         id={name}
+        name={name}
+        onChange={onInputChange}
+        placeholder={placeholder || ''}
+        type={type || 'text'}
         value={boundValue}
-        onChange={onInputChange} />
+      />
     </div>
   );
 }
@@ -46,6 +50,7 @@ InputField.propTypes = {
   label: string,
   name: string.isRequired,
   onInputChange: func.isRequired,
+  placeholder: string,
   type: oneOf(acceptableTypes),
 };
 

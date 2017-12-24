@@ -78,7 +78,6 @@ class AuthorsListPage extends Component<Props, State> {
       searchValue,
     } = this.state;
 
-    console.log('render()');
     return (
       <div>
         <h2>
@@ -94,6 +93,7 @@ class AuthorsListPage extends Component<Props, State> {
             boundValue={searchValue}
             name="searchValue"
             onInputChange={this.onInputChange}
+            placeholder={'Filter by author name...'}
             type="search"
           />
           <AuthorList
