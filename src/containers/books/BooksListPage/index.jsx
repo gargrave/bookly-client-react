@@ -11,6 +11,7 @@ import { fetchBooks } from '../../../store/actions/book-actions';
 import Button from '../../../components/common/Button';
 import BookList from '../../../components/bookly/books/BookList';
 import CardList from '../../../components/common/CardList';
+import InputField from '../../../components/common/InputField';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
@@ -19,13 +20,22 @@ type Props = {
   history: Object,
 };
 
-class BooksListPage extends Component<Props> {
+type State = {
+  searchValue: string,
+}
+
+class BooksListPage extends Component<Props, State> {
   constructor(props: Props) {
     super(props);
+
+    this.state = {
+      searchValue: '',
+    };
 
     const _this: any = this;
     _this.onAddClick = _this.onAddClick.bind(this);
     _this.onBookClick = _this.onBookClick.bind(this);
+    _this.onInputChange = _this.onInputChange.bind(this);
   }
 
   componentDidMount() {
@@ -51,10 +61,23 @@ class BooksListPage extends Component<Props> {
     }
   }
 
+  onInputChange(event) {
+    const key = event.target.name;
+    if (key in this.state) {
+      this.setState({
+        searchValue: event.target.value,
+      });
+    }
+  }
+
   render() {
     const {
       books,
     } = this.props;
+
+    const {
+      searchValue,
+    } = this.state;
 
     return (
       <div>
@@ -67,8 +90,15 @@ class BooksListPage extends Component<Props> {
           />
         </h2>
         <CardList>
+          <InputField
+            boundValue={searchValue}
+            name="searchValue"
+            onInputChange={this.onInputChange}
+            type="search"
+          />
           <BookList
             books={books}
+            filterBy={searchValue}
             onBookClick={this.onBookClick}
           />
         </CardList>

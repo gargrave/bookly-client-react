@@ -61,7 +61,6 @@ class AuthorsListPage extends Component<Props, State> {
   }
 
   onInputChange(event) {
-    event.preventDefault();
     const key = event.target.name;
     if (key in this.state) {
       this.setState({
