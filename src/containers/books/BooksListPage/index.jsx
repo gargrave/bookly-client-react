@@ -8,6 +8,7 @@ import type { Book } from '../../../constants/flowtypes';
 import { localUrls } from '../../../constants/urls';
 import { fetchBooks } from '../../../store/actions/book-actions';
 
+import Alert from '../../../components/common/Alert';
 import Button from '../../../components/common/Button';
 import BookList from '../../../components/bookly/books/BookList';
 import CardList from '../../../components/common/CardList';
@@ -97,6 +98,12 @@ class BooksListPage extends Component<Props, State> {
             placeholder={'Filter by title or author...'}
             type="search"
           />
+          {searchValue &&
+            <Alert
+              message={`Showing results matching "${searchValue}"`}
+              type="info"
+            />
+          }
           <BookList
             books={books}
             filterBy={searchValue}

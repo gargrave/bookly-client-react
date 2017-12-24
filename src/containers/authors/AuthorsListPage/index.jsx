@@ -8,6 +8,7 @@ import type { Author } from '../../../constants/flowtypes';
 import { localUrls } from '../../../constants/urls';
 import { fetchAuthors } from '../../../store/actions/author-actions';
 
+import Alert from '../../../components/common/Alert';
 import AuthorList from '../../../components/bookly/authors/AuthorList';
 import Button from '../../../components/common/Button';
 import CardList from '../../../components/common/CardList';
@@ -96,6 +97,12 @@ class AuthorsListPage extends Component<Props, State> {
             placeholder={'Filter by author name...'}
             type="search"
           />
+          {searchValue &&
+            <Alert
+              message={`Showing results matching "${searchValue}"`}
+              type="info"
+            />
+          }
           <AuthorList
             authors={authors}
             filterBy={searchValue}
