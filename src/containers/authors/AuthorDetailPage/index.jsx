@@ -7,6 +7,7 @@ import type { Author } from '../../../constants/flowtypes';
 
 import { localUrls } from '../../../constants/urls';
 import { fetchAuthors, updateAuthor } from '../../../store/actions/author-actions';
+import { authorsMatch, validateAuthor } from '../../../globals/validations';
 import authorModel from '../../../models/Author.model';
 
 import AuthorDetailView from '../../../components/bookly/authors/AuthorDetailView';
@@ -23,6 +24,8 @@ type Props = {
 type State = {
   editableAuthor: Author,
   editing: boolean,
+  errors: Author,
+  formDisabled: boolean,
 };
 
 function detailView(
@@ -41,6 +44,8 @@ function detailView(
 
 function editView(
   author: Author,
+  errors: Author,
+  formDisabled: boolean,
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
@@ -48,6 +53,8 @@ function editView(
   return (
     <AuthorEditView
       author={author}
+      disabled={formDisabled}
+      errors={errors}
       onCancel={onCancel}
       onInputChange={onInputChange}
       onSubmit={onSubmit} />
@@ -61,6 +68,8 @@ class AuthorDetailPage extends Component<Props, State> {
     this.state = {
       editableAuthor: authorModel.empty(),
       editing: false,
+      errors: authorModel.empty(),
+      formDisabled: true,
     };
   }
 
@@ -73,6 +82,10 @@ class AuthorDetailPage extends Component<Props, State> {
       await this.props.fetchAuthors();
       if (!this.props.author.id) {
         this.props.history.push(localUrls.authorsList);
+      } else {
+        this.setState({
+          formDisabled: false,
+        });
       }
     } catch (err) {
       // TODO: deal with this error
@@ -92,16 +105,34 @@ class AuthorDetailPage extends Component<Props, State> {
 
   async onSubmit(event) {
     event.preventDefault();
-    // TODO: temp validation -> fix this nephew......
-    if (this.state.editableAuthor.firstName && this.state.editableAuthor.lastName) {
-      try {
-        const author = authorModel.toAPI(Object.assign({}, this.props.author, this.state.editableAuthor));
-        await this.props.updateAuthor(author);
-        this.setState({ editing: false });
-      } catch (err) {
-        console.log('TODO: deal with this error in AuthorDetailPage.onSubmit():');
-        console.dir(err);
-      }
+    if (authorsMatch(this.props.author, this.state.editableAuthor)) {
+      console.log('TODO: show a top-level error on the form');
+      return;
+    }
+
+    const errors = validateAuthor(this.state.editableAuthor);
+    if (errors.found) {
+      this.setState({
+        errors,
+      });
+    } else {
+      this.setState({
+        errors: authorModel.empty(),
+        formDisabled: true,
+      }, async () => {
+        try {
+          const author = authorModel.toAPI(
+            Object.assign({},
+            this.props.author,
+            this.state.editableAuthor
+          ));
+          await this.props.updateAuthor(author);
+          this.setState({ editing: false });
+        } catch (err) {
+          console.log('TODO: deal with this error in AuthorDetailPage.onSubmit():');
+          console.dir(err);
+        }
+      });
     }
   }
 
@@ -117,6 +148,8 @@ class AuthorDetailPage extends Component<Props, State> {
         name: '',
       },
       editing: true,
+      errors: authorModel.empty(),
+      formDisabled: false,
     });
   }
 
@@ -133,15 +166,23 @@ class AuthorDetailPage extends Component<Props, State> {
   }
 
   render() {
-    const { author } = this.props;
-    const { editableAuthor, editing } = this.state;
+    const {
+      author,
+    } = this.props;
+    const {
+      editableAuthor,
+      editing,
+      errors,
+      formDisabled,
+    } = this.state;
+
     return (
       <div>
         {!editing &&
           detailView(author, this.onBackClick.bind(this), this.onEditClick.bind(this))
         }
         {editing &&
-          editView(editableAuthor, this.onCancel.bind(this),
+          editView(editableAuthor, errors, formDisabled, this.onCancel.bind(this),
             this.onInputChange.bind(this), this.onSubmit.bind(this))
         }
       </div>

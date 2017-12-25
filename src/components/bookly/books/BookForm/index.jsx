@@ -30,7 +30,7 @@ function BookForm({
   return (
     <Form
       classes={['book-form']}
-      dislabed={disabled}
+      disabled={disabled}
       onCancel={onCancel}
       onSubmit={onSubmit}
     >

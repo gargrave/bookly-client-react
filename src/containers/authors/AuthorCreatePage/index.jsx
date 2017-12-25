@@ -7,6 +7,7 @@ import type { Author } from '../../../constants/flowtypes';
 
 import { localUrls } from '../../../constants/urls';
 import { createAuthor, fetchAuthors } from '../../../store/actions/author-actions';
+import { validateAuthor } from '../../../globals/validations';
 import authorModel from '../../../models/Author.model';
 
 import AuthorForm from '../../../components/bookly/authors/AuthorForm';
@@ -21,6 +22,7 @@ type Props = {
 
 type State = {
   author: Author,
+  errors: Author,
   formDisabled: boolean,
 };
 
@@ -30,6 +32,7 @@ class AuthorCreatePage extends Component<Props, State> {
 
     this.state = {
       author: authorModel.empty(),
+      errors: authorModel.empty(),
       formDisabled: true,
     };
 
@@ -67,15 +70,25 @@ class AuthorCreatePage extends Component<Props, State> {
 
   async onSubmit(event) {
     event.preventDefault();
-    // TODO: temp validation -> fix this nephew......
-    if (this.state.author.firstName && this.state.author.lastName) {
-      try {
-        const author = authorModel.toAPI(this.state.author);
-        await this.props.createAuthor(author);
-        this.props.history.push(localUrls.authorsList);
-      } catch (err) {
-        console.log('TODO: deal with this error');
-      }
+    const errors = validateAuthor(this.state.author);
+    if (errors.found) {
+      this.setState({
+        errors,
+      });
+    } else {
+      this.setState({
+        errors: authorModel.empty(),
+        formDisabled: true,
+      }, async () => {
+        try {
+          const author = authorModel.toAPI(this.state.author);
+          await this.props.createAuthor(author);
+          this.props.history.push(localUrls.authorsList);
+        } catch (err) {
+          console.log('TODO: deal with this error in AuthorCreatePage.onSubmit():');
+          console.dir(err);
+        }
+      });
     }
   }
 
@@ -87,6 +100,7 @@ class AuthorCreatePage extends Component<Props, State> {
   render() {
     const {
       author,
+      errors,
       formDisabled,
     } = this.state;
 
@@ -99,6 +113,7 @@ class AuthorCreatePage extends Component<Props, State> {
         <AuthorForm
           author={author}
           disabled={formDisabled}
+          errors={errors}
           onCancel={this.onCancel}
           onInputChange={this.onInputChange}
           onSubmit={this.onSubmit}

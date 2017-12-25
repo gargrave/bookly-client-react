@@ -1,4 +1,4 @@
-export const validationErrs = {
+const validationErrors = {
   required: 'This field is required.',
   email: 'Must be a valid email address.',
   passwords: 'Passwords do not match',
@@ -12,14 +12,14 @@ const cleanMessages = {
   UNKNOWN: 'An uknown error occurred.',
 };
 
-export const cleanErrors = {
+const cleanErrors = {
   EMPTY: { name: '', message: '' },
   EXPIRED_TOKEN: { message: cleanMessages.EXPIRED_TOKEN },
   INVALID_TOKEN: { message: cleanMessages.INVALID_TOKEN },
   INVALID_LOGIN: { message: cleanMessages.INVALID_LOGIN },
 };
 
-export function parseError(err) {
+function parseError(err) {
   if (err.response && err.response.data) {
     return err.response.data;
   } else if (err.message) {
@@ -27,3 +27,9 @@ export function parseError(err) {
   }
   return { message: cleanMessages.UNKNOWN };
 }
+
+export {
+  cleanErrors,
+  parseError,
+  validationErrors,
+};

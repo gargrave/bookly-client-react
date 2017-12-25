@@ -4,9 +4,11 @@
   max-width: 600px;
   text-align: left;
 
-  input.input-invalid,
-  .form-error {
+  input.input-invalid {
     border-color: #ff4136;
+  }
+
+  .form-error {
     color: #ff4136;
   }
 }

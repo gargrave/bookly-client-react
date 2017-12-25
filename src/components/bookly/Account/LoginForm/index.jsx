@@ -21,7 +21,7 @@ function LoginForm({
   return (
     <Form
       classes={['login-form']}
-      dislabed={disabled}
+      disabled={disabled}
       onSubmit={onSubmit}
     >
 

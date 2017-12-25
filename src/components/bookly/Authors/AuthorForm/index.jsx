@@ -10,6 +10,7 @@ import InputField from '../../../common/InputField';
 type Props = {
   author: Author,
   disabled?: boolean,
+  errors: Author,
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
@@ -18,6 +19,7 @@ type Props = {
 function AuthorForm({
   author,
   disabled = false,
+  errors,
   onCancel,
   onInputChange,
   onSubmit,
@@ -25,13 +27,14 @@ function AuthorForm({
   return (
     <Form
       classes={['author-form']}
-      dislabed={disabled}
+      disabled={disabled}
       onCancel={onCancel}
       onSubmit={onSubmit}
     >
       <InputField
         boundValue={author.firstName}
         disabled={disabled}
+        error={errors.firstName}
         label="First name"
         name="firstName"
         onInputChange={onInputChange}
@@ -40,6 +43,7 @@ function AuthorForm({
       <InputField
         boundValue={author.lastName}
         disabled={disabled}
+        error={errors.lastName}
         label="Last name"
         name="lastName"
         onInputChange={onInputChange}
@@ -54,6 +58,10 @@ AuthorForm.propTypes = {
     lastName: string.isRequired,
   }).isRequired,
   disabled: bool,
+  errors: shape({
+    firstName: string.isRequired,
+    lastName: string.isRequired,
+  }).isRequired,
   onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
