@@ -7,6 +7,9 @@ import type { User } from '../../../constants/flowtypes';
 
 import { localUrls } from '../../../constants/urls';
 import { login } from '../../../store/actions/auth-actions';
+import { parseError } from '../../../globals/errors';
+import { validateLogin } from '../../../globals/validations/';
+import userModel from '../../../models/User.model';
 
 import Card from '../../../components/common/Card';
 import LoginForm from '../../../components/bookly/account/LoginForm';
@@ -18,7 +21,8 @@ type Props = {
 };
 
 type State = {
-  apiError: string,
+  errors: User,
+  topLevelError: string,
   user: User,
 };
 
@@ -27,28 +31,17 @@ class LoginPage extends Component<Props, State> {
     super(props);
 
     this.state = {
-      user: {
-        email: '',
-        password: '',
-      },
-      apiError: '',
+      errors: userModel.emptyErrors(),
+      topLevelError: '',
+        user: {
+          email: '',
+          password: '',
+        },
     };
 
     const _this: any = this;
-    _this.login = _this.login.bind(this);
+    _this.onSubmit = _this.onSubmit.bind(this);
     _this.onInputChange = _this.onInputChange.bind(this);
-  }
-
-  async login(event) {
-    event.preventDefault();
-    if (this.state.user.email && this.state.user.password) {
-      try {
-        await this.props.login(this.state.user);
-        this.props.history.push(localUrls.account);
-      } catch (err) {
-        this.setState({ apiError: err.message });
-      }
-    }
   }
 
   onInputChange(event) {
@@ -63,7 +56,33 @@ class LoginPage extends Component<Props, State> {
     }
   }
 
+  async onSubmit(event) {
+    event.preventDefault();
+    this.setState({
+      topLevelError: '',
+    }, async () => {
+      const errors = validateLogin(this.state.user);
+      this.setState({
+        errors,
+      });
+      if (!errors.found) {
+        try {
+          await this.props.login(this.state.user);
+          this.props.history.push(localUrls.account);
+        } catch (err) {
+          this.setState({
+            topLevelError: parseError(err),
+          });
+        }
+      }
+    });
+  }
+
   render() {
+    const {
+      errors,
+    } = this.state;
+
     return (
       <Card
         classes={['form-card']}
@@ -71,11 +90,12 @@ class LoginPage extends Component<Props, State> {
         hoverable={false}
       >
         <LoginForm
+          errors={errors}
           onCancel={() => null}
           onInputChange={this.onInputChange}
-          onSubmit={this.login}
+          onSubmit={this.onSubmit}
           submitBtnText="Login"
-          topLevelError={this.state.apiError}
+          topLevelError={this.state.topLevelError}
           user={this.state.user}
         />
       </Card>

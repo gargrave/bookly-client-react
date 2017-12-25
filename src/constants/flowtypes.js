@@ -19,6 +19,7 @@ export type Book = {
 export type User = {
   id?: string | number,
   email: string,
+  password?: string,
   createdAt?: string,
   updatedAt?: string,
 };

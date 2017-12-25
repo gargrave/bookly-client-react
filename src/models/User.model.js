@@ -10,6 +10,13 @@ const UserModel = {
     };
   },
 
+  emptyErrors() {
+    return {
+      email: '',
+      password: '',
+    };
+  },
+
   fromAPI(data) {
     return {
       id: data.id,
