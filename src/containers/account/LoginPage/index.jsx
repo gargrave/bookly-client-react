@@ -8,7 +8,6 @@ import type { User } from '../../../constants/flowtypes';
 import { localUrls } from '../../../constants/urls';
 import { login } from '../../../store/actions/auth-actions';
 
-import Alert from '../../../components/common/Alert';
 import Card from '../../../components/common/Card';
 import LoginForm from '../../../components/bookly/account/LoginForm';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
@@ -57,7 +56,10 @@ class LoginPage extends Component<Props, State> {
     if (key in this.state.user) {
       const user = this.state.user;
       user[key] = event.target.value;
-      this.setState({ user });
+
+      this.setState({
+        user,
+      });
     }
   }
 
@@ -68,15 +70,12 @@ class LoginPage extends Component<Props, State> {
         header={"Login"}
         hoverable={false}
       >
-        <Alert
-          message={this.state.apiError}
-          type="danger"
-        />
         <LoginForm
           onCancel={() => null}
           onInputChange={this.onInputChange}
           onSubmit={this.login}
           submitBtnText="Login"
+          topLevelError={this.state.apiError}
           user={this.state.user}
         />
       </Card>

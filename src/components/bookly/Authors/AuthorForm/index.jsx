@@ -14,6 +14,8 @@ type Props = {
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
+  topLevelError?: string,
+  submitDisabled?: boolean,
 };
 
 function AuthorForm({
@@ -23,6 +25,8 @@ function AuthorForm({
   onCancel,
   onInputChange,
   onSubmit,
+  submitDisabled,
+  topLevelError,
 }: Props) {
   return (
     <Form
@@ -30,6 +34,8 @@ function AuthorForm({
       disabled={disabled}
       onCancel={onCancel}
       onSubmit={onSubmit}
+      submitDisabled={submitDisabled}
+      topLevelError={topLevelError}
     >
       <InputField
         boundValue={author.firstName}
@@ -65,6 +71,8 @@ AuthorForm.propTypes = {
   onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
+  submitDisabled: bool,
+  topLevelError: string,
 };
 
 export default AuthorForm;

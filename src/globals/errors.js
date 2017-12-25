@@ -1,8 +1,10 @@
+// @flow
 const validationErrors = {
   required: 'This field is required.',
+  requiredSpecific: (field: string) => `'${field}' is a required field.`,
   email: 'Must be a valid email address.',
   passwords: 'Passwords do not match',
-  length: (min) => `Must be at least ${min} characters long.`,
+  length: (min: number | string) => `Must be at least ${min} characters long.`,
 };
 
 const cleanMessages = {
@@ -19,13 +21,21 @@ const cleanErrors = {
   INVALID_LOGIN: { message: cleanMessages.INVALID_LOGIN },
 };
 
-function parseError(err) {
+function simplifyApiError(msg: string): string {
+  let m = msg.match(/\["(\w+)" is not allowed to be empty\]/);
+  if (m && m.length && m.length > 1) {
+    return validationErrors.requiredSpecific(m[1]);
+  }
+  return `Unknown API error: ${msg}`;
+}
+
+function parseError(err: Object): string {
   if (err.response && err.response.data) {
     return err.response.data;
   } else if (err.message) {
-    return err;
+    return simplifyApiError(err.message);
   }
-  return { message: cleanMessages.UNKNOWN };
+  return cleanMessages.UNKNOWN;
 }
 
 export {

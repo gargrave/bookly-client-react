@@ -8,6 +8,7 @@ import type { Author } from '../../../constants/flowtypes';
 import { localUrls } from '../../../constants/urls';
 import { createAuthor, fetchAuthors } from '../../../store/actions/author-actions';
 import { validateAuthor } from '../../../globals/validations';
+import { parseError } from '../../../globals/errors';
 import authorModel from '../../../models/Author.model';
 
 import AuthorForm from '../../../components/bookly/authors/AuthorForm';
@@ -24,6 +25,7 @@ type State = {
   author: Author,
   errors: Author,
   formDisabled: boolean,
+  topLevelError: string,
 };
 
 class AuthorCreatePage extends Component<Props, State> {
@@ -34,6 +36,7 @@ class AuthorCreatePage extends Component<Props, State> {
       author: authorModel.empty(),
       errors: authorModel.empty(),
       formDisabled: true,
+      topLevelError: '',
     };
 
     const _this: any = this;
@@ -53,9 +56,9 @@ class AuthorCreatePage extends Component<Props, State> {
         formDisabled: false,
       });
     } catch (err) {
-      // TODO: deal with this error
-      console.log('TODO: deal with this error in AuthorDetailPage.refreshAuthors():');
-      console.dir(err);
+      this.setState({
+        topLevelError: parseError(err),
+      });
     }
   }
 
@@ -85,8 +88,9 @@ class AuthorCreatePage extends Component<Props, State> {
           await this.props.createAuthor(author);
           this.props.history.push(localUrls.authorsList);
         } catch (err) {
-          console.log('TODO: deal with this error in AuthorCreatePage.onSubmit():');
-          console.dir(err);
+          this.setState({
+            topLevelError: parseError(err),
+          });
         }
       });
     }

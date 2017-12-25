@@ -8,8 +8,8 @@ const AuthorModel = {
 
   toAPI(data) {
     let payload = {
-      firstName: data.firstName || '',
-      lastName: data.lastName || '',
+      firstName: data.firstName.trim() || '',
+      lastName: data.lastName.trim() || '',
     };
 
     if (data.id) {

@@ -17,6 +17,7 @@ type Props = {
   onCancel?: Function,
   onSubmit: Function,
   submitBtnText?: string,
+  submitDisabled?: boolean,
   topLevelError?: string,
 };
 
@@ -28,6 +29,7 @@ function Form({
   onCancel,
   onSubmit,
   submitBtnText,
+  submitDisabled = false,
   topLevelError,
 }: Props) {
   return (
@@ -48,7 +50,7 @@ function Form({
         <div className="input-field">
           <Button
             canSubmit={true}
-            disabled={disabled || false}
+            disabled={submitDisabled || disabled || false}
             onClick={onSubmit}
             position="left"
             text={submitBtnText || "Submit"}
@@ -77,6 +79,7 @@ Form.propTypes = {
   onCancel: func,
   onSubmit: func.isRequired,
   submitBtnText: string,
+  submitDisabled: bool,
   topLevelError: string,
 };
 

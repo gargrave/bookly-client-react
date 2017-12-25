@@ -8,6 +8,7 @@ import type { Author } from '../../../constants/flowtypes';
 import { localUrls } from '../../../constants/urls';
 import { fetchAuthors, updateAuthor } from '../../../store/actions/author-actions';
 import { authorsMatch, validateAuthor } from '../../../globals/validations';
+import { parseError } from '../../../globals/errors';
 import authorModel from '../../../models/Author.model';
 
 import AuthorDetailView from '../../../components/bookly/authors/AuthorDetailView';
@@ -26,6 +27,8 @@ type State = {
   editing: boolean,
   errors: Author,
   formDisabled: boolean,
+  submitDisabled: boolean,
+  topLevelError: string,
 };
 
 function detailView(
@@ -46,6 +49,8 @@ function editView(
   author: Author,
   errors: Author,
   formDisabled: boolean,
+  submitDisabled: boolean,
+  topLevelError: string,
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
@@ -57,7 +62,10 @@ function editView(
       errors={errors}
       onCancel={onCancel}
       onInputChange={onInputChange}
-      onSubmit={onSubmit} />
+      onSubmit={onSubmit}
+      submitDisabled={submitDisabled}
+      topLevelError={topLevelError}
+    />
   );
 }
 
@@ -70,6 +78,8 @@ class AuthorDetailPage extends Component<Props, State> {
       editing: false,
       errors: authorModel.empty(),
       formDisabled: true,
+      submitDisabled: false,
+      topLevelError: '',
     };
   }
 
@@ -88,9 +98,9 @@ class AuthorDetailPage extends Component<Props, State> {
         });
       }
     } catch (err) {
-      // TODO: deal with this error
-      console.log('TODO: deal with this error in AuthorDetailPage.refreshAuthors():');
-      console.dir(err);
+      this.setState({
+        topLevelError: parseError(err),
+      });
     }
   }
 
@@ -99,17 +109,17 @@ class AuthorDetailPage extends Component<Props, State> {
     if (key in this.state.editableAuthor) {
       let editableAuthor = Object.assign({}, this.state.editableAuthor);
       editableAuthor[key] = event.target.value;
-      this.setState({ editableAuthor });
+      const submitDisabled = authorsMatch(this.props.author, editableAuthor);
+
+      this.setState({
+        editableAuthor,
+        submitDisabled,
+      });
     }
   }
 
   async onSubmit(event) {
     event.preventDefault();
-    if (authorsMatch(this.props.author, this.state.editableAuthor)) {
-      console.log('TODO: show a top-level error on the form');
-      return;
-    }
-
     const errors = validateAuthor(this.state.editableAuthor);
     if (errors.found) {
       this.setState({
@@ -126,11 +136,15 @@ class AuthorDetailPage extends Component<Props, State> {
             this.props.author,
             this.state.editableAuthor
           ));
+
           await this.props.updateAuthor(author);
-          this.setState({ editing: false });
+          this.setState({
+            editing: false,
+          });
         } catch (err) {
-          console.log('TODO: deal with this error in AuthorDetailPage.onSubmit():');
-          console.dir(err);
+          this.setState({
+            topLevelError: parseError(err),
+          });
         }
       });
     }
@@ -150,6 +164,7 @@ class AuthorDetailPage extends Component<Props, State> {
       editing: true,
       errors: authorModel.empty(),
       formDisabled: false,
+      submitDisabled: true,
     });
   }
 
@@ -174,6 +189,8 @@ class AuthorDetailPage extends Component<Props, State> {
       editing,
       errors,
       formDisabled,
+      submitDisabled,
+      topLevelError,
     } = this.state;
 
     return (
@@ -182,8 +199,8 @@ class AuthorDetailPage extends Component<Props, State> {
           detailView(author, this.onBackClick.bind(this), this.onEditClick.bind(this))
         }
         {editing &&
-          editView(editableAuthor, errors, formDisabled, this.onCancel.bind(this),
-            this.onInputChange.bind(this), this.onSubmit.bind(this))
+          editView(editableAuthor, errors, formDisabled, submitDisabled, topLevelError,
+            this.onCancel.bind(this), this.onInputChange.bind(this), this.onSubmit.bind(this))
         }
       </div>
     );

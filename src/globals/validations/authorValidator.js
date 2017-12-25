@@ -3,10 +3,10 @@ import type { Author } from '../../constants/flowtypes';
 import { validationErrors } from '../errors';
 
 function authorsMatch(a: Author, b: Author): boolean {
-  if (a.firstName !== b.firstName) {
+  if (a.firstName.trim() !== b.firstName.trim()) {
     return false;
   }
-  if (a.lastName !== b.lastName) {
+  if (a.lastName.trim() !== b.lastName.trim()) {
     return false;
   }
   return true;

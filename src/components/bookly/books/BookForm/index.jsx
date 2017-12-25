@@ -16,6 +16,7 @@ type Props = {
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
+  topLevelError?: string,
 };
 
 function BookForm({
@@ -26,6 +27,7 @@ function BookForm({
   onCancel,
   onInputChange,
   onSubmit,
+  topLevelError,
 }: Props) {
   return (
     <Form
@@ -33,6 +35,7 @@ function BookForm({
       disabled={disabled}
       onCancel={onCancel}
       onSubmit={onSubmit}
+      topLevelError={topLevelError}
     >
       <InputField
         boundValue={book.title}
@@ -63,6 +66,7 @@ BookForm.propTypes = {
   onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
+  topLevelError: string,
 };
 
 export default BookForm;

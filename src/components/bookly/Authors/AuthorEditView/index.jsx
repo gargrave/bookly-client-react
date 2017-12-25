@@ -13,6 +13,8 @@ type Props = {
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
+  submitDisabled?: boolean,
+  topLevelError?: string,
 };
 
 function AuthorEditView({
@@ -21,6 +23,8 @@ function AuthorEditView({
   onCancel,
   onInputChange,
   onSubmit,
+  submitDisabled = false,
+  topLevelError,
 }: Props) {
   return (
     <div className="author-edit-view">
@@ -35,6 +39,8 @@ function AuthorEditView({
           onCancel={onCancel}
           onInputChange={onInputChange}
           onSubmit={onSubmit}
+          submitDisabled={submitDisabled}
+          topLevelError={topLevelError}
         />
       </Card>
     </div>
@@ -57,6 +63,8 @@ AuthorEditView.propTypes = {
   onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
+  submitDisabled: bool,
+  topLevelError: string,
 };
 
 export default AuthorEditView;
