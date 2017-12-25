@@ -11,6 +11,7 @@ import { createBook, fetchBooks } from '../../../store/actions/book-actions';
 import bookModel from '../../../models/Book.model';
 
 import BookForm from '../../../components/bookly/books/BookForm';
+import Card from '../../../components/common/Card';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
@@ -107,8 +108,11 @@ class BookCreatePage extends Component<Props, State> {
     } = this.state;
 
     return (
-      <div>
-        <h2>Add a Book</h2>
+      <Card
+        classes={['form-card']}
+        header={"New Book"}
+        hoverable={false}
+      >
         <BookForm
           authors={authors}
           book={book}
@@ -118,7 +122,7 @@ class BookCreatePage extends Component<Props, State> {
           onSubmit={this.onSubmit}
           onCancel={this.onCancel}
         />
-      </div>
+      </Card>
     );
   }
 }

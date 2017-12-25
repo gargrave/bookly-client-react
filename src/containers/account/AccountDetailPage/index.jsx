@@ -9,6 +9,7 @@ import { localUrls } from '../../../constants/urls';
 import { logout } from '../../../store/actions/auth-actions';
 
 import AccountDetailView from '../../../components/bookly/account/AccountDetailView';
+import CardList from '../../../components/common/CardList';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
 type Props = {
@@ -36,10 +37,12 @@ class AccountDetailPage extends Component<Props> {
       user,
     } = this.props;
     return (
-      <AccountDetailView
-        onLogoutClick={this.onLogoutClick}
-        user={user}
-      />
+      <CardList>
+        <AccountDetailView
+          onLogoutClick={this.onLogoutClick}
+          user={user}
+        />
+      </CardList>
     );
   }
 }

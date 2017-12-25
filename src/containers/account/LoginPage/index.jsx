@@ -9,6 +9,7 @@ import { localUrls } from '../../../constants/urls';
 import { login } from '../../../store/actions/auth-actions';
 
 import Alert from '../../../components/common/Alert';
+import Card from '../../../components/common/Card';
 import LoginForm from '../../../components/bookly/account/LoginForm';
 import RequiresAuth from '../../../components/common/hocs/RequiresAuth';
 
@@ -62,15 +63,23 @@ class LoginPage extends Component<Props, State> {
 
   render() {
     return (
-      <div>
-        <Alert message={this.state.apiError} type="danger" />
-        <h2>LoginPage</h2>
+      <Card
+        classes={['form-card']}
+        header={"Login"}
+        hoverable={false}
+      >
+        <Alert
+          message={this.state.apiError}
+          type="danger"
+        />
         <LoginForm
-          user={this.state.user}
+          onCancel={() => null}
           onInputChange={this.onInputChange}
           onSubmit={this.login}
+          submitBtnText="Login"
+          user={this.state.user}
         />
-      </div>
+      </Card>
     );
   }
 }

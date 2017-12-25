@@ -23,7 +23,7 @@ function AccountDetailView({
   return (
     <div className={buildClasses('account-detail-view')}>
       <Card
-        classes={['detail-card', 'account-detail-card']}
+        classes={['form-card', 'detail-card', 'account-detail-card']}
         hoverable={false}
         title="My Account">
         <p className={buildClasses('card-text')}>

@@ -5,6 +5,7 @@ import { array, func, number, shape, string } from 'prop-types';
 import type { Author, Book } from '../../../../constants/flowtypes';
 
 import BookForm from '../BookForm';
+import Card from '../../../common/Card';
 
 type Props = {
   authors: Author[],
@@ -25,15 +26,20 @@ function BookEditView({
 }: Props) {
   return (
     <div className="book-edit-view">
-      <h2>Edit Book</h2>
-      <BookForm
-        authors={authors}
-        book={book}
-        onAuthorChange={onAuthorChange}
-        onCancel={onCancel}
-        onInputChange={onInputChange}
-        onSubmit={onSubmit}
-      />
+      <Card
+        classes={['form-card']}
+        header={"Update Book"}
+        hoverable={false}
+      >
+        <BookForm
+          authors={authors}
+          book={book}
+          onAuthorChange={onAuthorChange}
+          onCancel={onCancel}
+          onInputChange={onInputChange}
+          onSubmit={onSubmit}
+        />
+      </Card>
     </div>
   );
 }

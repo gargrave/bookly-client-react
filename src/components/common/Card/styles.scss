@@ -5,11 +5,16 @@
   box-shadow:
     0 1px 3px rgba(0, 0, 0, 0.07),
     0 1px 2px rgba(0, 0, 0, 0.12);
-  margin: 8px 0;
+  margin: 8px auto;
+  max-width: 600px;
   padding: 10px 20px;
 
   hr {
     margin: 12px 0;
+  }
+
+  p {
+    margin: 0;
   }
 
   &.bookly-hoverable:hover {
@@ -17,10 +22,11 @@
     cursor: pointer;
   }
 
-  p {
-    margin: 0;
+  &-header {
+    font-size: 1.5rem;
   }
 
+  &-header,
   &-title {
     font-weight: bold;
   }
@@ -47,5 +53,9 @@
     .bookly-card-title + .bookly-card-text {
       font-size: 1.1rem;
     }
+  }
+
+  &.bookly-form-card {
+    margin-top: 50px;
   }
 }

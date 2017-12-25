@@ -1,14 +1,15 @@
 // @flow
 import React from 'react';
-import { array, bool, func, string } from 'prop-types';
+import { any, array, bool, func, string } from 'prop-types';
 
 import { buildClasses } from '../../../utils/cssHelpers';
 
 import './styles.css';
 
 type Props = {
-  children?: any[],
+  children?: any,
   classes?: string[],
+  header?: string,
   hoverable?: boolean,
   onClick?: Function,
   text?: string,
@@ -37,6 +38,7 @@ function rawClassList(
 function Card({
   children,
   classes,
+  header,
   hoverable,
   onClick,
   text,
@@ -47,6 +49,7 @@ function Card({
       className={buildClasses(rawClassList(classes, hoverable))}
       onClick={onClick}
     >
+      {renderText(header, 'card-header')}
       {renderText(title, 'card-title')}
       {renderText(text, 'card-text')}
       {children}
@@ -55,8 +58,9 @@ function Card({
 }
 
 Card.propTypes = {
-  children: array,
+  children: any,
   classes: array,
+  header: string,
   hoverable: bool,
   onClick: func,
   text: string,
