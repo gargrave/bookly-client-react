@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { bool, func, shape, string } from 'prop-types';
+import { any, bool, func, shape, string } from 'prop-types';
 
 import Form from '../../../common/Form';
 import InputField from '../../../common/InputField';
@@ -9,6 +9,7 @@ type Props = {
   disabled?: boolean,
   onInputChange: Function,
   onSubmit: Function,
+  topLevelError?: string,
   user: any,
 };
 
@@ -16,6 +17,7 @@ function LoginForm({
   disabled = false,
   onInputChange,
   onSubmit,
+  topLevelError,
   user,
 }: Props) {
   return (
@@ -23,6 +25,7 @@ function LoginForm({
       classes={['login-form']}
       disabled={disabled}
       onSubmit={onSubmit}
+      topLevelError={topLevelError}
     >
 
       <InputField
@@ -52,6 +55,8 @@ LoginForm.propTypes = {
       email: string.isRequired,
       password: string.isRequired,
     }).isRequired,
+  topLevelError: string,
+  user: any,
 };
 
 export default LoginForm;

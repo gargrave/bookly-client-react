@@ -4,6 +4,7 @@ import { any, array, func, bool, string} from 'prop-types';
 
 import { buildClasses } from '../../../utils/cssHelpers';
 
+import Alert from '../../common/Alert';
 import Button from '../../common/Button';
 
 import './styles.css';
@@ -16,6 +17,7 @@ type Props = {
   onCancel?: Function,
   onSubmit: Function,
   submitBtnText?: string,
+  topLevelError?: string,
 };
 
 function Form({
@@ -26,35 +28,44 @@ function Form({
   onCancel,
   onSubmit,
   submitBtnText,
+  topLevelError,
 }: Props) {
   return (
-    <form
-      className={buildClasses(['form', ...(classes || [])])}
-      onSubmit={onSubmit}
-      noValidate>
-
-      {children}
-
-      <div className="input-field">
-        <Button
-          canSubmit={true}
-          disabled={disabled || false}
-          onClick={onSubmit}
-          position="left"
-          text={submitBtnText || "Submit"}
-          type="success"
+    <div>
+      {topLevelError &&
+        <Alert
+          message={topLevelError}
+          type="danger"
         />
+      }
+      <form
+        className={buildClasses(['form', ...(classes || [])])}
+        onSubmit={onSubmit}
+        noValidate>
 
-        {onCancel &&
+        {children}
+
+        <div className="input-field">
           <Button
-            classes="float-right"
-            onClick={onCancel}
-            text={cancelBtnText || "Cancel"}
-            type="light"
+            canSubmit={true}
+            disabled={disabled || false}
+            onClick={onSubmit}
+            position="left"
+            text={submitBtnText || "Submit"}
+            type="success"
           />
-        }
-      </div>
-    </form>
+
+          {onCancel &&
+            <Button
+              classes="float-right"
+              onClick={onCancel}
+              text={cancelBtnText || "Cancel"}
+              type="light"
+            />
+          }
+        </div>
+      </form>
+    </div>
   );
 }
 
@@ -66,6 +77,7 @@ Form.propTypes = {
   onCancel: func,
   onSubmit: func.isRequired,
   submitBtnText: string,
+  topLevelError: string,
 };
 
 export default Form;
