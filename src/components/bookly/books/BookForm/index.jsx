@@ -4,39 +4,36 @@ import { array, bool, func, object, shape, string } from 'prop-types';
 
 import type { Author, Book } from '../../../../constants/flowtypes';
 
-import { buildClasses } from '../../../../utils/cssHelpers';
-
 import AuthorSelect from '../../authors/AuthorSelect';
-import Button from '../../../common/Button';
+import Form from '../../../common/Form';
 import InputField from '../../../common/InputField';
-
-import '../../../common/Form/styles.css';
 
 type Props = {
   authors: Author[],
   book: Book,
-  disabled: boolean,
+  disabled?: boolean,
   onAuthorChange: Function,
   onCancel: Function,
   onInputChange: Function,
   onSubmit: Function,
-}
+};
 
 function BookForm({
   authors,
   book,
-  disabled,
+  disabled = false,
   onAuthorChange,
   onCancel,
   onInputChange,
   onSubmit,
 }: Props) {
   return (
-    <form
-      className={buildClasses(['form', 'book-form'])}
+    <Form
+      classes={['book-form']}
+      dislabed={disabled}
+      onCancel={onCancel}
       onSubmit={onSubmit}
-      noValidate>
-
+    >
       <InputField
         boundValue={book.title}
         disabled={disabled || false}
@@ -51,25 +48,7 @@ function BookForm({
         disabled={disabled || false}
         onChange={onAuthorChange}
       />
-
-      <div className="input-field">
-        <Button
-          canSubmit={true}
-          disabled={disabled || false}
-          onClick={onSubmit}
-          position="left"
-          text="Submit"
-          type="success"
-        />
-
-        <Button
-          classes="float-right"
-          onClick={onCancel}
-          text="Cancel"
-          type="light"
-        />
-      </div>
-    </form>
+    </Form>
   );
 }
 
@@ -81,9 +60,9 @@ BookForm.propTypes = {
   }).isRequired,
   disabled: bool,
   onAuthorChange: func.isRequired,
+  onCancel: func.isRequired,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
-  onCancel: func.isRequired,
 };
 
 export default BookForm;

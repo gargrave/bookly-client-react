@@ -1,30 +1,29 @@
 // @flow
 import React from 'react';
-import { func, shape, string } from 'prop-types';
+import { bool, func, shape, string } from 'prop-types';
 
-import { buildClasses } from '../../../../utils/cssHelpers';
-
-import Button from '../../../common/Button';
+import Form from '../../../common/Form';
 import InputField from '../../../common/InputField';
 
-import '../../../common/Form/styles.css';
-
 type Props = {
+  disabled?: boolean,
   onInputChange: Function,
   onSubmit: Function,
   user: any,
 };
 
 function LoginForm({
+  disabled = false,
   onInputChange,
   onSubmit,
   user,
 }: Props) {
   return (
-    <form
-      className={buildClasses(['form', 'login-form'])}
+    <Form
+      classes={['login-form']}
+      dislabed={disabled}
       onSubmit={onSubmit}
-      noValidate>
+    >
 
       <InputField
         boundValue={user.email}
@@ -41,27 +40,18 @@ function LoginForm({
         onInputChange={onInputChange}
         type="password"
       />
-
-      <div className="input-field">
-        <Button
-          canSubmit={true}
-          onClick={onSubmit}
-          position="left"
-          text="Login"
-          type="success"
-        />
-      </div>
-    </form>
+    </Form>
   );
 }
 
 LoginForm.propTypes = {
-  user: shape({
-    email: string.isRequired,
-    password: string.isRequired,
-  }).isRequired,
+  disabled: bool,
   onInputChange: func.isRequired,
   onSubmit: func.isRequired,
+    user: shape({
+      email: string.isRequired,
+      password: string.isRequired,
+    }).isRequired,
 };
 
 export default LoginForm;

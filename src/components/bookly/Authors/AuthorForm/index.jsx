@@ -4,12 +4,8 @@ import { bool, func, shape, string } from 'prop-types';
 
 import type { Author } from '../../../../constants/flowtypes';
 
-import { buildClasses } from '../../../../utils/cssHelpers';
-
-import Button from '../../../common/Button';
+import Form from '../../../common/Form';
 import InputField from '../../../common/InputField';
-
-import '../../../common/Form/styles.css';
 
 type Props = {
   author: Author,
@@ -21,17 +17,18 @@ type Props = {
 
 function AuthorForm({
   author,
-  disabled,
+  disabled = false,
   onCancel,
   onInputChange,
   onSubmit,
 }: Props) {
   return (
-    <form
-      className={buildClasses(['form', 'author-form'])}
+    <Form
+      classes={['author-form']}
+      dislabed={disabled}
+      onCancel={onCancel}
       onSubmit={onSubmit}
-      noValidate>
-
+    >
       <InputField
         boundValue={author.firstName}
         disabled={disabled}
@@ -47,22 +44,7 @@ function AuthorForm({
         name="lastName"
         onInputChange={onInputChange}
       />
-
-      <div className="input-field">
-        <Button
-          canSubmit={true}
-          disabled={disabled}
-          onClick={onSubmit}
-          position="left"
-          text="Submit"
-          type="success" />
-        <Button
-          classes="float-right"
-          onClick={onCancel}
-          text="Cancel"
-          type="info" />
-      </div>
-    </form>
+    </Form>
   );
 }
 
