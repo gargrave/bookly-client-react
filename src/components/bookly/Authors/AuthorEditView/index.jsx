@@ -29,7 +29,7 @@ function AuthorEditView({
   return (
     <div className="author-edit-view">
       <Card
-        classes={['form-card']}
+        classes={['card--top-margin-med']}
         header={"Update Author"}
         hoverable={false}
       >

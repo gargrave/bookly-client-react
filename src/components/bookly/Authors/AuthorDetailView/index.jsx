@@ -25,7 +25,7 @@ function AuthorDetailView({
   return (
     <div className={buildClasses('author-detail-view')}>
       <Card
-        classes={['form-card', 'detail-card', 'author-detail-card']}
+        classes={['card--top-margin-med', 'detail-card', 'author-detail-card']}
         hoverable={false}
         title={`${author.firstName} ${author.lastName}`}>
 

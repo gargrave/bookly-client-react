@@ -30,7 +30,7 @@ function rawClassList(
 ) {
   const extras = [];
   if (hoverable) {
-    extras.push('hoverable');
+    extras.push('card--hoverable');
   }
   return ['card', ...classes, ...extras];
 }
@@ -49,9 +49,9 @@ function Card({
       className={buildClasses(rawClassList(classes, hoverable))}
       onClick={onClick}
     >
-      {renderText(header, 'card-header')}
-      {renderText(title, 'card-title')}
-      {renderText(text, 'card-text')}
+      {renderText(header, 'card__header')}
+      {renderText(title, 'card__title')}
+      {renderText(text, 'card__text')}
       {children}
     </div>
   );
