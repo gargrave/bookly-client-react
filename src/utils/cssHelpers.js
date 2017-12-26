@@ -1,4 +1,8 @@
 // @flow
+function isUseableClass(classname: string): boolean {
+  return !!classname.trim();
+}
+
 function buildClasses(
   prepends: string | string[],
   statics: string | string[] = []
@@ -11,11 +15,12 @@ function buildClasses(
   }
 
   const first = prepends
-    .filter((p) => !!p.trim()) // dispose of empty/whitespace strings
-    .map((p) => prependClass(p))
+    .filter(isUseableClass)
+    .map(prependClass)
     .join(' ');
+
   const second = statics.length
-    ? ` ${statics.filter((p) => !!p.trim()).join(' ')}`
+    ? ` ${statics.filter(isUseableClass).join(' ')}`
     : '';
 
   return `${first}${second}`;
