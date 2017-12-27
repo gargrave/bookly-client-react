@@ -13,9 +13,15 @@ describe('AuthorEditView', () => {
   beforeEach(() => {
     props = {
       author: Object.create(authorsMockData[0]),
+      errors: {
+        firstName: '',
+        lastName: '',
+      },
       onCancel: jest.fn(),
       onInputChange: jest.fn(),
       onSubmit: jest.fn(),
+      submitDisabled: false,
+      topLevelError: '',
     };
 
     component = shallow(<AuthorEditView {...props} />);

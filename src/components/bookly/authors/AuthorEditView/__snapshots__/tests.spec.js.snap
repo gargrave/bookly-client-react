@@ -6,9 +6,17 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AuthorEditView
     author={Object {}}
+    errors={
+      Object {
+        "firstName": "",
+        "lastName": "",
+      }
+    }
     onCancel={[Function]}
     onInputChange={[Function]}
     onSubmit={[Function]}
+    submitDisabled={false}
+    topLevelError=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -22,47 +30,81 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "host",
     "props": Object {
-      "children": Array [
-        <h2>
-          Edit Author
-        </h2>,
+      "children": <Card
+        classes={
+          Array [
+            "card--top-margin-med",
+          ]
+        }
+        header="Update Author"
+        hoverable={false}
+      >
         <AuthorForm
           author={Object {}}
+          errors={
+            Object {
+              "firstName": "",
+              "lastName": "",
+            }
+          }
           onCancel={[Function]}
           onInputChange={[Function]}
           onSubmit={[Function]}
-        />,
-      ],
+          submitDisabled={false}
+          topLevelError=""
+        />
+      </Card>,
       "className": "author-edit-view",
     },
     "ref": null,
-    "rendered": Array [
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "Edit Author",
-        },
-        "ref": null,
-        "rendered": "Edit Author",
-        "type": "h2",
+    "rendered": Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "function",
+      "props": Object {
+        "children": <AuthorForm
+          author={Object {}}
+          errors={
+            Object {
+              "firstName": "",
+              "lastName": "",
+            }
+          }
+          onCancel={[Function]}
+          onInputChange={[Function]}
+          onSubmit={[Function]}
+          submitDisabled={false}
+          topLevelError=""
+        />,
+        "classes": Array [
+          "card--top-margin-med",
+        ],
+        "header": "Update Author",
+        "hoverable": false,
       },
-      Object {
+      "ref": null,
+      "rendered": Object {
         "instance": null,
         "key": undefined,
         "nodeType": "function",
         "props": Object {
           "author": Object {},
+          "errors": Object {
+            "firstName": "",
+            "lastName": "",
+          },
           "onCancel": [Function],
           "onInputChange": [Function],
           "onSubmit": [Function],
+          "submitDisabled": false,
+          "topLevelError": "",
         },
         "ref": null,
         "rendered": null,
         "type": [Function],
       },
-    ],
+      "type": [Function],
+    },
     "type": "div",
   },
   Symbol(enzyme.__nodes__): Array [
@@ -71,47 +113,81 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "host",
       "props": Object {
-        "children": Array [
-          <h2>
-            Edit Author
-          </h2>,
+        "children": <Card
+          classes={
+            Array [
+              "card--top-margin-med",
+            ]
+          }
+          header="Update Author"
+          hoverable={false}
+        >
           <AuthorForm
             author={Object {}}
+            errors={
+              Object {
+                "firstName": "",
+                "lastName": "",
+              }
+            }
             onCancel={[Function]}
             onInputChange={[Function]}
             onSubmit={[Function]}
-          />,
-        ],
+            submitDisabled={false}
+            topLevelError=""
+          />
+        </Card>,
         "className": "author-edit-view",
       },
       "ref": null,
-      "rendered": Array [
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": "Edit Author",
-          },
-          "ref": null,
-          "rendered": "Edit Author",
-          "type": "h2",
+      "rendered": Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "function",
+        "props": Object {
+          "children": <AuthorForm
+            author={Object {}}
+            errors={
+              Object {
+                "firstName": "",
+                "lastName": "",
+              }
+            }
+            onCancel={[Function]}
+            onInputChange={[Function]}
+            onSubmit={[Function]}
+            submitDisabled={false}
+            topLevelError=""
+          />,
+          "classes": Array [
+            "card--top-margin-med",
+          ],
+          "header": "Update Author",
+          "hoverable": false,
         },
-        Object {
+        "ref": null,
+        "rendered": Object {
           "instance": null,
           "key": undefined,
           "nodeType": "function",
           "props": Object {
             "author": Object {},
+            "errors": Object {
+              "firstName": "",
+              "lastName": "",
+            },
             "onCancel": [Function],
             "onInputChange": [Function],
             "onSubmit": [Function],
+            "submitDisabled": false,
+            "topLevelError": "",
           },
           "ref": null,
           "rendered": null,
           "type": [Function],
         },
-      ],
+        "type": [Function],
+      },
       "type": "div",
     },
   ],

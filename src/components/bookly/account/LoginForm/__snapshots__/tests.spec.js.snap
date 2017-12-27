@@ -5,8 +5,17 @@ ShallowWrapper {
   "length": 1,
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <LoginForm
+    disabled={false}
+    errors={
+      Object {
+        "email": "",
+        "password": "",
+      }
+    }
     onInputChange={[Function]}
     onSubmit={[Function]}
+    submitDisabled={false}
+    topLevelError=""
     user={
       Object {
         "email": "whatever@gmail.com",
@@ -24,11 +33,13 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <InputField
           boundValue="whatever@gmail.com"
+          disabled={false}
+          error=""
           label="Email"
           name="email"
           onInputChange={[Function]}
@@ -36,26 +47,21 @@ ShallowWrapper {
         />,
         <InputField
           boundValue="password"
+          disabled={false}
+          error=""
           label="Password"
           name="password"
           onInputChange={[Function]}
           type="password"
         />,
-        <div
-          className="input-field"
-        >
-          <Button
-            canSubmit={true}
-            onClick={[Function]}
-            position="left"
-            text="Login"
-            type="success"
-          />
-        </div>,
       ],
-      "className": "bookly-form bookly-login-form",
-      "noValidate": true,
+      "classes": Array [
+        "login-form",
+      ],
+      "disabled": false,
       "onSubmit": [Function],
+      "submitDisabled": false,
+      "topLevelError": "",
     },
     "ref": null,
     "rendered": Array [
@@ -65,6 +71,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "boundValue": "whatever@gmail.com",
+          "disabled": false,
+          "error": "",
           "label": "Email",
           "name": "email",
           "onInputChange": [Function],
@@ -80,6 +88,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "boundValue": "password",
+          "disabled": false,
+          "error": "",
           "label": "Password",
           "name": "password",
           "onInputChange": [Function],
@@ -89,50 +99,20 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": <Button
-            canSubmit={true}
-            onClick={[Function]}
-            position="left"
-            text="Login"
-            type="success"
-          />,
-          "className": "input-field",
-        },
-        "ref": null,
-        "rendered": Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "function",
-          "props": Object {
-            "canSubmit": true,
-            "onClick": [Function],
-            "position": "left",
-            "text": "Login",
-            "type": "success",
-          },
-          "ref": null,
-          "rendered": null,
-          "type": [Function],
-        },
-        "type": "div",
-      },
     ],
-    "type": "form",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <InputField
             boundValue="whatever@gmail.com"
+            disabled={false}
+            error=""
             label="Email"
             name="email"
             onInputChange={[Function]}
@@ -140,26 +120,21 @@ ShallowWrapper {
           />,
           <InputField
             boundValue="password"
+            disabled={false}
+            error=""
             label="Password"
             name="password"
             onInputChange={[Function]}
             type="password"
           />,
-          <div
-            className="input-field"
-          >
-            <Button
-              canSubmit={true}
-              onClick={[Function]}
-              position="left"
-              text="Login"
-              type="success"
-            />
-          </div>,
         ],
-        "className": "bookly-form bookly-login-form",
-        "noValidate": true,
+        "classes": Array [
+          "login-form",
+        ],
+        "disabled": false,
         "onSubmit": [Function],
+        "submitDisabled": false,
+        "topLevelError": "",
       },
       "ref": null,
       "rendered": Array [
@@ -169,6 +144,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "boundValue": "whatever@gmail.com",
+            "disabled": false,
+            "error": "",
             "label": "Email",
             "name": "email",
             "onInputChange": [Function],
@@ -184,6 +161,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "boundValue": "password",
+            "disabled": false,
+            "error": "",
             "label": "Password",
             "name": "password",
             "onInputChange": [Function],
@@ -193,40 +172,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": <Button
-              canSubmit={true}
-              onClick={[Function]}
-              position="left"
-              text="Login"
-              type="success"
-            />,
-            "className": "input-field",
-          },
-          "ref": null,
-          "rendered": Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "canSubmit": true,
-              "onClick": [Function],
-              "position": "left",
-              "text": "Login",
-              "type": "success",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          "type": "div",
-        },
       ],
-      "type": "form",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

@@ -6,9 +6,18 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <AuthorForm
     author={Object {}}
+    disabled={false}
+    errors={
+      Object {
+        "firstName": "",
+        "lastName": "",
+      }
+    }
     onCancel={[Function]}
     onInputChange={[Function]}
     onSubmit={[Function]}
+    submitDisabled={false}
+    topLevelError=""
   />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -20,42 +29,34 @@ ShallowWrapper {
   Symbol(enzyme.__node__): Object {
     "instance": null,
     "key": undefined,
-    "nodeType": "host",
+    "nodeType": "function",
     "props": Object {
       "children": Array [
         <InputField
           boundValue="Aldous"
+          disabled={false}
+          error=""
           label="First name"
           name="firstName"
           onInputChange={[Function]}
         />,
         <InputField
           boundValue="Huxley"
+          disabled={false}
+          error=""
           label="Last name"
           name="lastName"
           onInputChange={[Function]}
         />,
-        <div
-          className="input-field"
-        >
-          <Button
-            canSubmit={true}
-            onClick={[Function]}
-            position="left"
-            text="Submit"
-            type="success"
-          />
-          <Button
-            classes="float-right"
-            onClick={[Function]}
-            text="Cancel"
-            type="info"
-          />
-        </div>,
       ],
-      "className": "bookly-form bookly-author-form",
-      "noValidate": true,
+      "classes": Array [
+        "author-form",
+      ],
+      "disabled": false,
+      "onCancel": [Function],
       "onSubmit": [Function],
+      "submitDisabled": false,
+      "topLevelError": "",
     },
     "ref": null,
     "rendered": Array [
@@ -65,6 +66,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "boundValue": "Aldous",
+          "disabled": false,
+          "error": "",
           "label": "First name",
           "name": "firstName",
           "onInputChange": [Function],
@@ -79,6 +82,8 @@ ShallowWrapper {
         "nodeType": "function",
         "props": Object {
           "boundValue": "Huxley",
+          "disabled": false,
+          "error": "",
           "label": "Last name",
           "name": "lastName",
           "onInputChange": [Function],
@@ -87,105 +92,41 @@ ShallowWrapper {
         "rendered": null,
         "type": [Function],
       },
-      Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": Array [
-            <Button
-              canSubmit={true}
-              onClick={[Function]}
-              position="left"
-              text="Submit"
-              type="success"
-            />,
-            <Button
-              classes="float-right"
-              onClick={[Function]}
-              text="Cancel"
-              type="info"
-            />,
-          ],
-          "className": "input-field",
-        },
-        "ref": null,
-        "rendered": Array [
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "canSubmit": true,
-              "onClick": [Function],
-              "position": "left",
-              "text": "Submit",
-              "type": "success",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-          Object {
-            "instance": null,
-            "key": undefined,
-            "nodeType": "function",
-            "props": Object {
-              "classes": "float-right",
-              "onClick": [Function],
-              "text": "Cancel",
-              "type": "info",
-            },
-            "ref": null,
-            "rendered": null,
-            "type": [Function],
-          },
-        ],
-        "type": "div",
-      },
     ],
-    "type": "form",
+    "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
     Object {
       "instance": null,
       "key": undefined,
-      "nodeType": "host",
+      "nodeType": "function",
       "props": Object {
         "children": Array [
           <InputField
             boundValue="Aldous"
+            disabled={false}
+            error=""
             label="First name"
             name="firstName"
             onInputChange={[Function]}
           />,
           <InputField
             boundValue="Huxley"
+            disabled={false}
+            error=""
             label="Last name"
             name="lastName"
             onInputChange={[Function]}
           />,
-          <div
-            className="input-field"
-          >
-            <Button
-              canSubmit={true}
-              onClick={[Function]}
-              position="left"
-              text="Submit"
-              type="success"
-            />
-            <Button
-              classes="float-right"
-              onClick={[Function]}
-              text="Cancel"
-              type="info"
-            />
-          </div>,
         ],
-        "className": "bookly-form bookly-author-form",
-        "noValidate": true,
+        "classes": Array [
+          "author-form",
+        ],
+        "disabled": false,
+        "onCancel": [Function],
         "onSubmit": [Function],
+        "submitDisabled": false,
+        "topLevelError": "",
       },
       "ref": null,
       "rendered": Array [
@@ -195,6 +136,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "boundValue": "Aldous",
+            "disabled": false,
+            "error": "",
             "label": "First name",
             "name": "firstName",
             "onInputChange": [Function],
@@ -209,6 +152,8 @@ ShallowWrapper {
           "nodeType": "function",
           "props": Object {
             "boundValue": "Huxley",
+            "disabled": false,
+            "error": "",
             "label": "Last name",
             "name": "lastName",
             "onInputChange": [Function],
@@ -217,64 +162,8 @@ ShallowWrapper {
           "rendered": null,
           "type": [Function],
         },
-        Object {
-          "instance": null,
-          "key": undefined,
-          "nodeType": "host",
-          "props": Object {
-            "children": Array [
-              <Button
-                canSubmit={true}
-                onClick={[Function]}
-                position="left"
-                text="Submit"
-                type="success"
-              />,
-              <Button
-                classes="float-right"
-                onClick={[Function]}
-                text="Cancel"
-                type="info"
-              />,
-            ],
-            "className": "input-field",
-          },
-          "ref": null,
-          "rendered": Array [
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "canSubmit": true,
-                "onClick": [Function],
-                "position": "left",
-                "text": "Submit",
-                "type": "success",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-            Object {
-              "instance": null,
-              "key": undefined,
-              "nodeType": "function",
-              "props": Object {
-                "classes": "float-right",
-                "onClick": [Function],
-                "text": "Cancel",
-                "type": "info",
-              },
-              "ref": null,
-              "rendered": null,
-              "type": [Function],
-            },
-          ],
-          "type": "div",
-        },
       ],
-      "type": "form",
+      "type": [Function],
     },
   ],
   Symbol(enzyme.__options__): Object {

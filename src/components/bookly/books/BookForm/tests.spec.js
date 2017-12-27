@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import BookForm from './';
-import Button from '../../../common/Button';
+import Form from '../../../common/Form';
 import InputField from '../../../common/InputField';
 
 
@@ -13,12 +13,14 @@ describe('BookForm', () => {
   describe('with "book" populated', () => {
     beforeEach(() => {
       props = {
-        book: { title: '', author: {} },
         authors: [],
+        book: { title: '', author: {} },
+        disabled: false,
         onAuthorChange: jest.fn(),
+        onCancel: jest.fn(),
         onInputChange: jest.fn(),
         onSubmit: jest.fn(),
-        onCancel: jest.fn(),
+        topLevelError: '',
       };
 
       component = shallow(<BookForm {...props} />);
@@ -26,9 +28,8 @@ describe('BookForm', () => {
 
     test('renders correctly', () => {
       expect(component).toMatchSnapshot();
-      expect(component.find('.bookly-form.bookly-book-form').length).toEqual(1);
+      expect(component.find(Form).length).toEqual(1);
       expect(component.find(InputField).length).toEqual(1);
-      expect(component.find(Button).length).toEqual(2);
     });
   });
 });

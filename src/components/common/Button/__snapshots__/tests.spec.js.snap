@@ -23,6 +23,7 @@ ShallowWrapper {
     "props": Object {
       "children": "ButtonText",
       "className": "bookly-button button-success",
+      "disabled": false,
       "onClick": [Function],
       "type": "button",
     },
@@ -38,6 +39,7 @@ ShallowWrapper {
       "props": Object {
         "children": "ButtonText",
         "className": "bookly-button button-success",
+        "disabled": false,
         "onClick": [Function],
         "type": "button",
       },

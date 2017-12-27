@@ -6,6 +6,7 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Card
     classes={Array []}
+    header="Great Header"
     hoverable={true}
     onClick={[Function]}
     text="this is the text"
@@ -25,18 +26,23 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <p
-          className="bookly-card-title"
+          className="bookly-card__header"
+        >
+          Great Header
+        </p>,
+        <p
+          className="bookly-card__title"
         >
           Awesome Title
         </p>,
         <p
-          className="bookly-card-text"
+          className="bookly-card__text"
         >
           this is the text
         </p>,
-        undefined,
+        null,
       ],
-      "className": "bookly-card bookly-hoverable",
+      "className": "bookly-card bookly-card--hoverable",
       "onClick": [Function],
     },
     "ref": null,
@@ -46,8 +52,20 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "children": "Great Header",
+          "className": "bookly-card__header",
+        },
+        "ref": null,
+        "rendered": "Great Header",
+        "type": "p",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
           "children": "Awesome Title",
-          "className": "bookly-card-title",
+          "className": "bookly-card__title",
         },
         "ref": null,
         "rendered": "Awesome Title",
@@ -59,13 +77,13 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "this is the text",
-          "className": "bookly-card-text",
+          "className": "bookly-card__text",
         },
         "ref": null,
         "rendered": "this is the text",
         "type": "p",
       },
-      undefined,
+      null,
     ],
     "type": "div",
   },
@@ -77,18 +95,23 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <p
-            className="bookly-card-title"
+            className="bookly-card__header"
+          >
+            Great Header
+          </p>,
+          <p
+            className="bookly-card__title"
           >
             Awesome Title
           </p>,
           <p
-            className="bookly-card-text"
+            className="bookly-card__text"
           >
             this is the text
           </p>,
-          undefined,
+          null,
         ],
-        "className": "bookly-card bookly-hoverable",
+        "className": "bookly-card bookly-card--hoverable",
         "onClick": [Function],
       },
       "ref": null,
@@ -98,8 +121,20 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "children": "Great Header",
+            "className": "bookly-card__header",
+          },
+          "ref": null,
+          "rendered": "Great Header",
+          "type": "p",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
             "children": "Awesome Title",
-            "className": "bookly-card-title",
+            "className": "bookly-card__title",
           },
           "ref": null,
           "rendered": "Awesome Title",
@@ -111,13 +146,13 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "this is the text",
-            "className": "bookly-card-text",
+            "className": "bookly-card__text",
           },
           "ref": null,
           "rendered": "this is the text",
           "type": "p",
         },
-        undefined,
+        null,
       ],
       "type": "div",
     },

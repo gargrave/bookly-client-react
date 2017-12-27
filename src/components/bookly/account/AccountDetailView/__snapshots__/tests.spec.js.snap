@@ -23,6 +23,7 @@ ShallowWrapper {
       "children": <Card
         classes={
           Array [
+            "card--top-margin-med",
             "detail-card",
             "account-detail-card",
           ]
@@ -116,6 +117,7 @@ ShallowWrapper {
           </ButtonRow>,
         ],
         "classes": Array [
+          "card--top-margin-med",
           "detail-card",
           "account-detail-card",
         ],
@@ -281,6 +283,7 @@ ShallowWrapper {
         "children": <Card
           classes={
             Array [
+              "card--top-margin-med",
               "detail-card",
               "account-detail-card",
             ]
@@ -374,6 +377,7 @@ ShallowWrapper {
             </ButtonRow>,
           ],
           "classes": Array [
+            "card--top-margin-med",
             "detail-card",
             "account-detail-card",
           ],

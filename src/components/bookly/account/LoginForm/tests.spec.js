@@ -1,6 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
+import Form from '../../../common/Form';
 import InputField from '../../../common/InputField';
 
 import LoginForm from './';
@@ -12,9 +13,19 @@ describe('LoginForm', () => {
   describe('basic rendering', () => {
     beforeEach(() => {
       props = {
-        user: { email: 'whatever@gmail.com', password: 'password' },
+        disabled: false,
+        errors: {
+          email: '',
+          password: '',
+        },
         onInputChange: jest.fn(),
         onSubmit: jest.fn(),
+        topLevelError: '',
+        user: {
+          email: 'whatever@gmail.com',
+          password: 'password',
+        },
+        submitDisabled: false,
       };
 
       component = shallow(<LoginForm {...props} />);
@@ -22,8 +33,7 @@ describe('LoginForm', () => {
 
     test('renders correctly', () => {
       expect(component).toMatchSnapshot();
-      expect(component.find('.bookly-form').length).toEqual(1);
-      expect(component.find('.bookly-login-form').length).toEqual(1);
+      expect(component.find(Form).length).toEqual(1);
       expect(component.find(InputField).length).toEqual(2);
     });
   });

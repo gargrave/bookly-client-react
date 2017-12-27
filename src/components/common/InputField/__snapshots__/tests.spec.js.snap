@@ -31,14 +31,18 @@ ShallowWrapper {
           :
         </label>,
         <input
+          className="bookly-input-field__input"
+          disabled={false}
           id="email"
           name="email"
           onChange={[Function]}
+          placeholder=""
           type="email"
           value=""
         />,
+        undefined,
       ],
-      "className": "input-field",
+      "className": "bookly-input-field input-field",
     },
     "ref": null,
     "rendered": Array [
@@ -65,9 +69,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "bookly-input-field__input",
+          "disabled": false,
           "id": "email",
           "name": "email",
           "onChange": [Function],
+          "placeholder": "",
           "type": "email",
           "value": "",
         },
@@ -75,6 +82,7 @@ ShallowWrapper {
         "rendered": null,
         "type": "input",
       },
+      undefined,
     ],
     "type": "div",
   },
@@ -92,14 +100,18 @@ ShallowWrapper {
             :
           </label>,
           <input
+            className="bookly-input-field__input"
+            disabled={false}
             id="email"
             name="email"
             onChange={[Function]}
+            placeholder=""
             type="email"
             value=""
           />,
+          undefined,
         ],
-        "className": "input-field",
+        "className": "bookly-input-field input-field",
       },
       "ref": null,
       "rendered": Array [
@@ -126,9 +138,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "bookly-input-field__input",
+            "disabled": false,
             "id": "email",
             "name": "email",
             "onChange": [Function],
+            "placeholder": "",
             "type": "email",
             "value": "",
           },
@@ -136,6 +151,7 @@ ShallowWrapper {
           "rendered": null,
           "type": "input",
         },
+        undefined,
       ],
       "type": "div",
     },
@@ -181,14 +197,18 @@ ShallowWrapper {
           :
         </label>,
         <input
+          className="bookly-input-field__input"
+          disabled={false}
           id="password"
           name="password"
           onChange={[Function]}
+          placeholder=""
           type="password"
           value=""
         />,
+        undefined,
       ],
-      "className": "input-field",
+      "className": "bookly-input-field input-field",
     },
     "ref": null,
     "rendered": Array [
@@ -215,9 +235,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "bookly-input-field__input",
+          "disabled": false,
           "id": "password",
           "name": "password",
           "onChange": [Function],
+          "placeholder": "",
           "type": "password",
           "value": "",
         },
@@ -225,6 +248,7 @@ ShallowWrapper {
         "rendered": null,
         "type": "input",
       },
+      undefined,
     ],
     "type": "div",
   },
@@ -242,14 +266,18 @@ ShallowWrapper {
             :
           </label>,
           <input
+            className="bookly-input-field__input"
+            disabled={false}
             id="password"
             name="password"
             onChange={[Function]}
+            placeholder=""
             type="password"
             value=""
           />,
+          undefined,
         ],
-        "className": "input-field",
+        "className": "bookly-input-field input-field",
       },
       "ref": null,
       "rendered": Array [
@@ -276,9 +304,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "bookly-input-field__input",
+            "disabled": false,
             "id": "password",
             "name": "password",
             "onChange": [Function],
+            "placeholder": "",
             "type": "password",
             "value": "",
           },
@@ -286,6 +317,7 @@ ShallowWrapper {
           "rendered": null,
           "type": "input",
         },
+        undefined,
       ],
       "type": "div",
     },
@@ -331,14 +363,18 @@ ShallowWrapper {
           :
         </label>,
         <input
+          className="bookly-input-field__input"
+          disabled={false}
           id="text"
           name="text"
           onChange={[Function]}
+          placeholder=""
           type="text"
           value=""
         />,
+        undefined,
       ],
-      "className": "input-field",
+      "className": "bookly-input-field input-field",
     },
     "ref": null,
     "rendered": Array [
@@ -365,9 +401,12 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "className": "bookly-input-field__input",
+          "disabled": false,
           "id": "text",
           "name": "text",
           "onChange": [Function],
+          "placeholder": "",
           "type": "text",
           "value": "",
         },
@@ -375,6 +414,7 @@ ShallowWrapper {
         "rendered": null,
         "type": "input",
       },
+      undefined,
     ],
     "type": "div",
   },
@@ -392,14 +432,18 @@ ShallowWrapper {
             :
           </label>,
           <input
+            className="bookly-input-field__input"
+            disabled={false}
             id="text"
             name="text"
             onChange={[Function]}
+            placeholder=""
             type="text"
             value=""
           />,
+          undefined,
         ],
-        "className": "input-field",
+        "className": "bookly-input-field input-field",
       },
       "ref": null,
       "rendered": Array [
@@ -426,9 +470,12 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "className": "bookly-input-field__input",
+            "disabled": false,
             "id": "text",
             "name": "text",
             "onChange": [Function],
+            "placeholder": "",
             "type": "text",
             "value": "",
           },
@@ -436,6 +483,7 @@ ShallowWrapper {
           "rendered": null,
           "type": "input",
         },
+        undefined,
       ],
       "type": "div",
     },

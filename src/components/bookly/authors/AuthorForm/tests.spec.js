@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 
 import { authorsMockData } from '../../../../utils/mocks/data/authors-mock-data';
 
-import Button from '../../../common/Button';
+import Form from '../../../common/Form';
 import InputField from '../../../common/InputField';
 
 import AuthorForm from './';
@@ -16,9 +16,16 @@ describe('AuthorForm', () => {
     beforeEach(() => {
       props = {
         author: Object.create(authorsMockData[0]),
+        disabled: false,
+        errors: {
+          firstName: '',
+          lastName: '',
+        },
+        onCancel: jest.fn(),
         onInputChange: jest.fn(),
         onSubmit: jest.fn(),
-        onCancel: jest.fn(),
+        submitDisabled: false,
+        topLevelError: '',
       };
 
       component = shallow(<AuthorForm {...props} />);
@@ -26,8 +33,7 @@ describe('AuthorForm', () => {
 
     test('renders correctly', () => {
       expect(component).toMatchSnapshot();
-      expect(component.find('.bookly-form.bookly-author-form').length).toEqual(1);
-      expect(component.find(Button).length).toEqual(2);
+      expect(component.find(Form).length).toEqual(1);
       expect(component.find(InputField).length).toEqual(2);
     });
   });
