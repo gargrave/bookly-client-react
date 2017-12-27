@@ -39,7 +39,7 @@ function buttonClass(type: string) {
 
 function positionClass(position: string) {
   if (acceptablePositions.includes(position)) {
-    return `button-${position}`;
+    return `button--${position}`;
   }
   return '';
 }
