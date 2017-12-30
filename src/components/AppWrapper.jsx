@@ -6,7 +6,7 @@ import { func } from 'prop-types';
 import { setInitialized } from '../store/actions/app-actions';
 import { fetchProfile } from '../store/actions/auth-actions';
 
-import SimpleHeader from './bookly/Header/SimpleHeader';
+import SimpleHeader from './bookly/header/SimpleHeader';
 import Routes from './Routes';
 
 import './AppWrapper.css';
